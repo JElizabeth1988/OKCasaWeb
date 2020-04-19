@@ -8615,7 +8615,7 @@ h1, h2, h3, h4, h5,
   box-shadow: none !important; }
   .request-form .form-control::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: rgba(0, 0, 0, 0.9); }
+    color: rgba(134, 126, 126, 0.9); }
   .request-form .form-control::-moz-placeholder {
     /* Firefox 19+ */
     color: rgba(0, 0, 0, 0.9); }
