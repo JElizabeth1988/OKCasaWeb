@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-md topper d-flex align-items-center align-items-stretch">
                                 <p class="mb-0 d-flex d-block">
-                                    <a href="#" class="btn btn-primary d-flex align-items-center justify-content-center">
+                                    <a href="contacto.jsp" class="btn btn-primary d-flex align-items-center justify-content-center">
                                         <span>Solicita una inspección</span>
                                     </a>
                                 </p>
