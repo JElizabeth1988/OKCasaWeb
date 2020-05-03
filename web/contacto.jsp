@@ -32,9 +32,13 @@
         <link rel="stylesheet" href="css/flaticon.css">
         <link rel="stylesheet" href="css/icomoon.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
     </head>
 
     <body>
+        <!-- Back to top button -->
+        <a id="button"></a>
+
         <div class="bg-top navbar-light">
             <div class="container">
                 <div class="row no-gutters d-flex align-items-center align-items-stretch">
@@ -44,21 +48,23 @@
                     <div class="col-lg-8 d-block">
                         <div class="row d-flex">
                             <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+                                <div class="icon d-flex justify-content-center align-items-center"><span
+                                        class="icon-paper-plane"></span></div>
                                 <div class="text d-flex align-items-center">
-                                    <span>OKCasa_chile@gmail.com</span>
+                                    <span>OKCasa_contacto@gmail.com</span>
                                 </div>
                             </div>
                             <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+                                <div class="icon d-flex justify-content-center align-items-center"><span
+                                        class="icon-phone2"></span></div>
                                 <div class="text d-flex align-items-center">
                                     <span>LLámanos: +22002200</span>
                                 </div>
                             </div>
                             <div class="col-md topper d-flex align-items-center align-items-stretch">
                                 <p class="mb-0 d-flex d-block">
-                                    <a href="contacto.jsp" class="btn btn-primary d-flex align-items-center justify-content-center">
-                                        <span>Solicita una inspección</span>
+                                    <a href="login.jsp" class="btn btn-primary d-flex align-items-center justify-content-center">
+                                        <span>Solicita una Inspección</span>
                                     </a>
                                 </p>
                             </div>
@@ -67,24 +73,37 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
+             style="position: -webkit-sticky;">
             <div class="container d-flex align-items-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="oi oi-menu"></span> Menu
                 </button>
-                <form action="#" class="searchform order-lg-last">
-                    <div class="form-group d-flex">
-                        <input type="text" class="form-control pl-3" placeholder="Search">
-                        <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
-                    </div>
-                </form>
+
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active"><a href="index.jsp" class="nav-link pl-0">Home</a></li>
                         <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
                         <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
                         <li class="nav-item"><a href="contacto.jsp" class="nav-link">Contacto</a></li>
+                        <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control pl-1" placeholder="Buscar">
+                                <button type="submit" placeholder="" class="form-control search"><span
+                                        class="ion-ios-search"></span></button>
+                            </div>
+                        </form>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresa/Regístratate <span
+                                    class="icon-user"></span></a></li>
+                    </ul>
+                    <div>
+
+                    </div>
+
+
                 </div>
             </div>
         </nav>
@@ -96,7 +115,7 @@
                 <div class="row no-gutters slider-text align-items-center justify-content-center">
                     <div class="col-md-9 ftco-animate text-center">
                         <h1 class="mb-2 bread">Contáctanos</h1>
-                        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contacto <i class="ion-ios-arrow-forward"></i></span></p>
+                        <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contacto <i class="ion-ios-arrow-forward"></i></span></p>
                     </div>
                 </div>
             </div>
@@ -106,12 +125,12 @@
             <div class="container">
                 <div class="row d-flex align-items-stretch no-gutters">
                     <div class="col-md-6 p-4 p-md-5 order-md-last bg-light">
-                        <form action="#">
+                        <form method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Tu Nombre">
+                                <input type="text" class="form-control" placeholder="Tu Nombre" title="Ingresa Nombre" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Tu Correo">
+                                <input type="email" class="form-control" placeholder="Tu Correo" title="Ingresa Correo" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Asunto">
@@ -207,8 +226,8 @@
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Brooklyn,NY EEUU</a></h3>
                                     <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Desde Feb. 07, 1990</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> 40 empleados</a></div>
+                                        <div><a href="#"><span class="icon-calendar"></span> Desde Feb. 07, 1978</a></div>
+                                        <div><a href="#"><span class="icon-person"></span> 500 empleados</a></div>
                                         <div><a href="#"><span class="icon-home"></span> Sede Base</a></div>
                                     </div>
                                 </div>
@@ -218,8 +237,8 @@
                                 <div class="text">
                                     <h3 class="heading"><a href="#"> Santiago, Chile</a></h3>
                                     <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Feb. 07, 2018</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> 60 empleados</a></div>
+                                        <div><a href="#"><span class="icon-calendar"></span> Feb. 07, 1990</a></div>
+                                        <div><a href="#"><span class="icon-person"></span> 320 empleados</a></div>
                                         <div><a href="#"><span class="icon-home"></span> Segunda Sede</a></div>
                                     </div>
                                 </div>
@@ -272,6 +291,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
         <script src="js/google-map.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/backtotop.js"></script>
 
     </body>
 </html>

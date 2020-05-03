@@ -312,11 +312,7 @@
     background-color: $custom-file-disabled-bg;
   }
 
-  @each $lang, $value in $custom-file-text {
-    &:lang(#{$lang}) ~ .custom-file-label::after {
-      content: $value;
-    }
-  }
+ 
 
   ~ .custom-file-label[data-browse]::after {
     content: attr(data-browse);
