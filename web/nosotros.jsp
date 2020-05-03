@@ -52,7 +52,7 @@
                                 <div class="icon d-flex justify-content-center align-items-center"><span
                                         class="icon-paper-plane"></span></div>
                                 <div class="text d-flex align-items-center">
-                                    <span>OKCasa_contacto@gmail.com</span>
+                                    <span>OKCasa_chile@gmail.com</span>
                                 </div>
                             </div>
                             <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
