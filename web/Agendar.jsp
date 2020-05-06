@@ -1,6 +1,6 @@
 <%-- 
-    Document   : servicios
-    Created on : 25-04-2020, 23:36:52
+    Document   : solicitarInspeccion
+    Created on : 01-05-2020, 21:21:41
     Author     : chida
 --%>
 
@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>OKCasa</title>
-
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
 
@@ -33,7 +32,6 @@
         <link rel="stylesheet" href="css/icomoon.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-
     </head>
     <body>
         <!-- Back to top button -->
@@ -73,7 +71,7 @@
                 </div>
             </div>
         </div>
-              <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
              style="position: -webkit-sticky;">
             <div class="container d-flex align-items-center">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -106,119 +104,223 @@
             </div>
         </div>
     </nav>
-        <!-- END nav -->
-
-        <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row no-gutters slider-text align-items-center justify-content-center">
-                    <div class="col-md-9 ftco-animate text-center">
-                        <h1 class="mb-2 bread">Servicios</h1>
-                        <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Servicios <i class="ion-ios-arrow-forward"></i></span></p>
-                    </div>
+    <!-- END nav -->
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">Agendar</h1>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Agendar <i class="ion-ios-arrow-forward"></i></span></p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FOTOS -->
+    <br>
+    <br>
 
-        <section class="ftco-section">
+
+    <div class="container">
+
+        <div class="row justify-content-center">   
             <div class="container">
-                <div class="row justify-content-center mb-5 pb-2">
-                    <div class="col-md-8 text-center heading-section ftco-animate">
-                        <span class="subheading">Servicios</span>
-                        <h2 class="mb-4">Nuestros Servicios</h2>
-                        <p> Contamos con un equipo entrenado para realizar una correcta fiscalización, contando con los instrumentos necesarios.</p>
-                    </div>
-                </div>	
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(images/inspec-1.jpg);"></div>
-                            </div>
-                            <div class="text pt-3 text-center">
-                                <h3>Verificación Instalaciones y Terminaciones</h3>
-                                <br>
-                                <p style="text-align: justify;">Entran en esta etapa revestimientos de paredes (plásticos, de madera, con cemento), la pintura, la colocación de tejas, cielorraso, la colocación de pisos y ventanas, la  iluminación y la climatización (calefacción, ventiladores/ aire acondicionado). <br>
-
-                                </p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(images/inspec-3.jpg);"></div>
-                            </div>
-                            <div class="text pt-3 text-center">
-                                <h3>Medición de Metros Cuadrados</h3>
-                                <br>
-                                <p style="text-align: justify;">En perspectiva, la construcción de una casa varía en función de la cantidad de habitantes y las condiciones mínimas de habitabilidad. Cuando revisamos la normativa en diversos países, existe un rango que oscila entre 30 y 40 m2 para 3 o 4 ocupantes.</p>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(images/inspec-2.jpg);"></div>
-                            </div>
-                            <div class="text pt-3 text-center">
-                                <h3>Inspección de Luz, Instalaciones Sanitarias y Gas</h3>
-                                <p style="text-align: justify;">La verificación de las instalaciones eléctricas previa a su puesta en servicio comprende dos fases, una primera fase que no requiere efectuar medidas y una segunda fase que requiere la utilización de equipos de medida para los ensayos.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(images/inspec-4.jpg);"></div>
-                            </div>
-                            <div class="text pt-3 text-center">
-                                <h3>Termografías</h3>
-                                <br>
-                                <br>
-                                <p style="text-align: justify;"> Se trata de una técnica de diagnóstico que tiene como finalidad medir la temperatura de tu vivienda y con ello detectar las pérdidas energéticas de tu hogar, moho, fugas de aire, para ello, se utilizan las conocidas como cámaras termográficas.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="ftco-intro" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-            <div class="overlay"></div>
-            <div class="container">
+                <h2 class="text-center" id="titl">Solicitar Inspección</h2>
+                <p class="text-center">
+                    <small id="passwordHelpInline" class="text-muted"></small>
+                </p>
+                <hr>
                 <div class="row justify-content-center">
-                    <div class="col-md-9 text-center">
-                        <h2>¡Nuevo Convenio con<br>
-                            Banco Estado!</h2> <img src="images/logobanco.png" alt="banco">
-                        <br>
-                        <br>
-                        <p> Presentamos excelentes descuentos para clientes que cuenten con un crédito hipotecario en Banco Estado.
-                            <br>
-                            Contáctanos para saber si cumples con los requisitos y puedes obtener un descuento para tu inspección.
-                        </p>
+                    <div class="col-md-5">
+                        <form role="form" method="POST" action="login.html">
+                            <fieldset>
+                                <label style="color: black">
+                                    Selecciona los servicios
+                                </label>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input">
+                                        Verificación Instalaciones y terminaciones.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input">
+                                        Medición de metros cuadrados de la vivienda.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input">
+                                        Inspección de luz, instalaciones sanitarias y gas.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input">
+                                        Termografías.
+                                    </label>
+                                </div>
 
-                        <p class="mb-0"><a href="login.jsp" class="btn btn-primary px-4 py-3">Contáctanos</a></p>
+                                <br>
+                                <br>
+                                <label style="color: black">
+                                    Selecciona Día y Hora
+                                </label>
+                                <br>
+                                <br>
+
+
+                                <div class="row">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-outline-primary">
+                                            <
+                                        </label>
+                                        <select id="cars" name="cars" style="margin-right: 182px; margin-left: 180px ">
+                                            <option value="volvo">Mayo</option>
+                                            <option value="saab">Junio</option>
+                                            <option value="fiat">Julio</option>
+                                            <option value="audi">Agosto</option>
+                                        </select>
+                                        <label class="btn btn-outline-primary justify-content-center">
+                                            >
+                                        </label>
+                                    </div>
+                                    <div class="table-responsive small">
+                                        <table class="table table-striped table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Hora</th>
+                                                    <th scope="col"> Lunes <br> 04-05</th>
+                                                    <th scope="col"> Martes <br> 05-05</th>
+                                                    <th scope="col"> Miércoles<br> 06-05</th>
+                                                    <th scope="col"> Jueves <br> 07-05</th>
+                                                    <th scope="col"> Viernes <br> 08-05</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>10:00 - 12:00</td>
+                                                    <td style="background-color: #EF3159">Ocupado</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>13:00 - 15:00</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td style="background-color: #EF3159">Ocupado</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>15:00 - 17:00</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>17:00 - 19:00</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                                </div>
+                                </div>
+
+                                <br>
+
+
+
+                                </div>
+
+
+                            </fieldset>
+                        </form>
+
+
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="container mr-8" >  
+                                <h4>Pagar</h4>
+                                <div class="card " style="width: 18rem;" >
+
+
+                                    <br>
+                                    <br>
+                                    <div class="card-body">
+                                        <label style="font-size:12px;">Subtotal:</label>
+                                        <input type="text" value="${totalPagar}" readonly="" class="form-control">
+
+                                        <label style="font-size:12px;">Descuento Banco:</label>
+                                        <input type="text" readonly="" class="form-control">
+
+                                        <label style="font-size:12px;">Total a pagar:</label>
+                                        <input type="text" value="${totalPagar}" readonly="" class="form-control">
+
+                                    </div>
+
+                                </div>
+                                <input type="submit" class="btn btn btn-primary" value="Pagar">
+                            </div>                        
+
+                        </div>  
+
+
+
                     </div>
+
+
+
+
+
+
+                    <br>
+
+
+
+
+
+
                 </div>
             </div>
-        </section>
+            <br>
+
+        </div>
+
+
         <br>
-        <br>
-        <br>
-        <br>
+        <div class="container">
+            <div class="row justify-content-center">
+                <p><a href="#" class="btn btn-lg btn-primary">Agendar</a></p>
+            </div>  
+        </div>  
+
         <br>
         <br>
 
-        <!--FOOTER  -->
+
+
+        <!-- Footer -->
         <footer class="ftco-footer ftco-bg-dark ftco-section">
             <div class="container">
                 <div class="row mb-5">
@@ -254,7 +356,7 @@
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Brooklyn,NY EEUU</a></h3>
                                     <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Desde Feb. 07, 1979</a></div>
+                                        <div><a href="#"><span class="icon-calendar"></span> Desde Feb. 07, 1978</a></div>
                                         <div><a href="#"><span class="icon-person"></span> 500 empleados</a></div>
                                         <div><a href="#"><span class="icon-home"></span> Sede Base</a></div>
                                     </div>
@@ -320,5 +422,7 @@
         <script src="js/google-map.js"></script>
         <script src="js/main.js"></script>
         <script src="js/backtotop.js"></script>
-    </body>
+
+
+</body>
 </html>

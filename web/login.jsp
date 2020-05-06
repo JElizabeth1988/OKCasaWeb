@@ -88,28 +88,39 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
+             style="position: -webkit-sticky;">
             <div class="container d-flex align-items-center">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="oi oi-menu"></span> Menu
                 </button>
-                <form action="#" class="searchform order-lg-last">
-                    <div class="form-group d-flex">
-                        <input type="text" class="form-control pl-3" placeholder="Search">
-                        <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
-                    </div>
-                </form>
+
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active"><a href="index.jsp" class="nav-link pl-0">Home</a></li>
                         <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
                         <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
-                        <li class="nav-item"><a href="contacto.jsp" class="nav-link">Contacto</a></li>
+                        <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
+                                    class="icon"></span></a></li></a></li>
+                        <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control pl-1" placeholder="Buscar">
+                                <button type="submit" placeholder="" class="form-control search"><span
+                                        class="ion-ios-search"></span></button>
+                            </div>
+                        </form>
+                    </ul>            
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar <span
+                                    class="icon-user"></span></a></li>
                     </ul>
                 </div>
+
+
             </div>
-        </nav>
+        </div>
+    </nav>
         <!-- END nav -->
 
 
@@ -170,11 +181,15 @@
                             <fieldset>
                                 <p class="text-uppercase pull-center" style="font-weight: bold;"> Regístrate</p>
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username" class="form-control input-lg" placeholder="Nombre"
+                                    <input type="text" name="rut" id="username" class="form-control input-lg" placeholder="RUT"
+                                           title="Debe Ingresar su RUT" required minlength="9">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="nombre" id="username" class="form-control input-lg" placeholder="Nombre"
                                            title="Debe Ingresar su Nombre" required minlength="3">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username" class="form-control input-lg" placeholder="Apellido"
+                                    <input type="text" name="apellido" id="username" class="form-control input-lg" placeholder="Apellido"
                                            title="Debe Ingresar su Apellido" required minlength="5">
                                 </div>
                                 <div class="form-group">
@@ -213,7 +228,7 @@
                                     </label>
                                 </div>
                                 <div>
-                                    <input type="submit" class="btn btn-lg btn-primary" value="Registrar">
+                                    <input type="post" class="btn btn-lg btn-primary" value="Registrar">
                                 </div>
                                 </div>
 
@@ -235,8 +250,8 @@
             <br>
             <br>
         </div>
-        
-       
+
+
 
 
 

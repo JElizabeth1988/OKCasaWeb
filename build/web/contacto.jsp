@@ -86,7 +86,8 @@
                         <li class="nav-item active"><a href="index.jsp" class="nav-link pl-0">Home</a></li>
                         <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
                         <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
-                        <li class="nav-item"><a href="contacto.jsp" class="nav-link">Contacto</a></li>
+                        <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
+                                    class="icon-folder"></span></a></li></a></li>
                         <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
                             <div class="form-group d-flex">
                                 <input type="text" class="form-control pl-1" placeholder="Buscar">
@@ -94,18 +95,12 @@
                                         class="ion-ios-search"></span></button>
                             </div>
                         </form>
-                    </ul>
+                    </ul>            
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresa/Regístratate <span
+                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar <span
                                     class="icon-user"></span></a></li>
                     </ul>
-                    <div>
-
-                    </div>
-
-
                 </div>
-            </div>
         </nav>
         <!-- END nav -->
 

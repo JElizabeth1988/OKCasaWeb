@@ -1,6 +1,6 @@
 <%-- 
-    Document   : servicios
-    Created on : 25-04-2020, 23:36:52
+    Document   : MisInspecciones
+    Created on : 01-05-2020, 22:58:24
     Author     : chida
 --%>
 
@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>OKCasa</title>
-
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
 
@@ -36,6 +35,7 @@
 
     </head>
     <body>
+
         <!-- Back to top button -->
         <a id="button"></a>
 
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-              <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
              style="position: -webkit-sticky;">
             <div class="container d-flex align-items-center">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -102,10 +102,8 @@
                     </ul>
                 </div>
 
-
-            </div>
-        </div>
-    </nav>
+            </div>    
+        </nav>
         <!-- END nav -->
 
         <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
@@ -113,112 +111,91 @@
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center justify-content-center">
                     <div class="col-md-9 ftco-animate text-center">
-                        <h1 class="mb-2 bread">Servicios</h1>
-                        <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Servicios <i class="ion-ios-arrow-forward"></i></span></p>
+                        <h1 class="mb-2 bread">Mis Inspecciones</h1>
+                        <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Mis Inspecciones <i class="ion-ios-arrow-forward"></i></span></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FOTOS -->
+        <br>
+        <br>
+        <div>
+            <p><a href="Agendar.jsp" class="btn btn-lg btn-primary">Solicita una Nueva Inspección</a></p>
+        </div>
+        <br>
+        <br>
 
-        <section class="ftco-section">
-            <div class="container">
-                <div class="row justify-content-center mb-5 pb-2">
-                    <div class="col-md-8 text-center heading-section ftco-animate">
-                        <span class="subheading">Servicios</span>
-                        <h2 class="mb-4">Nuestros Servicios</h2>
-                        <p> Contamos con un equipo entrenado para realizar una correcta fiscalización, contando con los instrumentos necesarios.</p>
-                    </div>
-                </div>	
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(images/inspec-1.jpg);"></div>
-                            </div>
-                            <div class="text pt-3 text-center">
-                                <h3>Verificación Instalaciones y Terminaciones</h3>
-                                <br>
-                                <p style="text-align: justify;">Entran en esta etapa revestimientos de paredes (plásticos, de madera, con cemento), la pintura, la colocación de tejas, cielorraso, la colocación de pisos y ventanas, la  iluminación y la climatización (calefacción, ventiladores/ aire acondicionado). <br>
+        <div class="container">
+            <h3>Mis Inspecciones</h3>
 
-                                </p>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col"> Fecha</th>
+                                <th scope="col"> Hora</th>
+                                <th scope="col"> Servicios</th>
+                                <th scope="col"> Inspector</th>
+                                <th scope="col"> Estado</th>
+                                <th scope="col"> Resultados</th>
+                                <th scope="col"> Reparaciones</th>
+                                <th scope="col"> Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>03246</td>
+                                <td>10/05/2020</td>
+                                <td>16:30</td>
+                                <td>Verificación Instalaciones <br>
+                                    Termografía
+                                </td>
+                                <td>Gustavo Henríquez</td>
+                                <td>En Verificación</td>
+                                <td>Pendientes</td>
+                                <td>Pendientes</td>
+                                <td>$150.300</td>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(images/inspec-3.jpg);"></div>
-                            </div>
-                            <div class="text pt-3 text-center">
-                                <h3>Medición de Metros Cuadrados</h3>
-                                <br>
-                                <p style="text-align: justify;">En perspectiva, la construcción de una casa varía en función de la cantidad de habitantes y las condiciones mínimas de habitabilidad. Cuando revisamos la normativa en diversos países, existe un rango que oscila entre 30 y 40 m2 para 3 o 4 ocupantes.</p>
+                            </tr>
+                            <tr>
+                                <td>03256</td>
+                                <td>05/05/2005</td>
+                                <td>16:30</td>
+                                <td>Termografía</td>
+                                <td>Eva Donoso</td>
+                                <td>Terminado</td>
+                                <td>Terminadas</td>
+                                <td>Terminadas</td>
+                                <td>$90.500</td>
 
+                            </tr>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(images/inspec-2.jpg);"></div>
-                            </div>
-                            <div class="text pt-3 text-center">
-                                <h3>Inspección de Luz, Instalaciones Sanitarias y Gas</h3>
-                                <p style="text-align: justify;">La verificación de las instalaciones eléctricas previa a su puesta en servicio comprende dos fases, una primera fase que no requiere efectuar medidas y una segunda fase que requiere la utilización de equipos de medida para los ensayos.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="staff">
-                            <div class="img-wrap d-flex align-items-stretch">
-                                <div class="img align-self-stretch" style="background-image: url(images/inspec-4.jpg);"></div>
-                            </div>
-                            <div class="text pt-3 text-center">
-                                <h3>Termografías</h3>
-                                <br>
-                                <br>
-                                <p style="text-align: justify;"> Se trata de una técnica de diagnóstico que tiene como finalidad medir la temperatura de tu vivienda y con ello detectar las pérdidas energéticas de tu hogar, moho, fugas de aire, para ello, se utilizan las conocidas como cámaras termográficas.</p>
-
-                            </div>
-                        </div>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
+
+
             </div>
-        </section>
+
+            <br>
+            <br>
+            <br>
 
 
-        <section class="ftco-intro" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-9 text-center">
-                        <h2>¡Nuevo Convenio con<br>
-                            Banco Estado!</h2> <img src="images/logobanco.png" alt="banco">
-                        <br>
-                        <br>
-                        <p> Presentamos excelentes descuentos para clientes que cuenten con un crédito hipotecario en Banco Estado.
-                            <br>
-                            Contáctanos para saber si cumples con los requisitos y puedes obtener un descuento para tu inspección.
-                        </p>
 
-                        <p class="mb-0"><a href="login.jsp" class="btn btn-primary px-4 py-3">Contáctanos</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <br>
-        <br>
-        <br>
+
+        </div>
+
+
+
         <br>
         <br>
         <br>
 
-        <!--FOOTER  -->
+        <!--Footer  -->
         <footer class="ftco-footer ftco-bg-dark ftco-section">
             <div class="container">
                 <div class="row mb-5">
@@ -298,7 +275,7 @@
 
 
 
-        <!-- Icono carga -->
+        <!-- Icono Cargar-->
         <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
@@ -319,6 +296,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
         <script src="js/google-map.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/backtotop.js"></script>
+        <script src="js/backtotop.js"></script>                    
+
     </body>
 </html>
