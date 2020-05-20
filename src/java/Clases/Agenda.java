@@ -11,29 +11,30 @@ package Clases;
  */
 public class Agenda {
     private int id_agenda;
-    private int dia;
-    private int hora;
+    private String dia;
+    private String hora;
 
     public Agenda() {
     }
 
-    public Agenda(int id_agenda, int dia, int hora) {
+    public Agenda(int id_agenda, String dia, String hora) {
         this.id_agenda = id_agenda;
         this.dia = dia;
         this.hora = hora;
     }
-    
+
+   
     //SETTER
 
     public void setId_agenda(int id_agenda) {
         this.id_agenda = id_agenda;
     }
 
-    public void setDia(int dia) {
+    public void setDia(String dia) {
         this.dia = dia;
     }
 
-    public void setHora(int hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
     
@@ -42,11 +43,11 @@ public class Agenda {
         return id_agenda;
     }
 
-    public int getDia() {
+    public String getDia() {
         return dia;
     }
 
-    public int getHora() {
+    public String getHora() {
         return hora;
     }
     
