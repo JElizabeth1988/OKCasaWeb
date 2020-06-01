@@ -14,12 +14,12 @@ public class Cliente {
     private String primer_nombre;
     private String segundo_nombre;
     private String ap_paterno;
+    private String ap_materno;
     private String direccion;
     private int telefono;
     private String email;
-    //Tipo cliente?
-    
-    
+    private Boolean hipotecario;
+
     //comuna
     private Comuna comu;
 
@@ -27,19 +27,22 @@ public class Cliente {
         comu=new Comuna();
     }
 
-    public Cliente(String rut, String primer_nombre, String segundo_nombre, String ap_paterno, String direccion, int telefono, String email, Comuna comu) {
+    public Cliente(String rut, String primer_nombre, String segundo_nombre, String ap_paterno, String ap_materno, String direccion, int telefono, String email, Boolean hipotecario, Comuna comu) {
         this.rut = rut;
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.ap_paterno = ap_paterno;
+        this.ap_materno = ap_materno;
         this.direccion = direccion;
         this.telefono = telefono;
         this.email = email;
+        this.hipotecario = hipotecario;
         this.comu = comu;
     }
 
-
+ 
     //SET
+
     public void setRut(String rut) {
         this.rut = rut;
     }
@@ -56,6 +59,10 @@ public class Cliente {
         this.ap_paterno = ap_paterno;
     }
 
+    public void setAp_materno(String ap_materno) {
+        this.ap_materno = ap_materno;
+    }
+
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
@@ -68,10 +75,14 @@ public class Cliente {
         this.email = email;
     }
 
+    public void setHipotecario(Boolean hipotecario) {
+        this.hipotecario = hipotecario;
+    }
+
     public void setComu(Comuna comu) {
         this.comu = comu;
     }
-    
+   
     //GET
 
     public String getRut() {
@@ -90,6 +101,10 @@ public class Cliente {
         return ap_paterno;
     }
 
+    public String getAp_materno() {
+        return ap_materno;
+    }
+
     public String getDireccion() {
         return direccion;
     }
@@ -102,10 +117,13 @@ public class Cliente {
         return email;
     }
 
+    public Boolean getHipotecario() {
+        return hipotecario;
+    }
+
     public Comuna getComu() {
         return comu;
     }
-    
     
     
 }

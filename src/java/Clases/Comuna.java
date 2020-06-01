@@ -13,17 +13,13 @@ public class Comuna {
     private int id_comuna;
     private String nombre;
     
-    //Region
-    private Region reg;
-
     public Comuna() {
-      reg=new Region();
+      
     }
 
     public Comuna(int id_comuna, String nombre, Region reg) {
         this.id_comuna = id_comuna;
         this.nombre = nombre;
-        this.reg = reg;
     }
 
     //SETTER
@@ -36,9 +32,7 @@ public class Comuna {
         this.nombre = nombre;
     }
 
-    public void setReg(Region reg) {
-        this.reg = reg;
-    }
+   
     
     //GETTER
 
@@ -50,9 +44,6 @@ public class Comuna {
         return nombre;
     }
 
-    public Region getReg() {
-        return reg;
-    }
     
     
 }

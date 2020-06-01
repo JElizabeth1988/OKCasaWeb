@@ -12,34 +12,35 @@ package Clases;
 public class Solicitud {
    private int id_solicitud;
    private String fecha_solicitud;
-   private int hora_solicitud;
+   private String hora_solicitud;
    
   //Cliente
    private Cliente cli;
-   
-   //Comuna
-   private Comuna comu;
-   
+      
    //Agenda
    private Agenda agen;
+   
+   //Pago
+   private Pago pag;
 
     public Solicitud() {
         cli = new Cliente();
-        comu = new Comuna();
+
         agen = new Agenda();
+        
+        pag = new Pago();
     }
 
-    public Solicitud(int id_solicitud, String fecha_solicitud, int hora_solicitud, Cliente cli, Comuna comu, Agenda agen) {
+    public Solicitud(int id_solicitud, String fecha_solicitud, String hora_solicitud, Cliente cli, Agenda agen, Pago pag) {
         this.id_solicitud = id_solicitud;
         this.fecha_solicitud = fecha_solicitud;
         this.hora_solicitud = hora_solicitud;
         this.cli = cli;
-        this.comu = comu;
         this.agen = agen;
+        this.pag = pag;
     }
-   
-   //SETTER
-
+    
+    //SETTER
     public void setId_solicitud(int id_solicitud) {
         this.id_solicitud = id_solicitud;
     }
@@ -48,7 +49,7 @@ public class Solicitud {
         this.fecha_solicitud = fecha_solicitud;
     }
 
-    public void setHora_solicitud(int hora_solicitud) {
+    public void setHora_solicitud(String hora_solicitud) {
         this.hora_solicitud = hora_solicitud;
     }
 
@@ -56,14 +57,14 @@ public class Solicitud {
         this.cli = cli;
     }
 
-    public void setComu(Comuna comu) {
-        this.comu = comu;
-    }
-
     public void setAgen(Agenda agen) {
         this.agen = agen;
     }
-    
+
+    public void setPag(Pago pag) {   
+        this.pag = pag;
+    }
+
     //GETTER
 
     public int getId_solicitud() {
@@ -74,7 +75,7 @@ public class Solicitud {
         return fecha_solicitud;
     }
 
-    public int getHora_solicitud() {
+    public String getHora_solicitud() {
         return hora_solicitud;
     }
 
@@ -82,14 +83,14 @@ public class Solicitud {
         return cli;
     }
 
-    public Comuna getComu() {
-        return comu;
-    }
-
     public Agenda getAgen() {
         return agen;
     }
+
+    public Pago getPag() {
+        return pag;
+    }
     
-   
+
    
 }
