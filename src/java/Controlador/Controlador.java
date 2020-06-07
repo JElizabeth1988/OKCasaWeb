@@ -6,7 +6,7 @@
 package Controlador;
 
 import Clases.Cliente;
-import Clases.ClienteDao;
+import Dao.ClienteDao;
 import Clases.Comuna;
 import Clases.ComunaDAO;
 import java.io.IOException;
@@ -77,20 +77,8 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String accion=request.getParameter("accion");
-    
-    
-        switch (accion) {
-            case "Listar":
-                List<Cliente>datos=dao.listar();
-                request.setAttribute("datos",datos);
-                request.getRequestDispatcher("Cliente.jsp").forward(request, response);
-                
-                break;
-            default:
-                throw new AssertionError();
-        }
-        
+
+           
     }
 
     /**

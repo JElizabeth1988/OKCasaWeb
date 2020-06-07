@@ -10,7 +10,7 @@ package Clases;
  * @author chida
  */
 public class Cliente {
-    private String rut;
+    private String rut_cliente;
     private String primer_nombre;
     private String segundo_nombre;
     private String ap_paterno;
@@ -18,17 +18,17 @@ public class Cliente {
     private String direccion;
     private int telefono;
     private String email;
-    private Boolean hipotecario;
+    private String hipotecario;
 
     //comuna
-    private Comuna comu;
-
+    private int id_comuna;
+    
     public Cliente() {
-        comu=new Comuna();
+        
     }
 
-    public Cliente(String rut, String primer_nombre, String segundo_nombre, String ap_paterno, String ap_materno, String direccion, int telefono, String email, Boolean hipotecario, Comuna comu) {
-        this.rut = rut;
+    public Cliente(String rut_cliente, String primer_nombre, String segundo_nombre, String ap_paterno, String ap_materno, String direccion, int telefono, String email, String hipotecario, int id_comuna) {
+        this.rut_cliente = rut_cliente;
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.ap_paterno = ap_paterno;
@@ -37,14 +37,15 @@ public class Cliente {
         this.telefono = telefono;
         this.email = email;
         this.hipotecario = hipotecario;
-        this.comu = comu;
+        this.id_comuna = id_comuna;
     }
 
- 
-    //SET
+    
 
-    public void setRut(String rut) {
-        this.rut = rut;
+   //SETTER
+
+    public void setRut_cliente(String rut_cliente) {
+        this.rut_cliente = rut_cliente;
     }
 
     public void setPrimer_nombre(String primer_nombre) {
@@ -75,18 +76,19 @@ public class Cliente {
         this.email = email;
     }
 
-    public void setHipotecario(Boolean hipotecario) {
+    public void setHipotecario(String hipotecario) {
         this.hipotecario = hipotecario;
     }
 
-    public void setComu(Comuna comu) {
-        this.comu = comu;
+    public void setId_comuna(int id_comuna) {
+        this.id_comuna = id_comuna;
     }
-   
-    //GET
+    
+    
+    //GETTER
 
-    public String getRut() {
-        return rut;
+    public String getRut_cliente() {
+        return rut_cliente;
     }
 
     public String getPrimer_nombre() {
@@ -117,14 +119,29 @@ public class Cliente {
         return email;
     }
 
-    public Boolean getHipotecario() {
+    public String getHipotecario() {
         return hipotecario;
     }
 
-    public Comuna getComu() {
-        return comu;
+    public int getId_comuna() {
+        return id_comuna;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "rut_cliente=" + rut_cliente + ", primer_nombre=" + primer_nombre + ", segundo_nombre=" + segundo_nombre + ", ap_paterno=" + ap_paterno + ", ap_materno=" + ap_materno + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + ", hipotecario=" + hipotecario + ", id_comuna=" + id_comuna + '}';
+    }
+
+   
     
+
+    
+    
+
+   
+    
+ 
+
     
 }
 

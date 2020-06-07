@@ -134,37 +134,58 @@
                     <div class="col-md-5">
                         <form role="form" method="POST" action="login.html">
                             <fieldset>
-                                <label style="color: black">
+                                <label class="lb"> Dirección Vivienda </label>
+                                <div class="form-group">
+                                    <input type="text" name="direccion" id="direccion" class="form-control input-sm"
+                                           placeholder="Ingresa Dirección" title="Debe Ingresar la dirección" required minlength="7">
+                                </div>
+                                <label class="lb"> Comuna </label>
+                                <div class="form-group">
+                                    <select id="comuna" name="comuna">
+                                        <option value="1">Puente Alto</option>
+                                        <option value="2">La Florida</option>
+                                        <option value="3">Santiago</option>
+                                        <option value="4">Ñuñoa</option>
+                                    </select>
+                                </div>
+
+
+                                <label class="lb"> Nombre Constructora </label>
+                                <div class="form-group">
+                                    <input type="text" name="constructora" id="constructora" class="form-control input-sm"
+                                           placeholder="Ingresa constructora" title="Debe Ingresar la Constructora" required minlength="7">
+                                </div>
+                                <label class="lb">
                                     Selecciona los servicios
                                 </label>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input">
+                                        <input value="1," name="instalaciones" type="checkbox" class="form-check-input">
                                         Verificación Instalaciones y terminaciones.
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input">
+                                        <input value="Medición de metros cuadrados de la vivienda." name="mediciones" type="checkbox" class="form-check-input">
                                         Medición de metros cuadrados de la vivienda.
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input">
+                                        <input value="Inspección de luz, instalaciones sanitarias y gas." name="Inspeccion" type="checkbox" class="form-check-input">
                                         Inspección de luz, instalaciones sanitarias y gas.
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input">
+                                        <input value="Termografías." name="termografías" type="checkbox" class="form-check-input">
                                         Termografías.
                                     </label>
                                 </div>
 
                                 <br>
                                 <br>
-                                <label style="color: black">
+                                <label class="lb">
                                     Selecciona Día y Hora
                                 </label>
                                 <br>
@@ -262,25 +283,49 @@
                         <div class="row">
                             <div class="container mr-8" >  
                                 <h4>Pagar</h4>
-                                <div class="card " style="width: 18rem;" >
+                                <div class="cart-totals-wrapper" style="background-color: #dee2e6">
+                                    <div class="cart-totals">
+                                        <table id="shopping-cart-totals-table">
+                                            <colgroup><col>
+                                                <col width="1">
+                                            </colgroup><tfoot>
+                                                <tr>
+                                                    <td style="" class="a-right" colspan="1">
+                                                        <strong>Total: </strong>
+                                                    </td>
+                                                    <td style="" class="a-right">
+                                                        <strong><span class="price"> $</span></strong>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="" class="a-right" colspan="1">
+                                                        Descuento:     </td>
+                                                    <td style="" class="a-right">
+                                                        <span class="price"> $</span>    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="" class="a-right" colspan="1">
+                                                        Subtotal:     </td>
+                                                    <td style="" class="a-right">
+                                                        <span class="price"> $</span>    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
 
-
-                                    <br>
-                                    <br>
-                                    <div class="card-body">
-                                        <label style="font-size:12px;">Subtotal:</label>
-                                        <input type="text" value="${totalPagar}" readonly="" class="form-control">
-
-                                        <label style="font-size:12px;">Descuento Banco:</label>
-                                        <input type="text" readonly="" class="form-control">
-
-                                        <label style="font-size:12px;">Total a pagar:</label>
-                                        <input type="text" value="${totalPagar}" readonly="" class="form-control">
-
+                                        <ul class="checkout-types bottom">
+                                            <li class="method-checkout-cart-methods-onepage-bottom" style="list-style: none">    <button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-primary"><span><span>Proceda a Pagar</span></span></button>
+                                            </li>
+                                            <li class="method-checkout-cart-methods-multishipping" style="list-style: none"><a>Diferentes medios de pago.</a>
+                                            </li>
+                                        </ul>
                                     </div>
+                                </div> 
 
-                                </div>
-                                <input type="submit" class="btn btn btn-primary" value="Pagar">
+
+                                </ul>
                             </div>                        
 
                         </div>  
