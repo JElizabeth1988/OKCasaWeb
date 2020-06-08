@@ -4,7 +4,7 @@
     Author     : chida
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,298 +37,263 @@
         <!-- Back to top button -->
         <a id="button"></a>
 
-        <div class="bg-top navbar-light">
+        <%@include file="menu.jsp" %>
+        <!-- END nav -->
+        <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
             <div class="container">
-                <div class="row no-gutters d-flex align-items-center align-items-stretch">
-                    <div class="col-md-4 d-flex align-items-center py-4">
-                        <a class="navbar-brand" href="index.jsp"><img src="images/logo.jpg" alt="logo"></a>
-                    </div>
-                    <div class="col-lg-8 d-block">
-                        <div class="row d-flex">
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-paper-plane"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>OKCasa_chile@gmail.com</span>
-                                </div>
-                            </div>
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-phone2"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>LLÃ¡manos: +22002200</span>
-                                </div>
-                            </div>
-                            <div class="col-md topper d-flex align-items-center align-items-stretch">
-                                <p class="mb-0 d-flex d-block">
-                                    <a href="login.jsp" class="btn btn-primary d-flex align-items-center justify-content-center">
-                                        <span>Solicita una InspecciÃ³n</span>
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
+                <div class="row no-gutters slider-text align-items-center justify-content-center">
+                    <div class="col-md-9 ftco-animate text-center">
+                        <h1 class="mb-2 bread">Agendar</h1>
+                        <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Agendar <i class="ion-ios-arrow-forward"></i></span></p>
                     </div>
                 </div>
             </div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
-             style="position: -webkit-sticky;">
-            <div class="container d-flex align-items-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="oi oi-menu"></span> Menu
-                </button>
+        </section>
 
-                <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a href="index.jsp" class="nav-link pl-0">Home</a></li>
-                        <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
-                        <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
-                                    class="icon"></span></a></li></a></li>
-                        <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
-                            <div class="form-group d-flex">
-                                <input type="text" class="form-control pl-1" placeholder="Buscar">
-                                <button type="submit" placeholder="" class="form-control search"><span
-                                        class="ion-ios-search"></span></button>
-                            </div>
-                        </form>
-                    </ul>            
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar <span
-                                    class="icon-user"></span></a></li>
-                    </ul>
-                </div>
+        <br>
+        <br>
 
 
-            </div>
-        </div>
-    </nav>
-    <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
         <div class="container">
-            <div class="row no-gutters slider-text align-items-center justify-content-center">
-                <div class="col-md-9 ftco-animate text-center">
-                    <h1 class="mb-2 bread">Agendar</h1>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Agendar <i class="ion-ios-arrow-forward"></i></span></p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <br>
-    <br>
+            <div class="row justify-content-center">   
+                <div class="container">
+                    <h2 class="text-center" id="titl">Solicitar Inspección</h2>
+                    <p class="text-center">
+                        <small id="passwordHelpInline" class="text-muted"></small>
+                    </p>
+                    <hr>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <form role="form" method="POST" action="login.html">
+                                <fieldset>
 
+                                    <div class="row">
 
-    <div class="container">
+                                        <div class="col-md-6" id="textbox">
+                                            <div class="form-group"> <!-- Direccion -->
+                                                <label style="color: #bd2130">*</label>
+                                                <label for="direccion" class="control-label">Dirección</label>
+                                                <input type="text" name="direccion" id="direccion" class="form-control input-lg"
+                                                       placeholder="Dirección y N°">
+                                            </div> 
+                                        </div>
 
-        <div class="row justify-content-center">   
-            <div class="container">
-                <h2 class="text-center" id="titl">Solicitar InspecciÃ³n</h2>
-                <p class="text-center">
-                    <small id="passwordHelpInline" class="text-muted"></small>
-                </p>
-                <hr>
-                <div class="row justify-content-center">
-                    <div class="col-md-5">
-                        <form role="form" method="POST" action="login.html">
-                            <fieldset>
-                                <label class="lb"> DirecciÃ³n Vivienda </label>
-                                <div class="form-group">
-                                    <input type="text" name="direccion" id="direccion" class="form-control input-sm"
-                                           placeholder="Ingresa DirecciÃ³n" title="Debe Ingresar la direcciÃ³n" required minlength="7">
-                                </div>
-                                <label class="lb"> Comuna </label>
-                                <div class="form-group">
-                                    <select id="comuna" name="comuna">
-                                        <option value="1">Puente Alto</option>
-                                        <option value="2">La Florida</option>
-                                        <option value="3">Santiago</option>
-                                        <option value="4">Ã‘uÃ±oa</option>
-                                    </select>
-                                </div>
+                                        <div class="col-md-3" id="textbox">
+                                            <div class="form-group"> <!--Comuna -->
+                                                <label style="color: #bd2130">*</label>
+                                                <label for="id_comuna" class="control-label">Comuna</label>
+                                                <select class="form-control" id="id_comuna" >
+                                                    <option value="1">Santiago</option>
+                                                    <option value="2">Providencia</option>
+                                                    <option value="3">Ñuñoa</option>
+                                                    <option value="4">La Florida</option>
+                                                    <option value="5">Puente Alto</option>
+                                                    <option value="6">Maipú</option>
+                                                    <option value="7">San Joaquín</option>
+                                                </select>                    
+                                            </div>
 
+                                        </div>
 
-                                <label class="lb"> Nombre Constructora </label>
-                                <div class="form-group">
-                                    <input type="text" name="constructora" id="constructora" class="form-control input-sm"
-                                           placeholder="Ingresa constructora" title="Debe Ingresar la Constructora" required minlength="7">
-                                </div>
-                                <label class="lb">
-                                    Selecciona los servicios
-                                </label>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input value="1," name="instalaciones" type="checkbox" class="form-check-input">
-                                        VerificaciÃ³n Instalaciones y terminaciones.
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input value="MediciÃ³n de metros cuadrados de la vivienda." name="mediciones" type="checkbox" class="form-check-input">
-                                        MediciÃ³n de metros cuadrados de la vivienda.
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input value="InspecciÃ³n de luz, instalaciones sanitarias y gas." name="Inspeccion" type="checkbox" class="form-check-input">
-                                        InspecciÃ³n de luz, instalaciones sanitarias y gas.
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input value="TermografÃ­as." name="termografÃ­as" type="checkbox" class="form-check-input">
-                                        TermografÃ­as.
-                                    </label>
-                                </div>
-
-                                <br>
-                                <br>
-                                <label class="lb">
-                                    Selecciona DÃ­a y Hora
-                                </label>
-                                <br>
-                                <br>
+                                    </div>
 
 
-                                <div class="row">
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-outline-primary">
-                                            <
+                                    <div class="row">
+
+                                        <div class="col-md-6" id="textbox">
+                                            <div class="form-group"> <!-- Constructora -->
+                                                <label style="color: #bd2130">*</label>
+                                                <label for="Constructora" class="control-label">Nombre Constructora</label>
+                                                <input type="text" name="Constructora" id="direccion" class="form-control input-lg"
+                                                       placeholder="Nombre">
+                                            </div> 
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div style="margin-left: 30px"
+                                         <label class="lb">
+                                            Selecciona los servicios
                                         </label>
-                                        <select id="cars" name="cars" style="margin-right: 182px; margin-left: 180px ">
-                                            <option value="volvo">Mayo</option>
-                                            <option value="saab">Junio</option>
-                                            <option value="fiat">Julio</option>
-                                            <option value="audi">Agosto</option>
-                                        </select>
-                                        <label class="btn btn-outline-primary justify-content-center">
-                                            >
-                                        </label>
-                                    </div>
-                                    <div class="table-responsive small">
-                                        <table class="table table-striped table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Hora</th>
-                                                    <th scope="col"> Lunes <br> 04-05</th>
-                                                    <th scope="col"> Martes <br> 05-05</th>
-                                                    <th scope="col"> MiÃ©rcoles<br> 06-05</th>
-                                                    <th scope="col"> Jueves <br> 07-05</th>
-                                                    <th scope="col"> Viernes <br> 08-05</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>10:00 - 12:00</td>
-                                                    <td style="background-color: #EF3159">Ocupado</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>13:00 - 15:00</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td style="background-color: #EF3159">Ocupado</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>15:00 - 17:00</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>17:00 - 19:00</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
+                                        <div class="form-check">
+                                            <label class="form-check-label" style="color: rgba(0, 0, 0, 0.5);">
+                                                <input value="1," name="instalaciones" type="checkbox" class="form-check-input">
+                                                Verificación Instalaciones y terminaciones.
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label" style="color: rgba(0, 0, 0, 0.5);">
+                                                <input value="Medición de metros cuadrados de la vivienda." name="mediciones" type="checkbox" class="form-check-input">
+                                                Medición de metros cuadrados de la vivienda.
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label" style="color: rgba(0, 0, 0, 0.5);">
+                                                <input value="Inspección de luz, instalaciones sanitarias y gas." name="Inspeccion" type="checkbox" class="form-check-input">
+                                                Inspección de luz, instalaciones sanitarias y gas.
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label" style="color: rgba(0, 0, 0, 0.5);">
+                                                <input value="Termografías." name="termografías" type="checkbox" class="form-check-input">
+                                                Termografías.
+                                            </label>
+                                        </div>
 
 
-                                            </tbody>
-                                        </table>
+
+
+
+
                                     </div>
 
 
-                                </div>
-                                </div>
-                                </div>
-
-                                <br>
-
-
-
-                                </div>
+                                    <br>
+                                    <br>
+                                    <label class="lb" style="margin-left: 30px; bfdsdnbv">
+                                        Selecciona Día y Hora
+                                    </label>
+                                    <br>
+                                    <br>
 
 
-                            </fieldset>
-                        </form>
+                                    <div class="row">
+                                        <%--<div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-outline-primary">
+                                                <
+                                            </label>
+                                            <select id="cars" name="cars" style="margin-right: 182px; margin-left: 180px ">
+                                                <option value="volvo">Mayo</option>
+                                                <option value="saab">Junio</option>
+                                                <option value="fiat">Julio</option>
+                                                <option value="audi">Agosto</option>
+                                            </select>
+                                            <label style="margin-left: 100px" class="btn btn-outline-primary justify-content-center">
+                                                >
+                                            </label>
+                                        </div
+                                        --%>
+                                        <div class="table-responsive small" style="width: 80%; margin-left: 30px">
+                                            <table class="table table-striped table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Hora</th>
+                                                        <th scope="col"> Lunes <br> 04-05</th>
+                                                        <th scope="col"> Martes <br> 05-05</th>
+                                                        <th scope="col"> Miércoles<br> 06-05</th>
+                                                        <th scope="col"> Jueves <br> 07-05</th>
+                                                        <th scope="col"> Viernes <br> 08-05</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>10:00 - 12:00</td>
+                                                        <td style="background-color: #EF3159">Ocupado</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>13:00 - 15:00</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td style="background-color: #EF3159">Ocupado</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>15:00 - 17:00</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>17:00 - 19:00</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
 
 
-                        <br>
-                        <br>
-                        <div class="row">
-                            <div class="container mr-8" >  
-                                <h4>Pagar</h4>
-                                <div class="cart-totals-wrapper" style="background-color: #dee2e6">
-                                    <div class="cart-totals">
-                                        <table id="shopping-cart-totals-table">
-                                            <colgroup><col>
-                                                <col width="1">
-                                            </colgroup><tfoot>
-                                                <tr>
-                                                    <td style="" class="a-right" colspan="1">
-                                                        <strong>Total: </strong>
-                                                    </td>
-                                                    <td style="" class="a-right">
-                                                        <strong><span class="price"> $</span></strong>
-                                                    </td>
-                                                </tr>
-                                            </tfoot>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="" class="a-right" colspan="1">
-                                                        Descuento:     </td>
-                                                    <td style="" class="a-right">
-                                                        <span class="price"> $</span>    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="" class="a-right" colspan="1">
-                                                        Subtotal:     </td>
-                                                    <td style="" class="a-right">
-                                                        <span class="price"> $</span>    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <br>
+                                                </tbody>
+                                            </table>
+                                        </div>
 
-                                        <ul class="checkout-types bottom">
-                                            <li class="method-checkout-cart-methods-onepage-bottom" style="list-style: none">    <button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-primary"><span><span>Proceda a Pagar</span></span></button>
-                                            </li>
-                                            <li class="method-checkout-cart-methods-multishipping" style="list-style: none"><a>Diferentes medios de pago.</a>
-                                            </li>
-                                        </ul>
+
                                     </div>
-                                </div> 
+                                    </div>
+                                    </div>
+
+                                    <br>
 
 
-                                </ul>
-                            </div>                        
 
-                        </div>  
+                                    </div>
+
+
+                                </fieldset>
+                            </form>
+
+
+                            <br>
+                            <br>
+                            <div class="cart-totals-wrapper">
+                                <div class="cart-totals">
+                                    <table id="shopping-cart-totals-table">
+                                        <colgroup><col>
+                                            <col width="1">
+                                        </colgroup><tfoot>
+                                            <tr>
+                                                <td style="" class="a-right" colspan="1">
+                                                    <strong>Total: </strong>
+                                                </td>
+                                                <td style="" class="a-right">
+                                                    <strong><span class="price"> $</span></strong>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr>
+                                                <td style="" class="a-right" colspan="1">
+                                                    Descuento:     </td>
+                                                <td style="" class="a-right">
+                                                    <span class="price"> $</span>    </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="" class="a-right" colspan="1">
+                                                    Subtotal:     </td>
+                                                <td style="" class="a-right">
+                                                    <span class="price"> $</span>    </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+
+                                    <ul class="checkout-types bottom">
+                                        <li class="method-checkout-cart-methods-onepage-bottom" style="list-style: none">    <button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-primary"><span><span>Proceda a Pagar</span></span></button>
+                                        </li>
+                                        <li class="method-checkout-cart-methods-multishipping" style="list-style: none"><a>Diferentes medios de pago.</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> 
+
+
+
+                        </div>
 
 
 
@@ -372,7 +337,7 @@
                     <div class="col-md">
                         <div class="ftco-footer-widget mb-5">
                             <h2 class="ftco-heading-2 logo"><span></span><img src="images/logo2.jpg" alt="logo"></h2>
-                            <p>Preocupados por la calidad de tu hogar, para una experiencia Ãºnica con tu familia.</p>
+                            <p>Preocupados por la calidad de tu hogar, para una experiencia única con tu familia.</p>
                             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -385,8 +350,8 @@
                         <div class="ftco-footer-widget mb-5 ml-md-4">
                             <h2 class="ftco-heading-2">Sobre nosotros</h2>
                             <ul class="list-unstyled">
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>ConÃ³cenos</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>ContÃ¡ctanos</a></li>
+                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conócenos</a></li>
+                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contáctanos</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Solicita servicios</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conoce nuestro equipo</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Proyectos</a></li>
@@ -422,11 +387,11 @@
                     </div>
                     <div class="col-md">
                         <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2">BoletÃ­n InformÃ¡tivo</h2>
+                            <h2 class="ftco-heading-2">Boletín Informátivo</h2>
                             <form action="#" class="subscribe-form">
                                 <div class="form-group">
                                     <input type="text" class="form-control mb-2 text-center" placeholder="Ingresa tu email">
-                                    <input type="submit" value="SubscrÃ­bete" class="form-control submit px-3">
+                                    <input type="submit" value="Subscríbete" class="form-control submit px-3">
                                 </div>
                             </form>
                         </div>
@@ -469,5 +434,5 @@
         <script src="js/backtotop.js"></script>
 
 
-</body>
+    </body>
 </html>

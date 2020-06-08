@@ -5,13 +5,11 @@
  */
 package Controlador;
 
-import Clases.Cliente;
-import Dao.ClienteDao;
-import Clases.Comuna;
-import Clases.ComunaDAO;
+import Clases.Login;
+import Dao.LoginDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,10 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author chida
  */
-public class Controlador extends HttpServlet {
+public class servletAgregarLogin extends HttpServlet {
 
-    ClienteDao dao = new ClienteDao();
-    Cliente cli = new Cliente();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -42,10 +38,10 @@ public class Controlador extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Controlador</title>");            
+            out.println("<title>Servlet servletAgregarLogin</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Controlador at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet servletAgregarLogin at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -77,8 +73,28 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+                //Capturar Info formulario
+        String nombre_usuario = request.getParameter("txtUsuario");
+        String contrasenia = request.getParameter("txtContrasenia");
+        String rut_cliente = request.getParameter("txtRut_cliente");
+        
 
-           
+        Login log = new Login(nombre_usuario, contrasenia, rut_cliente);
+        LoginDAO dao = new LoginDAO();
+
+        try {
+            //Intentar Guardar
+            if (dao.agregarLogin(log)) {
+                request.setAttribute("msje", "Registrado exitosamente");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            } else {
+                request.setAttribute("error", "No Registrado");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+        } catch (SQLException ex) {
+            request.setAttribute("error", "No Registrado" + ex.getMessage());
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
     }
 
     /**

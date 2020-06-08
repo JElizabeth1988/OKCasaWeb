@@ -12,21 +12,19 @@ package Clases;
 public class Login {
     private String nombre_usuario;
     private String contrasenia;
-    
-    //CLIENTE
-    private Cliente cli;
+    private String rut_cliente;
 
-    //SACAR PF DE TABLA CLIENTE (!)
-    
     public Login() {
-        cli = new Cliente();
+        
     }
 
-    public Login(String nombre_usuario, String contrasenia, Cliente cli) {
+    public Login(String nombre_usuario, String contrasenia, String rut_cliente) {
         this.nombre_usuario = nombre_usuario;
         this.contrasenia = contrasenia;
-        this.cli = cli;
+        this.rut_cliente = rut_cliente;
     }
+
+    
 
     //SETTER
 
@@ -38,9 +36,11 @@ public class Login {
         this.contrasenia = contrasenia;
     }
 
-    public void setCli(Cliente cli) {
-        this.cli = cli;
+    public void setRut_cliente(String rut_cliente) {
+        this.rut_cliente = rut_cliente;
     }
+
+
     
     //GETTER
 
@@ -52,9 +52,16 @@ public class Login {
         return contrasenia;
     }
 
-    public Cliente getCli() {
-        return cli;
+    public String getRut_cliente() {
+        return rut_cliente;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Login{" + "nombre_usuario=" + nombre_usuario + ", contrasenia=" + contrasenia + ", rut_cliente=" + rut_cliente + '}';
+    }
+
+   
+   
 
 }

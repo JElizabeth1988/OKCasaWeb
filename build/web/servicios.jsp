@@ -4,7 +4,7 @@
     Author     : chida
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,73 +39,7 @@
         <!-- Back to top button -->
         <a id="button"></a>
 
-        <div class="bg-top navbar-light">
-            <div class="container">
-                <div class="row no-gutters d-flex align-items-center align-items-stretch">
-                    <div class="col-md-4 d-flex align-items-center py-4">
-                        <a class="navbar-brand" href="index.jsp"><img src="images/logo.jpg" alt="logo"></a>
-                    </div>
-                    <div class="col-lg-8 d-block">
-                        <div class="row d-flex">
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-paper-plane"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>OKCasa_chile@gmail.com</span>
-                                </div>
-                            </div>
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-phone2"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>LL谩manos: +22002200</span>
-                                </div>
-                            </div>
-                            <div class="col-md topper d-flex align-items-center align-items-stretch">
-                                <p class="mb-0 d-flex d-block">
-                                    <a href="login.jsp" class="btn btn-primary d-flex align-items-center justify-content-center">
-                                        <span>Solicita una Inspecci贸n</span>
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-              <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
-             style="position: -webkit-sticky;">
-            <div class="container d-flex align-items-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="oi oi-menu"></span> Menu
-                </button>
-
-                <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a href="index.jsp" class="nav-link pl-0">Home</a></li>
-                        <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
-                        <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
-                                    class="icon"></span></a></li></a></li>
-                        <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
-                            <div class="form-group d-flex">
-                                <input type="text" class="form-control pl-1" placeholder="Buscar">
-                                <button type="submit" placeholder="" class="form-control search"><span
-                                        class="ion-ios-search"></span></button>
-                            </div>
-                        </form>
-                    </ul>            
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar <span
-                                    class="icon-user"></span></a></li>
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
-    </nav>
+        <%@include file="menu.jsp" %>
         <!-- END nav -->
 
         <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
@@ -128,7 +62,7 @@
                     <div class="col-md-8 text-center heading-section ftco-animate">
                         <span class="subheading">Servicios</span>
                         <h2 class="mb-4">Nuestros Servicios</h2>
-                        <p> Contamos con un equipo entrenado para realizar una correcta fiscalizaci贸n, contando con los instrumentos necesarios.</p>
+                        <p> Contamos con un equipo entrenado para realizar una correcta fiscalizaci髇, contando con los instrumentos necesarios.</p>
                     </div>
                 </div>	
                 <div class="row">
@@ -138,9 +72,9 @@
                                 <div class="img align-self-stretch" style="background-image: url(images/inspec-1.jpg);"></div>
                             </div>
                             <div class="text pt-3 text-center">
-                                <h3>Verificaci贸n Instalaciones y Terminaciones</h3>
+                                <h3>Verificaci髇 Instalaciones y Terminaciones</h3>
                                 <br>
-                                <p style="text-align: justify;">Entran en esta etapa revestimientos de paredes (pl谩sticos, de madera, con cemento), la pintura, la colocaci贸n de tejas, cielorraso, la colocaci贸n de pisos y ventanas, la  iluminaci贸n y la climatizaci贸n (calefacci贸n, ventiladores/ aire acondicionado). <br>
+                                <p style="text-align: justify;">Entran en esta etapa revestimientos de paredes (pl醩ticos, de madera, con cemento), la pintura, la colocaci髇 de tejas, cielorraso, la colocaci髇 de pisos y ventanas, la  iluminaci髇 y la climatizaci髇 (calefacci髇, ventiladores/ aire acondicionado). <br>
 
                                 </p>
 
@@ -153,9 +87,9 @@
                                 <div class="img align-self-stretch" style="background-image: url(images/inspec-3.jpg);"></div>
                             </div>
                             <div class="text pt-3 text-center">
-                                <h3>Medici贸n de Metros Cuadrados</h3>
+                                <h3>Medici髇 de Metros Cuadrados</h3>
                                 <br>
-                                <p style="text-align: justify;">En perspectiva, la construcci贸n de una casa var铆a en funci贸n de la cantidad de habitantes y las condiciones m铆nimas de habitabilidad. Cuando revisamos la normativa en diversos pa铆ses, existe un rango que oscila entre 30 y 40 m2 para 3 o 4 ocupantes.</p>
+                                <p style="text-align: justify;">En perspectiva, la construcci髇 de una casa var韆 en funci髇 de la cantidad de habitantes y las condiciones m韓imas de habitabilidad. Cuando revisamos la normativa en diversos pa韘es, existe un rango que oscila entre 30 y 40 m2 para 3 o 4 ocupantes.</p>
 
 
                             </div>
@@ -167,8 +101,8 @@
                                 <div class="img align-self-stretch" style="background-image: url(images/inspec-2.jpg);"></div>
                             </div>
                             <div class="text pt-3 text-center">
-                                <h3>Inspecci贸n de Luz, Instalaciones Sanitarias y Gas</h3>
-                                <p style="text-align: justify;">La verificaci贸n de las instalaciones el茅ctricas previa a su puesta en servicio comprende dos fases, una primera fase que no requiere efectuar medidas y una segunda fase que requiere la utilizaci贸n de equipos de medida para los ensayos.</p>
+                                <h3>Inspecci髇 de Luz, Instalaciones Sanitarias y Gas</h3>
+                                <p style="text-align: justify;">La verificaci髇 de las instalaciones el閏tricas previa a su puesta en servicio comprende dos fases, una primera fase que no requiere efectuar medidas y una segunda fase que requiere la utilizaci髇 de equipos de medida para los ensayos.</p>
 
                             </div>
                         </div>
@@ -179,10 +113,10 @@
                                 <div class="img align-self-stretch" style="background-image: url(images/inspec-4.jpg);"></div>
                             </div>
                             <div class="text pt-3 text-center">
-                                <h3>Termograf铆as</h3>
+                                <h3>Termograf韆s</h3>
                                 <br>
                                 <br>
-                                <p style="text-align: justify;"> Se trata de una t茅cnica de diagn贸stico que tiene como finalidad medir la temperatura de tu vivienda y con ello detectar las p茅rdidas energ茅ticas de tu hogar, moho, fugas de aire, para ello, se utilizan las conocidas como c谩maras termogr谩ficas.</p>
+                                <p style="text-align: justify;"> Se trata de una t閏nica de diagn髎tico que tiene como finalidad medir la temperatura de tu vivienda y con ello detectar las p閞didas energ閠icas de tu hogar, moho, fugas de aire, para ello, se utilizan las conocidas como c醡aras termogr醘icas.</p>
 
                             </div>
                         </div>
@@ -197,16 +131,16 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-9 text-center">
-                        <h2>隆Nuevo Convenio con<br>
+                        <h2>uevo Convenio con<br>
                             Banco Estado!</h2> <img src="images/logobanco.png" alt="banco">
                         <br>
                         <br>
-                        <p> Presentamos excelentes descuentos para clientes que cuenten con un cr茅dito hipotecario en Banco Estado.
+                        <p> Presentamos excelentes descuentos para clientes que cuenten con un cr閐ito hipotecario en Banco Estado.
                             <br>
-                            Cont谩ctanos para saber si cumples con los requisitos y puedes obtener un descuento para tu inspecci贸n.
+                            Cont醕tanos para saber si cumples con los requisitos y puedes obtener un descuento para tu inspecci髇.
                         </p>
 
-                        <p class="mb-0"><a href="login.jsp" class="btn btn-primary px-4 py-3">Cont谩ctanos</a></p>
+                        <p class="mb-0"><a href="login.jsp" class="btn btn-primary px-4 py-3">Cont醕tanos</a></p>
                     </div>
                 </div>
             </div>
@@ -225,7 +159,7 @@
                     <div class="col-md">
                         <div class="ftco-footer-widget mb-5">
                             <h2 class="ftco-heading-2 logo"><span></span><img src="images/logo2.jpg" alt="logo"></h2>
-                            <p>Preocupados por la calidad de tu hogar, para una experiencia 煤nica con tu familia.</p>
+                            <p>Preocupados por la calidad de tu hogar, para una experiencia 鷑ica con tu familia.</p>
                             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -238,8 +172,8 @@
                         <div class="ftco-footer-widget mb-5 ml-md-4">
                             <h2 class="ftco-heading-2">Sobre nosotros</h2>
                             <ul class="list-unstyled">
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Con贸cenos</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cont谩ctanos</a></li>
+                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Con骳enos</a></li>
+                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cont醕tanos</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Solicita servicios</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conoce nuestro equipo</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Proyectos</a></li>
@@ -275,11 +209,11 @@
                     </div>
                     <div class="col-md">
                         <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2">Bolet铆n Inform谩tivo</h2>
+                            <h2 class="ftco-heading-2">Bolet韓 Inform醫ivo</h2>
                             <form action="#" class="subscribe-form">
                                 <div class="form-group">
                                     <input type="text" class="form-control mb-2 text-center" placeholder="Ingresa tu email">
-                                    <input type="submit" value="Subscr铆bete" class="form-control submit px-3">
+                                    <input type="submit" value="Subscr韇ete" class="form-control submit px-3">
                                 </div>
                             </form>
                         </div>

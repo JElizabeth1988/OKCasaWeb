@@ -3,8 +3,7 @@
     Created on : 25-04-2020, 20:17:44
     Author     : chida
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,73 +38,7 @@
         <!-- Back to top button -->
         <a id="button"></a>
 
-        <div class="bg-top navbar-light">
-            <div class="container">
-                <div class="row no-gutters d-flex align-items-center align-items-stretch">
-                    <div class="col-md-4 d-flex align-items-center py-4">
-                        <a class="navbar-brand" href="index.jsp"><img src="images/logo.jpg" alt="logo"></a>
-                    </div>
-                    <div class="col-lg-8 d-block">
-                        <div class="row d-flex">
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-paper-plane"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>OKCasa_chile@gmail.com</span>
-                                </div>
-                            </div>
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-phone2"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>LL√°manos: +22002200</span>
-                                </div>
-                            </div>
-                            <div class="col-md topper d-flex align-items-center align-items-stretch">
-                                <p class="mb-0 d-flex d-block">
-                                    <a href="login.jsp" class="btn btn-primary d-flex align-items-center justify-content-center">
-                                        <span>Solicita una Inspecci√≥n</span>
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
-             style="position: -webkit-sticky;">
-            <div class="container d-flex align-items-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="oi oi-menu"></span> Menu
-                </button>
-
-                <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a href="index.jsp" class="nav-link pl-0">Home</a></li>
-                        <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
-                        <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
-                                    class="icon"></span></a></li></a></li>
-                        <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
-                            <div class="form-group d-flex">
-                                <input type="text" class="form-control pl-1" placeholder="Buscar">
-                                <button type="submit" placeholder="" class="form-control search"><span
-                                        class="ion-ios-search"></span></button>
-                            </div>
-                        </form>
-                    </ul>            
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar <span
-                                    class="icon-user"></span></a></li>
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
-    </nav>
+        <%@include file="menu.jsp" %>   
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
@@ -115,12 +48,12 @@
                 <div class="row no-gutters slider-text align-items-center justify-content-end"
                      data-scrollax-parent="true">
                     <div class="col-md-6 text ftco-animate pl-md-5">
-                        <h1 class="mb-4">Servicio de Inspecci√≥n<span>
-                                <h3 style="font-weight: bold;">Haz valer tu garant√≠a</h3>
+                        <h1 class="mb-4">Servicio de InspecciÛn<span>
+                                <h3 style="font-weight: bold;">Haz valer tu garantÌa</h3>
                             </span></h1>
                         <h2 class="subheading" style="font-weight: bold;">Resguardando la seguridad de tu familia y el
-                            valor de la inversi√≥n de tu nuevo hogar.</h2>
-                        <p><a href="nosotros.jsp" class="btn btn-secondary px-4 py-3 mt-3">Ver m√°s</a></p>
+                            valor de la inversiÛn de tu nuevo hogar.</h2>
+                        <p><a href="nosotros.jsp" class="btn btn-secondary px-4 py-3 mt-3">Ver m·s</a></p>
                     </div>
                 </div>
             </div>
@@ -136,11 +69,11 @@
                      data-scrollax-parent="true">
                     <div class="col-md-6 text ftco-animate pl-md-5">
                         <h1 class="mb-4">Convenio<span>
-                                <h2 style="font-weight: bold;">Con uno de los Bancos m√°s Reconocidos del Pa√≠s</h3>
+                                <h2 style="font-weight: bold;">Con uno de los Bancos m·s Reconocidos del PaÌs</h3>
                             </span></h1>
                         <h2 class="subheading" style="font-weight: bold;">Banco Estado y OKCasa se han unido para
-                            ofrecer los mejores descuentos en Servicios de Inspecci√≥n a sus Clientes Hipotecarios.</h2>
-                        <p><a href="servicios.jsp" class="btn btn-secondary px-4 py-3 mt-3">Ver m√°s</a></p>
+                            ofrecer los mejores descuentos en Servicios de InspecciÛn a sus Clientes Hipotecarios.</h2>
+                        <p><a href="servicios.jsp" class="btn btn-secondary px-4 py-3 mt-3">Ver m·s</a></p>
                     </div>
                 </div>
             </div>
@@ -156,8 +89,8 @@
                                 <h2 style="font-weight: bold;">la calidad de tu hogar</h2>
                             </span></h1>
                         <h2 class="subheading" style="font-weight: bold;">Reconocidos en el mercado por nuestro
-                            servicio, con a√±os de experiencia en el rubro.</h2>
-                        <p><a href="login.jsp" class="btn btn-secondary px-4 py-3 mt-3">Ver m√°s</a></p>
+                            servicio, con aÒos de experiencia en el rubro.</h2>
+                        <p><a href="login.jsp" class="btn btn-secondary px-4 py-3 mt-3">Ver m·s</a></p>
                     </div>
                 </div>
             </div>
@@ -173,17 +106,17 @@
                     <div class="request-quote">
                         <div class="bg-primary py-4">
                             <span class="subheading">Contrata nuestros servicios</span>
-                            <h3>Solicita una Inspecci√≥n</h3>
+                            <h3>Solicita una InspecciÛn</h3>
                         </div>
                         <form method="POST" class="request-form">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Usuario" title="Debe ingresar Usuario" required minlength="5">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Contrase√±a" title="Debe ingresar Contrase√±a" required minlength="7">
+                                <input type="password" class="form-control" placeholder="ContraseÒa" title="Debe ingresar ContraseÒa" required minlength="7">
                             </div>
                             <div class="form-group">
-                                <p class="text-center">No tienes una cuenta? <a href="login.jsp" id="signup">Reg√≠strate aqu√≠</a></p>
+                                <p class="text-center">No tienes una cuenta? <a href="login.jsp" id="signup">RegÌstrate aquÌ</a></p>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Ingresa" class="btn btn-primary py-3 px-4">
@@ -196,12 +129,12 @@
                         <h2 class="mb-4">Somos un Servicio Ampliamente Recomendado</h2>
                     </div>
                     <div class="">
-                        <p class="mb-5">LLevamos a√±os entregando un servicio de calidad a todos nuestros clientes, lo
+                        <p class="mb-5">LLevamos aÒos entregando un servicio de calidad a todos nuestros clientes, lo
                             que nos ha posicionado en la cima del mercado,
-                            siendo reconocidos como la empresa de inspecci√≥n m√°s confiable, preocupados de velar por la seguridad de tu familia.
+                            siendo reconocidos como la empresa de inspecciÛn m·s confiable, preocupados de velar por la seguridad de tu familia.
 
                         </p>
-                        <p><a href="nosotros.jsp" class="btn btn-secondary px-5 py-3">Leer m√°s</a></p>
+                        <p><a href="nosotros.jsp" class="btn btn-secondary px-5 py-3">Leer m·s</a></p>
                     </div>
                 </div>
             </div>
@@ -214,7 +147,7 @@
                 <div class="col-md-8 text-center heading-section ftco-animate">
                     <span class="subheading">Servicios</span>
                     <h2 class="mb-4">Nuestros Servicios</h2>
-                    <p>LLevamos a√±os entregando un servicio √≠ntegro para todos nuestros clientes.</p>
+                    <p>LLevamos aÒos entregando un servicio Ìntegro para todos nuestros clientes.</p>
                 </div>
             </div>
             <div class="row">
@@ -225,8 +158,8 @@
                         </div>
                         <div class="media-body p-2 mt-3">
                             <h3 class="heading">Verificar Instalaciones y Terminaciones</h3>
-                            <p style="text-align: justify;">Nos encargamos de velar por una construcci√≥n agradable
-                                est√©ticamente, segura y c√≥moda para ti y tu familia.</p>
+                            <p style="text-align: justify;">Nos encargamos de velar por una construcciÛn agradable
+                                estÈticamente, segura y cÛmoda para ti y tu familia.</p>
                         </div>
                     </div>
                 </div>
@@ -249,9 +182,9 @@
                             <span class="flaticon-stairs"></span>
                         </div>
                         <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Termograf√≠as</h3>
-                            <p style="text-align: justify;">Nos Comprometemos a realizar un an√°lisis completo
-                                termogr√°fico de la propiedad, para visualizar p√©rdidas t√©rmicas y fugas de aire.</p>
+                            <h3 class="heading">TermografÌas</h3>
+                            <p style="text-align: justify;">Nos Comprometemos a realizar un an·lisis completo
+                                termogr·fico de la propiedad, para visualizar pÈrdidas tÈrmicas y fugas de aire.</p>
                         </div>
                     </div>
                 </div>
@@ -278,8 +211,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-9 text-center">
                     <h2>Acepta tu Nuevo Hogar de Forma Segura</h2>
-                    <p> Contamos con todas las herramientas para hacer cumplir tu sue√±o</p>
-                    <p class="mb-0"><a href="servicios.jsp" class="btn btn-primary px-4 py-3">Conoce m√°s sobre Nosotros</a></p>
+                    <p> Contamos con todas las herramientas para hacer cumplir tu sueÒo</p>
+                    <p class="mb-0"><a href="servicios.jsp" class="btn btn-primary px-4 py-3">Conoce m·s sobre Nosotros</a></p>
                 </div>
             </div>
         </div>
@@ -290,7 +223,7 @@
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
                     <span class="subheading">Inspectores</span>
-                    <h2 class="mb-4">Nuestro Equipo T√©cnico</h2>
+                    <h2 class="mb-4">Nuestro Equipo TÈcnico</h2>
                     <p>El equipo de expertos de OKCasa cuenta con una amplia experiencia, siendo un equipo capacitado e
                         instruido.</p>
                 </div>
@@ -302,7 +235,7 @@
                             <div class="img align-self-stretch" style="background-image: url(images/team-1.jpg);"></div>
                         </div>
                         <div class="text pt-3 text-center">
-                            <h3>Santiago Gonz√°lez</h3>
+                            <h3>Santiago Gonz·lez</h3>
                             <span class="position mb-2">Inspector Senior</span>
                             <div class="faded">
                                 <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
@@ -322,8 +255,8 @@
                             <div class="img align-self-stretch" style="background-image: url(images/team-2.jpg);"></div>
                         </div>
                         <div class="text pt-3 text-center">
-                            <h3>Gustavo Henr√≠quez</h3>
-                            <span class="position mb-2">Ingeniero en Construcci√≥n</span>
+                            <h3>Gustavo HenrÌquez</h3>
+                            <span class="position mb-2">Ingeniero en ConstrucciÛn</span>
                             <div class="faded">
                                 <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
                                 <ul class="ftco-social text-center">
@@ -343,7 +276,7 @@
                         </div>
                         <div class="text pt-3 text-center">
                             <h3>Eva Donoso</h3>
-                            <span class="position mb-2">Ingeniera, experta en Dise√±o</span>
+                            <span class="position mb-2">Ingeniera, experta en DiseÒo</span>
                             <div class="faded">
                                 <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
                                 <ul class="ftco-social text-center">
@@ -362,7 +295,7 @@
                             <div class="img align-self-stretch" style="background-image: url(images/team-4.jpg);"></div>
                         </div>
                         <div class="text pt-3 text-center">
-                            <h3>Mat√≠as Valdivieso</h3>
+                            <h3>MatÌas Valdivieso</h3>
                             <span class="position mb-2">Arquitecto</span>
                             <div class="faded">
                                 <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
@@ -392,7 +325,7 @@
                         <strong class="number" data-number="30">0</strong>
                     </div>
                     <div class="text-2">
-                        <span>A√±os de <br>Experiencia</span>
+                        <span>AÒos de <br>Experiencia</span>
                     </div>
                 </div>
             </div>
@@ -473,7 +406,7 @@
                 <div class="heading-section ftco-animate mb-5">
                     <span class="subheading">Testimonios</span>
                     <h2 class="mb-4">Clientes Satisfechos</h2>
-                    <p>Testimonios de nuestros clientes m√°s frecuentes</p>
+                    <p>Testimonios de nuestros clientes m·s frecuentes</p>
                 </div>
                 <div class="carousel-testimony owl-carousel">
                     <div class="item">
@@ -497,7 +430,7 @@
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="icon-quote-left"></i>
                                 </span>
-                                <p> Por primera vez, estaba seguro de que al recibir mi casa no tendr√≠a ning√∫n
+                                <p> Por primera vez, estaba seguro de que al recibir mi casa no tendrÌa ning˙n
                                     inconveniente.</p>
                                 <p class="name">William Lagos</p>
                                 <span class="position">CEO Empresa Telecomunicaciones</span>
@@ -512,7 +445,7 @@
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="icon-quote-left"></i>
                                 </span>
-                                <p>Recomiendo el servicio, es r√°pido y tiene un costo accesible seg√∫n el mercado.
+                                <p>Recomiendo el servicio, es r·pido y tiene un costo accesible seg˙n el mercado.
                                 </p>
                                 <p class="name">Jorge Sepulveda</p>
                                 <span class="position">Profesor</span>
@@ -527,9 +460,9 @@
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="icon-quote-left"></i>
                                 </span>
-                                <p>Una amiga me recomend√≥ el servicio, debido a la seguridad y confianza que entrega
+                                <p>Una amiga me recomendÛ el servicio, debido a la seguridad y confianza que entrega
                                     la empresa.</p>
-                                <p class="name">Marcos Alarc√≥n</p>
+                                <p class="name">Marcos AlarcÛn</p>
                                 <span class="position">Estudiante</span>
                             </div>
                             <div class="user-img" style="background-image: url(images/person_4.jpg)">
@@ -542,8 +475,8 @@
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="icon-quote-left"></i>
                                 </span>
-                                <p>Me agrad√≥ mucho el servicio, sobre todo por la transparencia y la posibilidad de
-                                    ver el estado de la inspecci√≥n por la p√°gina.</p>
+                                <p>Me agradÛ mucho el servicio, sobre todo por la transparencia y la posibilidad de
+                                    ver el estado de la inspecciÛn por la p·gina.</p>
                                 <p class="name">Julio Yamamoto</p>
                                 <span class="position">Manager</span>
                             </div>
@@ -645,7 +578,7 @@
             <div class="col-md">
                 <div class="ftco-footer-widget mb-5">
                     <h2 class="ftco-heading-2 logo"><span></span><img src="images/logo2.jpg" alt="logo"></h2>
-                    <p>Preocupados por la calidad de tu hogar, para una experiencia √∫nica con tu familia.</p>
+                    <p>Preocupados por la calidad de tu hogar, para una experiencia ˙nica con tu familia.</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -658,8 +591,8 @@
                 <div class="ftco-footer-widget mb-5 ml-md-4">
                     <h2 class="ftco-heading-2">Sobre nosotros</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Con√≥cenos</a></li>
-                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cont√°ctanos</a></li>
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>ConÛcenos</a></li>
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cont·ctanos</a></li>
                         <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Solicita servicios</a>
                         </li>
                         <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conoce nuestro
@@ -697,11 +630,11 @@
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-5">
-                    <h2 class="ftco-heading-2">Bolet√≠n Inform√°tivo</h2>
+                    <h2 class="ftco-heading-2">BoletÌn Inform·tivo</h2>
                     <form action="#" class="subscribe-form">
                         <div class="form-group">
                             <input type="text" class="form-control mb-2 text-center" placeholder="Ingresa tu email">
-                            <input type="submit" value="Subscr√≠bete" class="form-control submit px-3">
+                            <input type="submit" value="SubscrÌbete" class="form-control submit px-3">
                         </div>
                     </form>
                 </div>

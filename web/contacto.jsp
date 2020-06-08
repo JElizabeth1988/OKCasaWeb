@@ -4,7 +4,7 @@
     Author     : chida
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,69 +39,7 @@
         <!-- Back to top button -->
         <a id="button"></a>
 
-        <div class="bg-top navbar-light">
-            <div class="container">
-                <div class="row no-gutters d-flex align-items-center align-items-stretch">
-                    <div class="col-md-4 d-flex align-items-center py-4">
-                        <a class="navbar-brand" href="index.jsp"><img src="images/logo.jpg" alt="logo"></a>
-                    </div>
-                    <div class="col-lg-8 d-block">
-                        <div class="row d-flex">
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-paper-plane"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>OKCasa_chile@gmail.com</span>
-                                </div>
-                            </div>
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-phone2"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>LL谩manos: +22002200</span>
-                                </div>
-                            </div>
-                            <div class="col-md topper d-flex align-items-center align-items-stretch">
-                                <p class="mb-0 d-flex d-block">
-                                    <a href="login.jsp" class="btn btn-primary d-flex align-items-center justify-content-center">
-                                        <span>Solicita una Inspecci贸n</span>
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
-             style="position: -webkit-sticky;">
-            <div class="container d-flex align-items-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="oi oi-menu"></span> Menu
-                </button>
-
-                <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a href="index.jsp" class="nav-link pl-0">Home</a></li>
-                        <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
-                        <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
-                                    class="icon-folder"></span></a></li></a></li>
-                        <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
-                            <div class="form-group d-flex">
-                                <input type="text" class="form-control pl-1" placeholder="Buscar">
-                                <button type="submit" placeholder="" class="form-control search"><span
-                                        class="ion-ios-search"></span></button>
-                            </div>
-                        </form>
-                    </ul>            
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar <span
-                                    class="icon-user"></span></a></li>
-                    </ul>
-                </div>
-        </nav>
+        <%@include file="menu.jsp" %>
         <!-- END nav -->
 
         <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
@@ -109,7 +47,7 @@
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center justify-content-center">
                     <div class="col-md-9 ftco-animate text-center">
-                        <h1 class="mb-2 bread">Cont谩ctanos</h1>
+                        <h1 class="mb-2 bread">Cont醕tanos</h1>
                         <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contacto <i class="ion-ios-arrow-forward"></i></span></p>
                     </div>
                 </div>
@@ -149,19 +87,19 @@
             <div class="container">
                 <div class="row d-flex mb-5 contact-info">
                     <div class="col-md-12 mb-4">
-                        <h2 class="h4">Informaci贸n de Contacto</h2>
+                        <h2 class="h4">Informaci髇 de Contacto</h2>
                     </div>
                     <div class="w-100"></div>
                     <div class="col-md-3 d-flex">
                         <div class="bg-light d-flex align-self-stretch box p-4">
-                            <p><span>Direcci贸n:</span> 
+                            <p><span>Direcci髇:</span> 
                                 <br>
-                                <a href="direcci贸n">Av. San Carlos 1340, Puente Alto, Regi贸n Metropolitana</p></a></p>   
+                                <a href="direcci髇">Av. San Carlos 1340, Puente Alto, Regi髇 Metropolitana</p></a></p>   
                         </div>
                     </div>
                     <div class="col-md-3 d-flex">
                         <div class="bg-light d-flex align-self-stretch box p-4">
-                            <p><span>Tel茅fono:</span>
+                            <p><span>Tel閒ono:</span>
                                 <br>
                                 <a href="telefono">+22002200</a></p>
                         </div>
@@ -192,7 +130,7 @@
                     <div class="col-md">
                         <div class="ftco-footer-widget mb-5">
                             <h2 class="ftco-heading-2 logo"><span></span><img src="images/logo2.jpg" alt="logo"></h2>
-                            <p>Preocupados por la calidad de tu hogar, para una experiencia 煤nica con tu familia.</p>
+                            <p>Preocupados por la calidad de tu hogar, para una experiencia 鷑ica con tu familia.</p>
                             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -205,8 +143,8 @@
                         <div class="ftco-footer-widget mb-5 ml-md-4">
                             <h2 class="ftco-heading-2">Sobre nosotros</h2>
                             <ul class="list-unstyled">
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Con贸cenos</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cont谩ctanos</a></li>
+                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Con骳enos</a></li>
+                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cont醕tanos</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Solicita servicios</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conoce nuestro equipo</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Proyectos</a></li>
@@ -242,11 +180,11 @@
                     </div>
                     <div class="col-md">
                         <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2">Bolet铆n Inform谩tivo</h2>
+                            <h2 class="ftco-heading-2">Bolet韓 Inform醫ivo</h2>
                             <form action="#" class="subscribe-form">
                                 <div class="form-group">
                                     <input type="text" class="form-control mb-2 text-center" placeholder="Ingresa tu email">
-                                    <input type="submit" value="Subscr铆bete" class="form-control submit px-3">
+                                    <input type="submit" value="Subscr韇ete" class="form-control submit px-3">
                                 </div>
                             </form>
                         </div>

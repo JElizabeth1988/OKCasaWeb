@@ -4,7 +4,7 @@
     Author     : chida
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,73 +40,7 @@
         <!-- Back to top button -->
         <a id="button"></a>
 
-        <div class="bg-top navbar-light">
-            <div class="container">
-                <div class="row no-gutters d-flex align-items-center align-items-stretch">
-                    <div class="col-md-4 d-flex align-items-center py-4">
-                        <a class="navbar-brand" href="index.jsp"><img src="images/logo.jpg" alt="logo"></a>
-                    </div>
-                    <div class="col-lg-8 d-block">
-                        <div class="row d-flex">
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-paper-plane"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>OKCasa_chile@gmail.com</span>
-                                </div>
-                            </div>
-                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-phone2"></span></div>
-                                <div class="text d-flex align-items-center">
-                                    <span>LL√°manos: +22002200</span>
-                                </div>
-                            </div>
-                            <div class="col-md topper d-flex align-items-center align-items-stretch">
-                                <p class="mb-0 d-flex d-block">
-                                    <a href="login.jsp" class="btn btn-primary d-flex align-items-center justify-content-center">
-                                        <span>Solicita una Inspecci√≥n</span>
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light sticky-top" id="ftco-navbar"
-             style="position: -webkit-sticky;">
-            <div class="container d-flex align-items-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="oi oi-menu"></span> Menu
-                </button>
-
-                <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a href="index.jsp" class="nav-link pl-0">Home</a></li>
-                        <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
-                        <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
-                                    class="icon"></span></a></li></a></li>
-                        <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
-                            <div class="form-group d-flex">
-                                <input type="text" class="form-control pl-1" placeholder="Buscar">
-                                <button type="submit" placeholder="" class="form-control search"><span
-                                        class="ion-ios-search"></span></button>
-                            </div>
-                        </form>
-                    </ul>            
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar <span
-                                    class="icon-user"></span></a></li>
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
-    </nav>
+        <%@include file="menu.jsp" %>
     <!-- END nav -->
 
     <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
@@ -130,7 +64,7 @@
                             <strong class="number" data-number="30">0</strong>
                         </div>
                         <div class="text-2">
-                            <span>A√±os de <br>Experiencia</span>
+                            <span>AÒos de <br>Experiencia</span>
                         </div>
                     </div>
                 </div>
@@ -178,12 +112,12 @@
                         <h2 class="mb-4" style="text-align: center ;">Somos Una Empresa Altamente Recomendada</h2>
                     </div>
                     <div style="text-align: justify">
-                        <p>LLevamos a√±os dedic√°ndonos a la inspecci√≥n de propiedades nuevas, con el fin de garantizar que los
-                            propietarios las reciban en perfectas condiciones y hagan valer las garant√≠as asociadas a su compra.
-                            Resguardando la seguridad de tu familia y el valor de la inversi√≥n.
+                        <p>LLevamos aÒos dedic·ndonos a la inspecciÛn de propiedades nuevas, con el fin de garantizar que los
+                            propietarios las reciban en perfectas condiciones y hagan valer las garantÌas asociadas a su compra.
+                            Resguardando la seguridad de tu familia y el valor de la inversiÛn.
                         </p>
-                        <p> Poseemos una amplia experiencia, adquirida durante a√±os de ejercicio profesional, lo que nos ha permitido brindar
-                            un servicio de calidad, r√°pido y eficiente.</p>
+                        <p> Poseemos una amplia experiencia, adquirida durante aÒos de ejercicio profesional, lo que nos ha permitido brindar
+                            un servicio de calidad, r·pido y eficiente.</p>
                     </div>
                 </div>
             </div>
@@ -195,7 +129,7 @@
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
                     <span class="subheading">Inspectores</span>
-                    <h2 class="mb-4">Nuestro Equipo T√©cnico</h2>
+                    <h2 class="mb-4">Nuestro Equipo TÈcnico</h2>
                     <p>El equipo de expertos de OKCasa cuenta con una amplia experiencia, siendo un equipo capacitado e instruido.</p>
                 </div>
             </div>	
@@ -206,7 +140,7 @@
                             <div class="img align-self-stretch" style="background-image: url(images/team-1.jpg);"></div>
                         </div>
                         <div class="text pt-3 text-center">
-                            <h3>Santiago Gonz√°lez</h3>
+                            <h3>Santiago Gonz·lez</h3>
                             <span class="position mb-2">Inspector Senior</span>
                             <div class="faded">
 
@@ -226,8 +160,8 @@
                             <div class="img align-self-stretch" style="background-image: url(images/team-2.jpg);"></div>
                         </div>
                         <div class="text pt-3 text-center">
-                            <h3>Gustavo Henr√≠quez</h3>
-                            <span class="position mb-2">Ingeniero en Construcci√≥n</span>
+                            <h3>Gustavo HenrÌquez</h3>
+                            <span class="position mb-2">Ingeniero en ConstrucciÛn</span>
                             <div class="faded">
 
                                 <ul class="ftco-social text-center">
@@ -247,7 +181,7 @@
                         </div>
                         <div class="text pt-3 text-center">
                             <h3>Eva Donoso</h3>
-                            <span class="position mb-2">Ingeniera, experta en Dise√±o</span>
+                            <span class="position mb-2">Ingeniera, experta en DiseÒo</span>
                             <div class="faded">
 
                                 <ul class="ftco-social text-center">
@@ -266,7 +200,7 @@
                             <div class="img align-self-stretch" style="background-image: url(images/team-4.jpg);"></div>
                         </div>
                         <div class="text pt-3 text-center">
-                            <h3>Mat√≠as Valdivieso</h3>
+                            <h3>MatÌas Valdivieso</h3>
                             <span class="position mb-2">Arquitecto</span>
                             <div class="faded">
 
@@ -295,10 +229,10 @@
                 <div class="col-md-6 wrap-about py-5 px-4 px-md-5 ftco-animate justify-content-center" style="text-align: justify;">
                     <div>
                         <p> Nuestra sede ubicada en la comuna de Puente Alto, fue inagurada en 1990 por
-                            Don Jer√≥nimo Casas. La empresa de OKCasa comenz√≥ solo con 40 empleados
-                            y al d√≠a de hoy somos m√°s de 300 en la familia.
+                            Don JerÛnimo Casas. La empresa de OKCasa comenzÛ solo con 40 empleados
+                            y al dÌa de hoy somos m·s de 300 en la familia.
                         </p>
-                        <p>Desde el a√±o 1990 nos hemos comprometido en ser la empresa #1 de Inspecci√≥n
+                        <p>Desde el aÒo 1990 nos hemos comprometido en ser la empresa #1 de InspecciÛn
                             de casas de todo Chile, fiscalizando la seguridad de la familia. </p>
                     </div>
                 </div>
@@ -310,19 +244,19 @@
         <div class="container">
             <div class="row d-flex mb-5 contact-info">
                 <div class="col-md-12 mb-4">
-                    <h2 class="h4">Informaci√≥n de Contacto</h2>
+                    <h2 class="h4">InformaciÛn de Contacto</h2>
                 </div>
                 <div class="w-100"></div>
                 <div class="col-md-3 d-flex">
                     <div class="bg-light d-flex align-self-stretch box p-4">
-                        <p><span>Direcci√≥n:</span> 
+                        <p><span>DirecciÛn:</span> 
                             <br>
-                            <a href="direcci√≥n">Av. San Carlos 1340, Puente Alto, Regi√≥n Metropolitana</p></a></p>   
+                            <a href="direcciÛn">Av. San Carlos 1340, Puente Alto, RegiÛn Metropolitana</p></a></p>   
                     </div>
                 </div>
                 <div class="col-md-3 d-flex">
                     <div class="bg-light d-flex align-self-stretch box p-4">
-                        <p><span>Tel√©fono:</span>
+                        <p><span>TelÈfono:</span>
                             <br>
                             <a href="telefono">+22002200</a></p>
                     </div>
@@ -354,7 +288,7 @@
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-5">
                         <h2 class="ftco-heading-2 logo"><span></span><img src="images/logo2.jpg" alt="logo"></h2>
-                        <p>Preocupados por la calidad de tu hogar, para una experiencia √∫nica con tu familia.</p>
+                        <p>Preocupados por la calidad de tu hogar, para una experiencia ˙nica con tu familia.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                             <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -367,8 +301,8 @@
                     <div class="ftco-footer-widget mb-5 ml-md-4">
                         <h2 class="ftco-heading-2">Sobre nosotros</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Con√≥cenos</a></li>
-                            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cont√°ctanos</a></li>
+                            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>ConÛcenos</a></li>
+                            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cont·ctanos</a></li>
                             <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Solicita servicios</a></li>
                             <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conoce nuestro equipo</a></li>
                             <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Proyectos</a></li>
@@ -404,11 +338,11 @@
                 </div>
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-5">
-                        <h2 class="ftco-heading-2">Bolet√≠n Inform√°tivo</h2>
+                        <h2 class="ftco-heading-2">BoletÌn Inform·tivo</h2>
                         <form action="#" class="subscribe-form">
                             <div class="form-group">
                                 <input type="text" class="form-control mb-2 text-center" placeholder="Ingresa tu email">
-                                <input type="submit" value="Subscr√≠bete" class="form-control submit px-3">
+                                <input type="submit" value="SubscrÌbete" class="form-control submit px-3">
                             </div>
                         </form>
                     </div>

@@ -9,12 +9,10 @@ import Conexion.Conexion;
 import Clases.Cliente;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import oracle.jdbc.OracleTypes;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -22,20 +20,18 @@ import oracle.jdbc.OracleTypes;
  * @author chida
  */
 public class ClienteDao {
-    
-       public Connection conexion;
+
+    public Connection conexion;
 
     public ClienteDao() {
     }
 
-    
-    
     //Agregar-------------------------------------------------------------------
-    public boolean agregarCliente(Cliente cli) throws SQLException{
+    public boolean agregarCliente(Cliente cli) throws SQLException {
         boolean centinela = false;
-        
+
         try {
-            
+
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
             String llamada = "{ call SP_AGREGAR_CLIENTE(?,?,?,?,?,?,?,?,?,?) }";
@@ -52,28 +48,27 @@ public class ClienteDao {
             cstmt.setString(8, cli.getEmail());
             cstmt.setString(9, cli.getHipotecario());
             cstmt.setInt(10, cli.getId_comuna());
-            
-            if (cstmt.executeUpdate()>0) {
-               centinela = true;
+
+            if (cstmt.executeUpdate() > 0) {
+                centinela = true;
             }
-            
+
         } catch (Exception e) {
-            System.out.println("Error al Agregar Cliente"+e.getMessage());
-        
-        }finally{
-            
+            System.out.println("Error al Agregar Cliente" + e.getMessage());
+
+        } finally {
+
             //Cerrar Conexión
             this.conexion.close();
         }
-        
+
         return centinela;
     }
-    
-    
+
     //Listar--------------------------------------------------------------------
-    public List<Cliente> listarClientes() throws SQLException{
+    public List<Cliente> listarClientes() throws SQLException {
         List<Cliente> listado = new ArrayList<>();
-        
+
         try {
             this.conexion = new Conexion().obtenerConexion();
             String llamada = " { call SP_LISTAR_CLIENTES(?) }";
@@ -81,11 +76,11 @@ public class ClienteDao {
             //pasamos cursor
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.execute();
-            
+
             ResultSet rs = (ResultSet) cstmt.getObject(1);
-            
+
             while (rs.next()) {
-                
+
                 Cliente c = new Cliente();
                 c.setRut_cliente(rs.getString("rut_cliente"));
                 c.setPrimer_nombre(rs.getString("primer_nombre"));
@@ -98,19 +93,16 @@ public class ClienteDao {
                 c.setEmail(rs.getString("email"));
                 c.setHipotecario(rs.getString("hipotecario"));
                 c.setId_comuna(rs.getInt("id_comuna"));
-                
+
                 listado.add(c);
             }
         } catch (Exception e) {
-            System.out.println("Error al listar clientes"+e.getMessage());
-        }finally{
+            System.out.println("Error al listar clientes" + e.getMessage());
+        } finally {
             this.conexion.close();
         }
         return listado;
-    } 
-    
-    
-    
-    //Eliminar
+    }
 
+    //Eliminar
 }
