@@ -6,7 +6,9 @@
 package Controlador;
 
 import Clases.Cliente;
+import Clases.Login;
 import Dao.ClienteDao;
+import Dao.LoginDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -102,6 +104,31 @@ public class servletAgregar extends HttpServlet {
             request.setAttribute("err", "No Registrado" + ex.getMessage());
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
+
+        //Capturar Info LOGIN
+        String nombre_usuario = request.getParameter("txtUsuario");
+        String contrasenia = request.getParameter("txtContrasenia");
+
+        Login log = new Login(nombre_usuario, contrasenia, rut_cliente);
+        LoginDAO daol = new LoginDAO();
+
+        try {
+            //Intentar Guardar
+            if (daol.agregarLogin(log)) {
+
+                request.setAttribute("msje", "Registrado exitosamente");
+
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            } else {
+
+                request.setAttribute("error", "No Registrado");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+        } catch (SQLException ex) {
+            request.setAttribute("error", "No Registrado");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+
     }
 
     /**
