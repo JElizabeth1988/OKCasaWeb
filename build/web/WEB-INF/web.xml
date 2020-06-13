@@ -5,16 +5,16 @@
         <servlet-class>Controlador.servletAgregar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>servletAgregarLogin</servlet-name>
-        <servlet-class>Controlador.servletAgregarLogin</servlet-class>
+        <servlet-name>servletAgregarSol</servlet-name>
+        <servlet-class>Controlador.servletAgregarSol</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>servletAgregarLogin</servlet-name>
-        <url-pattern>/servletAgregarLogin</url-pattern>
+        <servlet-name>servletAgregarSol</servlet-name>
+        <url-pattern>/servletAgregarSol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -3,22 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/contacto.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Clases/Cliente.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/servletAgregarLogin.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/TEST/TESTLOGIN.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Dao/ClienteDao.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Dao/SolicitudDAO.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/servletAgregar.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Dao/LoginDAO.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/nosotros.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/Cliente.jsp</file>
             <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/servicios.jsp</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Clases/Solicitud.java</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Clases/Cliente.java</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/TEST/TESTSOLICITUD.java</file>
             <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/index.jsp</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/servletAgregar.java</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/nosotros.jsp</file>
             <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/MisInspecciones.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/login.jsp</file>
             <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/Agendar.jsp</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/login.jsp</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Clases/Pago.java</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Clases/Login.java</file>
             <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/menu.jsp</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/css/style.css</file>
+            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>

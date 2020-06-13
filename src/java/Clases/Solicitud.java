@@ -5,17 +5,22 @@
  */
 package Clases;
 
+import java.sql.Date;
+
+
 /**
  *
  * @author chida
  */
 public class Solicitud {
    private int id_solicitud;
-   private String fecha_solicitud;
+   private Date fecha_solicitud;
    private String hora_solicitud;
    private String direccion_vivienda;
-   private String constructora;
    
+   
+   //Constructora
+   private String constructora;
   //Cliente
    private String rut_cliente;
       
@@ -27,11 +32,14 @@ public class Solicitud {
    
    //Comuna
    private int id_comuna;
+   
+   //Servicio
+    private int id_servicio;
 
     public Solicitud() {
     }
 
-    public Solicitud(int id_solicitud, String fecha_solicitud, String hora_solicitud, String direccion_vivienda, String constructora, String rut_cliente, int id_agenda, int id_pago, int id_comuna) {
+    public Solicitud(int id_solicitud, Date fecha_solicitud, String hora_solicitud, String direccion_vivienda, String constructora, String rut_cliente, int id_agenda, int id_pago, int id_comuna, int id_servicio) {
         this.id_solicitud = id_solicitud;
         this.fecha_solicitud = fecha_solicitud;
         this.hora_solicitud = hora_solicitud;
@@ -41,16 +49,16 @@ public class Solicitud {
         this.id_agenda = id_agenda;
         this.id_pago = id_pago;
         this.id_comuna = id_comuna;
+        this.id_servicio = id_servicio;
     }
 
-    
     //SET
 
     public void setId_solicitud(int id_solicitud) {
         this.id_solicitud = id_solicitud;
     }
 
-    public void setFecha_solicitud(String fecha_solicitud) {
+    public void setFecha_solicitud(Date fecha_solicitud) {
         this.fecha_solicitud = fecha_solicitud;
     }
 
@@ -82,13 +90,18 @@ public class Solicitud {
         this.id_comuna = id_comuna;
     }
 
-    //GETTER
+    public void setId_servicio(int id_servicio) {
+        this.id_servicio = id_servicio;
+    }
+
+   
+    //GET
 
     public int getId_solicitud() {
         return id_solicitud;
     }
 
-    public String getFecha_solicitud() {
+    public Date getFecha_solicitud() {
         return fecha_solicitud;
     }
 
@@ -120,10 +133,20 @@ public class Solicitud {
         return id_comuna;
     }
 
+    public int getId_servicio() {
+        return id_servicio;
+    }
+
     @Override
     public String toString() {
-        return "Solicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", hora_solicitud=" + hora_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", id_agenda=" + id_agenda + ", id_pago=" + id_pago + ", id_comuna=" + id_comuna + '}';
+        return "Solicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", hora_solicitud=" + hora_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", id_agenda=" + id_agenda + ", id_pago=" + id_pago + ", id_comuna=" + id_comuna + ", id_servicio=" + id_servicio + '}';
     }
+    
+   
+
+    
+
+    
     
     
 

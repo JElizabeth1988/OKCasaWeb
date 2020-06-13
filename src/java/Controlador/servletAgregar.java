@@ -6,9 +6,9 @@
 package Controlador;
 
 import Clases.Cliente;
-import Clases.Login;
+import Clases.Usuario;
 import Dao.ClienteDao;
-import Dao.LoginDAO;
+import Dao.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -40,7 +40,7 @@ public class servletAgregar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletAgregar</title>");
+            out.println("<title>Servlet servletAgregar</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet servletAgregar at " + request.getContextPath() + "</h1>");
@@ -75,8 +75,7 @@ public class servletAgregar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        //Capturar Info formulario
+                //Capturar Info formulario
         String rut_cliente = request.getParameter("txtRut_cliente");
         String primer_nombre = request.getParameter("txtPrimer_nombre");
         String segundo_nombre = request.getParameter("txtSegundo_nombre");
@@ -97,24 +96,25 @@ public class servletAgregar extends HttpServlet {
                 request.setAttribute("msj", "Registrado exitosamente");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "No Registrado");
+                request.setAttribute("err", "No Registrado :ooo");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         } catch (SQLException ex) {
-            request.setAttribute("err", "No Registrado" + ex.getMessage());
+            request.setAttribute("err", "No Registrado :o" + ex.getMessage());
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-
-        //Capturar Info LOGIN
+        
+         //USUARIO------------------------------------------------------------------
         String nombre_usuario = request.getParameter("txtUsuario");
         String contrasenia = request.getParameter("txtContrasenia");
+        int id_tipo_usuario = 1;
 
-        Login log = new Login(nombre_usuario, contrasenia, rut_cliente);
-        LoginDAO daol = new LoginDAO();
+        Usuario us = new Usuario(nombre_usuario, contrasenia, rut_cliente, id_tipo_usuario);
+        UsuarioDAO daous = new UsuarioDAO();
 
         try {
             //Intentar Guardar
-            if (daol.agregarLogin(log)) {
+            if (daous.agregarUsuario(us)) {
 
                 request.setAttribute("msje", "Registrado exitosamente");
 
@@ -128,7 +128,6 @@ public class servletAgregar extends HttpServlet {
             request.setAttribute("error", "No Registrado");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-
     }
 
     /**

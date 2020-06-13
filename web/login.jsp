@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
         <title>OKCASA</title>
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
@@ -53,6 +53,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 
     </head>
+    
     <body>
 
         <!-- Back to top button -->
@@ -69,7 +70,7 @@
                     <div class="col-md-9 ftco-animate text-center">
                         <h1 class="mb-2 bread">Ingreso</h1>
                         <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i
-                                        class="ion-ios-arrow-forward"></i></a></span> <span>Login <i class="ion-ios-arrow-forward"></i></span>
+                                        class="ion-ios-arrow-forward"></i></a></span> <span>Registro <i class="ion-ios-arrow-forward"></i></span>
                         </p>
                     </div>
                 </div>
@@ -90,7 +91,7 @@
             <!-- INGRESO --------------------------------------------------------------------------------------------->
             <div class="row justify-content-center">
                 <div class="col-md-5">
-                    <form action="servletAgregarLogin" method="POST">
+                    <form>
                         <fieldset>
                             <p class="text-uppercase" style="font-weight: bold;margin-left: 30px;">Ingresa con tu Cuenta</p>
                             <br>
@@ -121,21 +122,24 @@
                 <!-- REGISTRO ------------------------------------------------------------------------------------------------->
                 <div class="col-md-5">
 
-
                     <c:if test="${msj!=null}">
                         <div class="alert alert-success">${msj}</div>  
+                     
+                        
+                        
                     </c:if>
                     <c:if test="${err!=null}">
-                        <div class="alert alert-danger">${msj}</div>  
-                    </c:if>
+                        <div class="alert alert-danger">${err}</div>  
+                    </c:if>   
 
-                    <form action="servletAgregar" method="POST">
+                        <form action="servletAgregar" method="POST">
                         <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> Regístrate</p>
                         <div class="form-group"  id="textbox"> <!-- RUT -->
                             <label style="color: #bd2130">*</label>
                             <label for="rut_cliente" class="control-label">RUT</label>
-                            <input type="text" name="txtRut_cliente"  class="form-control input-lg" placeholder="Ej: 11.111.111-1"
-                                   title="Debe Ingresar su RUT" required minlength="9">
+                            <input type="text" name="txtRut_cliente"  class="form-control input-lg" placeholder="Ej: 11111111-1"
+                                   title="Debe Ingresar su RUT" required minlength="9" maxlength="10">
+
                         </div>    
 
 
@@ -146,7 +150,7 @@
                                     <label style="color: #bd2130">*</label>
                                     <label for="primer_nombre" class="control-label" style="black">Primer Nombre</label>
                                     <input type="text" name="txtPrimer_nombre" class="form-control input-lg" placeholder="Ej: Juan"
-                                           title="Debe Ingresar su Nombre" required minlength="3">
+                                           title="Debe Ingresar su Nombre" required minlength="3" maxlength="20">
                                 </div>  
                             </div>
 
@@ -165,27 +169,26 @@
                                 <div class="form-group" id="textbox"> <!-- Apellido Paterno -->
                                     <label style="color: #bd2130">*</label>
                                     <label for="ap_paterno" class="control-label">Apellido Paterno</label>
-                                    <input type="text" name="txtAp_paterno"  class="form-control input-lg" placeholder="Apellido Paterno"
-                                           >
+                                    <input type="text" name="txtAp_paterno"  class="form-control input-lg" placeholder="Apellido Paterno" required minlength="3" maxlength="20">
                                 </div>    
                                 <div class="form-group" id="textbox"> <!-- Apellido Materno -->
                                     <label style="color: #bd2130">*</label>
                                     <label for="ap_materno" class="control-label">Apellido Materno</label>
-                                    <input type="text" name="txtAp_materno"  class="form-control input-lg" placeholder="Apellido Materno"
-                                           >
+                                    <input type="text" name="txtAp_materno"  class="form-control input-lg" placeholder="Apellido Materno" required minlength="3" maxlength="20">
+                                         
                                 </div>    
                                 <div class="form-group" id="textbox"> <!-- Direccion -->
                                     <label style="color: #bd2130">*</label>
                                     <label for="direccion" class="control-label">Dirección</label>
                                     <input type="text" name="txtDireccion" id="direccion" class="form-control input-lg"
-                                           placeholder="Dirección y N°">
+                                           placeholder="Dirección y N°" required minlength="4" maxlength="50" >
                                 </div>    
 
 
                                 <div class="form-group" id="textbox"> <!--Comuna -->
                                     <label style="color: #bd2130">*</label>
-                                    <label for="id_comuna" class="control-label">Comuna</label>
-                                    <select class="form-control" name="cboComuna" >
+                                    <label for="comuna" class="control-label">Comuna</label>
+                                    <select class="form-control" name="cboComuna">                    
                                         <option value="1">Santiago</option>
                                         <option value="2">Providencia</option>
                                         <option value="3">Ñuñoa</option>
@@ -196,35 +199,36 @@
                                     </select>                    
                                 </div>
 
+
                                 <div class="form-group" id="textbox"> <!-- Telefono -->
                                     <label style="color: #bd2130">*</label>
                                     <label for="telefono" class="control-label">Telefono</label>
                                     <input type="number" name="txtTelefono" class="form-control input-lg"
-                                           placeholder="teléfono">
+                                           placeholder="teléfono" minlength="9" maxlength="10">
                                 </div>    
                                 <div class="form-group" id="textbox"> <!-- Email -->
                                     <label style="color: #bd2130">*</label>
                                     <label for="email" class="control-label">Email</label>
                                     <input type="email" name="txtEmail"  class="form-control input-lg"
-                                           placeholder="ejemplo@okcasa.cl">
+                                           placeholder="ejemplo@okcasa.cl" required="" minlength="4" maxlength="50">
                                 </div>    
                                 <div class="form-group" id="textbox"> <!-- Usuario -->
                                     <label style="color: #bd2130">*</label>
                                     <label for="usuario" class="control-label">Usuario</label>
                                     <input type="text" name="txtUsuario" id="usuario" class="form-control input-lg" placeholder="Usuario"
-                                           title="Debe Ingresar Usuario" required minlength="5">
+                                           title="Debe Ingresar Usuario" required minlength="3" maxlength="20">
                                 </div>    
                                 <div class="form-group" id="textbox"> <!-- Contraseña 1 -->
                                     <label style="color: #bd2130">*</label>
                                     <label for="contrasenia" class="control-label">Contraseña</label>
                                     <input type="password" name="txtContrasenia" id="pass1" class="form-control input-lg"
-                                           placeholder="Contraseña" title="Debe Ingresar su Contraseña" required minlength="7">
+                                           placeholder="Contraseña" title="Debe Ingresar su Contraseña" required minlength="7" maxlength="20">
                                 </div>    
                                 <div class="form-group" id="textbox"> <!-- Contraseña 2 -->
                                     <label style="color: #bd2130">*</label>
                                     <label for="contrasenia2" class="control-label">Vuelva a introducir Contraseña</label>
                                     <input type="password" name="txtPassword2" id="pass2" class="form-control input-lg"
-                                           placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="7">
+                                           placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="7" maxlength="20">
                                     <!-- Error Text --> <div id="error2"></div>
                                 </div>    
 
@@ -237,13 +241,6 @@
 
                                 <br>
 
-
-                                <c:if test="${msje!=null}">
-                                    <div class="alert alert-info">${msje}</div>  
-                                </c:if>
-                                <c:if test="${error!=null}">
-                                    <div class="alert alert-primary">${msje}</div>  
-                                </c:if>
 
                                 <div>
                                     <input type="submit" class="btn btn btn-primary" value="Registrar" style="margin-left: 30px">
@@ -268,6 +265,22 @@
 
 
         </div>
+
+        <%--
+        <form id="formulario">
+
+            <input type="text" name="txtNombre" placeholder="Ingrese nombre">
+            <br>
+            <input type="email" name="txtCorreo" placeholder="Ingrese correo">
+            <br>
+            <input type="password" name="txtContrasenia" id="contra" placeholder="Ingrese contraseña">
+            <br>
+            <input type="password" name="txtContrasenia2"  placeholder="Ingrese contraseña">    
+            <!-- submit es botón y desencadena click a diferencia button-->
+            <input type="submit" value="Enviar"> 
+
+
+        </form>--%>
 
 
 
@@ -372,8 +385,21 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
         <script src="js/google-map.js"></script>
         <script src="js/main.js"></script>
-        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="js/backtotop.js"></script>
+
+        <!-- jquery -->
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+        <!-- jquery validate -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+
+        <!-- Nuestro script -->
+        <script src="js/validaciones.js"></script>
+
+        <!-- Métodos adicionales, validar solo letras -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+
 
     </body>
 </html>

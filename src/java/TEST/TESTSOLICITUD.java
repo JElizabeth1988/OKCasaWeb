@@ -7,7 +7,11 @@ package TEST;
 
 import Clases.Solicitud;
 import Dao.SolicitudDAO;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
 /**
  *
  * @author chida
@@ -19,29 +23,36 @@ public class TESTSOLICITUD {
      */
     public static void main(String[] args) {
         // TODO code application logic here 
-    
-          SolicitudDAO dao = new SolicitudDAO();
-    
-       try {
-            
-           /*Solicitud s = new Solicitud(100, "05/06/2020", "10:10", "Olmos 1010", "Bio bio", "13697138-7", 2, 2, 5);
-           
-           if(dao.agregarSolicitud(s)){
-               
-               System.out.println("Solicitud Guardada");
-           } else{
-               System.out.println("Solicitud no Guardada");
-           }*/
-           
-            List<Solicitud>listado = dao.listarSolicitudes();
+
+        SolicitudDAO dao = new SolicitudDAO();
+
+        try {
+
+            Date date = new Date();
+//Caso 1: obtener la hora y salida por pantalla con formato:
+            DateFormat hourFormat = new SimpleDateFormat("HH:mm");
+            System.out.println("Hora: " + hourFormat.format(date));
+//Caso 2: obtener la fecha y salida por pantalla con formato:
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            System.out.println("Fecha: " + dateFormat.format(date));
+
+            Solicitud so = new Solicitud(9, (java.sql.Date) date, "10:20", "SAN Joaquin 223", "San Pablo", "19385798-1", 1, 1, 2, 3);
+
+            if (dao.agregarSolicitud(so)) {
+
+                System.out.println("Solicitud Guardada");
+            } else {
+                System.out.println("Solicitud no Guardada");
+            }
+
+            /*List<Solicitud>listado = dao.listarSolicitudes();
             for (Solicitud solicitud : listado) {
                 System.out.println(solicitud.toString());
-            }
-           
+            }*/
         } catch (Exception e) {
-             System.out.println("Error al ejecutar"+e.getMessage());
+            System.out.println("Error al ejecutar" + e.getMessage());
         }
-    
+
     }
-    
+
 }

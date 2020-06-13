@@ -20,26 +20,27 @@ import oracle.jdbc.OracleTypes;
  * @author chida
  */
 public class SolicitudDAO {
-    
+
     public Connection conexion;
 
     public SolicitudDAO() {
     }
-    
+
     //Agregar-------------------------------------------------------------------
-    public boolean agregarSolicitud(Solicitud solicitud) throws SQLException{
+    public boolean agregarSolicitud(Solicitud solicitud) throws SQLException {
         boolean centinela = false;
-        
+
         try {
-            
+
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = "{ call SP_AGREGAR_SOLICITUD(?,?,?,?,?,?,?,?,?) }";
+            String llamada = "{ call SP_AGREGAR_SOLICITUD(?,?,?,?,?,?,?,?,?,?) }";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
 
+ 
             //Pasar atributos
             cstmt.setInt(1, solicitud.getId_solicitud());
-            cstmt.setString(2, solicitud.getFecha_solicitud());
+            cstmt.setDate(2, solicitud.getFecha_solicitud());
             cstmt.setString(3, solicitud.getHora_solicitud());
             cstmt.setString(4, solicitud.getDireccion_vivienda());
             cstmt.setString(5, solicitud.getConstructora());
@@ -47,28 +48,28 @@ public class SolicitudDAO {
             cstmt.setInt(7, solicitud.getId_agenda());
             cstmt.setInt(8, solicitud.getId_pago());
             cstmt.setInt(9, solicitud.getId_comuna());
-            
-            if (cstmt.executeUpdate()>0) {
-               centinela = true;
+            cstmt.setInt(10, solicitud.getId_servicio());
+
+            if (cstmt.executeUpdate() > 0) {
+                centinela = true;
             }
-            
+
         } catch (Exception e) {
-            System.out.println("Error al Agregar Solicitud"+e.getMessage());
-        
-        }finally{
-            
+            System.out.println("Error al Agregar Solicitud" + e.getMessage());
+
+        } finally {
+
             //Cerrar Conexión
             this.conexion.close();
         }
-        
+
         return centinela;
     }
-    
-    
+
     //Listar--------------------------------------------------------------------
-     public List<Solicitud> listarSolicitudes() throws SQLException{
+    public List<Solicitud> listarSolicitudes() throws SQLException {
         List<Solicitud> listado = new ArrayList<>();
-        
+
         try {
             this.conexion = new Conexion().obtenerConexion();
             String llamada = " { call SP_LISTAR_SOLICITUDES(?) }";
@@ -76,14 +77,14 @@ public class SolicitudDAO {
             //pasamos cursor
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.execute();
-            
+
             ResultSet rs = (ResultSet) cstmt.getObject(1);
-            
+
             while (rs.next()) {
-                
+
                 Solicitud s = new Solicitud();
                 s.setId_solicitud(rs.getInt("id_solicitud"));
-                s.setFecha_solicitud(rs.getString("fecha_solicitud"));
+                s.setFecha_solicitud(rs.getDate("fecha_solicitud"));
                 s.setHora_solicitud(rs.getString("hora_solicitud"));
                 s.setDireccion_vivienda(rs.getString("direccion_vivienda"));
                 s.setConstructora(rs.getString("constructora"));
@@ -91,18 +92,16 @@ public class SolicitudDAO {
                 s.setId_agenda(rs.getInt("id_agenda"));
                 s.setId_pago(rs.getInt("id_pago"));
                 s.setId_comuna(rs.getInt("id_comuna"));
-                
+
                 listado.add(s);
             }
         } catch (Exception e) {
-            System.out.println("Error al listar solicitudes"+e.getMessage());
-        }finally{
+            System.out.println("Error al listar solicitudes" + e.getMessage());
+        } finally {
             this.conexion.close();
         }
         return listado;
-    } 
-    
-    
-    //Eliminar
+    }
 
+    //Eliminar
 }

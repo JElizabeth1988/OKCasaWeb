@@ -5,8 +5,8 @@
  */
 package TEST;
 
-import Clases.Login;
-import Dao.LoginDAO;
+import Clases.Usuario;
+import Dao.UsuarioDAO;
 import java.util.List;
 
 /**
@@ -21,13 +21,13 @@ public class TESTLOGIN {
     public static void main(String[] args) {
         // TODO code application logic here
         
-          LoginDAO dao = new LoginDAO();
+          UsuarioDAO dao = new UsuarioDAO();
     
         try {
             
-           Login l = new Login("cami2309", "camii2102", "17385798-1");
+           Usuario l = new Usuario("cami2309", "camii2102", "13697138-7",2);
            
-           if(dao.agregarLogin(l)){
+           if(dao.agregarUsuario(l)){
                System.out.println("Login Guardado");
            } else{
                System.out.println("Login no Guardado");
