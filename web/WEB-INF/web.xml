@@ -8,6 +8,10 @@
         <servlet-name>servletAgregarSol</servlet-name>
         <servlet-class>Controlador.servletAgregarSol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>servletLogin</servlet-name>
+        <servlet-class>Controlador.servletLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>servletAgregarSol</servlet-name>
         <url-pattern>/servletAgregarSol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletLogin</servlet-name>
+        <url-pattern>/servletLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

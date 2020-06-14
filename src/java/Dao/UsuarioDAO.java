@@ -27,21 +27,22 @@ public class UsuarioDAO {
     }
 
     //Agregar-------------------------------------------------------------------
-    public boolean agregarUsuario(Usuario login) throws SQLException {
+    public boolean agregarUsuario(Usuario us) throws SQLException {
         boolean centinela = false;
 
         try {
 
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = "{ call SP_AGREGAR_USUARIO(?,?,?,?) }";
+            String llamada = "{ call SP_AGREGAR_USUARIO(?,?,?,?,?) }";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
 
             //Pasar atributos
-            cstmt.setString(1, login.getNombre_usuario());
-            cstmt.setString(2, login.getContrasenia());
-            cstmt.setString(3, login.getRut_cliente());
-            cstmt.setInt(4, login.getId_tipo_usuario());
+            cstmt.setInt(1, us.getCodigo());
+            cstmt.setString(2, us.getNombre_usuario());
+            cstmt.setString(3, us.getContrasenia());
+            cstmt.setString(4, us.getRut_cliente());
+            cstmt.setInt(5, us.getId_tipo_usuario());
 
             if (cstmt.executeUpdate() > 0) {
                 centinela = true;
@@ -90,4 +91,32 @@ public class UsuarioDAO {
         }
         return listado;
     }
+    
+    //LOGIN---------------------------------------------------------------------
+    public int Login (String user, String pass) throws SQLException{
+    
+     int tipo = 0;
+     
+        try {
+            
+            this.conexion = new Conexion().obtenerConexion();
+            String script = "SELECT ID_TIPO_USUARIO FROM USUARIO "
+                    + "WHERE NOMBRE_USUARIO = '"+user+"' AND "
+                    + "CONTRASENIA = '"+pass+"' ";
+            CallableStatement cstmt = this.conexion.prepareCall(script);
+            
+            ResultSet rs = cstmt.executeQuery();
+            
+            while (rs.next()) {                
+                tipo = rs.getInt("ID_TIPO_USUARIO");
+            }
+        } catch (Exception e) {
+            System.out.println("Error en Login"+e.getMessage());
+        }finally{
+            
+            this.conexion.close();
+        }
+        return tipo;
+    }
+    
 }

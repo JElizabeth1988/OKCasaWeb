@@ -53,7 +53,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 
     </head>
-
+    
     <body>
 
         <!-- Back to top button -->
@@ -82,53 +82,160 @@
 
 
         <div class="container">
-            <h2 class="text-center" id="title">Ingresa para Agendar tu Inspección</h2>
+            <h2 class="text-center" id="title">Regístrate para Agendar tu Inspección</h2>
             <p class="text-center">
                 <small id="passwordHelpInline" class="text-muted"></small>
             </p>
             <hr>
+
             <!-- INGRESO --------------------------------------------------------------------------------------------->
             <div class="row justify-content-center">
-                <div class="col-md-5">
+          
+                <div class="col-md-1"></div>
+                <!-- REGISTRO ------------------------------------------------------------------------------------------------->
+                <div class="col-md-8">
+
+                    <c:if test="${msj!=null}">
+                        <div class="alert alert-success">${msj}</div>   
+                    </c:if>
                     <c:if test="${err!=null}">
                         <div class="alert alert-danger">${err}</div>  
                     </c:if>   
-                        <form action="servletLogin" method="POST">
-                        <fieldset>
-                            <p class="text-uppercase" style="font-weight: bold;margin-left: 30px;">Ingresa con tu Cuenta</p>
-                            <br>
-                            <div class="row justify-content-center">
-                                <img src="images/icono-usuario_6091-78.jpg" alt="imagen" width="150px" height="120px"
-                                     style="left: 70px; margin-right: 50px">
-                            </div>
-                            <br>
 
-                            <div class="form-group" id="textbox">
-                                 <label for="rut_cliente" class="control-label">Usuario</label>
-                                <input type="text" name="txtUsuario" id="username" class="form-control input-lg"
-                                       title="Debe Ingresar su Usuario" required minlength="5">
-                            </div>
-                            <div class="form-group" id="textbox">
-                                 <label for="rut_cliente" class="control-label">Contraseña</label>
-                                <input type="password" name="txtContrasenia" id="password" class="form-control input-lg"
-                                      title="Debe Ingresar su Contraseña" required minlength="5">
-                            </div>
-                            <div>
-                                <input type="submit" class="btn btn btn-primary" value="Ingresar" style="margin-left: 30px">
-                            </div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
+                        <form action="servletAgregar" method="POST">
+                        <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> Ingresa tus datos</p>
+                        <div class="form-group"  id="textbox"> <!-- RUT -->
+                            <label style="color: #bd2130">*</label>
+                            <label for="rut_cliente" class="control-label">RUT</label>
+                            <input type="text" name="txtRut_cliente"  class="form-control input-lg" placeholder="Ej: 11111111-1"
+                                   title="Debe Ingresar su RUT" required minlength="9" maxlength="10">
 
-                        </fieldset>
-                    </form>
+                        </div>    
+
+
+                        <div class="row" style="width: 90%">
+
+                            <div class="col-md-5" id="textbox">
+                                <div class="form-group"> <!-- Primer Nombre -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="primer_nombre" class="control-label" style="black">Primer Nombre</label>
+                                    <input type="text" name="txtPrimer_nombre" class="form-control input-lg" placeholder="Ej: Juan"
+                                           title="Debe Ingresar su Nombre" required minlength="3" maxlength="20">
+                                </div>  
+                            </div>
+
+                            <div class="col-md-5" id="textbox">
+                                <div class="form-group"> <!-- Segundo Nombre -->
+
+                                    <label for="segundo_nombre" class="control-label">Segundo Nombre</label>
+                                    <input type="text" name="txtSegundo_nombre"  class="form-control input-lg" placeholder="Ej: Pedro">
+                                </div>    
+                            </div>
+
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-12 pad-adjust">
+
+                                <div class="form-group" id="textbox"> <!-- Apellido Paterno -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="ap_paterno" class="control-label">Apellido Paterno</label>
+                                    <input type="text" name="txtAp_paterno"  class="form-control input-lg" placeholder="Apellido Paterno" required minlength="3" maxlength="20">
+                                </div>    
+                                <div class="form-group" id="textbox"> <!-- Apellido Materno -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="ap_materno" class="control-label">Apellido Materno</label>
+                                    <input type="text" name="txtAp_materno"  class="form-control input-lg" placeholder="Apellido Materno" required minlength="3" maxlength="20">
+                                         
+                                </div>    
+                                <div class="form-group" id="textbox"> <!-- Direccion -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="direccion" class="control-label">Dirección</label>
+                                    <input type="text" name="txtDireccion" id="direccion" class="form-control input-lg"
+                                           placeholder="Dirección y N°" required minlength="4" maxlength="50" >
+                                </div>    
+
+
+                                <div class="form-group" id="textbox"> <!--Comuna -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="comuna" class="control-label">Comuna</label>
+                                    <select class="form-control" name="cboComuna">                    
+                                        <option value="1">Santiago</option>
+                                        <option value="2">Providencia</option>
+                                        <option value="3">Ñuñoa</option>
+                                        <option value="4">La Florida</option>
+                                        <option value="5">Puente Alto</option>
+                                        <option value="6">Maipú</option>
+                                        <option value="7">San Joaquín</option>
+                                    </select>                    
+                                </div>
+
+
+                                <div class="form-group" id="textbox"> <!-- Telefono -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="telefono" class="control-label">Telefono</label>
+                                    <input type="number" name="txtTelefono" class="form-control input-lg"
+                                           placeholder="teléfono" minlength="9" maxlength="10">
+                                </div>    
+                                <div class="form-group" id="textbox"> <!-- Email -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="email" class="control-label">Email</label>
+                                    <input type="email" name="txtEmail"  class="form-control input-lg"
+                                           placeholder="ejemplo@okcasa.cl" required="" minlength="4" maxlength="50">
+                                </div>    
+                                <div class="form-group" id="textbox"> <!-- Usuario -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="usuario" class="control-label">Usuario</label>
+                                    <input type="text" name="txtUsuario" id="usuario" class="form-control input-lg" placeholder="Usuario"
+                                           title="Debe Ingresar Usuario" required minlength="3" maxlength="20">
+                                </div>    
+                                <div class="form-group" id="textbox"> <!-- Contraseña 1 -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="contrasenia" class="control-label">Contraseña</label>
+                                    <input type="password" name="txtContrasenia" id="pass1" class="form-control input-lg"
+                                           placeholder="Contraseña" title="Debe Ingresar su Contraseña" required minlength="7" maxlength="20">
+                                </div>    
+                                <div class="form-group" id="textbox"> <!-- Contraseña 2 -->
+                                    <label style="color: #bd2130">*</label>
+                                    <label for="contrasenia2" class="control-label">Vuelva a introducir Contraseña</label>
+                                    <input type="password" name="txtPassword2" id="pass2" class="form-control input-lg"
+                                           placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="7" maxlength="20">
+                                    <!-- Error Text --> <div id="error2"></div>
+                                </div>    
+
+                                <div class="form-check" style="margin-left: 30px">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" required min="1" checked="true">
+                                        Al registrarte estás aceptando nuestras <br> políticas y términos.
+                                    </label>
+                                </div>
+
+                                <br>
+
+
+                                <div>
+                                    <input type="submit" class="btn btn btn-primary" value="Registrar" style="margin-left: 30px">
+                                </div>
+
+                                <br>
+                                <br>
+
+                                </form>
+                            </div>
+
+
+
+
+                        </div>
                 </div>
-            </div>    
-        </div>         
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+
+
+        </div>
+
         <%--
         <form id="formulario">
 

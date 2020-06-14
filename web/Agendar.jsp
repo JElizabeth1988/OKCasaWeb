@@ -212,7 +212,7 @@
                                         <td> Sacar desde BD</td>
 
                                         <td>Sacar desde BD</td>
-                                        <td><div style="margin right: 20px">
+                                        <td><div style="margin-right:  20px">
                                                 <input type="submit" class="btn btn btn-primary" style=" font-size: 18px; margin-left: 50px;" value="&#x2b6f;"></span>
                                             </div></span></td>
 
@@ -222,7 +222,7 @@
                                     <tr>
                                         <td>Sacar desde BD</td>
                                         <td>Sacar desde BD</td>
-                                        <td><div style="margin right: 20px">
+                                        <td><div style="margin-right:  20px">
                                                 <input type="submit" class="btn btn btn-primary" style="color: #2ecc71; font-size: 15px; margin-left: 50px;" value="&#x1f50e;"></span>
                                             </div></td>
                                         </td>             
@@ -233,7 +233,7 @@
                                     <tr>
                                         <td>Sacar desde BD</td>
                                         <td>Sacar desde BD</td>
-                                        <td><div style="margin right: 20px">
+                                        <td><div style="margin-right: 20px">
                                                 <input type="submit" class="btn btn btn-primary" style="color: #2ecc71; font-size: 15px; margin-left: 50px;" value="&#x1f50e;"></span>
                                             </div></td>
 
@@ -242,7 +242,7 @@
                                     <tr>
                                         <td>Sacar desde BD</td>
                                         <td>Sacar desde BD</td>
-                                        <td><div style="margin right: 20px">
+                                        <td><div style="margin-right: 20px">
                                                 <input type="submit" class="btn btn btn-primary" style="color: #2ecc71; font-size: 15px; margin-left: 50px;" value="&#x1f50e;"></span>
                                             </div></td>
 
@@ -460,8 +460,6 @@
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/jquery.timepicker.min.js"></script>
 <script src="js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
 <script src="js/backtotop.js"></script>
 

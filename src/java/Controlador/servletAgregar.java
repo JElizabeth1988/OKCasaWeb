@@ -94,22 +94,23 @@ public class servletAgregar extends HttpServlet {
             //Intentar Guardar
             if (dao.agregarCliente(cli)) {
                 request.setAttribute("msj", "Registrado exitosamente");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             } else {
                 request.setAttribute("err", "No Registrado :ooo");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             }
         } catch (SQLException ex) {
             request.setAttribute("err", "No Registrado :o" + ex.getMessage());
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("Registrar.jsp").forward(request, response);
         }
         
          //USUARIO------------------------------------------------------------------
+        int codigo = 100;
         String nombre_usuario = request.getParameter("txtUsuario");
         String contrasenia = request.getParameter("txtContrasenia");
-        int id_tipo_usuario = 1;
+        int id_tipo_usuario = 2;
 
-        Usuario us = new Usuario(nombre_usuario, contrasenia, rut_cliente, id_tipo_usuario);
+        Usuario us = new Usuario(codigo, nombre_usuario, contrasenia, rut_cliente, id_tipo_usuario);
         UsuarioDAO daous = new UsuarioDAO();
 
         try {
@@ -118,15 +119,15 @@ public class servletAgregar extends HttpServlet {
 
                 request.setAttribute("msje", "Registrado exitosamente");
 
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             } else {
 
                 request.setAttribute("error", "No Registrado");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             }
         } catch (SQLException ex) {
             request.setAttribute("error", "No Registrado");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("Registrar.jsp").forward(request, response);
         }
     }
 

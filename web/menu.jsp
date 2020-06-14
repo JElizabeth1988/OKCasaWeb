@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="css/flaticon.css">
         <link rel="stylesheet" href="css/icomoon.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/fontello-embedded.css">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
     </head>
     <body>
@@ -78,21 +79,45 @@
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active"><a href="index.jsp" class="nav-link pl-0">Home</a></li>
+
                         <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
                         <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
-                        <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
-                                    class="icon"></span></a></li></a></li>
-                        <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
-                            <div class="form-group d-flex">
-                                <input type="text" class="form-control pl-1" placeholder="Buscar">
-                                <button type="submit" placeholder="" class="form-control search"><span
-                                        class="ion-ios-search"></span></button>
-                            </div>
-                        </form>
+                            <c:if test="${tipo==2}">
+                            <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
+                                        class="icon"></span></a></li></a></li>  
+                                </c:if>
+
+                        <c:if test="${tipo!=null}">
+                            <c:if test="${tipo==1}">
+                                <li class="nav-item"><a href="AgregarCliente.jsp" class="nav-link">Agregar</a></li>
+                                <li class="nav-item"><a href="ListarCliente.jsp" class="nav-link">Listar</a></li>
+                                <li class="nav-item"><a href="EliminarCliente.jsp" class="nav-link">Eliminar</a></li>
+
+
+                            </c:if> 
+                        </c:if>
+
+                        <%--<form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control pl-1" placeholder="Buscar">
+                        <button type="submit" class="form-control search"><span
+                                class="ion-ios-search"></span></button>
+                    </div>
+                </form>--%>
+
                     </ul>            
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar <span
-                                    class="icon-user"></span></a></li>
+                        <c:if test="${tipo!=null}">
+                            <li class="nav-item"><a class="nav-link">Bienvenido ${username} <span
+                                        class="icon-user"></span></a></li>
+                            <li class="nav-item"><a href="servletLogin" class="nav-link">Cerrar Sesión</a></li>
+                            </c:if>
+
+                        <c:if test="${tipo==nul}">
+                            <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar<span
+                                        class="icon-logout"></span></a></li>
+                                </c:if>
+
                     </ul>
                 </div>
 

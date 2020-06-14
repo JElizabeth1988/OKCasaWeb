@@ -10,6 +10,7 @@ package Clases;
  * @author chida
  */
 public class Usuario {
+    private int codigo;
     private String nombre_usuario;
     private String contrasenia;
     private String rut_cliente;
@@ -19,7 +20,8 @@ public class Usuario {
         
     }
 
-    public Usuario(String nombre_usuario, String contrasenia, String rut_cliente, int id_tipo_usuario) {
+    public Usuario(int codigo, String nombre_usuario, String contrasenia, String rut_cliente, int id_tipo_usuario) {
+        this.codigo = codigo;
         this.nombre_usuario = nombre_usuario;
         this.contrasenia = contrasenia;
         this.rut_cliente = rut_cliente;
@@ -28,6 +30,9 @@ public class Usuario {
 
     
     //SETTER
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
 
     public void setNombre_usuario(String nombre_usuario) {
         this.nombre_usuario = nombre_usuario;
@@ -45,8 +50,12 @@ public class Usuario {
         this.id_tipo_usuario = id_tipo_usuario;
     }
 
-        
+    
     //GETTER
+
+    public int getCodigo() {
+        return codigo;
+    }
 
     public String getNombre_usuario() {
         return nombre_usuario;
@@ -63,11 +72,15 @@ public class Usuario {
     public int getId_tipo_usuario() {
         return id_tipo_usuario;
     }
+    
+    
 
     @Override
     public String toString() {
-        return "Usuario{" + "nombre_usuario=" + nombre_usuario + ", contrasenia=" + contrasenia + ", rut_cliente=" + rut_cliente + ", id_tipo_usuario=" + id_tipo_usuario + '}';
+        return "Usuario{" + "codigo=" + codigo + ", nombre_usuario=" + nombre_usuario + ", contrasenia=" + contrasenia + ", rut_cliente=" + rut_cliente + ", id_tipo_usuario=" + id_tipo_usuario + '}';
     }
+
+    
 
     
     
