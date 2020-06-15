@@ -29,7 +29,7 @@
 
 
         <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/icomoon.css">
+        <link rel="stylesheet" href="css/fontello.css">
         <link rel="stylesheet" href="css/style.css">
 
         <link rel="stylesheet" href="css/style.css">
@@ -54,7 +54,7 @@
 
     </head>
 
-    <body>
+    <body style="background-color: #f2f2f2;">
 
         <!-- Back to top button -->
         <a id="button"></a>
@@ -78,8 +78,6 @@
         </section>
 
         <br>
-        <br>
-
 
         <div class="container">
             <h2 class="text-center" id="title">Ingresa para Agendar tu Inspección</h2>
@@ -92,40 +90,67 @@
                 <div class="col-md-5">
                     <c:if test="${err!=null}">
                         <div class="alert alert-danger">${err}</div>  
-                    </c:if>   
-                        <form action="servletLogin" method="POST">
-                        <fieldset>
-                            <p class="text-uppercase" style="font-weight: bold;margin-left: 30px;">Ingresa con tu Cuenta</p>
-                            <br>
-                            <div class="row justify-content-center">
-                                <img src="images/icono-usuario_6091-78.jpg" alt="imagen" width="150px" height="120px"
-                                     style="left: 70px; margin-right: 50px">
-                            </div>
-                            <br>
+                    </c:if> 
 
-                            <div class="form-group" id="textbox">
-                                 <label for="rut_cliente" class="control-label">Usuario</label>
-                                <input type="text" name="txtUsuario" id="username" class="form-control input-lg"
-                                       title="Debe Ingresar su Usuario" required minlength="5">
-                            </div>
-                            <div class="form-group" id="textbox">
-                                 <label for="rut_cliente" class="control-label">Contraseña</label>
-                                <input type="password" name="txtContrasenia" id="password" class="form-control input-lg"
-                                      title="Debe Ingresar su Contraseña" required minlength="5">
-                            </div>
-                            <div>
-                                <input type="submit" class="btn btn btn-primary" value="Ingresar" style="margin-left: 30px">
-                            </div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
+                        <div class="wrap-contact100" id="wrapp">
+                            <form action="servletLogin" method="POST">
+                                <fieldset>
+                                    <br>
+                                    <p class="text-uppercase" style="font-weight: bold;margin-left: 30px;">Ingresa con tu Cuenta</p>
+                                    <br>
+                                    <div class="row justify-content-center">
+                                        <img src="images/avatar.png" alt="imagen" width="120px" height="120px"
+                                             style="left: 70px;">
+                                    </div>
 
-                        </fieldset>
-                    </form>
+                                    <label for="usuario" class="control-label" id="lab">Usuario</label>
+                                    <div class="input-group form-group" id="tx" style="margin-left: 50px">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-user-outline"></i></span>
+                                        </div>
+                                        <input class="form-control" type="text" name="txtUsuario" id="username"  placeholder=" Ingresa Usuario" class="form-control input-lg"
+                                               title="Debe Ingresar su Usuario" required minlength="5">
+
+                                    </div>
+
+                                    <label for="contrasenia" class="control-label" id="lab">Contraseña</label>
+                                    <div class="input-group form-group" id="tx" style="margin-left: 50px">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-lock-1"></i></span>
+                                        </div>
+                                        <input type="password" name="txtContrasenia" id="password" placeholder="Ingresa tu contraseña" class="form-control input-lg"
+                                               title="Debe Ingresar su Contraseña" required minlength="5">
+
+                                    </div>
+
+                                    <div>
+                                        <input type="submit" class="btn btn btn-primary" value="Ingresar" style="margin-left: 50px; width: 75%;">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <p class="text-center">No tienes una cuenta? <a href="Registrar.jsp" id="signup">Regístrate aquí</a> </p>
+                                    </div>
+                                    <br>
+
+
+                                </fieldset>
+                            </form>
+
+
+
+                       </div>    
+
+
+
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    
                 </div>
             </div>    
         </div>         

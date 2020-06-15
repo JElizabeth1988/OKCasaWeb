@@ -27,9 +27,8 @@
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
         <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-
+        <link rel="stylesheet" href="css/fontello-embedded.css">
         <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/icomoon.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
     </head>
@@ -40,7 +39,7 @@
 
         <%@include file="menu.jsp" %>   
         <!-- END nav -->
-
+        <%--
         <c:if test="${tipo!=null}">
             <c:if test="${tipo==1}">
                 <div style="background-color: #fdd49a; text-align: center; font-weight: bold;">Bienvenido Administrador ${username}</div>
@@ -48,7 +47,7 @@
             <c:if test="${tipo==2}">
                 <div style="background-color: #fdd49a; text-align: center; font-weight: bold;"> Bienvenido ${username}</div>
             </c:if>
-        </c:if>
+        </c:if> --%>
 
         <section class="home-slider owl-carousel">
             <div class="slider-item" style="background-image:url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
@@ -116,17 +115,24 @@
                             </div>
                             <form method="POST" class="request-form">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Usuario" title="Debe ingresar Usuario" required minlength="5">
+                                    <label> Dirección </label>
+                                    <input type="text" class="form-control" placeholder="Av. San Carlos 1340, Puente Alto" title="Debe ingresar Usuario" required minlength="5" disabled="true">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Contraseña" title="Debe ingresar Contraseña" required minlength="7">
+                                    <label> Consultas </label>
+                                    <input type="password" class="form-control" placeholder="+22002200" title="Debe ingresar Contraseña" required minlength="7" disabled="">
                                 </div>
-                                <div class="form-group">
-                                    <p class="text-center">No tienes una cuenta? <a href="login.jsp" id="signup">Regístrate aquí</a></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" value="Ingresa" class="btn btn-primary py-3 px-4">
-                                </div>
+                                <c:if test="${tipo==null}">
+
+                                    <div class="form-group">
+                                        <p class="text-center">No tienes una cuenta? <a href="Registrar.jsp" id="signup">Regístrate aquí</a> </p>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="text-center">Si ya posees cuenta <a href="login.jsp" id="signup">Ingresa aquí</a> </p>
+                                    </div>
+                                    
+                                </c:if>
+
                             </form>
                         </div>
                     </div>
@@ -495,7 +501,7 @@
             </div>
         </div>
     </section>
-    
+
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mb-5">

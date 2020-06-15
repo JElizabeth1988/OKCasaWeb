@@ -25,10 +25,7 @@
 
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
         <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
         <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/icomoon.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/fontello-embedded.css">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
@@ -43,15 +40,18 @@
                     <div class="col-lg-8 d-block">
                         <div class="row d-flex">
                             <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-                                <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-paper-plane"></span></div>
+                                <div class="icon d-flex justify-content-center align-items-center">
+
+                                    <span
+                                        class="icon-paper-plane"> </span>
+                                </div>
                                 <div class="text d-flex align-items-center">
                                     <span>OKCasa_chile@gmail.com</span>
                                 </div>
                             </div>
                             <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
                                 <div class="icon d-flex justify-content-center align-items-center"><span
-                                        class="icon-phone2"></span></div>
+                                        class="icon-phone"></span></div>
                                 <div class="text d-flex align-items-center">
                                     <span>LLámanos: +22002200</span>
                                 </div>
@@ -110,12 +110,13 @@
                         <c:if test="${tipo!=null}">
                             <li class="nav-item"><a class="nav-link">Bienvenido ${username} <span
                                         class="icon-user"></span></a></li>
-                            <li class="nav-item"><a href="servletLogin" class="nav-link">Cerrar Sesión</a></li>
-                            </c:if>
+                            <li class="nav-item"><a href="servletLogin" class="nav-link">Cerrar Sesión <span
+                                        class="icon-logout"></span></a></li>
+                                </c:if>
 
                         <c:if test="${tipo==nul}">
-                            <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar<span
-                                        class="icon-logout"></span></a></li>
+                            <li class="nav-item"><a href="login.jsp" class="nav-link">Iniciar Sesión <span
+                                        class="icon-user"></span></a></li>
                                 </c:if>
 
                     </ul>
