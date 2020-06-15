@@ -4,11 +4,9 @@
     Author     : chida
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <title>OKCASA</title>
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -61,7 +59,7 @@
                     <div class="col-md">
                         <div class="ftco-footer-widget mb-5">
                             <h2 class="ftco-heading-2 logo"><span></span><img src="images/logo2.jpg" alt="logo"></h2>
-                            <p>Preocupados por la calidad de tu hogar, para una experiencia Ãºnica con tu familia.</p>
+                            <p>Preocupados por la calidad de tu hogar, para una experiencia única con tu familia.</p>
                             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -74,8 +72,8 @@
                         <div class="ftco-footer-widget mb-5 ml-md-4">
                             <h2 class="ftco-heading-2">Sobre nosotros</h2>
                             <ul class="list-unstyled">
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>ConÃ³cenos</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>ContÃ¡ctanos</a></li>
+                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conócenos</a></li>
+                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contáctanos</a></li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Solicita servicios</a>
                                 </li>
                                 <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conoce nuestro
@@ -113,11 +111,11 @@
                     </div>
                     <div class="col-md">
                         <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2">BoletÃ­n InformÃ¡tivo</h2>
+                            <h2 class="ftco-heading-2">Boletín Informátivo</h2>
                             <form action="#" class="subscribe-form">
                                 <div class="form-group">
                                     <input type="text" class="form-control mb-2 text-center" placeholder="Ingresa tu email">
-                                    <input type="submit" value="SubscrÃ­bete" class="form-control submit px-3">
+                                    <input type="submit" value="Subscríbete" class="form-control submit px-3">
                                 </div>
                             </form>
                         </div>

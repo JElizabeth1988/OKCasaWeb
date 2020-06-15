@@ -28,10 +28,8 @@
 
                 <link rel="stylesheet" href="css/bootstrap-datepicker.css">
                 <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
                 <link rel="stylesheet" href="css/flaticon.css">
-                <link rel="stylesheet" href="css/icomoon.css">
+                <link rel="stylesheet" href="css/fontello-embedded.css">
                 <link rel="stylesheet" href="css/style.css">
                 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 

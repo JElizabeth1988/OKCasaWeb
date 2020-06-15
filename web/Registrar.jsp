@@ -90,7 +90,7 @@
             <!-- INGRESO --------------------------------------------------------------------------------------------->
             <div class="row justify-content-center">
 
-               
+
                 <!-- REGISTRO ------------------------------------------------------------------------------------------------->
                 <div class="col-md-10">
 
@@ -101,9 +101,9 @@
                         <div class="alert alert-danger">${err}</div>  
                     </c:if>   
 
-                        <div class="wrap-contact100" id="wrapp">
+                    <div class="wrap-contact100" id="wrapp">
 
-                            <form action="servletAgregar" method="POST" style="margin-right: 45px">
+                        <form action="servletAgregar" method="POST" style="margin-right: 35px">
                             <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
                                     class="icon-user-1" style="font-size: 35px;"></span>  Ingresa tus datos</p>
                             <hr id="line">
@@ -115,7 +115,7 @@
                                     <div class="form-group"> <!-- RUT -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="rut_cliente" class="control-label">RUT</label>
-                                        <input type="text" name="txtRut_cliente"  class="form-control input-lg" placeholder="Ej: 11111111-1"
+                                        <input type="text" name="txtRut_cliente" required oninput="checkRut(this)" class="form-control input-lg" placeholder="Ej: 11111111-1"
                                                title="Debe Ingresar su RUT" required minlength="9" maxlength="10">
 
                                     </div>   
@@ -254,7 +254,7 @@
                                     <div class="form-check" style="text-align: center;">
                                         <label class="form-check-label">
                                             <input type="checkbox" class="form-check-input" required min="1" checked="true">
-                                            Al registrarte estás aceptando nuestras políticas y términos.
+                                            Acepto los Términos y Condiciones de OkCasa.
                                         </label>
 
 
@@ -335,6 +335,7 @@
                             <script src="js/google-map.js"></script>
                             <script src="js/main.js"></script>
                             <script src="js/backtotop.js"></script>
+                            <script src="js/validarRut.js"></script>
 
                             <!-- jquery -->
 
