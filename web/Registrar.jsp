@@ -29,7 +29,7 @@
 
 
         <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/icomoon.css">
+        <link rel="stylesheet" href="css/fontello-embedded.css">
         <link rel="stylesheet" href="css/style.css">
 
         <link rel="stylesheet" href="css/style.css">
@@ -53,8 +53,8 @@
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 
     </head>
-    
-    <body>
+
+    <body style="background-color: #f2f2f2;">
 
         <!-- Back to top button -->
         <a id="button"></a>
@@ -78,7 +78,6 @@
         </section>
 
         <br>
-        <br>
 
 
         <div class="container">
@@ -90,10 +89,10 @@
 
             <!-- INGRESO --------------------------------------------------------------------------------------------->
             <div class="row justify-content-center">
-          
-                <div class="col-md-1"></div>
+
+               
                 <!-- REGISTRO ------------------------------------------------------------------------------------------------->
-                <div class="col-md-8">
+                <div class="col-md-10">
 
                     <c:if test="${msj!=null}">
                         <div class="alert alert-success">${msj}</div>   
@@ -102,142 +101,198 @@
                         <div class="alert alert-danger">${err}</div>  
                     </c:if>   
 
-                        <form action="servletAgregar" method="POST">
-                        <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> Ingresa tus datos</p>
-                        <div class="form-group"  id="textbox"> <!-- RUT -->
-                            <label style="color: #bd2130">*</label>
-                            <label for="rut_cliente" class="control-label">RUT</label>
-                            <input type="text" name="txtRut_cliente"  class="form-control input-lg" placeholder="Ej: 11111111-1"
-                                   title="Debe Ingresar su RUT" required minlength="9" maxlength="10">
+                        <div class="wrap-contact100" id="wrapp">
 
-                        </div>    
+                            <form action="servletAgregar" method="POST" style="margin-right: 45px">
+                            <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
+                                    class="icon-user-1" style="font-size: 35px;"></span>  Ingresa tus datos</p>
+                            <hr id="line">
 
+                            <%-- ROW-----------------------------------------------------------------------------%>
+                            <div class="row justify-content-center">
 
-                        <div class="row" style="width: 90%">
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- RUT -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="rut_cliente" class="control-label">RUT</label>
+                                        <input type="text" name="txtRut_cliente"  class="form-control input-lg" placeholder="Ej: 11111111-1"
+                                               title="Debe Ingresar su RUT" required minlength="9" maxlength="10">
 
-                            <div class="col-md-5" id="textbox">
-                                <div class="form-group"> <!-- Primer Nombre -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="primer_nombre" class="control-label" style="black">Primer Nombre</label>
-                                    <input type="text" name="txtPrimer_nombre" class="form-control input-lg" placeholder="Ej: Juan"
-                                           title="Debe Ingresar su Nombre" required minlength="3" maxlength="20">
-                                </div>  
-                            </div>
-
-                            <div class="col-md-5" id="textbox">
-                                <div class="form-group"> <!-- Segundo Nombre -->
-
-                                    <label for="segundo_nombre" class="control-label">Segundo Nombre</label>
-                                    <input type="text" name="txtSegundo_nombre"  class="form-control input-lg" placeholder="Ej: Pedro">
-                                </div>    
-                            </div>
-
-                        </div>
-                        <div class="row ">
-                            <div class="col-md-12 pad-adjust">
-
-                                <div class="form-group" id="textbox"> <!-- Apellido Paterno -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="ap_paterno" class="control-label">Apellido Paterno</label>
-                                    <input type="text" name="txtAp_paterno"  class="form-control input-lg" placeholder="Apellido Paterno" required minlength="3" maxlength="20">
-                                </div>    
-                                <div class="form-group" id="textbox"> <!-- Apellido Materno -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="ap_materno" class="control-label">Apellido Materno</label>
-                                    <input type="text" name="txtAp_materno"  class="form-control input-lg" placeholder="Apellido Materno" required minlength="3" maxlength="20">
-                                         
-                                </div>    
-                                <div class="form-group" id="textbox"> <!-- Direccion -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="direccion" class="control-label">Dirección</label>
-                                    <input type="text" name="txtDireccion" id="direccion" class="form-control input-lg"
-                                           placeholder="Dirección y N°" required minlength="4" maxlength="50" >
-                                </div>    
-
-
-                                <div class="form-group" id="textbox"> <!--Comuna -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="comuna" class="control-label">Comuna</label>
-                                    <select class="form-control" name="cboComuna">                    
-                                        <option value="1">Santiago</option>
-                                        <option value="2">Providencia</option>
-                                        <option value="3">Ñuñoa</option>
-                                        <option value="4">La Florida</option>
-                                        <option value="5">Puente Alto</option>
-                                        <option value="6">Maipú</option>
-                                        <option value="7">San Joaquín</option>
-                                    </select>                    
+                                    </div>   
                                 </div>
 
 
-                                <div class="form-group" id="textbox"> <!-- Telefono -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="telefono" class="control-label">Telefono</label>
-                                    <input type="number" name="txtTelefono" class="form-control input-lg"
-                                           placeholder="teléfono" minlength="9" maxlength="10">
-                                </div>    
-                                <div class="form-group" id="textbox"> <!-- Email -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="email" class="control-label">Email</label>
-                                    <input type="email" name="txtEmail"  class="form-control input-lg"
-                                           placeholder="ejemplo@okcasa.cl" required="" minlength="4" maxlength="50">
-                                </div>    
-                                <div class="form-group" id="textbox"> <!-- Usuario -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="usuario" class="control-label">Usuario</label>
-                                    <input type="text" name="txtUsuario" id="usuario" class="form-control input-lg" placeholder="Usuario"
-                                           title="Debe Ingresar Usuario" required minlength="3" maxlength="20">
-                                </div>    
-                                <div class="form-group" id="textbox"> <!-- Contraseña 1 -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="contrasenia" class="control-label">Contraseña</label>
-                                    <input type="password" name="txtContrasenia" id="pass1" class="form-control input-lg"
-                                           placeholder="Contraseña" title="Debe Ingresar su Contraseña" required minlength="7" maxlength="20">
-                                </div>    
-                                <div class="form-group" id="textbox"> <!-- Contraseña 2 -->
-                                    <label style="color: #bd2130">*</label>
-                                    <label for="contrasenia2" class="control-label">Vuelva a introducir Contraseña</label>
-                                    <input type="password" name="txtPassword2" id="pass2" class="form-control input-lg"
-                                           placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="7" maxlength="20">
-                                    <!-- Error Text --> <div id="error2"></div>
-                                </div>    
-
-                                <div class="form-check" style="margin-left: 30px">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" required min="1" checked="true">
-                                        Al registrarte estás aceptando nuestras <br> políticas y términos.
-                                    </label>
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Primer Nombre -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="primer_nombre" class="control-label" style="black">Primer Nombre</label>
+                                        <input type="text" name="txtPrimer_nombre" class="form-control input-lg" placeholder="Ej: Juan"
+                                               title="Debe Ingresar su Nombre" required minlength="3" maxlength="20">
+                                    </div>  
                                 </div>
 
-                                <br>
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Segundo Nombre -->
 
-
-                                <div>
-                                    <input type="submit" class="btn btn btn-primary" value="Registrar" style="margin-left: 30px">
+                                        <label for="segundo_nombre" class="control-label">Segundo Nombre</label>
+                                        <input type="text" name="txtSegundo_nombre"  class="form-control input-lg" placeholder="Ej: Pedro">
+                                    </div>    
                                 </div>
 
-                                <br>
-                                <br>
+                            </div>
+                            <%-- ROW-----------------------------------------------------------------------------%>
+                            <div class="row justify-content-center" >
 
-                                </form>
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Apellido Paterno -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="ap_paterno" class="control-label">Apellido Paterno</label>
+                                        <input type="text" name="txtAp_paterno"  class="form-control input-lg" placeholder="Apellido Paterno" required minlength="3" maxlength="20">
+                                    </div>    
+                                </div>
+
+
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Apellido Materno -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="ap_materno" class="control-label">Apellido Materno</label>
+                                        <input type="text" name="txtAp_materno"  class="form-control input-lg" placeholder="Apellido Materno" required minlength="3" maxlength="20">
+
+                                    </div>  
+                                </div>
+
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Telefono -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="telefono" class="control-label">Telefono</label>
+                                        <input type="text" name="txtTelefono" class="form-control input-lg"
+                                               placeholder="teléfono" minlength="9" maxlength="10">
+                                    </div>   
+                                </div>
+
+                            </div>
+                            <%-- ROW-----------------------------------------------------------------------------%>
+                            <div class="row justify-content-center" >
+
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Direccion -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="direccion" class="control-label">Dirección</label>
+                                        <input type="text" name="txtDireccion" id="direccion" class="form-control input-lg"
+                                               placeholder="Dirección y N°" required minlength="4" maxlength="50" >
+                                    </div>      
+                                </div>
+
+
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!--Comuna -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="comuna" class="control-label">Comuna</label>
+                                        <select class="form-control" name="cboComuna">                    
+                                            <option value="1">Santiago</option>
+                                            <option value="2">Providencia</option>
+                                            <option value="3">Ñuñoa</option>
+                                            <option value="4">La Florida</option>
+                                            <option value="5">Puente Alto</option>
+                                            <option value="6">Maipú</option>
+                                            <option value="7">San Joaquín</option>
+                                        </select>                    
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Email -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="email" class="control-label">Email</label>
+                                        <input type="email" name="txtEmail"  class="form-control input-lg"
+                                               placeholder="ejemplo@okcasa.cl" required="" minlength="4" maxlength="50">
+                                    </div>   
+                                </div>
+
+                            </div>
+
+                            <%-- ROW-----------------------------------------------------------------------------%>
+                            <div class="row justify-content-center">
+
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Usuario -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="usuario" class="control-label">Usuario</label>
+                                        <input type="text" name="txtUsuario" id="usuario" class="form-control input-lg" placeholder="Usuario"
+                                               title="Debe Ingresar Usuario" required minlength="3" maxlength="20">
+                                    </div>   
+                                </div>
+
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Contraseña 1 -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="contrasenia" class="control-label">Contraseña</label>
+                                        <input type="password" name="txtContrasenia" id="pass1" class="form-control input-lg"
+                                               placeholder="Contraseña" title="Debe Ingresar su Contraseña" required minlength="7" maxlength="20">
+                                    </div>  
+
+                                </div>
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!-- Contraseña 2 -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="contrasenia2" class="control-label">Confirmar Contraseña</label>
+                                        <input type="password" name="txtPassword2" id="pass2" class="form-control input-lg"
+                                               placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="7" maxlength="20">
+                                        <!-- Error Text --> <div id="error2"></div>
+                                    </div> 
+
+                                </div>
+
+
+                            </div>
+                            <%-- ROW-----------------------------------------------------------------------------%>
+
+
+                            <div class="row justify-content-center">
+                                <div class="col-md">   
+
+                                    <div class="form-check" style="text-align: center;">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" required min="1" checked="true">
+                                            Al registrarte estás aceptando nuestras políticas y términos.
+                                        </label>
+
+
+                                        <div class="justify-content-center">
+                                            <br>
+                                            <input type="submit" class="btn btn-lg btn-primary" style="margin-right: 40px" value="Registrar">
+                                        </div>
+                                    </div>
+
+
+                                    <br>
+
+
+
+                                    </form>
+
+
+                                </div>
+
+                            </div>
+
+                            <br>
+                            <br>
+
+
+
+                            </div>
+                            </div>
+                            <br>
                             </div>
 
 
-
-
-                        </div>
-                </div>
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-
-
-        </div>
-
-        <%--
-        <form id="formulario">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <%--
+                            <form id="formulario">
 
             <input type="text" name="txtNombre" placeholder="Ingrese nombre">
             <br>
@@ -254,120 +309,46 @@
 
 
 
-        <!--Footer  -->
-        <footer class="ftco-footer ftco-bg-dark ftco-section">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-md">
-                        <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2 logo"><span></span><img src="images/logo2.jpg" alt="logo"></h2>
-                            <p>Preocupados por la calidad de tu hogar, para una experiencia única con tu familia.</p>
-                            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="col-md">
-                        <div class="ftco-footer-widget mb-5 ml-md-4">
-                            <h2 class="ftco-heading-2">Sobre nosotros</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conócenos</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contáctanos</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Solicita servicios</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conoce nuestro equipo</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Proyectos</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2">Sedes</h2>
-                            <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#">Brooklyn,NY EEUU</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Desde Feb. 07, 1979</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> 500 empleados</a></div>
-                                        <div><a href="#"><span class="icon-home"></span> Sede Base</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block-21 mb-5 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#"> Santiago, Chile</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Feb. 07, 1990</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> 320 empleados</a></div>
-                                        <div><a href="#"><span class="icon-home"></span> Segunda Sede</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2">Boletín Informátivo</h2>
-                            <form action="#" class="subscribe-form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control mb-2 text-center" placeholder="Ingresa tu email">
-                                    <input type="submit" value="Subscríbete" class="form-control submit px-3">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-
-                        <p>
-                            Copyright OKCasa &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados 
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+                            <!--Footer  -->
+                            <%@include file="footer.jsp" %>  
 
 
-
-        <!-- Icono Cargar-->
-        <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-migrate-3.0.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.easing.1.3.js"></script>
-        <script src="js/jquery.waypoints.min.js"></script>
-        <script src="js/jquery.stellar.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/aos.js"></script>
-        <script src="js/jquery.animateNumber.min.js"></script>
-        <script src="js/bootstrap-datepicker.js"></script>
-        <script src="js/jquery.timepicker.min.js"></script>
-        <script src="js/scrollax.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/backtotop.js"></script>
-
-        <!-- jquery -->
-
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-
-        <!-- jquery validate -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
-
-        <!-- Nuestro script -->
-        <script src="js/validaciones.js"></script>
-
-        <!-- Métodos adicionales, validar solo letras -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+                            <!-- Icono Cargar-->
+                            <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-    </body>
-</html>
+                            <script src="js/jquery.min.js"></script>
+                            <script src="js/jquery-migrate-3.0.1.min.js"></script>
+                            <script src="js/popper.min.js"></script>
+                            <script src="js/bootstrap.min.js"></script>
+                            <script src="js/jquery.easing.1.3.js"></script>
+                            <script src="js/jquery.waypoints.min.js"></script>
+                            <script src="js/jquery.stellar.min.js"></script>
+                            <script src="js/owl.carousel.min.js"></script>
+                            <script src="js/jquery.magnific-popup.min.js"></script>
+                            <script src="js/aos.js"></script>
+                            <script src="js/jquery.animateNumber.min.js"></script>
+                            <script src="js/bootstrap-datepicker.js"></script>
+                            <script src="js/jquery.timepicker.min.js"></script>
+                            <script src="js/scrollax.min.js"></script>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+                            <script src="js/google-map.js"></script>
+                            <script src="js/main.js"></script>
+                            <script src="js/backtotop.js"></script>
+
+                            <!-- jquery -->
+
+                            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+                            <!-- jquery validate -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+
+                            <!-- Nuestro script -->
+                            <script src="js/validaciones.js"></script>
+
+                            <!-- Métodos adicionales, validar solo letras -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+
+
+                            </body>
+                            </html>

@@ -85,7 +85,8 @@
                             <c:if test="${tipo==2}">
                             <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
                                         class="icon"></span></a></li></a></li>  
-                                </c:if>
+
+                        </c:if>
 
                         <c:if test="${tipo!=null}">
                             <c:if test="${tipo==1}">
@@ -97,13 +98,18 @@
                             </c:if> 
                         </c:if>
 
-                        <%--<form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
-                    <div class="form-group d-flex">
-                        <input type="text" class="form-control pl-1" placeholder="Buscar">
-                        <button type="submit" class="form-control search"><span
-                                class="ion-ios-search"></span></button>
-                    </div>
-                </form>--%>
+                        <c:if test="${tipo== null}">
+
+                            <form action="#" class="searchform" style="margin-top: 5px; margin-left: 200px; padding-left: 5px;">
+                                <div class="form-group d-flex">
+                                    <input type="text" class="form-control pl-1" placeholder="Buscar">
+                                    <button type="submit" class="form-control search"><span
+                                            class="ion-ios-search"></span></button>
+                                </div>
+                            </form>
+
+                        </c:if>
+
 
                     </ul>            
                     <ul class="nav navbar-nav navbar-right">
@@ -115,8 +121,8 @@
                                 </c:if>
 
                         <c:if test="${tipo==nul}">
-                            <li class="nav-item"><a href="login.jsp" class="nav-link">Iniciar Sesión <span
-                                        class="icon-user"></span></a></li>
+                            <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar/Iniciar Sesión <span
+                                        class="icon-user" style="font-size: 17px;"></span></a></li>
                                 </c:if>
 
                     </ul>

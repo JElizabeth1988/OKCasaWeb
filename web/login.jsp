@@ -92,54 +92,57 @@
                         <div class="alert alert-danger">${err}</div>  
                     </c:if> 
 
-                        <div class="wrap-contact100" id="wrapp">
-                            <form action="servletLogin" method="POST">
-                                <fieldset>
-                                    <br>
-                                    <p class="text-uppercase" style="font-weight: bold;margin-left: 30px;">Ingresa con tu Cuenta</p>
-                                    <br>
-                                    <div class="row justify-content-center">
-                                        <img src="images/avatar.png" alt="imagen" width="120px" height="120px"
-                                             style="left: 70px;">
+                    <div class="wrap-contact100" id="wrapp">
+                        
+                        <form action="servletLogin" method="POST">
+                            <fieldset>
+                                <br>
+                                <p class="text-uppercase" style="font-weight: bold;margin-left: 30px;">Ingresa tu Cuenta</p>
+                                <hr id="line">
+                                <br>
+                                <div class="row justify-content-center">
+                                    <img src="images/avatar.png" alt="imagen" width="120px" height="120px"
+                                         style="left: 70px;">
+                                </div>
+
+                                <label for="usuario" class="control-label" id="lab">Usuario</label>
+                                <div class="input-group form-group" id="tx" style="margin-left: 50px">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="icon-user-outline"></i></span>
                                     </div>
+                                    <input class="form-control" type="text" name="txtUsuario" id="username"  placeholder=" Ingresa Usuario" class="form-control input-lg"
+                                           title="Debe Ingresar su Usuario" required minlength="5">
 
-                                    <label for="usuario" class="control-label" id="lab">Usuario</label>
-                                    <div class="input-group form-group" id="tx" style="margin-left: 50px">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="icon-user-outline"></i></span>
-                                        </div>
-                                        <input class="form-control" type="text" name="txtUsuario" id="username"  placeholder=" Ingresa Usuario" class="form-control input-lg"
-                                               title="Debe Ingresar su Usuario" required minlength="5">
+                                </div>
 
+                                <label for="contrasenia" class="control-label" id="lab">Contraseña</label>
+                                <div class="input-group form-group" id="tx" style="margin-left: 50px">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="icon-lock-1"></i></span>
                                     </div>
+                                    <input type="password" name="txtContrasenia" id="password" placeholder="Ingresa tu contraseña" class="form-control input-lg"
+                                           title="Debe Ingresar su Contraseña" required minlength="5">
 
-                                    <label for="contrasenia" class="control-label" id="lab">Contraseña</label>
-                                    <div class="input-group form-group" id="tx" style="margin-left: 50px">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="icon-lock-1"></i></span>
-                                        </div>
-                                        <input type="password" name="txtContrasenia" id="password" placeholder="Ingresa tu contraseña" class="form-control input-lg"
-                                               title="Debe Ingresar su Contraseña" required minlength="5">
+                                </div>
 
-                                    </div>
-
-                                    <div>
-                                        <input type="submit" class="btn btn btn-primary" value="Ingresar" style="margin-left: 50px; width: 75%;">
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <p class="text-center">No tienes una cuenta? <a href="Registrar.jsp" id="signup">Regístrate aquí</a> </p>
-                                    </div>
-                                    <br>
+                                <div>
+                                    <input type="submit" class="btn btn btn-primary" value="Ingresar" style="margin-left: 50px; width: 75%;">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <p class="text-center">No tienes una cuenta? <a href="Registrar.jsp" id="signup">Regístrate aquí</a> </p>
+                                </div>
+                                <br>
 
 
-                                </fieldset>
-                            </form>
+                            </fieldset>
+                        </form>
 
 
 
-                       </div>    
-
+                    </div>    
+                        
+                        
 
 
 
@@ -150,7 +153,7 @@
                     <br>
                     <br>
 
-                    
+
                 </div>
             </div>    
         </div>         
@@ -173,84 +176,7 @@
 
 
         <!--Footer  -->
-        <footer class="ftco-footer ftco-bg-dark ftco-section">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-md">
-                        <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2 logo"><span></span><img src="images/logo2.jpg" alt="logo"></h2>
-                            <p>Preocupados por la calidad de tu hogar, para una experiencia única con tu familia.</p>
-                            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="col-md">
-                        <div class="ftco-footer-widget mb-5 ml-md-4">
-                            <h2 class="ftco-heading-2">Sobre nosotros</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conócenos</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contáctanos</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Solicita servicios</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conoce nuestro equipo</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Proyectos</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2">Sedes</h2>
-                            <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#">Brooklyn,NY EEUU</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Desde Feb. 07, 1979</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> 500 empleados</a></div>
-                                        <div><a href="#"><span class="icon-home"></span> Sede Base</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block-21 mb-5 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#"> Santiago, Chile</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Feb. 07, 1990</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> 320 empleados</a></div>
-                                        <div><a href="#"><span class="icon-home"></span> Segunda Sede</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2">Boletín Informátivo</h2>
-                            <form action="#" class="subscribe-form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control mb-2 text-center" placeholder="Ingresa tu email">
-                                    <input type="submit" value="Subscríbete" class="form-control submit px-3">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-
-                        <p>
-                            Copyright OKCasa &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados 
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-
+         <%@include file="footer.jsp" %>  
 
         <!-- Icono Cargar-->
         <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -270,6 +196,8 @@
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="js/jquery.timepicker.min.js"></script>
         <script src="js/scrollax.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+        <script src="js/google-map.js"></script>
         <script src="js/main.js"></script>
         <script src="js/backtotop.js"></script>
 

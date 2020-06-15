@@ -130,7 +130,7 @@
                                     <div class="form-group">
                                         <p class="text-center">Si ya posees cuenta <a href="login.jsp" id="signup">Ingresa aquí</a> </p>
                                     </div>
-                                    
+
                                 </c:if>
 
                             </form>
@@ -502,89 +502,8 @@
         </div>
     </section>
 
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-5">
-                        <h2 class="ftco-heading-2 logo"><span></span><img src="images/logo2.jpg" alt="logo"></h2>
-                        <p>Preocupados por la calidad de tu hogar, para una experiencia única con tu familia.</p>
-                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                        </ul>
-                    </div>
 
-                </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-5 ml-md-4">
-                        <h2 class="ftco-heading-2">Sobre nosotros</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conócenos</a></li>
-                            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contáctanos</a></li>
-                            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Solicita servicios</a>
-                            </li>
-                            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Conoce nuestro
-                                    equipo</a></li>
-                            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Proyectos</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="ftco-footer-widget mb-5">
-                        <h2 class="ftco-heading-2">Sedes</h2>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading"><a href="#">Brooklyn,NY EEUU</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> Desde Feb. 07, 1990</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> 40 empleados</a></div>
-                                    <div><a href="#"><span class="icon-home"></span> Sede Base</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-21 mb-5 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading"><a href="#"> Santiago, Chile</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> Feb. 07, 2018</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> 60 empleados</a></div>
-                                    <div><a href="#"><span class="icon-home"></span> Segunda Sede</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-5">
-                        <h2 class="ftco-heading-2">Boletín Informátivo</h2>
-                        <form action="#" class="subscribe-form">
-                            <div class="form-group">
-                                <input type="text" class="form-control mb-2 text-center" placeholder="Ingresa tu email">
-                                <input type="submit" value="Subscríbete" class="form-control submit px-3">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright OKCasa &copy;
-                        <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
+    <%@include file="footer.jsp" %>  
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
@@ -607,6 +526,8 @@
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/jquery.timepicker.min.js"></script>
     <script src="js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
     <script src="js/backtotop.js"></script>
 
