@@ -9,10 +9,13 @@ import Conexion.Conexion;
 import Clases.Cliente;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -104,5 +107,34 @@ public class ClienteDao {
         return listado;
     }
 
-    //Eliminar
+
+    //Eliminar------------------------------------------------------------------
+    public boolean eliminarCliente(String rut) throws SQLException {
+        boolean centinela = false;
+
+        try {
+
+            //Abrir conexión
+            this.conexion = new Conexion().obtenerConexion();
+            String llamada = "DELETE FROM CLIENTE WHERE RUT_CLIENTE = "+rut;
+            CallableStatement cstmt = this.conexion.prepareCall(llamada);
+
+            if (cstmt.executeUpdate() > 0) {
+                centinela = true;
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error al Eliminar Cliente" + e.getMessage());
+
+        } finally {
+
+            //Cerrar Conexión
+            this.conexion.close();
+        }
+
+        return centinela;
+    }
+
+ 
+
 }

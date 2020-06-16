@@ -1,10 +1,11 @@
 <%-- 
-    Document   : login
+    Document   : Registrar
     Created on : 02-05-2020, 18:34:14
     Author     : chida
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -115,7 +116,7 @@
                                     <div class="form-group"> <!-- RUT -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="rut_cliente" class="control-label">RUT</label>
-                                        <input type="text" name="txtRut_cliente" required oninput="checkRut(this)" class="form-control input-lg" placeholder="Ej: 11111111-1"
+                                        <input type="text" name="txtRut_cliente" required oninput="checkRut(this)" class="form-control input-lg" placeholder="Sin puntos ni guiones"
                                                title="Debe Ingresar su RUT" required minlength="9" maxlength="10">
 
                                     </div>   

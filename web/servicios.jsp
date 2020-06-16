@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -153,7 +154,7 @@
         <br>
 
         <!--FOOTER  -->
-         <%@include file="footer.jsp" %>  
+        <%@include file="footer.jsp" %>  
 
 
 

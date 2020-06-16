@@ -12,6 +12,10 @@
         <servlet-name>servletLogin</servlet-name>
         <servlet-class>Controlador.servletLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>servletEliminar</servlet-name>
+        <servlet-class>Controlador.servletEliminar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>servletLogin</servlet-name>
         <url-pattern>/servletLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletEliminar</servlet-name>
+        <url-pattern>/servletEliminar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

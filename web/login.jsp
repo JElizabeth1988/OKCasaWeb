@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -106,7 +107,7 @@
                                 </div>
 
                                 <label for="usuario" class="control-label" id="lab">Usuario</label>
-                                <div class="input-group form-group" id="tx" style="margin-left: 50px">
+                                <div class="input-group form-group" id="tx" style="margin-left: 50px; background-color: #34c0e7">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="icon-user-outline"></i></span>
                                     </div>

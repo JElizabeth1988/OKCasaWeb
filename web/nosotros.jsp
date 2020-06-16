@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -64,7 +65,7 @@
                                 <strong class="number" data-number="30">0</strong>
                             </div>
                             <div class="text-2">
-                                <span>AÒos de <br>Experiencia</span>
+                                <span>A√±os de <br>Experiencia</span>
                             </div>
                         </div>
                     </div>
@@ -112,12 +113,12 @@
                             <h2 class="mb-4" style="text-align: center ;">Somos Una Empresa Altamente Recomendada</h2>
                         </div>
                         <div style="text-align: justify">
-                            <p>LLevamos aÒos dedic·ndonos a la inspecciÛn de propiedades nuevas, con el fin de garantizar que los
-                                propietarios las reciban en perfectas condiciones y hagan valer las garantÌas asociadas a su compra.
-                                Resguardando la seguridad de tu familia y el valor de la inversiÛn.
+                            <p>LLevamos a√±os dedic√°ndonos a la inspecci√≥n de propiedades nuevas, con el fin de garantizar que los
+                                propietarios las reciban en perfectas condiciones y hagan valer las garant√≠as asociadas a su compra.
+                                Resguardando la seguridad de tu familia y el valor de la inversi√≥n.
                             </p>
-                            <p> Poseemos una amplia experiencia, adquirida durante aÒos de ejercicio profesional, lo que nos ha permitido brindar
-                                un servicio de calidad, r·pido y eficiente.</p>
+                            <p> Poseemos una amplia experiencia, adquirida durante a√±os de ejercicio profesional, lo que nos ha permitido brindar
+                                un servicio de calidad, r√°pido y eficiente.</p>
                         </div>
                     </div>
                 </div>
@@ -129,7 +130,7 @@
                 <div class="row justify-content-center mb-5 pb-2">
                     <div class="col-md-8 text-center heading-section ftco-animate">
                         <span class="subheading">Inspectores</span>
-                        <h2 class="mb-4">Nuestro Equipo TÈcnico</h2>
+                        <h2 class="mb-4">Nuestro Equipo T√©cnico</h2>
                         <p>El equipo de expertos de OKCasa cuenta con una amplia experiencia, siendo un equipo capacitado e instruido.</p>
                     </div>
                 </div>	
@@ -140,7 +141,7 @@
                                 <div class="img align-self-stretch" style="background-image: url(images/team-1.jpg);"></div>
                             </div>
                             <div class="text pt-3 text-center">
-                                <h3>Santiago Gonz·lez</h3>
+                                <h3>Santiago Gonz√°lez</h3>
                                 <span class="position mb-2">Inspector Senior</span>
                                 <div class="faded">
 
@@ -160,8 +161,8 @@
                                 <div class="img align-self-stretch" style="background-image: url(images/team-2.jpg);"></div>
                             </div>
                             <div class="text pt-3 text-center">
-                                <h3>Gustavo HenrÌquez</h3>
-                                <span class="position mb-2">Ingeniero en ConstrucciÛn</span>
+                                <h3>Gustavo Henr√≠quez</h3>
+                                <span class="position mb-2">Ingeniero en Construcci√≥n</span>
                                 <div class="faded">
 
                                     <ul class="ftco-social text-center">
@@ -181,7 +182,7 @@
                             </div>
                             <div class="text pt-3 text-center">
                                 <h3>Eva Donoso</h3>
-                                <span class="position mb-2">Ingeniera, experta en DiseÒo</span>
+                                <span class="position mb-2">Ingeniera, experta en Dise√±o</span>
                                 <div class="faded">
 
                                     <ul class="ftco-social text-center">
@@ -200,7 +201,7 @@
                                 <div class="img align-self-stretch" style="background-image: url(images/team-4.jpg);"></div>
                             </div>
                             <div class="text pt-3 text-center">
-                                <h3>MatÌas Valdivieso</h3>
+                                <h3>Mat√≠as Valdivieso</h3>
                                 <span class="position mb-2">Arquitecto</span>
                                 <div class="faded">
 
@@ -229,10 +230,10 @@
                     <div class="col-md-6 wrap-about py-5 px-4 px-md-5 ftco-animate justify-content-center" style="text-align: justify;">
                         <div>
                             <p> Nuestra sede ubicada en la comuna de Puente Alto, fue inagurada en 1990 por
-                                Don JerÛnimo Casas. La empresa de OKCasa comenzÛ solo con 40 empleados
-                                y al dÌa de hoy somos m·s de 300 en la familia.
+                                Don Jer√≥nimo Casas. La empresa de OKCasa comenz√≥ solo con 40 empleados
+                                y al d√≠a de hoy somos m√°s de 300 en la familia.
                             </p>
-                            <p>Desde el aÒo 1990 nos hemos comprometido en ser la empresa #1 de InspecciÛn
+                            <p>Desde el a√±o 1990 nos hemos comprometido en ser la empresa #1 de Inspecci√≥n
                                 de casas de todo Chile, fiscalizando la seguridad de la familia. </p>
                         </div>
                     </div>
@@ -244,19 +245,19 @@
             <div class="container">
                 <div class="row d-flex mb-5 contact-info">
                     <div class="col-md-12 mb-4">
-                        <h2 class="h4">InformaciÛn de Contacto</h2>
+                        <h2 class="h4">Informaci√≥n de Contacto</h2>
                     </div>
                     <div class="w-100"></div>
                     <div class="col-md-3 d-flex">
                         <div class="bg-light d-flex align-self-stretch box p-4">
-                            <p><span>DirecciÛn:</span> 
+                            <p><span>Direcci√≥n:</span> 
                                 <br>
-                                <a href="direcciÛn">Av. San Carlos 1340, Puente Alto, RegiÛn Metropolitana</p></a></p>   
+                                <a href="direcci√≥n">Av. San Carlos 1340, Puente Alto, Regi√≥n Metropolitana</p></a></p>   
                         </div>
                     </div>
                     <div class="col-md-3 d-flex">
                         <div class="bg-light d-flex align-self-stretch box p-4">
-                            <p><span>TelÈfono:</span>
+                            <p><span>Tel√©fono:</span>
                                 <br>
                                 <a href="telefono">+22002200</a></p>
                         </div>

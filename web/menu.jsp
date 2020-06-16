@@ -4,6 +4,7 @@
     Author     : chida
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -120,7 +121,7 @@
                                 </c:if>
 
                         <c:if test="${tipo==nul}">
-                            <li class="nav-item"><a href="login.jsp" class="nav-link">Ingresar/Iniciar Sesión <span
+                            <li class="nav-item"><a href="login.jsp" class="nav-link">Registrar/Iniciar Sesión <span
                                         class="icon-user" style="font-size: 17px;"></span></a></li>
                                 </c:if>
 

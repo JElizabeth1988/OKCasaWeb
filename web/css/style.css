@@ -8986,6 +8986,7 @@ h1, h2, h3, h4, h5,
     color:  black;
     font-size: 18px;
     border-radius: 8px;
+    font-size: 16px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     border: 1px solid rgba(0, 0, 0, 0.1); }
@@ -10003,35 +10004,41 @@ div#error2 {
     margin-left: 30px"
         }
 
-#lab{
-margin-left: 50px; 
-color: black;
-font-size: 18px;
-}        
+        #lab{
+        margin-left: 50px; 
+        color: black;
+        font-size: 18px;
+        }        
 
 
-#wrapp{
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-}
+        #wrapp{
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        }
 
-#line {
-    margin-top: .875rem;
-    margin-bottom: .875rem;
-    border: 0;
+        #line {
+        margin-top: .875rem;
+        margin-bottom: .875rem;
+        border: 0;
         border-top-color: currentcolor;
         border-top-style: none;
         border-top-width: 0px;
-    border-top: .1875rem solid #fcd305;
-    box-sizing: content-box;
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 0;
-    overflow: visible;F
-}
+        border-top: .1875rem solid #fcd305;
+        box-sizing: content-box;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 0;
+        overflow: visible;F
+        }
+        .input-group-prepend span {
+        width: 50px;
+        color: black;
+        border: 0 !important;
+        }
+        
