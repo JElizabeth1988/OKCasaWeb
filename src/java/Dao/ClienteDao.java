@@ -116,7 +116,7 @@ public class ClienteDao {
 
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = "DELETE FROM CLIENTE WHERE RUT_CLIENTE = "+rut;
+            String llamada = "DELETE FROM CLIENTE WHERE RUT_CLIENTE = '"+rut+"'";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
 
             if (cstmt.executeUpdate() > 0) {

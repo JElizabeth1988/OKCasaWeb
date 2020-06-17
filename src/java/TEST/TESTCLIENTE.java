@@ -51,7 +51,7 @@ public class TESTCLIENTE {
                 System.out.println(cliente.toString());
             }*/
             
-            if (dao.eliminarCliente("'15335874-5'")) {
+            if (dao.eliminarCliente("15335874-5")) {
                 
                 System.out.println("Cliente eliminado");
                 

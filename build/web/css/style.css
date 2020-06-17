@@ -1600,7 +1600,7 @@ pre code {
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+    border-radius: 8px;
     -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -8610,12 +8610,10 @@ h1, h2, h3, h4, h5,
     border: transparent !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
     height: 45px !important;
-    padding-left: 0;
-    padding-right: 0;
     background: transparent !important;
     color: black;
     font-size: 16px;
-    border-radius: 0px;
+    border-radius: 8px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
 .request-form .form-control::-webkit-input-placeholder {
@@ -8987,7 +8985,8 @@ h1, h2, h3, h4, h5,
     background: #fff !important;
     color:  black;
     font-size: 18px;
-    border-radius: 0px;
+    border-radius: 8px;
+    font-size: 16px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     border: 1px solid rgba(0, 0, 0, 0.1); }
@@ -9992,3 +9991,54 @@ div#error2 {
     color: black;
 
 }
+
+#tx{
+    height: 45px !important;
+    background: #fff !important;
+    color: black;
+    font-size: 18px;
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    width: 75%; 
+    margin-left: 30px"
+        }
+
+        #lab{
+        margin-left: 50px; 
+        color: black;
+        font-size: 18px;
+        }        
+
+
+        #wrapp{
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        #line {
+        margin-top: .875rem;
+        margin-bottom: .875rem;
+        border: 0;
+        border-top-color: currentcolor;
+        border-top-style: none;
+        border-top-width: 0px;
+        border-top: .1875rem solid #fcd305;
+        box-sizing: content-box;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 0;
+        overflow: visible;F
+        }
+        .input-group-prepend span {
+        width: 50px;
+        color: black;
+        border: 0 !important;
+        }
+        

@@ -795,7 +795,7 @@ h1, h2, h3, h4, h5,
 		background: transparent!important;
 		color: rgba(0,0,0,.9)!important;
 		font-size: 12px;
-		border-radius: 0px;
+                border-radius: 5px;
 		box-shadow: none!important;
 		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 		  color: rgba(0,0,0,.9);
