@@ -92,7 +92,7 @@
 
                     <!-- INGRESO --------------------------------------------------------------------------------------------->
                     <div class="row justify-content-center" style="margin-left: 30px;">
-                           
+
 
                         <!-- REGISTRO ------------------------------------------------------------------------------------------------->
                         <div class="col-md justify-content-center">
@@ -103,18 +103,18 @@
                             <c:if test="${err!=null}">
                                 <div class="alert alert-danger">${err}</div>  
                             </c:if>   
-                                
-                            
+
+
 
                             <div class="col-md justify-content-center">
 
-                                <form action="servletEliminar" method="POST" style="margin-right: 35px">
+                                <form action="Listado" method="POST" style="margin-right: 35px">
 
                                     <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
                                             class="icon-book-alt" style="font-size: 35px;"></span>Datos Encontrados
                                         <a href="AgregarCliente.jsp"><span
                                                 class="icon-plus" style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Agregar</span></a>
-                                        <a href="ListarCliente.jsp"><span
+                                        <a href="EliminarCliente.jsp"><span
                                                 class="icon-cancel" style="font-size:16px;margin-left: 10px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Eliminar</span></a>
                                     </p>
                                     <hr id="line" style=" border-top: .1875rem solid #fcf8e3">
@@ -122,8 +122,6 @@
                                     <br>
                                     <%-- ROW-----------------------------------------------------------------------------%>
                                     <div class="row justify-content-center">
-
-
 
 
                                         <table class="table-sm table-striped table-responsive-sm" border="1">
@@ -139,17 +137,21 @@
                                                 <td>HIPOTECARIO</td>
                                                 <td>COMUNA</td>
                                             </tr>
+                                            <c:forEach var="cliente" items="${listado}">
+                                                <tr>
+                                                    <td>${cliente.getRut_cliente()}</td>
+                                                    <td>${cliente.getPrimer_nombre()}</td>
+                                                    <td>${cliente.getSegundo_nombre()}</td>
+                                                    <td>${cliente.getAp_paterno()}</td>
+                                                    <td>${cliente.getAp_materno()}</td>
+                                                    <td>${cliente.getDireccion()}</td>
+                                                    <td>${cliente.getTelefono()}</td>
+                                                    <td>${cliente.getEmail()}</td>
+                                                    <td>${cliente.getHipotecario()}</td>
+                                                    <td>${cliente.getId_comuna()}</td>
+                                                </tr>
 
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            </c:forEach>
                                         </table>
 
 

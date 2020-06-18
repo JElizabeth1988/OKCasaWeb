@@ -19,7 +19,7 @@ public class Conexion {
 
     private String usuario = "OKCasa";
     private String pass = "OKCasa";
-    private String url = "jdbc:oracle:thin:" + usuario + "/" + pass + "@localhost:1521:xe";
+    private String url = "jdbc:oracle:thin:" + usuario + "/" + pass + "@localhost:1521:orcl";
 
     public Conexion() {
 

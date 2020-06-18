@@ -26,21 +26,21 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-WSLOGIN" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/WSLOGIN"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSLOGIN" destdir="${build.generated.dir}/jax-wsCache/WSLOGIN" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/WSLOGIN"/>
+    <target name="wsimport-client-WSLOGIN_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSLOGIN_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSLOGIN_1" destdir="${build.generated.dir}/jax-wsCache/WSLOGIN_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_1/wsdl/localhost_8080/WSOKCasa/WSLOGIN.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSOKCasa/WSLOGIN?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_1/wsdl/localhost_8080/WSOKCasa/WSLOGIN.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSLOGIN_1"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/WSLOGIN">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSLOGIN_1">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-WSLOGIN" depends="-init-project">
+    <target name="wsimport-client-clean-WSLOGIN_1" depends="-init-project">
         <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN_1"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1"/>
 </project>
