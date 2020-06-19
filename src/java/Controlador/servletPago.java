@@ -5,27 +5,20 @@
  */
 package Controlador;
 
-import Clases.Solicitud;
-import Dao.SolicitudDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import ws.WSPAGO;
+import ws.WSPAGO_Service;
 
 /**
  *
  * @author chida
  */
-public class servletAgregarSol extends HttpServlet {
+public class servletPago extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,10 +37,10 @@ public class servletAgregarSol extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletAgregarSol</title>");
+            out.println("<title>Servlet servletPago</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet servletAgregarSol at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet servletPago at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -79,54 +72,27 @@ public class servletAgregarSol extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        //Capturar Info formulario
-        int id_solicitud = 1;
-
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        String xfecha = "13/06/2020";
-         
-        Date fecha;  
         
-        java.util.Date nfecha;
+         //Capturar Credenciales
+        int total = Integer.parseInt(request.getParameter("txtTotal")); 
+        int pago = Integer.parseInt(request.getParameter("txtPago")); 
+
+        //Creamos el cliente al WS
+        WSPAGO_Service servicio = new WSPAGO_Service();
+        WSPAGO cliente = servicio.getWSPAGOPort();
         
-        //fecha = new java.sql.Date(nfecha.getTime());
 
-        
-        Date fecha_solicitud = null;
-        String hora_solicitud = "23:06";
+        if (pago>=total) {
+             request.setAttribute("msj", "Pago efectuado");
+            request.getRequestDispatcher("PagoEfectuado.jsp").forward(request, response);
 
-        String direccion_vivienda = request.getParameter("txtDireccion");
-
-        String costructora = request.getParameter("txtConstructora");
-
-        String rut_cliente = "19385798-1";
-
-        int id_agenda = 1;
-
-        int id_pago = 2;
-
-        int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
-
-        int id_servicio = Integer.parseInt(request.getParameter("cboServicio"));
-
-        Solicitud sol = new Solicitud(id_solicitud, fecha_solicitud, hora_solicitud, direccion_vivienda, costructora, rut_cliente, id_agenda, id_pago, id_comuna, id_servicio);
-        SolicitudDAO dao = new SolicitudDAO();
-
-        try {
-            //Intentar Guardar
-            if (dao.agregarSolicitud(sol)) {
-                request.setAttribute("msj", "Agendado exitosamente");
-                request.getRequestDispatcher("PagoIngreso.jsp").forward(request, response);
-            } else {
-                request.setAttribute("err", "No Agendado :(");
-                request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-            }
-        } catch (SQLException ex) {
-            request.setAttribute("err", "No Agendado :o" + ex.getMessage());
-            request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+        } else {
+            request.setAttribute("err", "Pago Insuficiente");
+            request.getRequestDispatcher("Pago.jsp").forward(request, response);
         }
-
+        
+        
+        
     }
 
     /**

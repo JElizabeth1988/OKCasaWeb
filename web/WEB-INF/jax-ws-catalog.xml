@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" uri="wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
     <system systemId="http://localhost:31439/WSOKCasa/WSLOGIN?xsd=1" uri="wsdl/localhost_31439/WSOKCasa/WSLOGIN.xsd_1.xsd"/>
+    <system systemId="http://localhost:31439/WSOKCasa/WSPAGO?WSDL" uri="wsdl/localhost_31439/WSOKCasa/WSPAGO.wsdl"/>
+    <system systemId="http://localhost:31439/WSOKCasa/WSPAGO?xsd=1" uri="wsdl/localhost_31439/WSOKCasa/WSPAGO.xsd_1.xsd"/>
 </catalog>

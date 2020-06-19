@@ -42,5 +42,53 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN_1"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1"/>
+    <target name="wsimport-client-WSLOGIN" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSLOGIN"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSLOGIN" destdir="${build.generated.dir}/jax-wsCache/WSLOGIN" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSLOGIN"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSLOGIN">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSLOGIN" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN"/>
+    </target>
+    <target name="wsimport-client-WSLOGIN_2" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSLOGIN_2"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSLOGIN_2" destdir="${build.generated.dir}/jax-wsCache/WSLOGIN_2" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_2/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_2/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSLOGIN_2"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSLOGIN_2">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSLOGIN_2" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN_2"/>
+    </target>
+    <target name="wsimport-client-WSPAGO" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSPAGO"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSPAGO" destdir="${build.generated.dir}/jax-wsCache/WSPAGO" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSPAGO/wsdl/localhost_31439/WSOKCasa/WSPAGO.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSPAGO?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSPAGO/wsdl/localhost_31439/WSOKCasa/WSPAGO.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSPAGO"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSPAGO">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSPAGO" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSPAGO"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO"/>
 </project>

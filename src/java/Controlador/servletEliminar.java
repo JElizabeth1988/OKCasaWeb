@@ -37,7 +37,7 @@ public class servletEliminar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletEliminar</title>");
+            out.println("<title>Servlet servletEliminar</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet servletEliminar at " + request.getContextPath() + "</h1>");
@@ -72,23 +72,23 @@ public class servletEliminar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String rut = request.getParameter("txtRut_cliente");
-
+       
+         
+        String rut = request.getParameter("txtRut");
         ClienteDao dao = new ClienteDao();
 
-        try {
+         try {
+            //Intentar Eliminar
             if (dao.eliminarCliente(rut)) {
-                request.setAttribute("msj", "Cliente Eliminado");
-                request.getRequestDispatcher("EliminarCliente.jsp");
+                request.setAttribute("msj", "Eliminado exitosamente");
+                request.getRequestDispatcher("EliminarCliente.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "Cliente No Eliminado");
-                request.getRequestDispatcher("EliminarCliente.jsp");
-
+                request.setAttribute("err", "No Eliminado");
+                request.getRequestDispatcher("EliminarCliente.jsp").forward(request, response);
             }
         } catch (SQLException ex) {
-            request.setAttribute("err", "Cliente No Eliminado" + ex.getMessage());
-            request.getRequestDispatcher("EliminarCliente.jsp");
+            request.setAttribute("err", "No Eliminado" + ex.getMessage());
+            request.getRequestDispatcher("EliminarCliente.jsp").forward(request, response);
         }
     }
 

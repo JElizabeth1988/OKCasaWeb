@@ -119,7 +119,7 @@ public class ClienteDao {
             String llamada = "DELETE FROM CLIENTE WHERE RUT_CLIENTE = '"+rut+"'";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
 
-            if (cstmt.executeUpdate() > 0) {
+            if (cstmt.executeUpdate()>0) {
                 centinela = true;
             }
 

@@ -96,11 +96,11 @@ public class servletAgregar extends HttpServlet {
                 request.setAttribute("msj", "Registrado exitosamente");
                 request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "No Registrado :ooo");
+                request.setAttribute("err", "No Registrado");
                 request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             }
         } catch (SQLException ex) {
-            request.setAttribute("err", "No Registrado :o" + ex.getMessage());
+            request.setAttribute("err", "No Registrado" + ex.getMessage());
             request.getRequestDispatcher("Registrar.jsp").forward(request, response);
         }
         

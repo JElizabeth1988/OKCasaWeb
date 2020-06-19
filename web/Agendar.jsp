@@ -123,6 +123,8 @@
                                         <br>
                                         <br>
                                         <br>
+                                        <br>
+                                        <br>
                                     </div>
 
                                     <%-- INGRESAR DATOS -----------------------------------------------------------------%>
@@ -160,9 +162,9 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-3"></div>
+                                        <div class="col-md-3" style="padding-bottom: 120px;"></div>
 
-
+                                    
 
                                         <div class="col-md-4" id="textbox" style="padding-left: 30px;">
                                             <div class="form-group"> <!-- Direccion -->
@@ -203,15 +205,10 @@
                                             <input type="submit" class="btn btn btn-primary" value="Enviar" style="margin-left: 50px">
                                         </div>  --%>
 
-                                        <br>
-                                        <br>
-
                                     </div>
                                     <br>
 
-                                    <br>
-
-                                    <%-- PAGO -----------------------------------------------------------------%>
+                                    <%-- PAGO ---------------------------------------------------------------
                                     <p style="font-weight: bold; font-size: 18px;margin-left: 10px;">
                                         PASO 3. Efectuar Pago
                                     </p>
@@ -233,22 +230,11 @@
                                     <%--<div>
                                         <input type="submit" class="btn btn btn-primary" value="Enviar" style="margin-left: 50px">
                                     </div>  --%>
-
-
-
                                 </div>
-                                <br>
-
-
-
 
                             </div> 
-                            <br>
-                            <br>
-                            <br>
-                            <br>
                             <div class="container">
-                                <div class="row justify-content-center">
+                                <div class="row justify-content-center" style="margin-right: 150px;">
                                     <p><a href="#" class="btn btn-lg btn-primary">Agendar</a></p>
                                 </div>  
                             </div>  
@@ -387,26 +373,12 @@
 
 
 
-            <br>
-
-
-
-
-
 
             </fieldset>
 
-            <br>
-
-
-
-
-            <br>
-            <br>         
+      
             <%-- --%>
 
-            <br>
-            <br>
 
 
             <%-- <div class="cart-totals-wrapper">
@@ -464,6 +436,9 @@
 
 
     <br>
+    <br>
+    <br>
+    <br>
 
 
 
@@ -472,16 +447,10 @@
 
 </div>
 </div>
-<br>
 
 </div>
 
 
-<br>
-
-
-<br>
-<br>
 
 <!-- Footer -->
 <%@include file="footer.jsp" %>  
