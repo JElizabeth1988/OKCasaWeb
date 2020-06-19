@@ -103,5 +103,30 @@ public class SolicitudDAO {
         return listado;
     }
 
-    //Eliminar
+    //Eliminar------------------------------------------------------------------
+    public boolean eliminarSolicitud(int codigo) throws SQLException {
+        boolean centinela = false;
+
+        try {
+
+            //Abrir conexión
+            this.conexion = new Conexion().obtenerConexion();
+            String llamada = "DELETE FROM SOLICITUD WHERE ID_SOLICITUD = "+codigo;
+            CallableStatement cstmt = this.conexion.prepareCall(llamada);
+
+            if (cstmt.executeUpdate()>0) {
+                centinela = true;
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error al Eliminar Solicitud" + e.getMessage());
+
+        } finally {
+
+            //Cerrar Conexión
+            this.conexion.close();
+        }
+
+        return centinela;
+    }
 }

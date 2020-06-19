@@ -16,6 +16,14 @@
         <servlet-name>servletEliminar</servlet-name>
         <servlet-class>Controlador.servletEliminar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EliminarSol</servlet-name>
+        <servlet-class>Controlador.EliminarSol</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servletEliminarSol</servlet-name>
+        <servlet-class>Controlador.servletEliminarSol</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>servletEliminar</servlet-name>
         <url-pattern>/servletEliminar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarSol</servlet-name>
+        <url-pattern>/EliminarSol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletEliminarSol</servlet-name>
+        <url-pattern>/servletEliminarSol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
