@@ -98,7 +98,7 @@
                         <div class="col-md-10">
 
                             <c:if test="${msj!=null}">
-                                <div class="alert alert-success">${msj}</div>   
+                                <div class="alert alert-success">${msj}</div>  
                             </c:if>
                             <c:if test="${err!=null}">
                                 <div class="alert alert-danger">${err}</div>  
@@ -165,11 +165,11 @@
 
                                     </div>
 
-                                    <c:if test="${msj!=null}">
-                                        <div class="alert alert-success">${msj}</div>   
+                                    <c:if test="${msje!=null}">
+                                        <div class="alert alert-success">${msje}</div>   
                                     </c:if>
-                                    <c:if test="${err!=null}">
-                                        <div class="alert alert-danger">${err}</div>  
+                                    <c:if test="${erro!=null}">
+                                        <div class="alert alert-danger">${erro}</div>  
                                     </c:if> 
 
                                     <%-- ELIMINAR SOLICITUD----------------------------------------------%>

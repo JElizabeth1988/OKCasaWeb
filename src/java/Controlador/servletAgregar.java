@@ -96,7 +96,7 @@ public class servletAgregar extends HttpServlet {
                 request.setAttribute("msj", "Registrado exitosamente");
                 request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "No Registrado");
+                request.setAttribute("err", "Cliente ya existente");
                 request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             }
         } catch (SQLException ex) {

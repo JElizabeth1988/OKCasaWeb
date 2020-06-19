@@ -80,10 +80,10 @@ public class servletEliminar extends HttpServlet {
          try {
             //Intentar Eliminar
             if (dao.eliminarCliente(rut)) {
-                request.setAttribute("msj", "Eliminado exitosamente");
+                request.setAttribute("msj", "Cliente Eliminado");
                 request.getRequestDispatcher("EliminarCliente.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "No Eliminado");
+                request.setAttribute("err", "Cliente No Existente");
                 request.getRequestDispatcher("EliminarCliente.jsp").forward(request, response);
             }
         } catch (SQLException ex) {

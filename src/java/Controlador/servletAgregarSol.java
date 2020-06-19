@@ -116,14 +116,14 @@ public class servletAgregarSol extends HttpServlet {
         try {
             //Intentar Guardar
             if (dao.agregarSolicitud(sol)) {
-                request.setAttribute("msj", "Agendado exitosamente");
+                request.setAttribute("msj", "Inspección Agendada");
                 request.getRequestDispatcher("PagoIngreso.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "No Agendado :(");
+                request.setAttribute("err", "No Agendado");
                 request.getRequestDispatcher("Agendar.jsp").forward(request, response);
             }
         } catch (SQLException ex) {
-            request.setAttribute("err", "No Agendado :o" + ex.getMessage());
+            request.setAttribute("err", "No Agendado" + ex.getMessage());
             request.getRequestDispatcher("Agendar.jsp").forward(request, response);
         }
 

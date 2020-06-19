@@ -78,14 +78,14 @@ public class servletEliminarSol extends HttpServlet {
         try {
             //Intentar Eliminar
             if (dao.eliminarSolicitud(codigo)) {
-                request.setAttribute("msj", "Eliminado exitosamente");
+                request.setAttribute("msje", "Solicitud Eliminada");
                 request.getRequestDispatcher("EliminarCliente.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "No Eliminado");
+                request.setAttribute("erro", "Solicitud No Existente");
                 request.getRequestDispatcher("EliminarCliente.jsp").forward(request, response);
             }
         } catch (SQLException ex) {
-            request.setAttribute("err", "No Eliminado" + ex.getMessage());
+            request.setAttribute("erro", "No Eliminado" + ex.getMessage());
             request.getRequestDispatcher("EliminarCliente.jsp").forward(request, response);
         }
     }
