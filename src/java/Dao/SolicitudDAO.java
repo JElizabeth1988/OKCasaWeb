@@ -41,14 +41,13 @@ public class SolicitudDAO {
             //Pasar atributos
             cstmt.setInt(1, solicitud.getId_solicitud());
             cstmt.setDate(2, solicitud.getFecha_solicitud());
-            cstmt.setString(3, solicitud.getHora_solicitud());
-            cstmt.setString(4, solicitud.getDireccion_vivienda());
-            cstmt.setString(5, solicitud.getConstructora());
-            cstmt.setString(6, solicitud.getRut_cliente());
-            cstmt.setInt(7, solicitud.getId_agenda());
-            cstmt.setInt(8, solicitud.getId_pago());
-            cstmt.setInt(9, solicitud.getId_comuna());
-            cstmt.setInt(10, solicitud.getId_servicio());
+            cstmt.setString(3, solicitud.getDireccion_vivienda());
+            cstmt.setString(4, solicitud.getConstructora());
+            cstmt.setString(5, solicitud.getRut_cliente());
+            cstmt.setInt(6, solicitud.getId_agenda());
+            cstmt.setInt(7, solicitud.getId_pago());
+            cstmt.setInt(8, solicitud.getId_comuna());
+            cstmt.setInt(9, solicitud.getId_servicio());
 
             if (cstmt.executeUpdate() > 0) {
                 centinela = true;
@@ -68,7 +67,7 @@ public class SolicitudDAO {
 
     //Listar--------------------------------------------------------------------
     public List<Solicitud> listarSolicitudes() throws SQLException {
-        List<Solicitud> listado = new ArrayList<>();
+        List<Solicitud> listadoSol = new ArrayList<>();
 
         try {
             this.conexion = new Conexion().obtenerConexion();
@@ -85,22 +84,22 @@ public class SolicitudDAO {
                 Solicitud s = new Solicitud();
                 s.setId_solicitud(rs.getInt("id_solicitud"));
                 s.setFecha_solicitud(rs.getDate("fecha_solicitud"));
-                s.setHora_solicitud(rs.getString("hora_solicitud"));
                 s.setDireccion_vivienda(rs.getString("direccion_vivienda"));
                 s.setConstructora(rs.getString("constructora"));
                 s.setRut_cliente(rs.getString("rut_cliente"));
                 s.setId_agenda(rs.getInt("id_agenda"));
                 s.setId_pago(rs.getInt("id_pago"));
                 s.setId_comuna(rs.getInt("id_comuna"));
+                s.setId_comuna(rs.getInt("id_servicio"));
 
-                listado.add(s);
+                listadoSol.add(s);
             }
         } catch (Exception e) {
             System.out.println("Error al listar solicitudes" + e.getMessage());
         } finally {
             this.conexion.close();
         }
-        return listado;
+        return listadoSol;
     }
 
     //Eliminar------------------------------------------------------------------

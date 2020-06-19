@@ -9,11 +9,8 @@ import Clases.Solicitud;
 import Dao.SolicitudDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -25,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author chida
  */
-public class servletAgregarSol extends HttpServlet {
+public class ListadoSol extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,10 +41,10 @@ public class servletAgregarSol extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletAgregarSol</title>");
+            out.println("<title>Servlet ListadoSol</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet servletAgregarSol at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ListadoSol at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -65,7 +62,16 @@ public class servletAgregarSol extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+          SolicitudDAO dao = new SolicitudDAO();
+        
+        try {
+            List<Solicitud> listadoSol =  dao.listarSolicitudes();
+            request.setAttribute("listadoSol", listadoSol);
+            request.getRequestDispatcher("ListarSolicitud.jsp").forward(request, response);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Listado.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -79,53 +85,7 @@ public class servletAgregarSol extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        //Capturar Info formulario
-        int id_solicitud = 1;
-
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        String xfecha = "13/06/2020";
-         
-        Date fecha;  
-        
-        java.util.Date nfecha;
-        
-        //fecha = new java.sql.Date(nfecha.getTime());
-
-        
-        Date fecha_solicitud = null;
-
-        String direccion_vivienda = request.getParameter("txtDireccion");
-
-        String costructora = request.getParameter("txtConstructora");
-
-        String rut_cliente = "19385798-1";
-
-        int id_agenda = 1;
-
-        int id_pago = 2;
-
-        int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
-
-        int id_servicio = Integer.parseInt(request.getParameter("cboServicio"));
-
-        Solicitud sol = new Solicitud(id_solicitud, fecha_solicitud, direccion_vivienda, costructora, rut_cliente, id_agenda, id_pago, id_comuna, id_servicio);
-        SolicitudDAO dao = new SolicitudDAO();
-
-        try {
-            //Intentar Guardar
-            if (dao.agregarSolicitud(sol)) {
-                request.setAttribute("msj", "Inspección Agendada");
-                request.getRequestDispatcher("PagoIngreso.jsp").forward(request, response);
-            } else {
-                request.setAttribute("err", "No Agendado");
-                request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-            }
-        } catch (SQLException ex) {
-            request.setAttribute("err", "No Agendado" + ex.getMessage());
-            request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-        }
-
+        processRequest(request, response);
     }
 
     /**

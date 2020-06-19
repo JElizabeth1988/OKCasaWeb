@@ -90,8 +90,10 @@
 
                         <c:if test="${tipo!=null}">
                             <c:if test="${tipo==1}">
-                                <li class="nav-item"><a href="AgregarCliente.jsp" class="nav-link">Agregar</a></li>
-                                <li class="nav-item"><a href="Listado" class="nav-link">Listar</a></li>
+                                
+                                <li class="nav-item"><a href="Listado" class="nav-link">Clientes</a></li>
+                                <li class="nav-item"><a href="ListadoSol" class="nav-link">Solicitudes</a></li>
+                                <li class="nav-item"><a href="AgregarCliente.jsp" class="nav-link">Agregar Cliente</a></li>
                                 <li class="nav-item"><a href="EliminarCliente.jsp" class="nav-link">Eliminar</a></li>
 
 

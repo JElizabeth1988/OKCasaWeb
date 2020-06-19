@@ -24,6 +24,10 @@
         <servlet-name>servletEliminarSol</servlet-name>
         <servlet-class>Controlador.servletEliminarSol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListadoSol</servlet-name>
+        <servlet-class>Controlador.ListadoSol</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>servletEliminarSol</servlet-name>
         <url-pattern>/servletEliminarSol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListadoSol</servlet-name>
+        <url-pattern>/ListadoSol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

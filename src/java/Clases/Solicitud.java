@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -15,7 +15,6 @@ import java.sql.Date;
 public class Solicitud {
    private int id_solicitud;
    private Date fecha_solicitud;
-   private String hora_solicitud;
    private String direccion_vivienda;
    
    
@@ -39,10 +38,9 @@ public class Solicitud {
     public Solicitud() {
     }
 
-    public Solicitud(int id_solicitud, Date fecha_solicitud, String hora_solicitud, String direccion_vivienda, String constructora, String rut_cliente, int id_agenda, int id_pago, int id_comuna, int id_servicio) {
+    public Solicitud(int id_solicitud, Date fecha_solicitud, String direccion_vivienda, String constructora, String rut_cliente, int id_agenda, int id_pago, int id_comuna, int id_servicio) {
         this.id_solicitud = id_solicitud;
         this.fecha_solicitud = fecha_solicitud;
-        this.hora_solicitud = hora_solicitud;
         this.direccion_vivienda = direccion_vivienda;
         this.constructora = constructora;
         this.rut_cliente = rut_cliente;
@@ -62,9 +60,6 @@ public class Solicitud {
         this.fecha_solicitud = fecha_solicitud;
     }
 
-    public void setHora_solicitud(String hora_solicitud) {
-        this.hora_solicitud = hora_solicitud;
-    }
 
     public void setDireccion_vivienda(String direccion_vivienda) {
         this.direccion_vivienda = direccion_vivienda;
@@ -105,10 +100,6 @@ public class Solicitud {
         return fecha_solicitud;
     }
 
-    public String getHora_solicitud() {
-        return hora_solicitud;
-    }
-
     public String getDireccion_vivienda() {
         return direccion_vivienda;
     }
@@ -139,8 +130,10 @@ public class Solicitud {
 
     @Override
     public String toString() {
-        return "Solicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", hora_solicitud=" + hora_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", id_agenda=" + id_agenda + ", id_pago=" + id_pago + ", id_comuna=" + id_comuna + ", id_servicio=" + id_servicio + '}';
+        return "Solicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", id_agenda=" + id_agenda + ", id_pago=" + id_pago + ", id_comuna=" + id_comuna + ", id_servicio=" + id_servicio + '}';
     }
+
+    
     
    
 

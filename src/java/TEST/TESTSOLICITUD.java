@@ -36,7 +36,7 @@ public class TESTSOLICITUD {
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             System.out.println("Fecha: " + dateFormat.format(date));
 
-            Solicitud so = new Solicitud(9, (java.sql.Date) date, "10:20", "SAN Joaquin 223", "San Pablo", "19385798-1", 1, 1, 2, 3);
+            /*Solicitud so = new Solicitud(id_solicitud, null, null, null, null, id_agenda, id_pago, id_comuna, id_servicio);
 
             if (dao.agregarSolicitud(so)) {
 

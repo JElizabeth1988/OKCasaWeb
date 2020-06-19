@@ -97,15 +97,6 @@
                         <!-- REGISTRO ------------------------------------------------------------------------------------------------->
                         <div class="col-md justify-content-center">
 
-                            <c:if test="${msj!=null}">
-                                <div class="alert alert-success">${msj}</div>   
-                            </c:if>
-                            <c:if test="${err!=null}">
-                                <div class="alert alert-danger">${err}</div>  
-                            </c:if>   
-
-
-
                             <div class="col-md justify-content-center">
 
                                 <form action="Listado" method="POST" style="margin-right: 35px">
@@ -168,28 +159,27 @@
 
                                 </form>
 
+                               
 
                             </div>
 
+                            <br>
+                            <br>
+
+
+
                         </div>
-
-                        <br>
-                        <br>
-
-
-
                     </div>
+                    <br>
                 </div>
-                <br>
+
+
             </div>
-
-
-        </div>
-        <br>
-        <br>
-        <br>
-        <%--
-        <form id="formulario">
+            <br>
+            <br>
+            <br>
+            <%--
+            <form id="formulario">
 
             <input type="text" name="txtNombre" placeholder="Ingrese nombre">
             <br>
@@ -206,49 +196,49 @@
 
 
 
-        <!--Footer  -->
-        <%@include file="footer.jsp" %>  
+            <!--Footer  -->
+            <%@include file="footer.jsp" %>  
 
 
-        <!-- Icono Cargar-->
-        <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+            <!-- Icono Cargar-->
+            <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-migrate-3.0.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.easing.1.3.js"></script>
-        <script src="js/jquery.waypoints.min.js"></script>
-        <script src="js/jquery.stellar.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/aos.js"></script>
-        <script src="js/jquery.animateNumber.min.js"></script>
-        <script src="js/bootstrap-datepicker.js"></script>
-        <script src="js/jquery.timepicker.min.js"></script>
-        <script src="js/scrollax.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-        <script src="js/google-map.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/backtotop.js"></script>
-        <script src="js/validarRut.js"></script>
+            <script src="js/jquery.min.js"></script>
+            <script src="js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/jquery.easing.1.3.js"></script>
+            <script src="js/jquery.waypoints.min.js"></script>
+            <script src="js/jquery.stellar.min.js"></script>
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/jquery.magnific-popup.min.js"></script>
+            <script src="js/aos.js"></script>
+            <script src="js/jquery.animateNumber.min.js"></script>
+            <script src="js/bootstrap-datepicker.js"></script>
+            <script src="js/jquery.timepicker.min.js"></script>
+            <script src="js/scrollax.min.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+            <script src="js/google-map.js"></script>
+            <script src="js/main.js"></script>
+            <script src="js/backtotop.js"></script>
+            <script src="js/validarRut.js"></script>
 
-        <!-- jquery -->
+            <!-- jquery -->
 
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
-        <!-- jquery validate -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+            <!-- jquery validate -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
 
-        <!-- Nuestro script -->
-        <script src="js/validaciones.js"></script>
+            <!-- Nuestro script -->
+            <script src="js/validaciones.js"></script>
 
-        <!-- Métodos adicionales, validar solo letras -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+            <!-- Métodos adicionales, validar solo letras -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
 
 
-    </body>
-</html>
+        </body>
+    </html>
 </c:if>
 </c:if>
