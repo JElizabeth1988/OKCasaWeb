@@ -43,11 +43,12 @@ public class SolicitudDAO {
             cstmt.setDate(2, solicitud.getFecha_solicitud());
             cstmt.setString(3, solicitud.getDireccion_vivienda());
             cstmt.setString(4, solicitud.getConstructora());
-            cstmt.setString(5, solicitud.getRut_cliente());
-            cstmt.setInt(6, solicitud.getId_agenda());
-            cstmt.setInt(7, solicitud.getId_pago());
-            cstmt.setInt(8, solicitud.getId_comuna());
-            cstmt.setInt(9, solicitud.getId_servicio());
+            cstmt.setString(5, solicitud.getEstado());
+            cstmt.setString(6, solicitud.getRut_cliente());
+            cstmt.setInt(7, solicitud.getId_agenda());
+            cstmt.setInt(8, solicitud.getId_pago());
+            cstmt.setInt(9, solicitud.getId_comuna());
+            cstmt.setInt(10, solicitud.getId_servicio());
 
             if (cstmt.executeUpdate() > 0) {
                 centinela = true;

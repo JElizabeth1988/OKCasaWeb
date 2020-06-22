@@ -20,6 +20,9 @@ public class Solicitud {
    
    //Constructora
    private String constructora;
+   
+   private String estado;
+   
   //Cliente
    private String rut_cliente;
       
@@ -38,11 +41,12 @@ public class Solicitud {
     public Solicitud() {
     }
 
-    public Solicitud(int id_solicitud, Date fecha_solicitud, String direccion_vivienda, String constructora, String rut_cliente, int id_agenda, int id_pago, int id_comuna, int id_servicio) {
+    public Solicitud(int id_solicitud, Date fecha_solicitud, String direccion_vivienda, String constructora, String estado, String rut_cliente, int id_agenda, int id_pago, int id_comuna, int id_servicio) {
         this.id_solicitud = id_solicitud;
         this.fecha_solicitud = fecha_solicitud;
         this.direccion_vivienda = direccion_vivienda;
         this.constructora = constructora;
+        this.estado = estado;
         this.rut_cliente = rut_cliente;
         this.id_agenda = id_agenda;
         this.id_pago = id_pago;
@@ -50,9 +54,7 @@ public class Solicitud {
         this.id_servicio = id_servicio;
     }
 
-    //SET
-
-    public void setId_solicitud(int id_solicitud) {
+    public void setId_solicitud(int id_solicitud) {   
         this.id_solicitud = id_solicitud;
     }
 
@@ -60,13 +62,16 @@ public class Solicitud {
         this.fecha_solicitud = fecha_solicitud;
     }
 
-
     public void setDireccion_vivienda(String direccion_vivienda) {
         this.direccion_vivienda = direccion_vivienda;
     }
 
     public void setConstructora(String constructora) {
         this.constructora = constructora;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public void setRut_cliente(String rut_cliente) {
@@ -84,12 +89,10 @@ public class Solicitud {
     public void setId_comuna(int id_comuna) {
         this.id_comuna = id_comuna;
     }
-
     public void setId_servicio(int id_servicio) {
         this.id_servicio = id_servicio;
     }
 
-   
     //GET
 
     public int getId_solicitud() {
@@ -106,6 +109,10 @@ public class Solicitud {
 
     public String getConstructora() {
         return constructora;
+    }
+
+    public String getEstado() {
+        return estado;
     }
 
     public String getRut_cliente() {
@@ -130,20 +137,8 @@ public class Solicitud {
 
     @Override
     public String toString() {
-        return "Solicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", id_agenda=" + id_agenda + ", id_pago=" + id_pago + ", id_comuna=" + id_comuna + ", id_servicio=" + id_servicio + '}';
+        return "Solicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", estado=" + estado + ", rut_cliente=" + rut_cliente + ", id_agenda=" + id_agenda + ", id_pago=" + id_pago + ", id_comuna=" + id_comuna + ", id_servicio=" + id_servicio + '}';
     }
-
     
     
-   
-
-    
-
-    
-    
-    
-
-    
-    
-   
 }

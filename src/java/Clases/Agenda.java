@@ -22,6 +22,8 @@ public class Agenda {
         this.dia = dia;
         this.hora = hora;
     }
+    
+    
 
    
     //SETTER

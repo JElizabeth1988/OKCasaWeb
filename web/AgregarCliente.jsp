@@ -54,7 +54,6 @@
                 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
                 <!---- Font awesom link local ----->
                 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-
             </head>
 
             <body style="background-color: white;">
@@ -285,7 +284,6 @@
                                     <br>
 
 
-
                                     </div>
                                     </div>
                                     <br>
@@ -296,6 +294,8 @@
                                     <br>
                                     <br>
                                     <br>
+
+
                                     <%--
                                     <form id="formulario">
 

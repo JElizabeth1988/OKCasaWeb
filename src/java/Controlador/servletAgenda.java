@@ -5,24 +5,23 @@
  */
 package Controlador;
 
-import Clases.Solicitud;
-import Dao.SolicitudDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ws.WSPAGO;
-import ws.WSPAGO_Service;
+import ws.Agenda;
+import ws.WSDISPONIBILIDAD;
+import ws.WSDISPONIBILIDAD_Service;
 
 /**
  *
  * @author chida
  */
-public class servletAgregarSol extends HttpServlet {
+public class servletAgenda extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +40,10 @@ public class servletAgregarSol extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletAgregarSol</title>");            
+            out.println("<title>Servlet servletAgenda</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet servletAgregarSol at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet servletAgenda at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,7 +61,15 @@ public class servletAgregarSol extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //Creamos el cliente al WS
+        WSDISPONIBILIDAD_Service servicio = new WSDISPONIBILIDAD_Service();
+        WSDISPONIBILIDAD cliente = servicio.getWSDISPONIBILIDADPort();
+
+                
+        List<Agenda> lista =  cliente.listarAgenda();
+        request.setAttribute("lista", lista);
+        request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+       
     }
 
     /**
@@ -76,59 +83,7 @@ public class servletAgregarSol extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        int id_solicitud = 1;        
-        Date fecha_solicitud = null;
-
-        String direccion_vivienda = request.getParameter("txtDireccion");
-
-        String costructora = request.getParameter("txtConstructora");
-
-        String estado = "Recepcionada";
-        
-        String rut_cliente = "19385798-1";
-
-        int id_agenda = Integer.parseInt(request.getParameter("rb_agendar"));
-        
-        int total = Integer.parseInt(request.getParameter("txtTotal")); 
-        int pago = Integer.parseInt(request.getParameter("txtPago")); 
-
-        //Creamos el cliente al WS
-        WSPAGO_Service servicio = new WSPAGO_Service();
-        WSPAGO cliente = servicio.getWSPAGOPort();
-        
-        
-        if (pago>=total) {
-             request.setAttribute("msje", "Pago efectuado");
-            request.getRequestDispatcher("PagoEfectuado.jsp").forward(request, response);
-
-        } else {
-            request.setAttribute("erro", "Pago Insuficiente");
-            request.getRequestDispatcher("Pago.jsp").forward(request, response);
-        }
-        
-        int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
-
-        int id_servicio = Integer.parseInt(request.getParameter("cboServicio"));
-
-        Solicitud sol = new Solicitud(id_solicitud, fecha_solicitud, direccion_vivienda, costructora, estado, rut_cliente, id_agenda, id_pago, id_comuna, id_servicio);
-        SolicitudDAO dao = new SolicitudDAO();
-
-        try {
-            //Intentar Guardar
-            if (dao.agregarSolicitud(sol)) {
-                request.setAttribute("msj", "Inspección Agendada");
-                request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-            } else {
-                request.setAttribute("err", "No Agendado");
-                request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-            }
-        } catch (SQLException ex) {
-            request.setAttribute("err", "No Agendado" + ex.getMessage());
-            request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-        }
-        
-        
+        processRequest(request, response);
     }
 
     /**

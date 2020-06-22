@@ -74,22 +74,7 @@ public class servletPago extends HttpServlet {
             throws ServletException, IOException {
         
          //Capturar Credenciales
-        int total = Integer.parseInt(request.getParameter("txtTotal")); 
-        int pago = Integer.parseInt(request.getParameter("txtPago")); 
-
-        //Creamos el cliente al WS
-        WSPAGO_Service servicio = new WSPAGO_Service();
-        WSPAGO cliente = servicio.getWSPAGOPort();
-        
-
-        if (pago>=total) {
-             request.setAttribute("msj", "Pago efectuado");
-            request.getRequestDispatcher("PagoEfectuado.jsp").forward(request, response);
-
-        } else {
-            request.setAttribute("err", "Pago Insuficiente");
-            request.getRequestDispatcher("Pago.jsp").forward(request, response);
-        }
+      
         
         
         

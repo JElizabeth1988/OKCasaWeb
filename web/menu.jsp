@@ -85,6 +85,8 @@
                             <c:if test="${tipo==2}">
                             <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
                                         class="icon"></span></a></li></a></li>  
+                            <li class="nav-item"><a href="servletAgenda" class="nav-link">Agendar<span
+                                        class="icon"></span></a></li></a></li>  
 
                         </c:if>
 

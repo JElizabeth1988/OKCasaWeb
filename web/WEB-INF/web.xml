@@ -5,10 +5,6 @@
         <servlet-class>Controlador.servletAgregar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>servletAgregarSol</servlet-name>
-        <servlet-class>Controlador.servletAgregarSol</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>servletLogin</servlet-name>
         <servlet-class>Controlador.servletLogin</servlet-class>
     </servlet>
@@ -28,13 +24,17 @@
         <servlet-name>ListadoSol</servlet-name>
         <servlet-class>Controlador.ListadoSol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>servletAgenda</servlet-name>
+        <servlet-class>Controlador.servletAgenda</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servletAgregarSol</servlet-name>
+        <servlet-class>Controlador.servletAgregarSol</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>servletAgregarSol</servlet-name>
-        <url-pattern>/servletAgregarSol</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>servletLogin</servlet-name>
@@ -55,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>ListadoSol</servlet-name>
         <url-pattern>/ListadoSol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletAgenda</servlet-name>
+        <url-pattern>/servletAgenda</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletAgregarSol</servlet-name>
+        <url-pattern>/servletAgregarSol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

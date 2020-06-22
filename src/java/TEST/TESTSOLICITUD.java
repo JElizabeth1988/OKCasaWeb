@@ -28,15 +28,15 @@ public class TESTSOLICITUD {
 
         try {
 
-            Date date = new Date();
+            /*Date date = new Date();
 //Caso 1: obtener la hora y salida por pantalla con formato:
             DateFormat hourFormat = new SimpleDateFormat("HH:mm");
             System.out.println("Hora: " + hourFormat.format(date));
 //Caso 2: obtener la fecha y salida por pantalla con formato:
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-            System.out.println("Fecha: " + dateFormat.format(date));
+            System.out.println("Fecha: " + dateFormat.format(date));*/
 
-            /*Solicitud so = new Solicitud(id_solicitud, null, null, null, null, id_agenda, id_pago, id_comuna, id_servicio);
+            Solicitud so = new Solicitud(100, null, "ddewdwed", "dwededewd", "todo bien", "19385798-1", 1, 2, 3,2);
 
             if (dao.agregarSolicitud(so)) {
 

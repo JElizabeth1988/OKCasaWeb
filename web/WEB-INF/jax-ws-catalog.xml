@@ -4,4 +4,6 @@
     <system systemId="http://localhost:31439/WSOKCasa/WSLOGIN?xsd=1" uri="wsdl/localhost_31439/WSOKCasa/WSLOGIN.xsd_1.xsd"/>
     <system systemId="http://localhost:31439/WSOKCasa/WSPAGO?WSDL" uri="wsdl/localhost_31439/WSOKCasa/WSPAGO.wsdl"/>
     <system systemId="http://localhost:31439/WSOKCasa/WSPAGO?xsd=1" uri="wsdl/localhost_31439/WSOKCasa/WSPAGO.xsd_1.xsd"/>
+    <system systemId="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" uri="wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
+    <system systemId="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?xsd=1" uri="wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.xsd_1.xsd"/>
 </catalog>

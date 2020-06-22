@@ -56,7 +56,7 @@
         <br>
         <br>
         <div>
-            <p><a href="Agendar.jsp" class="btn btn-lg btn-primary">Solicita una Nueva Inspección</a></p>
+            <p><a href="servletAgenda" class="btn btn-lg btn-primary">Solicita una Nueva Inspección</a></p>
         </div>
         <br>
         <br>
@@ -119,16 +119,22 @@
             <br>
             <br>
 
-
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 
 
         </div>
 
 
 
-        <br>
-        <br>
-        <br>
+
 
         <!--Footer  -->
         <%@include file="footer.jsp" %>  
