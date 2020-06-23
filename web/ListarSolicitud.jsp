@@ -126,7 +126,7 @@
                                                     <td>CONSTRUCTORA</td>
                                                     <td>RUT_CLIENTE</td>
                                                     <td>ID_AGENDA</td>
-                                                    <td>ID_PAGO</td>
+                                                    <td>PAGO</td>
                                                     <td>ID_COMUNA</td>
                                                     <td>ID_SERVICIO</td>
                                                 
@@ -139,7 +139,7 @@
                                                         <td>${sol.getConstructora()}</td>
                                                         <td>${sol.getRut_cliente()}</td>
                                                         <td>${sol.getId_agenda()}</td>
-                                                        <td>${sol.getId_pago()}</td>
+                                                        <td>${sol.getPago()}</td>
                                                         <td>${sol.getId_comuna()}</td>
                                                         <td>${sol.getId_servicio()}</td>
                                                        

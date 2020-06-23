@@ -125,7 +125,6 @@
                                                 <td>DIRECCION</td>
                                                 <td>TELEFONO</td>
                                                 <td>EMAIL</td>
-                                                <td>HIPOTECARIO</td>
                                                 <td>COMUNA</td>
                                             </tr>
                                             <c:forEach var="cliente" items="${listado}">
@@ -137,9 +136,9 @@
                                                     <td>${cliente.getAp_materno()}</td>
                                                     <td>${cliente.getDireccion()}</td>
                                                     <td>${cliente.getTelefono()}</td>
-                                                    <td>${cliente.getEmail()}</td>
-                                                    <td>${cliente.getHipotecario()}</td>
+                                                    <td>${cliente.getEmail()}</td>         
                                                     <td>${cliente.getId_comuna()}</td>
+                                        
                                                 </tr>
 
                                             </c:forEach>

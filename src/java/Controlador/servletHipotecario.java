@@ -5,24 +5,20 @@
  */
 package Controlador;
 
-import Clases.Solicitud;
-import Dao.SolicitudDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ws.WSPAGO;
-import ws.WSPAGO_Service;
+import ws.WSBANCO;
+import ws.WSBANCO_Service;
 
 /**
  *
  * @author chida
  */
-public class servletAgregarSol extends HttpServlet {
+public class servletHipotecario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +37,10 @@ public class servletAgregarSol extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletAgregarSol</title>");
+            out.println("<title>Servlet servletHipotecario</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet servletAgregarSol at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet servletHipotecario at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -76,58 +72,21 @@ public class servletAgregarSol extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        //---------------------WS PAGO----------------------------------------
-        int total = Integer.parseInt(request.getParameter("txtTotal"));
-        int pag = Integer.parseInt(request.getParameter("txtPago"));
-
+        
+        //Capturar Credenciales
+        String rut = request.getParameter("txtRut");
+        
         //Creamos el cliente al WS
-        WSPAGO_Service servicio = new WSPAGO_Service();
-        WSPAGO cliente = servicio.getWSPAGOPort();
+        WSBANCO_Service servicio = new WSBANCO_Service();
+        WSBANCO cliente = servicio.getWSBANCOPort();
 
-        if (cliente.realizarPago(total, pag) >= 0) {
+        //Validar las credenciales
+        int tipo_cliente = cliente.tipoCliente(rut);
 
-            request.setAttribute("msje", "Pago efectuado");
-            int id_solicitud = 1;
-            Date fecha_solicitud = null;
-            String direccion_vivienda = request.getParameter("txtDireccion");
-
-            String costructora = request.getParameter("txtConstructora");
-
-            String rut_cliente = "19385798-1";
-
-            int pago = Integer.parseInt(request.getParameter("txtPago"));
-            int descuento = 0;
-            int id_agenda = 1;
-            int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
-
-            int id_servicio = Integer.parseInt(request.getParameter("cboServicio"));
-
-            Solicitud sol = new Solicitud(id_solicitud, fecha_solicitud, direccion_vivienda, costructora, rut_cliente, pago, descuento, id_agenda, id_comuna, id_servicio);
-            SolicitudDAO dao = new SolicitudDAO();
-
-            try {
-                //Intentar Guardar
-                if (dao.agregarSolicitud(sol)) {
-                    request.setAttribute("msj", "Inspección Agendada");
-                    request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-
-                } else {
-                    request.setAttribute("err", "No Agendado");
-                    request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-                    request.setAttribute("msje", "Pago No efectuado");
-                }
-            } catch (SQLException ex) {
-                request.setAttribute("err", "No Agendado" + ex.getMessage());
-                request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-            }
-
-        } else {
-            request.setAttribute("erro", "Pago Insuficiente");
-            request.setAttribute("err", "No Agendado");
+        //Retornar tipo
+            request.getSession().setAttribute("tipo_cliente", tipo_cliente);
+            request.getSession().setAttribute("rut", rut);
             request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-        }
-
     }
 
     /**

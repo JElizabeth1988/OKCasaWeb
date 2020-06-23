@@ -226,7 +226,7 @@ button::-moz-focus-inner,
     padding: 0;
     border-style: none; }
 
-
+input[type="radio"],
 input[type="checkbox"] {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -2831,7 +2831,9 @@ input[type="button"].btn-block {
 .btn-group-toggle > .btn,
 .btn-group-toggle > .btn-group > .btn {
     margin-bottom: 0; }
+.btn-group-toggle > .btn input[type="radio"],
 .btn-group-toggle > .btn input[type="checkbox"],
+.btn-group-toggle > .btn-group > .btn input[type="radio"],
 .btn-group-toggle > .btn-group > .btn input[type="checkbox"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
@@ -2946,6 +2948,9 @@ input[type="button"].btn-block {
     background-color: #e9ecef;
     border: 1px solid #ced4da;
     border-radius: 0.25rem; }
+.input-group-text input[type="radio"],
+.input-group-text input[type="checkbox"] {
+    margin-top: 0; }
 
 .input-group-lg > .form-control:not(textarea),
 .input-group-lg > .custom-select {
@@ -3077,6 +3082,15 @@ input[type="button"].btn-block {
     background-color: rgba(0, 123, 255, 0.5); }
 
 .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+    background-color: rgba(0, 123, 255, 0.5); }
+
+.custom-radio .custom-control-label::before {
+    border-radius: 50%; }
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e"); }
+
+.custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
     background-color: rgba(0, 123, 255, 0.5); }
 
 .custom-switch {
@@ -7882,6 +7896,7 @@ a.text-dark:hover, a.text-dark:focus {
 .text-body {
     color: #212529 !important; }
 
+
 .text-muted {
     color: #6c757d !important; }
 
@@ -9844,6 +9859,7 @@ textarea.form-control {
     visibility: visible;
     opacity: 1; }
 
+
 #ftco-loader .circular {
     -webkit-animation: loader-rotate 2s linear infinite;
     animation: loader-rotate 2s linear infinite;
@@ -9978,46 +9994,59 @@ div#error2 {
 
 }
 
-
-#lab{
-    margin-left: 50px; 
+#tx{
+    height: 45px !important;
+    background: #fff !important;
     color: black;
     font-size: 18px;
-}        
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    width: 75%; 
+    margin-left: 30px"
+        }
+
+        #lab{
+        margin-left: 50px; 
+        color: black;
+        font-size: 18px;
+        }        
 
 
-#wrapp{
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-}
+        #wrapp{
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        }
 
-#line {
-    margin-top: .875rem;
-    margin-bottom: .875rem;
-    border: 0;
-    border-top-color: currentcolor;
-    border-top-style: none;
-    border-top-width: 0px;
-    border-top: .1875rem solid #fcd305;
-    box-sizing: content-box;
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 0;
-    overflow: visible;
-}
-.input-group-prepend span {
-    width: 50px;
-    color: black;
-    border: 0 !important;
-}
+        #line {
+        margin-top: .875rem;
+        margin-bottom: .875rem;
+        border: 0;
+        border-top-color: currentcolor;
+        border-top-style: none;
+        border-top-width: 0px;
+        border-top: .1875rem solid #fcd305;
+        box-sizing: content-box;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 0;
+        overflow: visible;F
+        }
+        .input-group-prepend span {
+        width: 50px;
+        color: black;
+        border: 0 !important;
+        }
 
-.outer {
+        
+        
+        .outer {
     overflow-y: auto;
     height: 300px;
 }

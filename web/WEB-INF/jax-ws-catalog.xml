@@ -6,4 +6,6 @@
     <system systemId="http://localhost:31439/WSOKCasa/WSPAGO?xsd=1" uri="wsdl/localhost_31439/WSOKCasa/WSPAGO.xsd_1.xsd"/>
     <system systemId="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" uri="wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
     <system systemId="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?xsd=1" uri="wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.xsd_1.xsd"/>
+    <system systemId="http://localhost:31439/WSBancoEstado/WS_BANCO?WSDL" uri="wsdl/localhost_31439/WSBancoEstado/WS_BANCO.wsdl"/>
+    <system systemId="http://localhost:31439/WSBancoEstado/WS_BANCO?xsd=1" uri="wsdl/localhost_31439/WSBancoEstado/WS_BANCO.xsd_1.xsd"/>
 </catalog>

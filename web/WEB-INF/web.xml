@@ -32,6 +32,14 @@
         <servlet-name>servletAgregarSol</servlet-name>
         <servlet-class>Controlador.servletAgregarSol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>servletAgregarAg</servlet-name>
+        <servlet-class>Controlador.servletAgregarAg</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servletHipotecario</servlet-name>
+        <servlet-class>Controlador.servletHipotecario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
@@ -63,6 +71,14 @@
     <servlet-mapping>
         <servlet-name>servletAgregarSol</servlet-name>
         <url-pattern>/servletAgregarSol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletAgregarAg</servlet-name>
+        <url-pattern>/servletAgregarAg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletHipotecario</servlet-name>
+        <url-pattern>/servletHipotecario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

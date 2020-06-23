@@ -94,6 +94,7 @@ public class servletAgregar extends HttpServlet {
             //Intentar Guardar
             if (dao.agregarCliente(cli)) {
                 request.setAttribute("msj", "Registrado exitosamente");
+                request.getSession().setAttribute("rut", rut_cliente);
                 request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             } else {
                 request.setAttribute("err", "Cliente ya existente");
@@ -118,7 +119,6 @@ public class servletAgregar extends HttpServlet {
             if (daous.agregarUsuario(us)) {
 
                 request.setAttribute("msje", "Registrado exitosamente");
-
                 request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             } else {
 
@@ -129,6 +129,8 @@ public class servletAgregar extends HttpServlet {
             request.setAttribute("error", "No Registrado");
             request.getRequestDispatcher("Registrar.jsp").forward(request, response);
         }
+        
+        
     }
 
     /**

@@ -94,8 +94,8 @@ public class ClienteDao {
                 c.setDireccion(rs.getString("direccion"));
                 c.setTelefono(rs.getInt("telefono"));
                 c.setEmail(rs.getString("email"));
-                c.setHipotecario(rs.getString("hipotecario"));
                 c.setId_comuna(rs.getInt("id_comuna"));
+                c.setId_comuna(rs.getInt("id_tipo_cliente"));
 
                 listado.add(c);
             }

@@ -46,19 +46,12 @@ public class TESTCLIENTE {
                System.out.println("Cliente no Guardado");
            }*/
         
-            /*List<Cliente>listado = dao.listarClientes();
+            List<Cliente>listado = dao.listarClientes();
             for (Cliente cliente : listado) {
                 System.out.println(cliente.toString());
-            }*/
-            
-            if (dao.eliminarCliente("12864223-3")) {
-                
-                System.out.println("Cliente eliminado");
-                
-            }else{
-                
-                System.out.println("Cliente NO eliminado");
             }
+            
+           
             
         } catch (Exception e) {
             

@@ -51,12 +51,9 @@
         <!---- Font awesom link local ----->
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     </head>
     <body>
-
-
-
         <!-- Back to top button -->
         <a id="button"></a>
 
@@ -87,14 +84,6 @@
             <hr>
 
             <div class="col-md">
-                <c:if test="${msj!=null}">
-                    <div class="alert alert-success">${msj}</div>   
-                </c:if>
-                <c:if test="${err!=null}">
-                    <div class="alert alert-danger">${err}</div>  
-                </c:if> 
-
-
                 <div class="row justify-content-center">
 
                     <!-- REGISTRO ------------------------------------------------------------------------------------------------->
@@ -105,13 +94,12 @@
                         <div class="container-fluid col-md-8">
                             <div class="row justify-content-center">
 
-
-
                                 <p style="font-weight: bold; font-size: 18px">
                                     PASO 1. Selecciona la Fecha
                                 </p>
 
                                 <hr id="line" style="width: 60%;">
+
                                 <div class="col-lg-12">
 
 
@@ -124,10 +112,11 @@
                                                         <th scope="col">Fecha</th>
                                                         <th scope="col">Hora</th>
                                                         <th scope="col">Seleccionar</th>
-
+                                                        <th scope="col">Seleccionar</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+
 
                                                     <c:forEach var="agenda" items="${lista}">
                                                         <tr>
@@ -135,6 +124,12 @@
                                                             <td>${agenda.getHora()}</td>
                                                             <td> 
                                                                 <label>
+                                                                    <input type="submit" onclick="AgregarCliente.jsp" class="btn btn btn-primary" name="btnPago" value="✔">
+                                                                  
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                  <label>
                                                                     <input style="margin-left: 20px;" type="radio" class="option-input radio" checked name="rb_agendar" value="${agenda.getIdAgenda()}">
                                                                     <link href="css/style.css" rel="stylesheet" type="text/css"/>
                                                                 </label>
@@ -149,9 +144,6 @@
 
                                     </div>
 
-
-
-
                                 </div>
 
                             </div>
@@ -163,6 +155,8 @@
                         <br>
 
                     </form>      
+
+
 
                     <form action="servletAgregarSol" method="POST">
                         <div class="container-fluid col-md-10">
@@ -253,67 +247,93 @@
 
                                         <hr id="line" style="width: 60%;">
 
-                                        <div class="col-md-6">
-                                            <table class="table-bordered">
-                                                <colgroup><col>
-                                                    <col width="1">
-                                                </colgroup><tfoot>
-                                                    <tr>
-                                                        <td style="" class="a-right" colspan="1">
-                                                            <strong>Total:  $  </strong>
-                                                        </td>
-
-                                                    </tr>
-                                                </tfoot>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="" class="a-right" colspan="1">
-                                                            Descuento:  $    </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="" class="a-right" colspan="1">
-                                                            Subtotal:   $    </td>
-
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br>
-                                            <br>
+                                        <div class="card" style="width: 18rem;">
+                                            <div class="card-header">
+                                                Detalle Pago
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group">Descuento: $</li>
+                                                <li class="list-group">Subtotal: $</li>
+                                                <li class="list-group">Total: $</li>
+                                                <input type="submit" value="Ver Descuentos">
+                                            </ul>
                                         </div>
 
 
                                         <div class="col-md-10">
+                                            <br>
+                                            <br>
                                             <div class="card text-center">
-                                                <div class="card-header">
-                                                    SISTEMA DE PAGO
+                                                <div class="card-header" style="background-color: white;">
+                                                    <img src="images/webpago.png" alt="logo">
                                                 </div>
-                                                <div class="card-body">
+                                                <div class="card-body justify-content-center">
 
                                                     <!--<div class="form-group"> <!-- ValorTotal 
                                                        <input id="prodId" name="txtTotal" type="hidden" value="70990">
                                                     </div>-->
 
-                                                    <div class="form-group"> <!-- Valor Total -->
-                                                        <label for="direccion" class="control-label">Total</label>
-                                                        <input id="prodId" name="txtTotal" value="56792" disabled>
-                                                    </div> 
+                                                    <c:if test="${tipo==2}">
+                                                        <input value="79500" name="txtTotal" hidden>
+                                                        <label></label>
+                                                    </c:if>     
+                                                    <c:if test="${tipo==1}">
+                                                        <input value="63600" name="txtTotal" hidden>
+                                                        <label></label>
+                                                    </c:if>
 
-                                                    <div class="form-group"> <!-- Direccion -->
-                                                        <label for="direccion" class="control-label">Ingrese Monto a pagar</label>
-                                                        <input type="text" name="txtPago" id="direccion"
-                                                               required minlength="1" maxlength="500">
-                                                    </div> 
+                                                    <div class="row justify-content-center"> 
+                                                        <div class="col-md-6" id="textbox">
+                                                            <div class="form-group"> <!-- Direccion -->
+                                                                <label for="direccion" class="control-label">Ingrese Monto</label>
+                                                                <input type="text" name="txtConstructora" id="direccion" class="form-control input-lg"
+                                                                       placeholder="Ingrese Nombre" required minlength="4" maxlength="500" >
+                                                            </div> 
+                                                        </div>
 
-                                                    <input type="submit" class="btn btn btn-primary" style="margin-right: 40px" value="Procesar Pago">
+                                                    </div>  
+                                                    <input type="submit" class="btn btn btn-secondary" name="btnPago" style="margin-left: 30px" value="Procesar Pago">
+                                                    <br>
+                                                    <br>
                                                 </div>
                                                 <div class="card-footer text-muted">
-                                                    Sitio Seguro
+                                                    Transacción Respaldada
                                                 </div>
+
+
+
                                             </div>
                                             <br>
 
                                         </div>
+                                        <div id="delayMsg"></div>
+
+
+                                        <div class="col-md-10">
+                                            <c:if test="${msj!=null}">
+                                                <div class="alert alert-success">${msj}</div>   
+                                            </c:if>
+                                            <c:if test="${err!=null}">
+                                                <div class="alert alert-danger">${err}</div>  
+                                            </c:if>   
+
+                                        </div>
+
+                                        <div class="col-md-10"> 
+                                            <!-- ERROR WS PAGO   -->    
+
+                                            <c:if test="${msje!=null}">
+                                                <div class="alert alert-success">${msje}</div>   
+                                            </c:if>
+                                            <c:if test="${erro!=null}">
+                                                <div class="alert alert-danger">${erro}</div>  
+                                            </c:if>  
+
+
+
+                                        </div>
+
+
                                     </div>
 
                                 </div>
@@ -328,32 +348,6 @@
                 </div>
                 <%-- ROW-----------------------------------------------------------------------------%>
 
-
-                <div class="row justify-content-center">
-                    <div class="col-md">   
-
-                        <div class="form-check" style="text-align: center;">
-
-                            <br>
-                            <br>
-                            <br>
-
-                            <div class="justify-content-center">
-
-                                <input type="submit" class="btn btn btn-primary" style="margin-right: 40px" value="Agendar">
-                            </div>
-                        </div>
-
-
-                        <br>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-
                 <br>
                 <br>
 
@@ -365,7 +359,34 @@
         <br>
         <br>
         <br>
+        
+              <!--Footer  -->
+        <%@include file="footer.jsp" %>  
 
+
+
+        <!-- Icono Cargar-->
+        <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.stellar.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/jquery.animateNumber.min.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/jquery.timepicker.min.js"></script>
+        <script src="js/scrollax.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+        <script src="js/google-map.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/backtotop.js"></script>   
 
     </body>
 </html>

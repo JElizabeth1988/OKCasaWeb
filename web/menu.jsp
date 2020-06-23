@@ -124,7 +124,7 @@
                                         class="icon-logout"></span></a></li>
                                 </c:if>
 
-                        <c:if test="${tipo==nul}">
+                        <c:if test="${tipo==null}">
                             <li class="nav-item"><a href="login.jsp" class="nav-link">Registrar/Iniciar Sesión <span
                                         class="icon-user" style="font-size: 17px;"></span></a></li>
                                 </c:if>
