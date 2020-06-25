@@ -67,7 +67,7 @@ public class servletAgenda extends HttpServlet {
 
                 
         List<Agenda> lista =  cliente.listarAgenda();
-        request.setAttribute("lista", lista);
+        request.getSession().setAttribute("listaws", lista);
         request.getRequestDispatcher("Agendar.jsp").forward(request, response);
        
     }

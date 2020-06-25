@@ -37,7 +37,7 @@ public class ClienteDao {
 
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = "{ call SP_AGREGAR_CLIENTE(?,?,?,?,?,?,?,?,?,?) }";
+            String llamada = "{ call SP_AGREGAR_CLIENTE(?,?,?,?,?,?,?,?,?) }";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
 
             //Pasar atributos
@@ -49,8 +49,7 @@ public class ClienteDao {
             cstmt.setString(6, cli.getDireccion());
             cstmt.setInt(7, cli.getTelefono());
             cstmt.setString(8, cli.getEmail());
-            cstmt.setString(9, cli.getHipotecario());
-            cstmt.setInt(10, cli.getId_comuna());
+            cstmt.setInt(9, cli.getId_comuna());
 
             if (cstmt.executeUpdate() > 0) {
                 centinela = true;
@@ -90,13 +89,10 @@ public class ClienteDao {
                 c.setSegundo_nombre(rs.getString("segundo_nombre"));
                 c.setAp_paterno(rs.getString("ap_paterno"));
                 c.setAp_materno(rs.getString("ap_materno"));
-                c.setAp_materno(rs.getString("ap_materno"));
                 c.setDireccion(rs.getString("direccion"));
                 c.setTelefono(rs.getInt("telefono"));
                 c.setEmail(rs.getString("email"));
                 c.setId_comuna(rs.getInt("id_comuna"));
-                c.setId_comuna(rs.getInt("id_tipo_cliente"));
-
                 listado.add(c);
             }
         } catch (Exception e) {

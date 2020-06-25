@@ -202,5 +202,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN_4"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4"/>
+    <target name="wsimport-client-WSDISPONIBILIDAD_3" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_3"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_3" destdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_3" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_3/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_3/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_3"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_3">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSDISPONIBILIDAD_3" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_3"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4, wsimport-client-WSDISPONIBILIDAD_3"/>
 </project>

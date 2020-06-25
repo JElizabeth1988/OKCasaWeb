@@ -20,6 +20,7 @@ public class Solicitud {
    private String rut_cliente;
    private int pago;
    private int descuento;
+   private String estado;
    private int id_agenda;
    private int id_comuna;
    private int id_servicio;
@@ -27,7 +28,7 @@ public class Solicitud {
     public Solicitud() {
     }
 
-    public Solicitud(int id_solicitud, Date fecha_solicitud, String direccion_vivienda, String constructora, String rut_cliente, int pago, int descuento, int id_agenda, int id_comuna, int id_servicio) {
+    public Solicitud(int id_solicitud, Date fecha_solicitud, String direccion_vivienda, String constructora, String rut_cliente, int pago, int descuento, String estado, int id_agenda, int id_comuna, int id_servicio) {
         this.id_solicitud = id_solicitud;
         this.fecha_solicitud = fecha_solicitud;
         this.direccion_vivienda = direccion_vivienda;
@@ -35,10 +36,15 @@ public class Solicitud {
         this.rut_cliente = rut_cliente;
         this.pago = pago;
         this.descuento = descuento;
+        this.estado = estado;
         this.id_agenda = id_agenda;
         this.id_comuna = id_comuna;
         this.id_servicio = id_servicio;
     }
+
+    
+
+    //SETTER
 
     public void setId_solicitud(int id_solicitud) {
         this.id_solicitud = id_solicitud;
@@ -68,6 +74,10 @@ public class Solicitud {
         this.descuento = descuento;
     }
 
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public void setId_agenda(int id_agenda) {
         this.id_agenda = id_agenda;
     }
@@ -80,12 +90,14 @@ public class Solicitud {
         this.id_servicio = id_servicio;
     }
     
+    
+    //GETTER
 
     public int getId_solicitud() {
         return id_solicitud;
     }
 
-    public Date getFecha_solicitud() {  
+    public Date getFecha_solicitud() {
         return fecha_solicitud;
     }
 
@@ -109,6 +121,10 @@ public class Solicitud {
         return descuento;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
     public int getId_agenda() {
         return id_agenda;
     }
@@ -117,15 +133,18 @@ public class Solicitud {
         return id_comuna;
     }
 
-    //GET
     public int getId_servicio() {
         return id_servicio;
     }
 
     @Override
     public String toString() {
-        return "Solicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", pago=" + pago + ", descuento=" + descuento + ", id_agenda=" + id_agenda + ", id_comuna=" + id_comuna + ", id_servicio=" + id_servicio + '}';
+        return "Solicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", pago=" + pago + ", descuento=" + descuento + ", estado=" + estado + ", id_agenda=" + id_agenda + ", id_comuna=" + id_comuna + ", id_servicio=" + id_servicio + '}';
     }
+
+    
+
+    
 
    
 

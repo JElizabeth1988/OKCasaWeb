@@ -86,7 +86,6 @@ public class servletLogin extends HttpServlet {
         WSLOGIN_Service servicio = new WSLOGIN_Service();
         WSLOGIN cliente = servicio.getWSLOGINPort();
 
-        String rut = cliente.rutCliente(user, pass);
 
         //Validar las credenciales
         int tipo = cliente.login(user, pass);
@@ -96,7 +95,8 @@ public class servletLogin extends HttpServlet {
             //SACAR CLIENTE HIPOTECARIO
             WSBANCO_Service serv = new WSBANCO_Service();
             WSBANCO cli = serv.getWSBANCOPort();
-
+            
+            String rut = cliente.rutCliente(user, pass);
             int tipo_cliente = cli.tipoCliente(rut);
 
             request.getSession().setAttribute("tipo", tipo);

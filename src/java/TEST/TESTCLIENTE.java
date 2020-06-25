@@ -7,11 +7,18 @@ package TEST;
 
 
 import Clases.Cliente;
+import Clases.Comuna;
 import Dao.ClienteDao;
+import Dao.ComunaDAO;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 /**
  *
  * @author chida
@@ -34,8 +41,9 @@ public class TESTCLIENTE {
         
        //----------------------------------------
         
+        
          ClienteDao dao = new ClienteDao();
-    
+         ComunaDAO d = new ComunaDAO();
         try {
             
           /*Cliente c = new Cliente("13697138-7", "Ximena", "Nayareth", "Gómez", "Pacheco", "Rucalin 4100", 965172587, "sxs@gsa.cl", "Si", 2);
@@ -49,6 +57,10 @@ public class TESTCLIENTE {
             List<Cliente>listado = dao.listarClientes();
             for (Cliente cliente : listado) {
                 System.out.println(cliente.toString());
+            }
+            List<Comuna>lis = d.listarComunas();
+            for (Comuna comuna : lis) {
+                System.out.println(comuna.toString());
             }
             
            

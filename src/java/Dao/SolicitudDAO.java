@@ -34,7 +34,7 @@ public class SolicitudDAO {
 
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = "{ call SP_AGREGAR_SOLICITUD(?,?,?,?,?,?,?,?,?,?) }";
+            String llamada = "{ call SP_AGREGAR_SOLICITUD(?,?,?,?,?,?,?,?,?,?,?) }";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
 
  
@@ -46,9 +46,10 @@ public class SolicitudDAO {
             cstmt.setString(5, solicitud.getRut_cliente());
             cstmt.setInt(6, solicitud.getPago());
             cstmt.setInt(7, solicitud.getDescuento());
-            cstmt.setInt(8, solicitud.getId_agenda());
-            cstmt.setInt(9, solicitud.getId_comuna());
-            cstmt.setInt(10, solicitud.getId_servicio());
+            cstmt.setString(8, solicitud.getEstado());
+            cstmt.setInt(9, solicitud.getId_agenda());
+            cstmt.setInt(10, solicitud.getId_comuna());
+            cstmt.setInt(11, solicitud.getId_servicio());
 
             if (cstmt.executeUpdate() > 0) {
                 centinela = true;
@@ -90,9 +91,10 @@ public class SolicitudDAO {
                 s.setRut_cliente(rs.getString("rut_cliente"));
                 s.setPago(rs.getInt("pago"));
                 s.setDescuento(rs.getInt("descuento"));
+                s.setEstado(rs.getString("estado"));
                 s.setId_agenda(rs.getInt("id_agenda"));
                 s.setId_comuna(rs.getInt("id_comuna"));
-                s.setId_comuna(rs.getInt("id_servicio"));
+                s.setId_servicio(rs.getInt("id_servicio"));
 
                 listadoSol.add(s);
             }

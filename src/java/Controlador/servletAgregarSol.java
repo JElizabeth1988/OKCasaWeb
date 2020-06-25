@@ -5,14 +5,21 @@
  */
 package Controlador;
 
+import Clases.Comuna;
 import Clases.Solicitud;
+import Clases.fecha;
 import Dao.AgendaDao;
+import Dao.ComunaDAO;
 import Dao.SolicitudDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -67,16 +74,27 @@ public class servletAgregarSol extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-             //Creamos el cliente al WS
-        WSDISPONIBILIDAD_Service servicio = new WSDISPONIBILIDAD_Service();
-        WSDISPONIBILIDAD cliente = servicio.getWSDISPONIBILIDADPort();
 
-                
-        List<Agenda> lista =  cliente.listarAgenda();
-        request.setAttribute("lista", lista);
-        request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-        
+        //LISTAR COMUNAS
+        ComunaDAO d = new ComunaDAO();
+
+        try {
+            //WS DISPONIBILIDAD
+            //Creamos el cliente al WS
+            WSDISPONIBILIDAD_Service servicio = new WSDISPONIBILIDAD_Service();
+            WSDISPONIBILIDAD cliente = servicio.getWSDISPONIBILIDADPort();
+
+            List<Agenda> lista = cliente.listarAgenda();
+            request.setAttribute("lista", lista);
+            
+            List<Comuna> listac = d.listarComunas();
+            request.setAttribute("listac", listac);
+            request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Listado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**
@@ -102,22 +120,25 @@ public class servletAgregarSol extends HttpServlet {
         if (cliente.realizarPago(total, pag) >= 0) {
 
             request.setAttribute("msje", "Pago efectuado");
+
             int id_solicitud = 1;
-            Date fecha_solicitud = null;
+
+            Date fecha_solicitud = Date.valueOf(fecha.obtenerFechaYHoraActual());
             String direccion_vivienda = request.getParameter("txtDireccion");
 
             String costructora = request.getParameter("txtConstructora");
 
-            String rut_cliente = "19385798-1";
+            String rut_cliente = request.getParameter("txtRut");
 
             int pago = Integer.parseInt(request.getParameter("txtPago"));
-            int descuento = 0;
+            int descuento = Integer.parseInt(request.getParameter("txtDescuento"));
+            String estado = "Pendiente";
             int id_agenda = Integer.parseInt(request.getParameter("rb_agendar"));
             int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
 
             int id_servicio = Integer.parseInt(request.getParameter("cboServicio"));
 
-            Solicitud sol = new Solicitud(id_solicitud, fecha_solicitud, direccion_vivienda, costructora, rut_cliente, pago, descuento, id_agenda, id_comuna, id_servicio);
+            Solicitud sol = new Solicitud(id_solicitud, fecha_solicitud, direccion_vivienda, costructora, rut_cliente, pago, descuento, estado, id_agenda, id_comuna, id_servicio);
             SolicitudDAO dao = new SolicitudDAO();
 
             try {
@@ -125,7 +146,7 @@ public class servletAgregarSol extends HttpServlet {
                 if (dao.agregarSolicitud(sol)) {
                     request.setAttribute("msj", "Inspección Agendada");
                     request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-                   
+
                     //Pasar día y hora a no disponible
                     AgendaDao d = new AgendaDao();
                     d.modificarAgenda(id_agenda);

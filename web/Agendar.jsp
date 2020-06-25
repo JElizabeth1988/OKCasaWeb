@@ -117,14 +117,14 @@
                                                 <tbody>
 
 
-                                                    <c:forEach var="agenda" items="${lista}">
+                                                    <c:forEach var="agenda" items="${listaws}">
                                                         <tr>
                                                             <td>${agenda.getDia()}</td>
                                                             <td>${agenda.getHora()}</td>                                         
                                                             <td>
                                                                 <label>
                                                                     <input style="margin-left: 20px;" type="radio" checked="True" class="option-input radio" name="rb_agendar" value="${agenda.getIdAgenda()}">
-                                                                    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+                                                                   
                                                                 </label>
                                                             </td>
 
@@ -168,11 +168,12 @@
                                         </div> 
                                     </div>
 
-
+                                    
                                     <div class="col-md-2" id="textbox">
                                         <div class="form-group"> <!--Comuna -->
                                             <label style="color: #bd2130">*</label>
                                             <label for="id_comuna" class="control-label">Comuna</label>
+                                            
                                             <select class="form-control" name="cboComuna">
                                                 <option value="1">Santiago</option>
                                                 <option value="2">Providencia</option>
@@ -273,17 +274,17 @@
                                                     <img src="images/webpago.png" alt="logo">
                                                 </div>
                                                 <div class="card-body justify-content-center">
-
+                                                     <!-----WS CLIENTE HIPOTECARIO ------------------>
                                                     <!-- No cliente hipotecario -->
                                                     <c:if test="${tipo_cliente==0}">
                                                         <input value="79500" name="txtTotal" hidden>
-                                                        <label></label>
+                                                        <input value="0" name="txtDescuento" hidden>
                                                     </c:if>     
 
                                                     <!-- Cliente hipotecario -->
                                                     <c:if test="${tipo_cliente==1}">
                                                         <input value="63600" name="txtTotal" hidden>
-                                                        <label></label>
+                                                         <input value="20" name="txtDescuento" hidden> 
                                                     </c:if>
 
 
@@ -303,6 +304,9 @@
 
                                                                 </ul>
                                                             </c:if> 
+                                                            
+                                                               <!-- RUT CLIENTE -->
+                                                             <input value="${rut}" name="txtRut" hidden>
 
                                                             <div class="form-group"> <!-- Pago -->
                                                                 <label for="pago" class="control-label">Ingrese Monto</label>

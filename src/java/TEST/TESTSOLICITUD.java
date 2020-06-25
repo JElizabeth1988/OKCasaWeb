@@ -35,7 +35,7 @@ public class TESTSOLICITUD {
              //Caso 2: obtener la fecha y salida por pantalla con formato:
              DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
              System.out.println("Fecha: " + dateFormat.format(date));*/
-            Solicitud so = new Solicitud(100, null, "dwdwedwed", "edewdewd", "19385798-1", 30000, 0, 1, 1, 2);
+            Solicitud so = new Solicitud(100, null, "dwdwedwed", "edewdewd", "19385798-1", 30000, 0,"Pendiente", 1, 1, 2);
             if (dao.agregarSolicitud(so)) {
 
                 System.out.println("Solicitud Guardada");
