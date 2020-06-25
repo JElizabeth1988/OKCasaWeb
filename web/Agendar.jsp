@@ -51,7 +51,7 @@
         <!---- Font awesom link local ----->
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
         <!-- Back to top button -->
@@ -66,7 +66,7 @@
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center justify-content-center">
                     <div class="col-md-9 ftco-animate text-center">
-                        <h1 class="mb-2 bread">Ingreso</h1>
+                        <h1 class="mb-2 bread">Inspección</h1>
                         <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i
                                         class="ion-ios-arrow-forward"></i></a></span> <span>Agendar<i class="ion-ios-arrow-forward"></i></span>
                         </p>
@@ -89,7 +89,7 @@
                     <!-- REGISTRO ------------------------------------------------------------------------------------------------->
 
 
-                    <form action="servletAgenda" method="POST" style="width: 100%;">
+                    <form action="servletAgregarSol" method="POST" style="width: 100%;">
 
                         <div class="container-fluid col-md-8">
                             <div class="row justify-content-center">
@@ -112,7 +112,6 @@
                                                         <th scope="col">Fecha</th>
                                                         <th scope="col">Hora</th>
                                                         <th scope="col">Seleccionar</th>
-                                                        <th scope="col">Seleccionar</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -121,16 +120,10 @@
                                                     <c:forEach var="agenda" items="${lista}">
                                                         <tr>
                                                             <td>${agenda.getDia()}</td>
-                                                            <td>${agenda.getHora()}</td>
-                                                            <td> 
-                                                                <label>
-                                                                    <input type="submit" onclick="AgregarCliente.jsp" class="btn btn btn-primary" name="btnPago" value="✔">
-                                                                  
-                                                                </label>
-                                                            </td>
+                                                            <td>${agenda.getHora()}</td>                                         
                                                             <td>
-                                                                  <label>
-                                                                    <input style="margin-left: 20px;" type="radio" class="option-input radio" checked name="rb_agendar" value="${agenda.getIdAgenda()}">
+                                                                <label>
+                                                                    <input style="margin-left: 20px;" type="radio" checked="True" class="option-input radio" name="rb_agendar" value="${agenda.getIdAgenda()}">
                                                                     <link href="css/style.css" rel="stylesheet" type="text/css"/>
                                                                 </label>
                                                             </td>
@@ -154,11 +147,6 @@
                         <br>
                         <br>
 
-                    </form>      
-
-
-
-                    <form action="servletAgregarSol" method="POST">
                         <div class="container-fluid col-md-10">
                             <div class="row justify-content-center">
 
@@ -167,7 +155,7 @@
                                     PASO 2. Ingresa los datos
                                 </p>
 
-                                <hr id="line" style="width: 45%;">
+                                <hr id="line" style="width: 48%;">
 
 
                                 <div class="row justify-content-center">
@@ -245,18 +233,35 @@
                                             PASO 3. Realizar Pago
                                         </p>
 
-                                        <hr id="line" style="width: 60%;">
+                                        <hr id="line" style="width: 61%;">
 
                                         <div class="card" style="width: 18rem;">
                                             <div class="card-header">
                                                 Detalle Pago
                                             </div>
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group">Descuento: $</li>
-                                                <li class="list-group">Subtotal: $</li>
-                                                <li class="list-group">Total: $</li>
-                                                <input type="submit" value="Ver Descuentos">
-                                            </ul>
+
+                                            <!-- No Hipotecario -->
+                                            <c:if test="${tipo_cliente==0}">
+                                                <ul class="list-group list-group-flush text-center">
+                                                    <li class="list-group">Descuento: $0</li>
+                                                    <li class="list-group">Subtotal: $0</li>
+                                                    <li class="list-group">Total: $79.590</li>
+                                                    Cliente No Hipotecario de Banco Estado
+                                                </ul>
+                                            </c:if> 
+
+                                            <!--Hipotecario -->
+                                            <c:if test="${tipo_cliente==1}">
+                                                <ul class="list-group list-group-flush text-center">
+                                                    <li class="list-group">Descuento: 20%</li>
+                                                    <li class="list-group">Subtotal: $15.900</li>
+                                                    <li class="list-group">Total: $63.600</li>
+                                                    Cliente Hipotecario de Banco Estado
+                                                </ul>
+                                            </c:if> 
+
+
+
                                         </div>
 
 
@@ -269,25 +274,40 @@
                                                 </div>
                                                 <div class="card-body justify-content-center">
 
-                                                    <!--<div class="form-group"> <!-- ValorTotal 
-                                                       <input id="prodId" name="txtTotal" type="hidden" value="70990">
-                                                    </div>-->
-
-                                                    <c:if test="${tipo==2}">
+                                                    <!-- No cliente hipotecario -->
+                                                    <c:if test="${tipo_cliente==0}">
                                                         <input value="79500" name="txtTotal" hidden>
                                                         <label></label>
                                                     </c:if>     
-                                                    <c:if test="${tipo==1}">
+
+                                                    <!-- Cliente hipotecario -->
+                                                    <c:if test="${tipo_cliente==1}">
                                                         <input value="63600" name="txtTotal" hidden>
                                                         <label></label>
                                                     </c:if>
 
+
                                                     <div class="row justify-content-center"> 
                                                         <div class="col-md-6" id="textbox">
-                                                            <div class="form-group"> <!-- Direccion -->
-                                                                <label for="direccion" class="control-label">Ingrese Monto</label>
-                                                                <input type="text" name="txtConstructora" id="direccion" class="form-control input-lg"
-                                                                       placeholder="Ingrese Nombre" required minlength="4" maxlength="500" >
+                                                            <!-- No Hipotecario -->
+                                                            <c:if test="${tipo_cliente==0}">
+                                                                <ul class="list-group list-group-flush text-center">
+                                                                    <li class="list-group">Total a Pagar: $79.590</li>  
+                                                                </ul>
+                                                            </c:if> 
+
+                                                            <!-- No Hipotecario -->
+                                                            <c:if test="${tipo_cliente==1}">
+                                                                <ul class="list-group list-group-flush text-center">
+                                                                    <li class="list-group">Total a Pagar: $63.600</li>
+
+                                                                </ul>
+                                                            </c:if> 
+
+                                                            <div class="form-group"> <!-- Pago -->
+                                                                <label for="pago" class="control-label">Ingrese Monto</label>
+                                                                <input type="text" name="txtPago" id="direccion" class="form-control input-lg"
+                                                                       placeholder="$" required minlength="1">
                                                             </div> 
                                                         </div>
 
@@ -306,7 +326,7 @@
                                             <br>
 
                                         </div>
-                                        <div id="delayMsg"></div>
+
 
 
                                         <div class="col-md-10">
@@ -324,6 +344,7 @@
 
                                             <c:if test="${msje!=null}">
                                                 <div class="alert alert-success">${msje}</div>   
+
                                             </c:if>
                                             <c:if test="${erro!=null}">
                                                 <div class="alert alert-danger">${erro}</div>  
@@ -359,8 +380,8 @@
         <br>
         <br>
         <br>
-        
-              <!--Footer  -->
+
+        <!--Footer  -->
         <%@include file="footer.jsp" %>  
 
 

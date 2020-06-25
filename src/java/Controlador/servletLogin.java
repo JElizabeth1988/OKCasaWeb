@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import ws.WSBANCO;
+import ws.WSBANCO_Service;
 import ws.WSLOGIN;
 import ws.WSLOGIN_Service;
 
@@ -58,7 +60,7 @@ public class servletLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         //Cerrar Sesión
         request.getSession().invalidate();
         // Solo redirije, no envía variables
@@ -84,19 +86,30 @@ public class servletLogin extends HttpServlet {
         WSLOGIN_Service servicio = new WSLOGIN_Service();
         WSLOGIN cliente = servicio.getWSLOGINPort();
 
+        String rut = cliente.rutCliente(user, pass);
+
         //Validar las credenciales
         int tipo = cliente.login(user, pass);
 
         if (tipo > 0) {
 
+            //SACAR CLIENTE HIPOTECARIO
+            WSBANCO_Service serv = new WSBANCO_Service();
+            WSBANCO cli = serv.getWSBANCOPort();
+
+            int tipo_cliente = cli.tipoCliente(rut);
+
             request.getSession().setAttribute("tipo", tipo);
             request.getSession().setAttribute("username", user);
+            request.getSession().setAttribute("tipo_cliente", tipo_cliente);
+            request.getSession().setAttribute("rut", rut);
             request.getRequestDispatcher("index.jsp").forward(request, response);
 
         } else {
             request.setAttribute("err", "Credenciales Incorrectas");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
+
     }
 
     /**

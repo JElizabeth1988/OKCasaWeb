@@ -6,15 +6,20 @@
 package Controlador;
 
 import Clases.Solicitud;
+import Dao.AgendaDao;
 import Dao.SolicitudDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import ws.Agenda;
+import ws.WSDISPONIBILIDAD;
+import ws.WSDISPONIBILIDAD_Service;
 import ws.WSPAGO;
 import ws.WSPAGO_Service;
 
@@ -62,7 +67,16 @@ public class servletAgregarSol extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       
+             //Creamos el cliente al WS
+        WSDISPONIBILIDAD_Service servicio = new WSDISPONIBILIDAD_Service();
+        WSDISPONIBILIDAD cliente = servicio.getWSDISPONIBILIDADPort();
+
+                
+        List<Agenda> lista =  cliente.listarAgenda();
+        request.setAttribute("lista", lista);
+        request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+        
     }
 
     /**
@@ -98,7 +112,7 @@ public class servletAgregarSol extends HttpServlet {
 
             int pago = Integer.parseInt(request.getParameter("txtPago"));
             int descuento = 0;
-            int id_agenda = 1;
+            int id_agenda = Integer.parseInt(request.getParameter("rb_agendar"));
             int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
 
             int id_servicio = Integer.parseInt(request.getParameter("cboServicio"));
@@ -111,6 +125,10 @@ public class servletAgregarSol extends HttpServlet {
                 if (dao.agregarSolicitud(sol)) {
                     request.setAttribute("msj", "Inspección Agendada");
                     request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+                   
+                    //Pasar día y hora a no disponible
+                    AgendaDao d = new AgendaDao();
+                    d.modificarAgenda(id_agenda);
 
                 } else {
                     request.setAttribute("err", "No Agendado");

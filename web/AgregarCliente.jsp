@@ -108,7 +108,7 @@
                                 <form action="servletAgregar" method="POST" style="margin-right: 35px">
                                     <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
                                             class="icon-edit" style="font-size: 35px;"></span>  Ingrese los datos 
-                                        <a href="ListarCliente.jsp"><span
+                                        <a href="Listado"><span
                                                 class="icon-book-alt" style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Listar</span></a>
                                         <a href="EliminarCliente.jsp"><span
                                                 class="icon-cancel" style="font-size:16px;margin-left: 10px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir eliminar</span></a>
