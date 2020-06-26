@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Clases.ListaSolicitud;
 import Clases.Solicitud;
 import Dao.SolicitudDAO;
 import java.io.IOException;
@@ -65,7 +66,7 @@ public class ListadoSol extends HttpServlet {
           SolicitudDAO dao = new SolicitudDAO();
         
         try {
-            List<Solicitud> listadoSol =  dao.listarSolicitudes();
+            List<ListaSolicitud> listadoSol =  dao.listarSolicitudes();
             request.setAttribute("listadoSol", listadoSol);
             request.getRequestDispatcher("ListarSolicitud.jsp").forward(request, response);
             

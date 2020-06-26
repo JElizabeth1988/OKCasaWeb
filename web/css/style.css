@@ -10063,6 +10063,41 @@ div#error2 {
     background-color: white;
 }
 
+
+        .outer {
+    overflow-y: auto;
+    height: 300px;
+}
+
+.outer {
+    width: 100%;
+    -layout: fixed;
+}
+
+.out th {
+    text-align: left;
+    top: 0;
+    position: sticky;
+    background-color: white;
+}
+
+        .out {
+    overflow-y: auto;
+    height: 450px;
+}
+
+.out {
+    width: 100%;
+    -layout: fixed;
+}
+
+.out th {
+    text-align: left;
+    top: 0;
+    position: sticky;
+    background-color: white;
+}
+
 @keyframes click-wave {
   0% {
     height: 30px;

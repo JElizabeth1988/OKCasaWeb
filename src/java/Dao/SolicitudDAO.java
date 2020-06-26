@@ -5,6 +5,7 @@
  */
 package Dao;
 
+import Clases.ListaSolicitud;
 import Conexion.Conexion;
 import Clases.Solicitud;
 import java.sql.CallableStatement;
@@ -68,8 +69,8 @@ public class SolicitudDAO {
     }
 
     //Listar--------------------------------------------------------------------
-    public List<Solicitud> listarSolicitudes() throws SQLException {
-        List<Solicitud> listadoSol = new ArrayList<>();
+    public List<ListaSolicitud> listarSolicitudes() throws SQLException {
+        List<ListaSolicitud> listadoSol = new ArrayList<>();
 
         try {
             this.conexion = new Conexion().obtenerConexion();
@@ -83,7 +84,7 @@ public class SolicitudDAO {
 
             while (rs.next()) {
 
-                Solicitud s = new Solicitud();
+                ListaSolicitud s = new ListaSolicitud();
                 s.setId_solicitud(rs.getInt("id_solicitud"));
                 s.setFecha_solicitud(rs.getDate("fecha_solicitud"));
                 s.setDireccion_vivienda(rs.getString("direccion_vivienda"));
@@ -92,9 +93,10 @@ public class SolicitudDAO {
                 s.setPago(rs.getInt("pago"));
                 s.setDescuento(rs.getInt("descuento"));
                 s.setEstado(rs.getString("estado"));
-                s.setId_agenda(rs.getInt("id_agenda"));
-                s.setId_comuna(rs.getInt("id_comuna"));
-                s.setId_servicio(rs.getInt("id_servicio"));
+                s.setDia(rs.getDate("dia"));
+                s.setHora(rs.getString("hora"));
+                s.setNombre_comuna(rs.getString("comuna"));
+                s.setNombre_servicio(rs.getString("servicio"));
 
                 listadoSol.add(s);
             }

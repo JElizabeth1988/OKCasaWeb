@@ -88,15 +88,16 @@
                             <li class="nav-item"><a href="servletAgenda" class="nav-link">Agendar<span
                                         class="icon"></span></a></li></a></li>  
 
-                        </c:if>
+                            </c:if>
 
                         <c:if test="${tipo!=null}">
                             <c:if test="${tipo==1}">
-                                
+
                                 <li class="nav-item"><a href="Listado" class="nav-link">Clientes</a></li>
                                 <li class="nav-item"><a href="ListadoSol" class="nav-link">Solicitudes</a></li>
                                 <li class="nav-item"><a href="AgregarCliente.jsp" class="nav-link">Agregar Cliente</a></li>
                                 <li class="nav-item"><a href="EliminarCliente.jsp" class="nav-link">Eliminar</a></li>
+                                <li class="nav-item"><a href="EnviarCorreo.jsp" class="nav-link">Correo</a></li>
 
 
                             </c:if> 
@@ -118,7 +119,7 @@
                     </ul>            
                     <ul class="nav navbar-nav navbar-right">
                         <c:if test="${tipo!=null}">
-                            <li class="nav-item"><a class="nav-link">Bienvenido ${username} <span
+                            <li class="nav-item"><a style="color: #022d5d;" class="nav-link">Bienvenido ${username} <span
                                         class="icon-user"></span></a></li>
                             <li class="nav-item"><a href="servletLogin" class="nav-link">Cerrar Sesión <span
                                         class="icon-logout"></span></a></li>

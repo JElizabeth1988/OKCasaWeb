@@ -7,6 +7,7 @@ package Dao;
 
 import Conexion.Conexion;
 import Clases.Cliente;
+import Clases.ListaCliente;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -68,8 +69,8 @@ public class ClienteDao {
     }
 
     //Listar--------------------------------------------------------------------
-    public List<Cliente> listarClientes() throws SQLException {
-        List<Cliente> listado = new ArrayList<>();
+    public List<ListaCliente> listarClientes() throws SQLException {
+        List<ListaCliente> listado = new ArrayList<>();
 
         try {
             this.conexion = new Conexion().obtenerConexion();
@@ -83,7 +84,7 @@ public class ClienteDao {
 
             while (rs.next()) {
 
-                Cliente c = new Cliente();
+                ListaCliente c = new ListaCliente();
                 c.setRut_cliente(rs.getString("rut_cliente"));
                 c.setPrimer_nombre(rs.getString("primer_nombre"));
                 c.setSegundo_nombre(rs.getString("segundo_nombre"));
@@ -92,7 +93,7 @@ public class ClienteDao {
                 c.setDireccion(rs.getString("direccion"));
                 c.setTelefono(rs.getInt("telefono"));
                 c.setEmail(rs.getString("email"));
-                c.setId_comuna(rs.getInt("id_comuna"));
+                c.setNombre(rs.getString("nombre"));
                 listado.add(c);
             }
         } catch (Exception e) {

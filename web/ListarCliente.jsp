@@ -84,7 +84,7 @@
 
 
                 <div class="container">
-                    <h2 class="text-center" id="title">Listado</h2>
+                    <h2 class="text-center" id="title">Listado Clientes</h2>
                     <p class="text-center">
                         <small id="passwordHelpInline" class="text-muted"></small>
                     </p>
@@ -101,7 +101,7 @@
 
                                 <form action="Listado" method="POST" style="margin-right: 35px">
 
-                                    <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
+                                    <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 100px;"> <span
                                             class="icon-book-alt" style="font-size: 35px;"></span>Datos Encontrados
                                         <a href="AgregarCliente.jsp"><span
                                                 class="icon-plus" style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Agregar</span></a>
@@ -113,43 +113,44 @@
                                     <br>
                                     <%-- ROW-----------------------------------------------------------------------------%>
                                     <div class="row justify-content-center">
+                               
+
+                                        <div class="table-responsive">
+                                            <table class="table text-uppercase">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">RUT</th>
+                                                        <th scope="col"> NOMBRE </th>
+                                                        <th scope="col">DIRECCION</th>
+                                                        <th scope="col">TELEFONO</th>
+                                                        <th scope="col">EMAIL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <c:forEach var="cliente" items="${listado}">
+                                                        <tr>
+                                                            <td>${cliente.getRut_cliente()}</td>
+                                                            <td>${cliente.getPrimer_nombre()} ${cliente.getSegundo_nombre()}
+                                                                ${cliente.getAp_paterno()} ${cliente.getAp_materno()}
+                                                            </td>
+                                                            <td>${cliente.getDireccion()} ${cliente.getNombre()}</td>
+                                                            <td>${cliente.getTelefono()}</td>
+                                                            <td>${cliente.getEmail()}</td>         
 
 
-                                        <table class="table-sm table-striped table-responsive-sm" border="1">
-                                            <tr>
-                                                <td>RUT</td>
-                                                <td>PRIMER NOMBRE </td>
-                                                <td>SEGUNDO NOMBRE</td>
-                                                <td>APELLIDO PATERNO</td>
-                                                <td>APELLIDO MATERNO</td>
-                                                <td>DIRECCION</td>
-                                                <td>TELEFONO</td>
-                                                <td>EMAIL</td>
-                                                <td>COMUNA</td>
-                                            </tr>
-                                            <c:forEach var="cliente" items="${listado}">
-                                                <tr>
-                                                    <td>${cliente.getRut_cliente()}</td>
-                                                    <td>${cliente.getPrimer_nombre()}</td>
-                                                    <td>${cliente.getSegundo_nombre()}</td>
-                                                    <td>${cliente.getAp_paterno()}</td>
-                                                    <td>${cliente.getAp_materno()}</td>
-                                                    <td>${cliente.getDireccion()}</td>
-                                                    <td>${cliente.getTelefono()}</td>
-                                                    <td>${cliente.getEmail()}</td>         
-                                                    <td>${cliente.getId_comuna()}</td>
-                                        
-                                                </tr>
+                                                        </tr>
 
-                                            </c:forEach>
-                                        </table>
+                                                    </c:forEach>
+                                                </tbody>    
+                                            </table>
 
 
 
 
 
+                                        </div>
+                                      
                                     </div>
-
 
 
                                     <br>
@@ -158,7 +159,7 @@
 
                                 </form>
 
-                               
+
 
                             </div>
 

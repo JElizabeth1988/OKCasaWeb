@@ -36,6 +36,10 @@
         <servlet-name>servletHipotecario</servlet-name>
         <servlet-class>Controlador.servletHipotecario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>servletCorreo</servlet-name>
+        <servlet-class>Controlador.servletCorreo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>servletHipotecario</servlet-name>
         <url-pattern>/servletHipotecario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletCorreo</servlet-name>
+        <url-pattern>/servletCorreo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

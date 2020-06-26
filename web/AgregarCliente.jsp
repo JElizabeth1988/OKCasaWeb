@@ -34,6 +34,7 @@
                 <link rel="stylesheet" href="css/flaticon.css">
                 <link rel="stylesheet" href="css/fontello-embedded.css">
                 <link rel="stylesheet" href="css/style.css">
+                <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 
                 <link rel="stylesheet" href="css/style.css">
                 <script src="jquery/jquery.min.js"></script>
@@ -53,7 +54,7 @@
 
                 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
                 <!---- Font awesom link local ----->
-                <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+
             </head>
 
             <body style="background-color: white;">

@@ -5,15 +5,16 @@
  */
 package Controlador;
 
-import Clases.Cliente;
-import Clases.ListaCliente;
-import Dao.ClienteDao;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,10 +23,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Felipe Cristian
+ * @author Gemin
  */
-@WebServlet(name = "Listado", urlPatterns = {"/Listado"})
-public class Listado extends HttpServlet {
+@WebServlet(name = "servletCorreo", urlPatterns = {"/servletCorreo"})
+public class servletCorreo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,10 +45,10 @@ public class Listado extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Listado</title>");            
+            out.println("<title>Servlet servletCorreo</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Listado at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet servletCorreo at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -65,19 +66,7 @@ public class Listado extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        ClienteDao dao = new ClienteDao();
-        
-        try {
-            List<ListaCliente> listado =  dao.listarClientes();
-            request.setAttribute("listado", listado);
-            request.getRequestDispatcher("ListarCliente.jsp").forward(request, response);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Listado.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        processRequest(request, response);
     }
 
     /**
@@ -91,7 +80,52 @@ public class Listado extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //Capturar los datos del correo
+        String To = request.getParameter("txtCorreo");
+        String Subject = request.getParameter("cboAsunto");
+        String Mensage = request.getParameter("txtMensaje");
+
+        try {
+            /*Credenciales -> 
+             Deben tener habilitado que su correo GMAIL permita acceder
+             desde aplicaciones desconocidas. Modificar desde:
+             https://myaccount.google.com/lesssecureapps */
+            String mail = "ipy03.grupo3@gmail.com";
+            String password = "ipygrupo3";
+
+            Properties props = new Properties();
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.starttls.enable", "true");
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.put("mail.smtp.port", "587");
+
+            Session session = Session.getInstance(props,
+                    new javax.mail.Authenticator() {
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(mail, password);
+                        }
+                    });
+
+            try {
+
+                Message message = new MimeMessage(session);
+                message.setFrom(new InternetAddress(mail));
+                message.setRecipients(Message.RecipientType.TO,
+                        InternetAddress.parse(To));
+                message.setSubject(Subject);
+                message.setText(Mensage);
+
+                Transport.send(message);
+
+            } catch (MessagingException e) {
+                throw new RuntimeException(e);
+            }
+            request.setAttribute("msj", "Correo Enviado");
+            request.getRequestDispatcher("EnviarCorreo.jsp").forward(request, response);
+        } catch (Exception e) {
+            request.setAttribute("msj", "Correo no enviado " + e.getMessage());
+            request.getRequestDispatcher("EnviarCorreo.jsp").forward(request, response);
+        }
     }
 
     /**

@@ -54,7 +54,7 @@ public class TESTCLIENTE {
                System.out.println("Cliente no Guardado");
            }*/
         
-            List<Cliente>listado = dao.listarClientes();
+           /* List<Cliente>listado = dao.listarClientes();
             for (Cliente cliente : listado) {
                 System.out.println(cliente.toString());
             }
@@ -62,7 +62,7 @@ public class TESTCLIENTE {
             for (Comuna comuna : lis) {
                 System.out.println(comuna.toString());
             }
-            
+            */
            
             
         } catch (Exception e) {

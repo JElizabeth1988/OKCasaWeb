@@ -84,7 +84,7 @@
 
 
                 <div class="container">
-                    <h2 class="text-center" id="title">Listado</h2>
+                    <h2 class="text-center" id="title">Listado Solicitudes</h2>
                     <p class="text-center">
                         <small id="passwordHelpInline" class="text-muted"></small>
                     </p>
@@ -116,40 +116,48 @@
                                         <br>
                                         <%-- ROW-----------------------------------------------------------------------------%>
                                         <div class="row justify-content-center">
+                                            <div class="col-md-auto">
+                                                <div class="card-body">
+                                                    <div class="out"> 
+
+                                                        <table class="table table-responsive-sm text-center text-uppercase">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">CÓDIGO SOLICITUD</th>
+                                                                    <th scope="col">FECHA SOLICITUD</th>
+                                                                    <th scope="col">RUT CLIENTE</th> 
+                                                                    <th scope="col">DIRECCION VIVIENDA</th>
+                                                                    <th scope="col">NOMBRE CONSTRUCTORA</th>
+                                                                    <th scope="col">SERVICIO ESCOGIDO</th>
+                                                                    <th scope="col">MONTO PAGO</th>
+                                                                    <th scope="col">DESCUENTO APLICADO</th>
+                                                                    <th scope="col">FECHA INSPECCION</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <c:forEach var="sol" items="${listadoSol}">
+                                                                    <tr>
+                                                                        <td>${sol.getId_solicitud()}</td>
+                                                                        <td>${sol.getFecha_solicitud()}</td>
+                                                                        <td>${sol.getRut_cliente()}</td>
+                                                                        <td>${sol.getDireccion_vivienda()} ${sol.getNombre_comuna()}</td>
+                                                                        <td>${sol.getConstructora()}</td>
+                                                                        <td>${sol.getNombre_servicio()}</td>
+                                                                        <td>${sol.getPago()}</td>                                                      
+                                                                        <td>${sol.getDescuento()}</td>
+                                                                        <td>${sol.getDia()} ${sol.getHora()}</td>
 
 
-                                            <table class="table-sm table-striped table-responsive-sm" border="1">
-                                                <tr>
-                                                    <td>ID_SOLICITUD</td>
-                                                    <td>FECHA_SOLICITUD</td>
-                                                    <td>DIRECCION_VIVIENDA</td>
-                                                    <td>CONSTRUCTORA</td>
-                                                    <td>RUT_CLIENTE</td>
-                                                    <td>ID_AGENDA</td>
-                                                    <td>PAGO</td>
-                                                    <td>ID_COMUNA</td>
-                                                    <td>ID_SERVICIO</td>
-                                                
-                                                </tr>
-                                                <c:forEach var="sol" items="${listadoSol}">
-                                                    <tr>
-                                                        <td>${sol.getId_solicitud()}</td>
-                                                        <td>${sol.getFecha_solicitud()}</td>
-                                                        <td>${sol.getDireccion_vivienda()}</td>
-                                                        <td>${sol.getConstructora()}</td>
-                                                        <td>${sol.getRut_cliente()}</td>
-                                                        <td>${sol.getId_agenda()}</td>
-                                                        <td>${sol.getPago()}</td>
-                                                        <td>${sol.getId_comuna()}</td>
-                                                        <td>${sol.getId_servicio()}</td>
-                                                       
-                                                    </tr>
 
-                                                </c:forEach>
-                                            </table>
+                                                                    </tr>
 
-
-
+                                                                </c:forEach>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>        
+                                            </div>
 
 
                                         </div>
