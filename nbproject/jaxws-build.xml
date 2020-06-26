@@ -218,5 +218,85 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_3"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4, wsimport-client-WSDISPONIBILIDAD_3"/>
+    <target name="wsimport-client-WSDISPONIBILIDAD_4" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_4"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_4" destdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_4" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_4/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_4/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_4"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_4">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSDISPONIBILIDAD_4" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_4"/>
+    </target>
+    <target name="wsimport-client-WSDISPONIBILIDAD_5" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_5"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_5" destdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_5" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_5/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_5/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_5"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_5">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSDISPONIBILIDAD_5" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_5"/>
+    </target>
+    <target name="wsimport-client-WSDISPONIBILIDAD_6" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_6"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_6" destdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_6" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_6/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_6/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_6"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_6">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSDISPONIBILIDAD_6" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_6"/>
+    </target>
+    <target name="wsimport-client-WSDISPONIBILIDAD_7" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_7"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_7" destdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_7" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_7/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_7/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_7"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_7">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSDISPONIBILIDAD_7" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_7"/>
+    </target>
+    <target name="wsimport-client-WSDISPONIBILIDAD_8" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_8"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_8" destdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_8" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_8/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_8/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_8"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_8">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSDISPONIBILIDAD_8" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_8"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4, wsimport-client-WSDISPONIBILIDAD_3, wsimport-client-WSDISPONIBILIDAD_4, wsimport-client-WSDISPONIBILIDAD_5, wsimport-client-WSDISPONIBILIDAD_6, wsimport-client-WSDISPONIBILIDAD_7, wsimport-client-WSDISPONIBILIDAD_8"/>
 </project>
