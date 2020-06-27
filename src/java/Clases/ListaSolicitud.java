@@ -18,8 +18,9 @@ public class ListaSolicitud {
     private String direccion_vivienda;
     private String constructora;
     private String rut_cliente;
+    private String tipo_pago;
     private int pago;
-    private int descuento;
+    private double descuento;
     private String estado;
     private Date dia;
     private String hora;
@@ -29,12 +30,13 @@ public class ListaSolicitud {
     public ListaSolicitud() {
     }
 
-    public ListaSolicitud(int id_solicitud, Date fecha_solicitud, String direccion_vivienda, String constructora, String rut_cliente, int pago, int descuento, String estado, Date dia, String hora, String nombre_comuna, String nombre_servicio) {
+    public ListaSolicitud(int id_solicitud, Date fecha_solicitud, String direccion_vivienda, String constructora, String rut_cliente, String tipo_pago, int pago, double descuento, String estado, Date dia, String hora, String nombre_comuna, String nombre_servicio) {
         this.id_solicitud = id_solicitud;
         this.fecha_solicitud = fecha_solicitud;
         this.direccion_vivienda = direccion_vivienda;
         this.constructora = constructora;
         this.rut_cliente = rut_cliente;
+        this.tipo_pago = tipo_pago;
         this.pago = pago;
         this.descuento = descuento;
         this.estado = estado;
@@ -84,6 +86,14 @@ public class ListaSolicitud {
         this.rut_cliente = rut_cliente;
     }
 
+    public String getTipo_pago() {
+        return tipo_pago;
+    }
+
+    public void setTipo_pago(String tipo_pago) {
+        this.tipo_pago = tipo_pago;
+    }
+
     public int getPago() {
         return pago;
     }
@@ -92,11 +102,11 @@ public class ListaSolicitud {
         this.pago = pago;
     }
 
-    public int getDescuento() {
+    public double getDescuento() {
         return descuento;
     }
 
-    public void setDescuento(int descuento) {
+    public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
 
@@ -139,8 +149,17 @@ public class ListaSolicitud {
     public void setNombre_servicio(String nombre_servicio) {
         this.nombre_servicio = nombre_servicio;
     }
-    
-    
-    
 
-}
+    @Override
+    public String toString() {
+        return "ListaSolicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", tipo_pago=" + tipo_pago + ", pago=" + pago + ", descuento=" + descuento + ", estado=" + estado + ", dia=" + dia + ", hora=" + hora + ", nombre_comuna=" + nombre_comuna + ", nombre_servicio=" + nombre_servicio + '}';
+    }
+
+    
+       
+    
+}    
+
+
+
+   

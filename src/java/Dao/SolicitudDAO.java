@@ -35,7 +35,7 @@ public class SolicitudDAO {
 
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = "{ call SP_AGREGAR_SOLICITUD(?,?,?,?,?,?,?,?,?,?,?) }";
+            String llamada = "{ call SP_AGREGAR_SOLICITUD(?,?,?,?,?,?,?,?,?,?,?,?) }";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
 
  
@@ -45,12 +45,13 @@ public class SolicitudDAO {
             cstmt.setString(3, solicitud.getDireccion_vivienda());
             cstmt.setString(4, solicitud.getConstructora());
             cstmt.setString(5, solicitud.getRut_cliente());
-            cstmt.setInt(6, solicitud.getPago());
-            cstmt.setInt(7, solicitud.getDescuento());
-            cstmt.setString(8, solicitud.getEstado());
-            cstmt.setInt(9, solicitud.getId_agenda());
-            cstmt.setInt(10, solicitud.getId_comuna());
-            cstmt.setInt(11, solicitud.getId_servicio());
+            cstmt.setString(6, solicitud.getTipo_pago());
+            cstmt.setInt(7, solicitud.getPago());
+            cstmt.setDouble(8, solicitud.getDescuento());
+            cstmt.setString(9, solicitud.getEstado());
+            cstmt.setInt(10, solicitud.getId_agenda());
+            cstmt.setInt(11, solicitud.getId_comuna());
+            cstmt.setInt(12, solicitud.getId_servicio());
 
             if (cstmt.executeUpdate() > 0) {
                 centinela = true;
@@ -90,8 +91,9 @@ public class SolicitudDAO {
                 s.setDireccion_vivienda(rs.getString("direccion_vivienda"));
                 s.setConstructora(rs.getString("constructora"));
                 s.setRut_cliente(rs.getString("rut_cliente"));
+                s.setTipo_pago(rs.getString("tipo_pago"));
                 s.setPago(rs.getInt("pago"));
-                s.setDescuento(rs.getInt("descuento"));
+                s.setDescuento(rs.getDouble("descuento"));
                 s.setEstado(rs.getString("estado"));
                 s.setDia(rs.getDate("dia"));
                 s.setHora(rs.getString("hora"));

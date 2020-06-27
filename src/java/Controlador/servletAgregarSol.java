@@ -112,67 +112,85 @@ public class servletAgregarSol extends HttpServlet {
         //---------------------WS PAGO----------------------------------------
         int total = Integer.parseInt(request.getParameter("txtTotal"));
         int pag = Integer.parseInt(request.getParameter("txtPago"));
+        int clave = Integer.parseInt(request.getParameter("txtClave"));
+        String rut = request.getParameter("txtRut");
 
-        //Creamos el cliente al WS
+        //CREAMOS CLIENTE AL WS PAGO
         WSPAGO_Service servicio = new WSPAGO_Service();
         WSPAGO cliente = servicio.getWSPAGOPort();
 
+        //VERIFICAMOS PAGO
         if (cliente.realizarPago(total, pag) >= 0) {
 
-            request.setAttribute("msje", "Pago efectuado");
+            //VERIFICAMOS CLAVE
+            if (cliente.claveCliente(rut, clave)) {
+               
+                //DATOS PARA GUARDAR SOLICITUD----------------------------------
+                int id_solicitud = 1;
 
-            int id_solicitud = 1;
+                Date fecha_solicitud = Date.valueOf(fecha.obtenerFechaYHoraActual());
+                String direccion_vivienda = request.getParameter("txtDireccion");
 
-            Date fecha_solicitud = Date.valueOf(fecha.obtenerFechaYHoraActual());
-            String direccion_vivienda = request.getParameter("txtDireccion");
+                String costructora = request.getParameter("txtConstructora");
 
-            String costructora = request.getParameter("txtConstructora");
+                String rut_cliente = request.getParameter("txtRut");
 
-            String rut_cliente = request.getParameter("txtRut");
+                String tipo_pago = request.getParameter("rbTipoPago");
+                int pago = Integer.parseInt(request.getParameter("txtPago"));
+                double descuento = Double.parseDouble(request.getParameter("txtDescuento"));
+                String estado = "Pendiente";
+                int id_agenda = Integer.parseInt(request.getParameter("rb_agendar"));
+                int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
 
-            int pago = Integer.parseInt(request.getParameter("txtPago"));
-            int descuento = Integer.parseInt(request.getParameter("txtDescuento"));
-            String estado = "Pendiente";
-            int id_agenda = Integer.parseInt(request.getParameter("rb_agendar"));
-            int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
+                int id_servicio = Integer.parseInt(request.getParameter("cboServicio"));
 
-            int id_servicio = Integer.parseInt(request.getParameter("cboServicio"));
+                Solicitud sol = new Solicitud(id_solicitud, fecha_solicitud, direccion_vivienda, costructora, rut_cliente, tipo_pago, pago, descuento, estado, id_agenda, id_comuna, id_servicio);
+                SolicitudDAO dao = new SolicitudDAO();
 
-            Solicitud sol = new Solicitud(id_solicitud, fecha_solicitud, direccion_vivienda, costructora, rut_cliente, pago, descuento, estado, id_agenda, id_comuna, id_servicio);
-            SolicitudDAO dao = new SolicitudDAO();
+                try {
+                    //Guardar
+                    if (dao.agregarSolicitud(sol)) {
 
-            try {
-                //Guardar
-                if (dao.agregarSolicitud(sol)) {
-                    
-                    //Indicar vuelto,
-                    if (cliente.realizarPago(total, pag) == 0) {
-                        request.setAttribute("msj", "Inspección Agendada");
-                        request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-                        //Pasar día y hora a no disponible
-                        AgendaDao d = new AgendaDao();
-                        d.modificarAgenda(id_agenda);
+                        //Indicar vuelto
+                        if (cliente.realizarPago(total, pag) == 0) {
+                            request.setAttribute("msj", "Inspección Agendada");
+                            request.setAttribute("msje", "Pago efectuado");
+                            request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+
+                            //PASAR DIA Y HORA A NO DISPONIBLE
+                            AgendaDao d = new AgendaDao();
+                            d.modificarAgenda(id_agenda);
+                            
+                        } else {
+                            request.setAttribute("msj", "Inspección Agendada");
+                            request.setAttribute("msje", "Pago efectuado, su vuelto es: $"+ cliente.realizarPago(total, pag));
+                            request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+                            
+                             //PASAR DIA Y HORA A NO DISPONIBLE
+                            AgendaDao d = new AgendaDao();
+                            d.modificarAgenda(id_agenda);
+                        }
+
                     } else {
-                        request.setAttribute("msj", "Inspección Agendada, su vuelto es: $"+cliente.realizarPago(total, pag));
+                        request.setAttribute("err", "No Agendado :( ");
+                        request.setAttribute("msje", "Pago no Efectuado");
                         request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-                        //Pasar día y hora a no disponible
-                        AgendaDao d = new AgendaDao();
-                        d.modificarAgenda(id_agenda);
+                        
                     }
-
-                } else {
-                    request.setAttribute("err", "No Agendado");
+                } catch (SQLException ex) {
+                    request.setAttribute("err", "No Agendado :0" + ex.getMessage());
                     request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-                    request.setAttribute("msje", "Pago Insuficiente");
                 }
-            } catch (SQLException ex) {
-                request.setAttribute("err", "No Agendado" + ex.getMessage());
+            } else {
+                request.setAttribute("erro", "Clave Errónea");
+                request.setAttribute("err", "No Agendado :S");
                 request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+
             }
 
         } else {
             request.setAttribute("erro", "Pago Insuficiente");
-            request.setAttribute("err", "No Agendado");
+            request.setAttribute("err", "No Agendado :/");
             request.getRequestDispatcher("Agendar.jsp").forward(request, response);
         }
 

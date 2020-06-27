@@ -5,6 +5,7 @@
  */
 package TEST;
 
+import Clases.ListaSolicitud;
 import Clases.Solicitud;
 import Dao.SolicitudDAO;
 import java.text.DateFormat;
@@ -35,18 +36,19 @@ public class TESTSOLICITUD {
              //Caso 2: obtener la fecha y salida por pantalla con formato:
              DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
              System.out.println("Fecha: " + dateFormat.format(date));*/
-            Solicitud so = new Solicitud(100, null, "dwdwedwed", "edewdewd", "19385798-1", 30000, 0,"Pendiente", 1, 1, 2);
+            
+            /*Solicitud so = new Solicitud(100, null, "dewdewcdewd", "dwedewdewd", "19385798-1", "dewdewdwed", 30000, 0.2, "dewdewd", 1, 2, 3);
             if (dao.agregarSolicitud(so)) {
 
                 System.out.println("Solicitud Guardada");
             } else {
                 System.out.println("Solicitud no Guardada");
             }
-
-            /* List<Solicitud>listado = dao.listarSolicitudes();
-             for (Solicitud solicitud : listado) {
+*/
+            List<ListaSolicitud>listado = dao.listarSolicitudes();
+             for (ListaSolicitud solicitud : listado) {
              System.out.println(solicitud.toString());
-             }*/
+             }
         } catch (Exception e) {
             System.out.println("Error al ejecutar" + e.getMessage());
         }
