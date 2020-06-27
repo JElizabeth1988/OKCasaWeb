@@ -115,10 +115,6 @@
                                             </select>                    
                                         </div>
 
-
-
-
-
                                     </td>
                                 </tr>
                                 <tr>
@@ -131,7 +127,7 @@
                                     <td></td>
                                     <td> <input type="submit" name="btnEnviar" value="Enviar Correo" class="btn btn-primary">  </td>
                                 </tr>
-
+|
 
                             </table>
 

@@ -41,6 +41,7 @@
         <link rel="stylesheet" href="css/style.css">
         <!---- boostrap.min link local ----->
 
+        <script src="js/calculos.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <!---- Boostrap js link local ----->
 
@@ -52,6 +53,8 @@
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
     </head>
     <body>
         <!-- Back to top button -->
@@ -122,8 +125,7 @@
                                                             <td>${agenda.getDia()}</td>
                                                             <td>${agenda.getHora()}</td>                                         
                                                             <td>
-                                                                <input style="margin-left: 20px;" type="radio" checked="true" class="option-input radio" name="rb_agendar" value="${agenda.getIdAgenda()}">
-
+                                                                <input style="margin-left: 20px;" type="radio" checked class="option-input radio" name="rb_agendar" value="${agenda.getIdAgenda()}">
                                                             </td>
 
                                                         </tr>
@@ -199,8 +201,8 @@
                                     <div class="col-md-4" id="textbox">
                                         <div class="form-group"> <!-- Servicio -->
                                             <label style="color: #bd2130">*</label>
-                                            <label for="servicio" class="control-label">Selecciona el Servicio</label>
-                                            <select class="form-control" name="cboServicio">                    
+                                            <label for="servicio" id="cboServicio" class="control-label">Selecciona el Servicio</label>
+                                            <select class="form-control" name="cboServicio" onchange="ddlselect();">                    
                                                 <option value="1">Verificación Instalaciones y terminaciones</option>
                                                 <option value="2">Medición de metros cuadrados de la vivienda</option>
                                                 <option value="3">Inspección de luz, instalaciones sanitarias y gas</option>
@@ -241,67 +243,110 @@
 
                                             <!-- No Hipotecario -->
                                             <c:if test="${tipo_cliente==0}">
-                                                <ul class="list-group list-group-flush text-center">
-                                                    <li class="list-group">Descuento: $0</li>
-                                                    <li class="list-group">Subtotal: $0</li>
-                                                    <li class="list-group">Total: $79.590</li>
-                                                    Cliente No Hipotecario de Banco Estado
-                                                </ul>
+                                                <table class="table" style="font-size: 14px;">
+                                                    <tr>
+                                                        <td>Descuento: $0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Subtotal: $0</td>     
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Total: $79.590</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size: 12px;">No se encontraron descuentos asociados a este Rut.</td>
+                                                    </tr>
+
+                                                </table>
+
                                             </c:if> 
 
                                             <!--Hipotecario -->
                                             <c:if test="${tipo_cliente==1}">
-                                                <ul class="list-group list-group-flush text-center">
-                                                    <li class="list-group">Descuento: 20%</li>
-                                                    <li class="list-group">Subtotal: $15.900</li>
-                                                    <li class="list-group">Total: $63.600</li>
-                                                    Cliente Hipotecario de Banco Estado
-                                                </ul>
+                                                <table class="table" style="font-size: 14px;">
+                                                    <tr>
+                                                        <td>Descuento: 20%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Subtotal: $15.900</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Total: $63.600</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size: 12px;">Descuento Cliente Hipotecario de Banco Estado.</td>
+                                                    </tr>
+                                                </table>
+
                                             </c:if> 
 
 
 
                                         </div>
 
-
+                                        <!-- PAGO ------------------------------------------------------->
                                         <div class="col-md-10">
                                             <br>
                                             <br>
-                                            <div class="card text-center">
+                                            <div class="card text-center" style="color: #000;">
                                                 <div class="card-header" style="background-color: white;">
                                                     <img src="images/webpago.png" alt="logo">
                                                 </div>
                                                 <div class="card-body justify-content-center">
+                                                    <!-- No Hipotecario -->
+                                                    <c:if test="${tipo_cliente==0}">
+                                                        <ul class="list-group list-group-flush text-center">
+                                                            <li style="background-color: #f5c6cb;" class="list-group">Total a Pagar: $79.590</li>  
+                                                        </ul>
+                                                    </c:if> 
+
+                                                    <!--Hipotecario -->
+                                                    <c:if test="${tipo_cliente==1}">
+                                                        <ul class="list-group list-group-flush text-center">
+                                                            <li style="font-size: 17px; color: #007bff;list-style: none;">Total a Pagar: $63.600</li>
+
+                                                        </ul>
+                                                    </c:if> 
+                                                    <br>
+                                                    <p> Seleccione Tipo de Pago </p>
+                                                    <div class="row">
+
+                                                        <div class="col-md-3">
+
+                                                        </div>
+                                                        <div class="col-md-3 text-center">
+                                                            <input type="radio" name="rbPago" value="credito" checked>
+                                                            <img src="images/card-a.png" width="55%">
+                                                            <a>Crédito</a>
+
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <input type="radio" name="rbPago" value="debito">
+                                                            <img src="images/card-b.png" width="53%">
+                                                            <a>Débito</a>
+                                                        </div>
+                                                        <div class="col-md-3">
+
+                                                        </div>
+
+                                                    </div>
+         
+
                                                     <!-----WS CLIENTE HIPOTECARIO ------------------>
                                                     <!-- No cliente hipotecario -->
                                                     <c:if test="${tipo_cliente==0}">
                                                         <input value="79500" name="txtTotal" hidden>
                                                         <input value="0" name="txtDescuento" hidden>
+                                                        <input name="txtT" id="txtT">
                                                     </c:if>     
-
                                                     <!-- Cliente hipotecario -->
                                                     <c:if test="${tipo_cliente==1}">
                                                         <input value="63600" name="txtTotal" hidden>
                                                         <input value="20" name="txtDescuento" hidden> 
                                                     </c:if>
-
-
                                                     <div class="row justify-content-center"> 
+
                                                         <div class="col-md-6" id="textbox">
-                                                            <!-- No Hipotecario -->
-                                                            <c:if test="${tipo_cliente==0}">
-                                                                <ul class="list-group list-group-flush text-center">
-                                                                    <li class="list-group">Total a Pagar: $79.590</li>  
-                                                                </ul>
-                                                            </c:if> 
-
-                                                            <!-- No Hipotecario -->
-                                                            <c:if test="${tipo_cliente==1}">
-                                                                <ul class="list-group list-group-flush text-center">
-                                                                    <li class="list-group">Total a Pagar: $63.600</li>
-
-                                                                </ul>
-                                                            </c:if> 
 
                                                             <!-- RUT CLIENTE -->
                                                             <input value="${rut}" name="txtRut" hidden>
@@ -311,10 +356,15 @@
                                                                 <input type="text" name="txtPago" id="direccion" class="form-control input-lg"
                                                                        placeholder="$" required minlength="1">
                                                             </div> 
+                                                            <div class="form-group"> <!-- Clave wsPago -->
+                                                                <label for="pago" class="control-label">Ingrese clave secreta</label>
+                                                                <input type="text" name="txtclave" id="direccion" class="form-control input-lg"
+                                                                       placeholder="*****" required minlength="1" style="width: 60%;margin-left: 50px;">
+                                                            </div> 
                                                         </div>
 
                                                     </div>  
-                                                    <input type="submit" class="btn btn btn-secondary" name="btnPago" style="margin-left: 30px" value="Procesar Pago">
+                                                    <input type="submit" class="btn btn btn-secondary" name="btnPago"  value="Procesar Pago">
                                                     <br>
                                                     <br>
                                                 </div>
@@ -410,6 +460,7 @@
         <script src="js/google-map.js"></script>
         <script src="js/main.js"></script>
         <script src="js/backtotop.js"></script>   
+        <script src="js/calculos.js"></script>
 
     </body>
 </html>

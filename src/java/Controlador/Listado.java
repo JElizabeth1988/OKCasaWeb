@@ -70,7 +70,7 @@ public class Listado extends HttpServlet {
         
         try {
             List<ListaCliente> listado =  dao.listarClientes();
-            request.setAttribute("listado", listado);
+            request.getSession().setAttribute("listado", listado);
             request.getRequestDispatcher("ListarCliente.jsp").forward(request, response);
             
         } catch (SQLException ex) {
