@@ -75,7 +75,7 @@ public class Listado extends HttpServlet {
             
         } catch (SQLException ex) {
             Logger.getLogger(Listado.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    }
         
         
     }

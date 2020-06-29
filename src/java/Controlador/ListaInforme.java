@@ -7,20 +7,22 @@ package Controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ws.WSBANCO;
-import ws.WSBANCO_Service;
-import ws.WSLOGIN;
-import ws.WSLOGIN_Service;
+import ws.Informe;
+import ws.WSSeguimiento;
+import ws.WSSeguimiento_Service;
+
+
 
 /**
  *
  * @author chida
  */
-public class servletLogin extends HttpServlet {
+public class ListaInforme extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +41,10 @@ public class servletLogin extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletLogin</title>");
+            out.println("<title>Servlet ListaInforme</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet servletLogin at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ListaInforme at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,11 +62,19 @@ public class servletLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+         String rut_cliente = request.getParameter("txtRut");
+        
+          //Creamos el cliente al WS
+        WSSeguimiento_Service servicio = new WSSeguimiento_Service();
+        WSSeguimiento  cliente = servicio.getWSSeguimientoPort();
 
-        //Cerrar Sesión
-        request.getSession().invalidate();
-        // Solo redirije, no envía variables
-        response.sendRedirect("index.jsp");
+                
+        List<Informe> listar =  cliente.seguimientos(rut_cliente);
+        request.getSession().setAttribute("listar", listar);
+        request.getRequestDispatcher("Resultados.jsp").forward(request, response);
+        
+       
     }
 
     /**
@@ -78,39 +88,7 @@ public class servletLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Capturar Credenciales
-        String user = request.getParameter("txtUsuario");
-        String pass = request.getParameter("txtContrasenia");
-
-        //Creamos el cliente al WS
-        WSLOGIN_Service servicio = new WSLOGIN_Service();
-        WSLOGIN cliente = servicio.getWSLOGINPort();
-
-
-        //Validar las credenciales
-        int tipo = cliente.login(user, pass);
-
-        if (tipo > 0) {
-
-            //SACAR CLIENTE HIPOTECARIO, sacar rut para entregarla como variable de sesión
-            WSBANCO_Service serv = new WSBANCO_Service();
-            WSBANCO cli = serv.getWSBANCOPort();
-            
-            String rut = cliente.rutCliente(user, pass);
-            
-            int tipo_cliente = cli.tipoCliente(rut);
-
-            request.getSession().setAttribute("tipo", tipo);
-            request.getSession().setAttribute("username", user);
-            request.getSession().setAttribute("tipo_cliente", tipo_cliente);
-            request.getSession().setAttribute("rut", rut);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-
-        } else {
-            request.setAttribute("err", "Credenciales Incorrectas");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
-
+        processRequest(request, response);
     }
 
     /**

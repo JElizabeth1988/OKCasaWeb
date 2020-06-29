@@ -118,9 +118,10 @@ public class SolicitudDAO {
 
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = "DELETE FROM SOLICITUD WHERE ID_SOLICITUD = "+codigo;
+            String llamada = " { CALL SP_ELIMINAR_SOLICITUD(?) } ";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
-
+            cstmt.setInt(1, codigo);
+            
             if (cstmt.executeUpdate()>0) {
                 centinela = true;
             }
@@ -136,4 +137,47 @@ public class SolicitudDAO {
 
         return centinela;
     }
+    
+   //LISTAR POR RUT
+    public List<ListaSolicitud> listarPorRut(String rut) throws SQLException {
+        List<ListaSolicitud> listadoSol = new ArrayList<>();
+
+        try {
+            this.conexion = new Conexion().obtenerConexion();
+            String llamada = " { call SP_LISTAR_POR_RUT(?,?) }";
+            CallableStatement cstmt = this.conexion.prepareCall(llamada);
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.setString(2, rut);
+            cstmt.execute();
+
+            ResultSet rs = (ResultSet) cstmt.getObject(1);
+
+            while (rs.next()) {
+
+                ListaSolicitud s = new ListaSolicitud();
+                s.setId_solicitud(rs.getInt("id_solicitud"));
+                s.setFecha_solicitud(rs.getDate("fecha_solicitud"));
+                s.setDireccion_vivienda(rs.getString("direccion_vivienda"));
+                s.setConstructora(rs.getString("constructora"));
+                s.setRut_cliente(rs.getString("rut_cliente"));
+                s.setTipo_pago(rs.getString("tipo_pago"));
+                s.setPago(rs.getInt("pago"));
+                s.setDescuento(rs.getDouble("descuento"));
+                s.setEstado(rs.getString("estado"));
+                s.setDia(rs.getDate("dia"));
+                s.setHora(rs.getString("hora"));
+                s.setNombre_comuna(rs.getString("comuna"));
+                s.setNombre_servicio(rs.getString("servicio"));
+
+                listadoSol.add(s);
+            }
+        } catch (Exception e) {
+            System.out.println("Error al listar solicitudes" + e.getMessage());
+        } finally {
+            this.conexion.close();
+        }
+        return listadoSol;
+    }
+    
+    
 }

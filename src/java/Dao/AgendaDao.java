@@ -30,15 +30,16 @@ public class AgendaDao {
 
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = "UPDATE agenda SET DISPONIBLE = 'N' WHERE ID_AGENDA = "+ id_agenda;
+            String llamada = "{ CALL SP_MODIFICAR_AGENDA(?) }";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
-           
+            cstmt.setInt(1, id_agenda);
+ 
             if (cstmt.executeUpdate() > 0) {
                 centinela = true;
             }
 
         } catch (Exception e) {
-            System.out.println("Error al Agregar Cliente" + e.getMessage());
+            System.out.println("Error al Modificar Agenda" + e.getMessage());
 
         } finally {
 

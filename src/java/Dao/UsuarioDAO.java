@@ -92,31 +92,5 @@ public class UsuarioDAO {
         return listado;
     }
     
-    //LOGIN---------------------------------------------------------------------
-    public int Login (String user, String pass) throws SQLException{
-    
-     int tipo = 0;
-     
-        try {
-            
-            this.conexion = new Conexion().obtenerConexion();
-            String script = "SELECT ID_TIPO_USUARIO FROM USUARIO "
-                    + "WHERE NOMBRE_USUARIO = '"+user+"' AND "
-                    + "CONTRASENIA = '"+pass+"' ";
-            CallableStatement cstmt = this.conexion.prepareCall(script);
-            
-            ResultSet rs = cstmt.executeQuery();
-            
-            while (rs.next()) {                
-                tipo = rs.getInt("ID_TIPO_USUARIO");
-            }
-        } catch (Exception e) {
-            System.out.println("Error en Login"+e.getMessage());
-        }finally{
-            
-            this.conexion.close();
-        }
-        return tipo;
-    }
-    
+   
 }

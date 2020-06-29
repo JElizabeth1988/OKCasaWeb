@@ -83,13 +83,16 @@
                         <li class="nav-item"><a href="nosotros.jsp" class="nav-link">Sobre Nosotros</a></li>
                         <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
                             <c:if test="${tipo==2}">
-                           
-                            <li class="nav-item"><a href="MisInspecciones.jsp" class="nav-link">Mis Inspecciones <span
+
+                            <li class="nav-item"><a href="ListaUS" class="nav-link">Mis Inspecciones <span
                                         class="icon"></span></a></li></a></li>  
+                            <li class="nav-item"><a href="ListaInforme" class="nav-link">Mis Resultados<span
+                                        class="icon"></span></a></li></a></li>  
+                    
                             <li class="nav-item"><a href="servletAgenda" class="nav-link">Agendar<span
                                         class="icon"></span></a></li></a></li>  
 
-                            </c:if>
+                        </c:if>
 
                         <c:if test="${tipo!=null}">
                             <c:if test="${tipo==1}">

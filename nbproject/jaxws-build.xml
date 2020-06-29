@@ -314,5 +314,85 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSPAGO_2"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4, wsimport-client-WSDISPONIBILIDAD_3, wsimport-client-WSDISPONIBILIDAD_4, wsimport-client-WSDISPONIBILIDAD_5, wsimport-client-WSDISPONIBILIDAD_6, wsimport-client-WSDISPONIBILIDAD_7, wsimport-client-WSDISPONIBILIDAD_8, wsimport-client-WSPAGO_2"/>
+    <target name="wsimport-client-WSLOGIN_5" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSLOGIN_5"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSLOGIN_5" destdir="${build.generated.dir}/jax-wsCache/WSLOGIN_5" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_5/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_5/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSLOGIN_5"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSLOGIN_5">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSLOGIN_5" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN_5"/>
+    </target>
+    <target name="wsimport-client-WSPAGO_3" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSPAGO_3"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSPAGO_3" destdir="${build.generated.dir}/jax-wsCache/WSPAGO_3" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSPAGO_3/wsdl/localhost_31439/WSOKCasa/WSPAGO.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSPAGO?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSPAGO_3/wsdl/localhost_31439/WSOKCasa/WSPAGO.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSPAGO_3"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSPAGO_3">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSPAGO_3" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSPAGO_3"/>
+    </target>
+    <target name="wsimport-client-WS_Seguimiento" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WS_Seguimiento" destdir="${build.generated.dir}/jax-wsCache/WS_Seguimiento" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Seguimiento/wsdl/localhost_31439/WSSeguimiento/WS_Seguimiento.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSSeguimiento/WS_Seguimiento?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Seguimiento/wsdl/localhost_31439/WSSeguimiento/WS_Seguimiento.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WS_Seguimiento" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento"/>
+    </target>
+    <target name="wsimport-client-WS_Seguimiento_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_1" destdir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Seguimiento_1/wsdl/localhost_31439/WSSeguimiento/WS_Seguimiento.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSSeguimiento/WS_Seguimiento?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Seguimiento_1/wsdl/localhost_31439/WSSeguimiento/WS_Seguimiento.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WS_Seguimiento_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_1"/>
+    </target>
+    <target name="wsimport-client-WS_Seguimiento_2" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_2"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_2" destdir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_2" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Seguimiento_2/wsdl/localhost_31439/WSOKCasa/WS_Seguimiento.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WS_Seguimiento?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Seguimiento_2/wsdl/localhost_31439/WSOKCasa/WS_Seguimiento.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_2"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_2">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WS_Seguimiento_2" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_2"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4, wsimport-client-WSDISPONIBILIDAD_3, wsimport-client-WSDISPONIBILIDAD_4, wsimport-client-WSDISPONIBILIDAD_5, wsimport-client-WSDISPONIBILIDAD_6, wsimport-client-WSDISPONIBILIDAD_7, wsimport-client-WSDISPONIBILIDAD_8, wsimport-client-WSPAGO_2, wsimport-client-WSLOGIN_5, wsimport-client-WSPAGO_3, wsimport-client-WS_Seguimiento, wsimport-client-WS_Seguimiento_1, wsimport-client-WS_Seguimiento_2"/>
 </project>

@@ -113,9 +113,10 @@ public class ClienteDao {
 
             //Abrir conexión
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = "DELETE FROM CLIENTE WHERE RUT_CLIENTE = '"+rut+"'";
+            String llamada = " { CALL SP_ELIMINAR_CLIENTE(?) } ";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
-
+            cstmt.setString(1, rut);
+            
             if (cstmt.executeUpdate()>0) {
                 centinela = true;
             }

@@ -40,6 +40,14 @@
         <servlet-name>servletCorreo</servlet-name>
         <servlet-class>Controlador.servletCorreo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListaUS</servlet-name>
+        <servlet-class>Controlador.ListaUS</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListaInforme</servlet-name>
+        <servlet-class>Controlador.ListaInforme</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
@@ -79,6 +87,14 @@
     <servlet-mapping>
         <servlet-name>servletCorreo</servlet-name>
         <url-pattern>/servletCorreo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListaUS</servlet-name>
+        <url-pattern>/ListaUS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListaInforme</servlet-name>
+        <url-pattern>/ListaInforme</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

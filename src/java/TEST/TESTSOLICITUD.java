@@ -8,6 +8,7 @@ package TEST;
 import Clases.ListaSolicitud;
 import Clases.Solicitud;
 import Dao.SolicitudDAO;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,7 +23,7 @@ public class TESTSOLICITUD {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // TODO code application logic here 
 
         SolicitudDAO dao = new SolicitudDAO();
@@ -37,6 +38,11 @@ public class TESTSOLICITUD {
              DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
              System.out.println("Fecha: " + dateFormat.format(date));*/
             
+            List<ListaSolicitud>listado = dao.listarPorRut("19385798-1");
+             for (ListaSolicitud solicitud : listado){ 
+             System.out.println(solicitud.toString());
+             }
+            
             /*Solicitud so = new Solicitud(100, null, "dewdewcdewd", "dwedewdewd", "19385798-1", "dewdewdwed", 30000, 0.2, "dewdewd", 1, 2, 3);
             if (dao.agregarSolicitud(so)) {
 
@@ -45,10 +51,10 @@ public class TESTSOLICITUD {
                 System.out.println("Solicitud no Guardada");
             }
 */
-            List<ListaSolicitud>listado = dao.listarSolicitudes();
+           /* List<ListaSolicitud>listado = dao.listarSolicitudes();
              for (ListaSolicitud solicitud : listado) {
-             System.out.println(solicitud.toString());
-             }
+             System.out.println(solicitud.toString());*/
+             
         } catch (Exception e) {
             System.out.println("Error al ejecutar" + e.getMessage());
         }

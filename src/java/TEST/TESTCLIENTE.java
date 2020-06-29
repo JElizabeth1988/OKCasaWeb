@@ -64,6 +64,12 @@ public class TESTCLIENTE {
             }
             */
            
+            if (dao.eliminarCliente("12864223-4")) {
+                System.out.println("Eliminado");
+            }else{
+                System.out.println("No eliminado");
+            }
+
             
         } catch (Exception e) {
             

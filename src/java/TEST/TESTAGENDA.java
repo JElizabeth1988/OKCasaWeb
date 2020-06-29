@@ -24,7 +24,13 @@ public class TESTAGENDA {
         AgendaDao dao = new AgendaDao();
         
         try {
-            dao.modificarAgenda(22);
+            
+            if (dao.modificarAgenda(10)) {
+                System.out.println("Modificado");
+            }else{
+                System.out.println("No modificado");
+            }
+
             
         } catch (SQLException ex) {
             System.out.println("nop"+ex.getMessage());
