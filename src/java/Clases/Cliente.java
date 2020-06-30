@@ -18,16 +18,15 @@ public class Cliente {
     private String direccion;
     private int telefono;
     private String email;
-    private String hipotecario;
+
 
     //comuna
     private int id_comuna;
     
     public Cliente() {
-        
     }
 
-    public Cliente(String rut_cliente, String primer_nombre, String segundo_nombre, String ap_paterno, String ap_materno, String direccion, int telefono, String email, String hipotecario, int id_comuna) {
+    public Cliente(String rut_cliente, String primer_nombre, String segundo_nombre, String ap_paterno, String ap_materno, String direccion, int telefono, String email, int id_comuna) {
         this.rut_cliente = rut_cliente;
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
@@ -36,19 +35,14 @@ public class Cliente {
         this.direccion = direccion;
         this.telefono = telefono;
         this.email = email;
-        this.hipotecario = hipotecario;
         this.id_comuna = id_comuna;
     }
 
-    
-
-   //SETTER
-
-    public void setRut_cliente(String rut_cliente) {
+    public void setRut_cliente(String rut_cliente) {   
         this.rut_cliente = rut_cliente;
     }
 
-    public void setPrimer_nombre(String primer_nombre) {
+    public void setPrimer_nombre(String primer_nombre) {    
         this.primer_nombre = primer_nombre;
     }
 
@@ -76,17 +70,10 @@ public class Cliente {
         this.email = email;
     }
 
-    public void setHipotecario(String hipotecario) {
-        this.hipotecario = hipotecario;
-    }
-
     public void setId_comuna(int id_comuna) {
         this.id_comuna = id_comuna;
     }
-    
-    
-    //GETTER
-
+   
     public String getRut_cliente() {
         return rut_cliente;
     }
@@ -119,27 +106,17 @@ public class Cliente {
         return email;
     }
 
-    public String getHipotecario() {
-        return hipotecario;
-    }
-
-    public int getId_comuna() {
+    //GETTER
+    public int getId_comuna() {   
         return id_comuna;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "rut_cliente=" + rut_cliente + ", primer_nombre=" + primer_nombre + ", segundo_nombre=" + segundo_nombre + ", ap_paterno=" + ap_paterno + ", ap_materno=" + ap_materno + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + ", hipotecario=" + hipotecario + ", id_comuna=" + id_comuna + '}';
+        return "Cliente{" + "rut_cliente=" + rut_cliente + ", primer_nombre=" + primer_nombre + ", segundo_nombre=" + segundo_nombre + ", ap_paterno=" + ap_paterno + ", ap_materno=" + ap_materno + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + ", id_comuna=" + id_comuna + '}';
     }
 
-   
-    
-
-    
-    
-
-   
-    
+ 
  
 
     

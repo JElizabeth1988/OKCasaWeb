@@ -6,6 +6,7 @@
 package Controlador;
 
 import Clases.ListaSolicitud;
+import Clases.Solicitud;
 import Dao.SolicitudDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,7 +42,7 @@ public class ListaUS extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ListaUS</title>");            
+            out.println("<title>Servlet ListaUS</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ListaUS at " + request.getContextPath() + "</h1>");
@@ -49,8 +50,10 @@ public class ListaUS extends HttpServlet {
             out.println("</html>");
         }
     }
+    String rut = "";
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -62,19 +65,18 @@ public class ListaUS extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
         SolicitudDAO dao = new SolicitudDAO();
-        
-        
+
         try {
             String rut_cliente = request.getParameter("txtRut");
-            List<ListaSolicitud> listaUS =  dao.listarPorRut(rut_cliente);
-            request.getSession().setAttribute("listaUS", listaUS);
+            List<ListaSolicitud> listac = dao.listarPorRut(rut_cliente);
+            request.getSession().setAttribute("listac", listac);
             request.getRequestDispatcher("MisInspecciones.jsp").forward(request, response);
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(Listado.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     /**
@@ -88,7 +90,18 @@ public class ListaUS extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        SolicitudDAO dao = new SolicitudDAO();
+
+        try {
+            String rut_cliente = request.getParameter("txtRut");
+            List<ListaSolicitud> listac = dao.listarPorRut(rut_cliente);
+            request.getSession().setAttribute("listac", listac);
+            request.getRequestDispatcher("MisInspecciones.jsp").forward(request, response);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Listado.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

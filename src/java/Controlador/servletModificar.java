@@ -6,12 +6,14 @@
 package Controlador;
 
 import Clases.Cliente;
-import Clases.Usuario;
+import Clases.ListaCliente;
 import Dao.ClienteDao;
-import Dao.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author chida
  */
-public class servletAgregar extends HttpServlet {
+public class servletModificar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,10 +42,10 @@ public class servletAgregar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletAgregar</title>");            
+            out.println("<title>Servlet servletModificar</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet servletAgregar at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet servletModificar at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -75,61 +77,18 @@ public class servletAgregar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                //Capturar Info formulario
-        String rut_cliente = request.getParameter("txtRut_cliente");
-        String primer_nombre = request.getParameter("txtPrimer_nombre");
-        String segundo_nombre = request.getParameter("txtSegundo_nombre");
-        String ap_paterno = request.getParameter("txtAp_paterno");
-        String ap_materno = request.getParameter("txtAp_materno");
-        String direccion = request.getParameter("txtDireccion");
-        int telefono = Integer.parseInt(request.getParameter("txtTelefono"));
-        String email = request.getParameter("txtEmail");
-        int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
 
-        Cliente cli = new Cliente(rut_cliente, primer_nombre, segundo_nombre, ap_paterno, ap_materno, direccion, telefono, email, id_comuna);
+        String rut = request.getParameter("txtRut");
         ClienteDao dao = new ClienteDao();
 
         try {
-            //Intentar Guardar
-            if (dao.agregarCliente(cli)) {
-                request.setAttribute("msj", "Registrado exitosamente");
-                request.getSession().setAttribute("rut", rut_cliente);
-                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
-            } else {
-                request.setAttribute("err", "Cliente ya existente");
-                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
-            }
+            List<Cliente> listac = dao.buscarCliente(rut);
+            request.setAttribute("listac", listac);
+            request.getRequestDispatcher("Modificar.jsp").forward(request, response);
+
         } catch (SQLException ex) {
-            request.setAttribute("err", "No Registrado" + ex.getMessage());
-            request.getRequestDispatcher("Registrar.jsp").forward(request, response);
+            Logger.getLogger(Listado.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-         //USUARIO------------------------------------------------------------------
-        int codigo = 100;
-        String nombre_usuario = request.getParameter("txtUsuario");
-        String contrasenia = request.getParameter("txtContrasenia");
-        int id_tipo_usuario = 2;
-
-        Usuario us = new Usuario(codigo, nombre_usuario, contrasenia, rut_cliente, id_tipo_usuario);
-        UsuarioDAO daous = new UsuarioDAO();
-
-        try {
-            //Intentar Guardar
-            if (daous.agregarUsuario(us)) {
-
-                request.setAttribute("msje", "Registrado exitosamente");
-                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
-            } else {
-
-                request.setAttribute("error", "No Registrado");
-                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
-            }
-        } catch (SQLException ex) {
-            request.setAttribute("error", "No Registrado");
-            request.getRequestDispatcher("Registrar.jsp").forward(request, response);
-        }
-        
-        
     }
 
     /**

@@ -172,25 +172,25 @@ public class servletAgregarSol extends HttpServlet {
                         }
 
                     } else {
-                        request.setAttribute("err", "No Agendado :( ");
+                        request.setAttribute("err", "No Agendado ");
                         request.setAttribute("msje", "Pago no Efectuado");
                         request.getRequestDispatcher("Agendar.jsp").forward(request, response);
                         
                     }
                 } catch (SQLException ex) {
-                    request.setAttribute("err", "No Agendado :0" + ex.getMessage());
+                    request.setAttribute("err", "No Agendado" + ex.getMessage());
                     request.getRequestDispatcher("Agendar.jsp").forward(request, response);
                 }
             } else {
                 request.setAttribute("erro", "Clave Errónea");
-                request.setAttribute("err", "No Agendado :S");
+                request.setAttribute("err", "No Agendado ");
                 request.getRequestDispatcher("Agendar.jsp").forward(request, response);
 
             }
 
         } else {
             request.setAttribute("erro", "Pago Insuficiente");
-            request.setAttribute("err", "No Agendado :/");
+            request.setAttribute("err", "No Agendado ");
             request.getRequestDispatcher("Agendar.jsp").forward(request, response);
         }
 

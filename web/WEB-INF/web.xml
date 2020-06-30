@@ -48,6 +48,18 @@
         <servlet-name>ListaInforme</servlet-name>
         <servlet-class>Controlador.ListaInforme</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>servletModificar</servlet-name>
+        <servlet-class>Controlador.servletModificar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servletActualizar</servlet-name>
+        <servlet-class>Controlador.servletActualizar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servletActualizarSol</servlet-name>
+        <servlet-class>Controlador.servletActualizarSol</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
@@ -95,6 +107,18 @@
     <servlet-mapping>
         <servlet-name>ListaInforme</servlet-name>
         <url-pattern>/ListaInforme</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletModificar</servlet-name>
+        <url-pattern>/servletModificar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletActualizar</servlet-name>
+        <url-pattern>/servletActualizar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletActualizarSol</servlet-name>
+        <url-pattern>/servletActualizarSol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

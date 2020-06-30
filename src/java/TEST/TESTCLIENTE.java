@@ -46,31 +46,32 @@ public class TESTCLIENTE {
          ComunaDAO d = new ComunaDAO();
         try {
             
-          /*Cliente c = new Cliente("13697138-7", "Ximena", "Nayareth", "Gómez", "Pacheco", "Rucalin 4100", 965172587, "sxs@gsa.cl", "Si", 2);
+          Cliente c = new Cliente("19385798-1", "no", "Nayareth", "Gómez", "Pacheco", "Rucalin 4100", 965172587, "sxs@gsa.cl", 2);
            
-           if(dao.agregarCliente(c)){
-               System.out.println("Cliente Guardado");
+           if(dao.ModificarCliente(c)){
+               System.out.println("Cliente mod");
            } else{
-               System.out.println("Cliente no Guardado");
-           }*/
+               System.out.println("Cliente no mod");
+           }
         
-           /* List<Cliente>listado = dao.listarClientes();
+            /*List<Cliente> listado = dao.buscarCliente("19385798-1");
             for (Cliente cliente : listado) {
                 System.out.println(cliente.toString());
             }
-            List<Comuna>lis = d.listarComunas();
+            
+            /*List<Comuna>lis = d.listarComunas();
             for (Comuna comuna : lis) {
                 System.out.println(comuna.toString());
             }
             */
            
-            if (dao.eliminarCliente("12864223-4")) {
+            /*if (dao.eliminarCliente("12864223-4")) {
                 System.out.println("Eliminado");
             }else{
                 System.out.println("No eliminado");
             }
 
-            
+            */
         } catch (Exception e) {
             
             System.out.println("Error al ejecutar"+e.getMessage());

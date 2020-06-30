@@ -99,65 +99,70 @@
 
                             <div class="col-md justify-content-center">
 
-                                <form action="Listado" method="POST" style="margin-right: 35px">
 
-                                    <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 100px;"> <span
-                                            class="icon-book-alt" style="font-size: 35px;"></span>Datos Encontrados
-                                        <a href="AgregarCliente.jsp"><span
-                                                class="icon-plus" style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Agregar</span></a>
-                                        <a href="EliminarCliente.jsp"><span
-                                                class="icon-cancel" style="font-size:16px;margin-left: 10px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Eliminar</span></a>
-                                    </p>
-                                    <hr id="line" style=" border-top: .1875rem solid #fcf8e3">
 
-                                    <br>
-                                    <%-- ROW-----------------------------------------------------------------------------%>
-                                    <div class="row justify-content-center">
-                               
+                                <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 100px;"> <span
+                                        class="icon-book-alt" style="font-size: 35px;"></span>Datos Encontrados
+                                    <a href="AgregarCliente.jsp"><span
+                                            class="icon-plus" style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Agregar</span></a>
+                                    <a href="EliminarCliente.jsp"><span
+                                            class="icon-cancel" style="font-size:16px;margin-left: 10px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Eliminar</span></a>
+                                </p>
+                                <hr id="line" style=" border-top: .1875rem solid #fcf8e3">
 
-                                        <div class="table-responsive">
-                                            <table class="table text-uppercase">
-                                                <thead>
+                                <br>
+                                <%-- ROW-----------------------------------------------------------------------------%>
+                                <div class="row justify-content-center">
+
+
+                                    <div class="table-responsive">
+                                        <table class="table text-uppercase">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">RUT</th>
+                                                    <th scope="col"> NOMBRE </th>
+                                                    <th scope="col">DIRECCION</th>
+                                                    <th scope="col">TELEFONO</th>
+                                                    <th scope="col">EMAIL</th>
+                                                    <th scope="col">acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <c:forEach var="cliente" items="${listado}">
                                                     <tr>
-                                                        <th scope="col">RUT</th>
-                                                        <th scope="col"> NOMBRE </th>
-                                                        <th scope="col">DIRECCION</th>
-                                                        <th scope="col">TELEFONO</th>
-                                                        <th scope="col">EMAIL</th>
+                                                        <td>${cliente.getRut_cliente()}</td>
+                                                        <td>${cliente.getPrimer_nombre()} ${cliente.getSegundo_nombre()}
+                                                            ${cliente.getAp_paterno()} ${cliente.getAp_materno()}
+                                                        </td>
+                                                        <td>${cliente.getDireccion()} ${cliente.getNombre()}</td>
+                                                        <td>${cliente.getTelefono()}</td>
+                                                        <td>${cliente.getEmail()}</td>  
+
+                                                        <td>
+                                                            <form action="servletModificar" method="POST">
+                                                                <input type="hidden" name="txtRut" id="rut_cliente" value="${cliente.getRut_cliente()}">
+                                                                <input type="submit" class="btn btn btn-primary" style="margin-right: 40px" value="Editar">
+                                                            </form>
+                                                        </td>         
+
+
                                                     </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <c:forEach var="cliente" items="${listado}">
-                                                        <tr>
-                                                            <td>${cliente.getRut_cliente()}</td>
-                                                            <td>${cliente.getPrimer_nombre()} ${cliente.getSegundo_nombre()}
-                                                                ${cliente.getAp_paterno()} ${cliente.getAp_materno()}
-                                                            </td>
-                                                            <td>${cliente.getDireccion()} ${cliente.getNombre()}</td>
-                                                            <td>${cliente.getTelefono()}</td>
-                                                            <td>${cliente.getEmail()}</td>         
 
-
-                                                        </tr>
-
-                                                    </c:forEach>
-                                                </tbody>    
-                                            </table>
+                                                </c:forEach>
+                                            </tbody>    
+                                        </table>
 
 
 
 
 
-                                        </div>
-                                      
                                     </div>
 
-
-                                    <br>
-
+                                </div>
 
 
-                                </form>
+                                <br>
+
 
 
 

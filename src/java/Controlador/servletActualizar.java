@@ -6,9 +6,7 @@
 package Controlador;
 
 import Clases.Cliente;
-import Clases.Usuario;
 import Dao.ClienteDao;
-import Dao.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -21,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author chida
  */
-public class servletAgregar extends HttpServlet {
+public class servletActualizar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,10 +38,10 @@ public class servletAgregar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletAgregar</title>");            
+            out.println("<title>Servlet servletActualizar</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet servletAgregar at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet servletActualizar at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -75,7 +73,7 @@ public class servletAgregar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                //Capturar Info formulario
+         //Capturar Info formulario
         String rut_cliente = request.getParameter("txtRut_cliente");
         String primer_nombre = request.getParameter("txtPrimer_nombre");
         String segundo_nombre = request.getParameter("txtSegundo_nombre");
@@ -91,45 +89,18 @@ public class servletAgregar extends HttpServlet {
 
         try {
             //Intentar Guardar
-            if (dao.agregarCliente(cli)) {
-                request.setAttribute("msj", "Registrado exitosamente");
+            if (dao.ModificarCliente(cli)) {
+                request.setAttribute("msj", "Modificado exitosamente");
                 request.getSession().setAttribute("rut", rut_cliente);
-                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
+                request.getRequestDispatcher("Modificar.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "Cliente ya existente");
-                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
+                request.setAttribute("err", "Error");
+                request.getRequestDispatcher("Modificar.jsp").forward(request, response);
             }
         } catch (SQLException ex) {
-            request.setAttribute("err", "No Registrado" + ex.getMessage());
-            request.getRequestDispatcher("Registrar.jsp").forward(request, response);
+            request.setAttribute("err", "No Modificado" + ex.getMessage());
+            request.getRequestDispatcher("Modificar.jsp").forward(request, response);
         }
-        
-         //USUARIO------------------------------------------------------------------
-        int codigo = 100;
-        String nombre_usuario = request.getParameter("txtUsuario");
-        String contrasenia = request.getParameter("txtContrasenia");
-        int id_tipo_usuario = 2;
-
-        Usuario us = new Usuario(codigo, nombre_usuario, contrasenia, rut_cliente, id_tipo_usuario);
-        UsuarioDAO daous = new UsuarioDAO();
-
-        try {
-            //Intentar Guardar
-            if (daous.agregarUsuario(us)) {
-
-                request.setAttribute("msje", "Registrado exitosamente");
-                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
-            } else {
-
-                request.setAttribute("error", "No Registrado");
-                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
-            }
-        } catch (SQLException ex) {
-            request.setAttribute("error", "No Registrado");
-            request.getRequestDispatcher("Registrar.jsp").forward(request, response);
-        }
-        
-        
     }
 
     /**

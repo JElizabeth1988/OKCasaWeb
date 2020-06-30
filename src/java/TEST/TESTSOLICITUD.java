@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import ws.WSSeguimiento_Service;
 
 /**
  *
@@ -38,22 +39,21 @@ public class TESTSOLICITUD {
              DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
              System.out.println("Fecha: " + dateFormat.format(date));*/
             
-            List<ListaSolicitud>listado = dao.listarPorRut("19385798-1");
-             for (ListaSolicitud solicitud : listado){ 
+           /*List<Solicitud>listado = dao.buscarSolicitud(1);
+             for (Solicitud solicitud : listado){ 
              System.out.println(solicitud.toString());
              }
-            
-            /*Solicitud so = new Solicitud(100, null, "dewdewcdewd", "dwedewdewd", "19385798-1", "dewdewdwed", 30000, 0.2, "dewdewd", 1, 2, 3);
-            if (dao.agregarSolicitud(so)) {
-
-                System.out.println("Solicitud Guardada");
+            */
+            Solicitud so = new Solicitud(1, null, "hello", "dwedewdewd", "19385798-1", "dewdewdwed", 30000, 0.2, "dewdewd", 1, 2, 3);
+            if (dao.modificarSolicitud(so)) {
+                System.out.println("Solicitud Modificada");
             } else {
-                System.out.println("Solicitud no Guardada");
+                System.out.println("Solicitud no Modificada");
             }
-*/
            /* List<ListaSolicitud>listado = dao.listarSolicitudes();
              for (ListaSolicitud solicitud : listado) {
              System.out.println(solicitud.toString());*/
+
              
         } catch (Exception e) {
             System.out.println("Error al ejecutar" + e.getMessage());

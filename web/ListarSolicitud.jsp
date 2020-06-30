@@ -102,73 +102,75 @@
 
                                 <div class="col-md justify-content-center">
 
-                                    <form action="ListadoSol" method="POST" style="margin-right: 35px">
 
-                                        <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
-                                                class="icon-book-alt" style="font-size: 35px;"></span>Datos Encontrados
-                                            <a href="AgregarCliente.jsp"><span
-                                                    class="icon-plus" style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Agregar</span></a>
-                                            <a href="EliminarCliente.jsp"><span
-                                                    class="icon-cancel" style="font-size:16px;margin-left: 10px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Eliminar</span></a>
-                                        </p>
-                                        <hr id="line" style=" border-top: .1875rem solid #fcf8e3">
 
-                                        <br>
-                                        <%-- ROW-----------------------------------------------------------------------------%>
-                                        <div class="row justify-content-center">
-                                            <div class="col-md-auto">
-                                                <div class="card-body">
-                                                    <div class="out"> 
+                                    <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
+                                            class="icon-book-alt" style="font-size: 35px;"></span>Datos Encontrados
+                                        <a href="AgregarCliente.jsp"><span
+                                                class="icon-plus" style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Agregar</span></a>
+                                        <a href="EliminarCliente.jsp"><span
+                                                class="icon-cancel" style="font-size:16px;margin-left: 10px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Eliminar</span></a>
+                                    </p>
+                                    <hr id="line" style=" border-top: .1875rem solid #fcf8e3">
 
-                                                        <table class="table table-responsive-sm text-center text-uppercase">
-                                                            <thead>
+                                    <br>
+                                    <%-- ROW-----------------------------------------------------------------------------%>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-auto">
+                                            <div class="card-body">
+                                                <div class="out"> 
+
+                                                    <table class="table table-responsive-sm text-center text-uppercase">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">CÓDIGO SOLICITUD</th>
+                                                                <th scope="col">FECHA SOLICITUD</th>
+                                                                <th scope="col">RUT CLIENTE</th> 
+                                                                <th scope="col">DIRECCION VIVIENDA</th>
+                                                                <th scope="col">NOMBRE CONSTRUCTORA</th>
+                                                                <th scope="col">SERVICIO ESCOGIDO</th>
+                                                                <th scope="col">MONTO PAGO</th>
+                                                                <th scope="col">DESCUENTO APLICADO</th>
+                                                                <th scope="col">FECHA INSPECCION</th>
+                                                                <th scope="col">ACCION</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <c:forEach var="sol" items="${listadoSol}">
                                                                 <tr>
-                                                                    <th scope="col">CÓDIGO SOLICITUD</th>
-                                                                    <th scope="col">FECHA SOLICITUD</th>
-                                                                    <th scope="col">RUT CLIENTE</th> 
-                                                                    <th scope="col">DIRECCION VIVIENDA</th>
-                                                                    <th scope="col">NOMBRE CONSTRUCTORA</th>
-                                                                    <th scope="col">SERVICIO ESCOGIDO</th>
-                                                                    <th scope="col">MONTO PAGO</th>
-                                                                    <th scope="col">DESCUENTO APLICADO</th>
-                                                                    <th scope="col">FECHA INSPECCION</th>
+                                                                    <td>${sol.getId_solicitud()}</td>
+                                                                    <td>${sol.getFecha_solicitud()}</td>
+                                                                    <td>${sol.getRut_cliente()}</td>
+                                                                    <td>${sol.getDireccion_vivienda()} ${sol.getNombre_comuna()}</td>
+                                                                    <td>${sol.getConstructora()}</td>
+                                                                    <td>${sol.getNombre_servicio()}</td>
+                                                                    <td>${sol.getPago()}</td>                                                      
+                                                                    <td>${sol.getDescuento()}</td>
+                                                                    <td>${sol.getDia()} ${sol.getHora()}</td>
+
+                                                                    <td>
+                                                                        <form action="servletModificarSol" method="POST">
+                                                                            <input type="hidden" name="txtId" id="txtId" value="${sol.getId_solicitud()}">
+                                                                            <input type="submit" class="btn btn btn-primary" style="margin-right: 40px" value="Editar">
+                                                                        </form>
+                                                                    </td>   
 
                                                                 </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <c:forEach var="sol" items="${listadoSol}">
-                                                                    <tr>
-                                                                        <td>${sol.getId_solicitud()}</td>
-                                                                        <td>${sol.getFecha_solicitud()}</td>
-                                                                        <td>${sol.getRut_cliente()}</td>
-                                                                        <td>${sol.getDireccion_vivienda()} ${sol.getNombre_comuna()}</td>
-                                                                        <td>${sol.getConstructora()}</td>
-                                                                        <td>${sol.getNombre_servicio()}</td>
-                                                                        <td>${sol.getPago()}</td>                                                      
-                                                                        <td>${sol.getDescuento()}</td>
-                                                                        <td>${sol.getDia()} ${sol.getHora()}</td>
 
-
-
-                                                                    </tr>
-
-                                                                </c:forEach>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>        
-                                            </div>
-
-
+                                                            </c:forEach>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>        
                                         </div>
 
 
-
-                                        <br>
-
+                                    </div>
 
 
-                                    </form>
+
+                                    <br>
 
 
                                 </div>

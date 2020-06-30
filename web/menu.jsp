@@ -85,10 +85,7 @@
                             <c:if test="${tipo==2}">
 
                             <li class="nav-item"><a href="ListaUS" class="nav-link">Mis Inspecciones <span
-                                        class="icon"></span></a></li></a></li>  
-                            <li class="nav-item"><a href="ListaInforme" class="nav-link">Mis Resultados<span
-                                        class="icon"></span></a></li></a></li>  
-                    
+                                        class="icon"></span></a></li></a></li>                      
                             <li class="nav-item"><a href="servletAgenda" class="nav-link">Agendar<span
                                         class="icon"></span></a></li></a></li>  
 
@@ -102,8 +99,7 @@
                                 <li class="nav-item"><a href="AgregarCliente.jsp" class="nav-link">Agregar Cliente</a></li>
                                 <li class="nav-item"><a href="EliminarCliente.jsp" class="nav-link">Eliminar</a></li>
                                 <li class="nav-item"><a href="EnviarCorreo.jsp" class="nav-link">Correo</a></li>
-
-
+ 
                             </c:if> 
                         </c:if>
 
