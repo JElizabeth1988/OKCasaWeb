@@ -106,7 +106,7 @@
 
                             <div class="wrap-contact100" id="wrapp">
 
-                                <form action="servletAgregar" method="POST" style="margin-right: 35px">
+                                <form action="servletAgregarAdm" method="POST" style="margin-right: 35px">
                                     <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
                                             class="icon-edit" style="font-size: 35px;"></span>  Ingrese los datos 
                                         <a href="Listado"><span

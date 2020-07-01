@@ -131,7 +131,9 @@
                                                                 <th scope="col">SERVICIO ESCOGIDO</th>
                                                                 <th scope="col">MONTO PAGO</th>
                                                                 <th scope="col">DESCUENTO APLICADO</th>
+                                                                
                                                                 <th scope="col">FECHA INSPECCION</th>
+                                                                <th scope="col">ESTADO</th>
                                                                 <th scope="col">ACCION</th>
 
                                                             </tr>
@@ -147,8 +149,9 @@
                                                                     <td>${sol.getNombre_servicio()}</td>
                                                                     <td>${sol.getPago()}</td>                                                      
                                                                     <td>${sol.getDescuento()}</td>
+                                                                    
                                                                     <td>${sol.getDia()} ${sol.getHora()}</td>
-
+                                                                    <td>${sol.getEstado()}</td>
                                                                     <td>
                                                                         <form action="servletModificarSol" method="POST">
                                                                             <input type="hidden" name="txtId" id="txtId" value="${sol.getId_solicitud()}">

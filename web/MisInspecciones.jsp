@@ -58,11 +58,11 @@
         <br>
         <br>
         <div>
-            <p><a href="servletAgenda" class="btn btn-lg btn-primary">Solicita una Nueva Inspección</a></p>
+            <form action="ListaInforme" method="POST">
+                <input type="hidden" name="txtRut" id="txtId" value="${rut}">
+                <input type="submit" class="btn btn btn-primary" style="margin-left: 1000px" value="Ver Mis Resultados">
+            </form>  
         </div>
-        <br>
-        <br>
-
 
 
         <div class="container">
@@ -90,7 +90,7 @@
                                         <th scope="col">DESCUENTO APLICADO</th>
                                         <th scope="col">FECHA INSPECCION</th>
                                         <th scope="col">RUT_CLIENTE</th>
-                                        
+
 
                                     </tr>
                                 </thead>
@@ -107,16 +107,15 @@
                                             <td>${sol.getDia()} ${sol.getHora()}</td>
                                             <td>${sol.getRut_cliente()}</td>      
 
-                                        </tr>
-                                      
-                                    <form action="ListaInforme" method="POST">
-                                        <input type="hidden" name="txtRut" id="txtId" value="${sol.getRut_cliente()}">
-                                        <input type="submit" class="btn btn btn-primary" style="margin-left: 1000px" value="Ver Resultados">
-                                    </form>
 
-                                </c:forEach>
+                                        </tr>
+
+
+                                    </c:forEach>
                                 </tbody>
                             </table>
+
+
 
                         </div>
                     </div>        

@@ -13,7 +13,6 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
         <link rel="stylesheet" href="css/animate.css">
 
         <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -32,20 +31,17 @@
         <link rel="stylesheet" href="css/fontello-embedded.css">
         <link rel="stylesheet" href="css/style.css">
 
-        <link rel="stylesheet" href="css/style.css">
         <script src="jquery/jquery.min.js"></script>
         <!---- jquery link local dont forget to place this in first than other script or link or may not work ---->
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!---- boostrap.min link local ----->
 
-        <link rel="stylesheet" href="css/style.css">
         <!---- boostrap.min link local ----->
 
         <script src="js/calculos.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <!---- Boostrap js link local ----->
-
         <link rel="icon" href="images/icon.png" type="image/x-icon" />
         <!---- Icon link local ----->
 
@@ -82,6 +78,14 @@
         <br>
         <div class="container">
             <h2 class="text-center">Agenda tu Inspección</h2>
+
+            <div>
+                <form action="ListaUS" method="POST">
+                    <input type="hidden" name="txtRut" id="txtId" value="${rut}">
+                    <input type="submit" class="btn btn-outline-secondary" style="margin-left: 1000px" value="Ver Mis Inspecciones">
+                </form>  
+            </div>
+
             <p class="text-center">
                 <small id="passwordHelpInline" class="text-muted"></small>
             </p>
@@ -126,9 +130,11 @@
                                                             <td>${agenda.getDia()}</td>
                                                             <td>${agenda.getHora()}</td>                                         
                                                             <td>
+
                                                                 <label>
-                                                                    <input style="margin-left: 20px;" type="radio" checked class="option-input radio" name="rb_agendar" value="${agenda.getIdAgenda()}">
+                                                                    <input style="margin-left: 20px;"  type="radio" checked class="option-input radio" name="rb_agendar" value="${agenda.getIdAgenda()}" >
                                                                 </label> 
+
                                                             </td>
 
                                                         </tr>

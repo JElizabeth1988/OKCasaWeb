@@ -2379,3 +2379,20 @@ textarea.form-control {
   padding: 62px 55px 90px 55px;
 }
 
+
+  .outer {
+    overflow-y: auto;
+    height: 300px;
+  }
+
+  .outer {
+    width: 100%;
+    -layout: fixed;
+  }
+
+  .outer th {
+    text-align: left;
+    top: 0;
+    position: sticky;
+    background-color: white;
+  }

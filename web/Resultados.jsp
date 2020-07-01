@@ -65,8 +65,6 @@
         <br>
         <br>
 
-
-        <a href="../../../../AppData/Local/Temp/Mis Inspecciones.URL"></a>
         <div class="container">
             <h3>Seguimiento</h3>
 
@@ -78,8 +76,8 @@
                             <table class="table table-responsive-sm text-center text-uppercase">
                                 <thead>
                                     <tr>
-                                        <th scope="col">N°</th>
-                                        <th scope="col">Rut</th>
+                                        
+                                        <th scope="col">Código</th>
                                         <th scope="col">ESTADO</th>
                                         <th scope="col">FECHA INSPECCION</th>
                                         <th scope="col">RESULTADO</th>
@@ -92,8 +90,7 @@
                                 <tbody>
                                     <c:forEach var="inf" items="${listai}">
                                         <tr>
-                                            <td>${inf.getNumFormulario()}</td>
-                                            <td>${inf.getRutCliente()}</td>
+                                            <td>${inf.getIdSolicitud()}</td>
                                             <td>${inf.getEstado()} </td>
                                             <td>${inf.getFechaInsp()}</td>
                                             <td>${inf.getResultado()}</td>                                                                                                  

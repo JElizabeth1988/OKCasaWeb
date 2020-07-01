@@ -3,37 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Clases/ListaSolicitud.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Clases/ListaCliente.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Dao/AgendaDao.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/ListaUS.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/ListarSolicitud.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Dao/UsuarioDAO.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/servletAgregarSol.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Dao/SolicitudDAO.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/TEST/TESTAGENDA.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/TEST/TESTSOLICITUD.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/servletHipotecario.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/servletCorreo.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/Agendar.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/menu.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/servletLogin.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Clases/Cliente.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/EnviarCorreo.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Dao/ComunaDAO.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Dao/ClienteDao.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/ListarCliente.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/js/calculos.js</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/servletAgenda.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Clases/Solicitud.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/servletAgregar.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/EliminarCliente.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/css/style.css</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/AgregarCliente.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/ListadoSol.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/web/MisInspecciones.jsp</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/Controlador/Listado.java</file>
-            <file>file:/C:/Users/chida/Desktop/Duplicado/OKCasaWeb/src/java/TEST/TESTCLIENTE.java</file>
+            <file>file:/C:/Users/chida/Desktop/TODO/why/OKCasaWeb/web/Agendar.jsp</file>
         </group>
     </open-files>
 </project-private>

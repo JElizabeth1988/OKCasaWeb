@@ -205,7 +205,7 @@
                             <br>
                             <br>
 
-                            <div class="container-fluid col-md-10">
+                            <div class="container-fluid col-md-8">
                                 <div class="row justify-content-center">
 
                                     <%-- INGRESAR DATOS -----------------------------------------------------------------%>

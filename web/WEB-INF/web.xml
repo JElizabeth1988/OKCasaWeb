@@ -60,6 +60,10 @@
         <servlet-name>servletActualizarSol</servlet-name>
         <servlet-class>Controlador.servletActualizarSol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>servletAgregarAdm</servlet-name>
+        <servlet-class>Controlador.servletAgregarAdm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletAgregar</servlet-name>
         <url-pattern>/servletAgregar</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>servletActualizarSol</servlet-name>
         <url-pattern>/servletActualizarSol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletAgregarAdm</servlet-name>
+        <url-pattern>/servletAgregarAdm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
