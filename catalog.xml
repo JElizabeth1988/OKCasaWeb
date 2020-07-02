@@ -4,8 +4,6 @@
     <system systemId="http://localhost:8080/WSOKCasa/WSLOGIN?xsd=1" uri="src/conf/xml-resources/web-service-references/WSLOGIN_1/wsdl/localhost_8080/WSOKCasa/WSLOGIN.xsd_1.xsd"/>
     <system systemId="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" uri="src/conf/xml-resources/web-service-references/WSDISPONIBILIDAD_8/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
     <system systemId="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?xsd=1" uri="src/conf/xml-resources/web-service-references/WSDISPONIBILIDAD_8/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.xsd_1.xsd"/>
-    <system systemId="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" uri="src/conf/xml-resources/web-service-references/WSLOGIN_5/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
-    <system systemId="http://localhost:31439/WSOKCasa/WSLOGIN?xsd=1" uri="src/conf/xml-resources/web-service-references/WSLOGIN_5/wsdl/localhost_31439/WSOKCasa/WSLOGIN.xsd_1.xsd"/>
     <system systemId="http://localhost:31439/WSOKCasa/WSPAGO?WSDL" uri="src/conf/xml-resources/web-service-references/WSPAGO_3/wsdl/localhost_31439/WSOKCasa/WSPAGO.wsdl"/>
     <system systemId="http://localhost:31439/WSOKCasa/WSPAGO?xsd=1" uri="src/conf/xml-resources/web-service-references/WSPAGO_3/wsdl/localhost_31439/WSOKCasa/WSPAGO.xsd_1.xsd"/>
     <system systemId="http://localhost:31439/WSSeguimiento/WS_Seguimiento?WSDL" uri="src/conf/xml-resources/web-service-references/WS_Seguimiento_1/wsdl/localhost_31439/WSSeguimiento/WS_Seguimiento.wsdl"/>
@@ -14,4 +12,6 @@
     <system systemId="http://localhost:31439/WSBancoEstado/WS_BANCO?xsd=1" uri="src/conf/xml-resources/web-service-references/WS_BANCO_1/wsdl/localhost_31439/WSBancoEstado/WS_BANCO.xsd_1.xsd"/>
     <system systemId="http://localhost:31439/WSOKCasa/WS_Seguimiento?WSDL" uri="src/conf/xml-resources/web-service-references/WS_Seguimiento_4/wsdl/localhost_31439/WSOKCasa/WS_Seguimiento.wsdl"/>
     <system systemId="http://localhost:31439/WSOKCasa/WS_Seguimiento?xsd=1" uri="src/conf/xml-resources/web-service-references/WS_Seguimiento_4/wsdl/localhost_31439/WSOKCasa/WS_Seguimiento.xsd_1.xsd"/>
+    <system systemId="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" uri="src/conf/xml-resources/web-service-references/WSLOGIN_6/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
+    <system systemId="http://localhost:31439/WSOKCasa/WSLOGIN?xsd=1" uri="src/conf/xml-resources/web-service-references/WSLOGIN_6/wsdl/localhost_31439/WSOKCasa/WSLOGIN.xsd_1.xsd"/>
 </catalog>

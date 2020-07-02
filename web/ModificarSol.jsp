@@ -223,24 +223,49 @@
                                         </div>
 
 
-                                        <div class="col-md-2" id="textbox">
+                                        <div class="col-md-3" id="textbox">
                                             <div class="form-group"> <!--Comuna -->
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="id_comuna" class="control-label">Comuna</label>
 
                                                 <select class="form-control" name="cboComuna">
                                                     <option value="${sol.getId_comuna()}">Santiago</option>
-                                                    <option value="2">Providencia</option>
-                                                    <option value="3">Ñuñoa</option>
-                                                    <option value="4">La Florida</option>
-                                                    <option value="5">Puente Alto</option>
-                                                    <option value="6">Maipú</option>
-                                                    <option value="7">San Joaquín</option>
+                                                    <option value="2">Conchalí</option>
+                                                    <option value="3">Huechuraba</option>
+                                                    <option value="4">Independencia</option>
+                                                    <option value="5">Quilicura</option>
+                                                    <option value="6">Recoleta</option>
+                                                    <option value="7">Renca</option>
+                                                    <option value="8">Las Condes</option>
+                                                    <option value="9">Lo Barnechea</option>
+                                                    <option value="10">Providencia</option>
+                                                    <option value="11">Vitacura</option>
+                                                    <option value="12">La Reina</option>
+                                                    <option value="13">Macul</option>
+                                                    <option value="14">Ñuñoa</option>
+                                                    <option value="15">Peñalolen</option>
+                                                    <option value="16">La Florida</option>
+                                                    <option value="17">La Granja</option>
+                                                    <option value="18">El Bosque</option>
+                                                    <option value="19">La Cisterna</option>
+                                                    <option value="20">La Pintana</option>
+                                                    <option value="21">San Ramón</option>
+                                                    <option value="22">Lo Espejo</option>
+                                                    <option value="23">Pedro Aguirre Cerda</option>                                           
+                                                    <option value="24">San Joaquín</option>                                           
+                                                    <option value="25">San Miguel</option>
+                                                    <option value="26">Cerrilos</option>
+                                                    <option value="27">Estación Centrak</option>
+                                                    <option value="28">Maipú</option>
+                                                    <option value="29">Cerro Navia</option>
+                                                    <option value="30">Lo prado</option>
+                                                    <option value="31">Pudahuel</option>
+                                                    <option value="32">Quinta Normal</option>
                                                 </select>                    
                                             </div>
                                         </div>
 
-                                        <div class="col-md-3"></div>
+                                        <div class="col-md-2"></div>
 
 
 
@@ -332,31 +357,31 @@
                             </div>
                     </form>
                     <div class="row justify-content-center">
-                         <c:if test="${msj!=null}">
-                             <div class="alert alert-success">${msj}</div>   
-                    </c:if>
-                    <c:if test="${err!=null}">
-                        <div class="alert alert-danger">${err}</div>  
-                    </c:if>   
+                        <c:if test="${msj!=null}">
+                            <div class="alert alert-success">${msj}</div>   
+                        </c:if>
+                        <c:if test="${err!=null}">
+                            <div class="alert alert-danger">${err}</div>  
+                        </c:if>   
 
+                    </div>
+                    <br>
+                    <br>
                 </div>
-                <br>
-                <br>
-            </div>
 
+
+            </div>
+            <br>
 
         </div>
-        <br>
+
+
+        <div class="col-md-10"> 
+
+        </div>
+
 
     </div>
-
-
-    <div class="col-md-10"> 
-
-    </div>
-
-
-</div>
 
 </div>
 

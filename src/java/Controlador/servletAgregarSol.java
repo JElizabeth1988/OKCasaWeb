@@ -75,25 +75,11 @@ public class servletAgregarSol extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        //LISTAR COMUNAS
-        ComunaDAO d = new ComunaDAO();
 
-        try {
-            //WS DISPONIBILIDAD
-            //Creamos el cliente al WS
-            WSDISPONIBILIDAD_Service servicio = new WSDISPONIBILIDAD_Service();
-            WSDISPONIBILIDAD cliente = servicio.getWSDISPONIBILIDADPort();
-
-            List<Agenda> lista = cliente.listarAgenda();
-            request.setAttribute("lista", lista);
-
-            List<Comuna> listac = d.listarComunas();
-            request.setAttribute("listac", listac);
-            request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Listado.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        WSDISPONIBILIDAD_Service servicio = new WSDISPONIBILIDAD_Service();
+        WSDISPONIBILIDAD cliente = servicio.getWSDISPONIBILIDADPort();
+        List<Agenda> lista = cliente.listarAgenda();
+        request.setAttribute("lista", lista);
 
     }
 

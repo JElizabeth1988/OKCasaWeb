@@ -442,5 +442,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_4"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4, wsimport-client-WSDISPONIBILIDAD_3, wsimport-client-WSDISPONIBILIDAD_4, wsimport-client-WSDISPONIBILIDAD_5, wsimport-client-WSDISPONIBILIDAD_6, wsimport-client-WSDISPONIBILIDAD_7, wsimport-client-WSDISPONIBILIDAD_8, wsimport-client-WSPAGO_2, wsimport-client-WSLOGIN_5, wsimport-client-WSPAGO_3, wsimport-client-WS_Seguimiento, wsimport-client-WS_Seguimiento_1, wsimport-client-WS_Seguimiento_2, wsimport-client-WS_BANCO_1, wsimport-client-WS_Seguimiento_3, wsimport-client-WS_Seguimiento_4"/>
+    <target name="wsimport-client-WSLOGIN_6" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSLOGIN_6"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSLOGIN_6" destdir="${build.generated.dir}/jax-wsCache/WSLOGIN_6" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_6/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_6/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSLOGIN_6"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSLOGIN_6">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSLOGIN_6" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN_6"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4, wsimport-client-WSDISPONIBILIDAD_3, wsimport-client-WSDISPONIBILIDAD_4, wsimport-client-WSDISPONIBILIDAD_5, wsimport-client-WSDISPONIBILIDAD_6, wsimport-client-WSDISPONIBILIDAD_7, wsimport-client-WSDISPONIBILIDAD_8, wsimport-client-WSPAGO_2, wsimport-client-WSLOGIN_5, wsimport-client-WSPAGO_3, wsimport-client-WS_Seguimiento, wsimport-client-WS_Seguimiento_1, wsimport-client-WS_Seguimiento_2, wsimport-client-WS_BANCO_1, wsimport-client-WS_Seguimiento_3, wsimport-client-WS_Seguimiento_4, wsimport-client-WSLOGIN_6"/>
 </project>
