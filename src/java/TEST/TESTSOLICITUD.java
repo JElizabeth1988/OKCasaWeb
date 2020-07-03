@@ -51,7 +51,7 @@ public class TESTSOLICITUD {
                 System.out.println("Solicitud no Modificada");
             }*/
             
-            List<ListaSolicitud>listado = dao.listarSolicitudes();
+            List<ListaSolicitud>listado = dao.buscarSolicitud(3);
              for (ListaSolicitud solicitud : listado) {
              System.out.println(solicitud.toString());
              }

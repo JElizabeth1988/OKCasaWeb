@@ -123,7 +123,7 @@
                                             <label style="color: #bd2130">*</label>
                                             <label for="rut_cliente" class="control-label">RUT</label>
                                             <input type="text" name="txtRut_cliente" required oninput="checkRut(this)" class="form-control input-lg" placeholder="Sin puntos ni guiones"
-                                                   title="Debe Ingresar su RUT" required minlength="9" maxlength="10" value="${cli.getRut_cliente()}" style="color: #9e9e9e;" disabled>
+                                                   title="Debe Ingresar su RUT" required minlength="9" maxlength="10" value="${cli.getRut_cliente()}" style="color: #9e9e9e;">
 
                                         </div>   
                                     </div>
@@ -195,12 +195,12 @@
                                         </div>      
                                     </div>
 
-
                                     <div class="col-md-3" id="textbox">
                                         <div class="form-group"> <!--Comuna -->
                                             <label style="color: #bd2130">*</label>
                                             <label for="comuna" class="control-label">Comuna</label>
-                                            <select class="form-control" name="cboComuna">                    
+                                            <select class="form-control" name="cboComuna"> 
+                                                <option selected value="${cli.getId_comuna()}" hidden>${cli.getNombre()}</option>
                                                 <option value="1">Santiago</option>
                                                 <option value="2">Conchalí</option>
                                                 <option value="3">Huechuraba</option>
@@ -233,6 +233,7 @@
                                                 <option value="30">Lo prado</option>
                                                 <option value="31">Pudahuel</option>
                                                 <option value="32">Quinta Normal</option>
+                                                </option>
                                             </select>                    
                                         </div>
                                     </div>

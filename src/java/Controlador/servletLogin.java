@@ -92,16 +92,20 @@ public class servletLogin extends HttpServlet {
 
         if (tipo > 0) {
 
-            //SACAR CLIENTE HIPOTECARIO, sacar rut para entregarla como variable de sesión
+            //WS BANCO, HIPOTECARIO
             WSBANCO_Service serv = new WSBANCO_Service();
             WSBANCO cli = serv.getWSBANCOPort();
-            
+           
+             //WS LOGIN, sacar rut usuario
             String rut = cliente.rutCliente(user, pass);
             
+             //WS BANCO, PASAR EL RUT 
             int tipo_cliente = cli.tipoCliente(rut);
 
             request.getSession().setAttribute("tipo", tipo);
             request.getSession().setAttribute("username", user);
+            
+            //WS BANCO
             request.getSession().setAttribute("tipo_cliente", tipo_cliente);
             request.getSession().setAttribute("rut", rut);
             request.getRequestDispatcher("index.jsp").forward(request, response);

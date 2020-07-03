@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Clases.ListaSolicitud;
 import Clases.Solicitud;
 import Dao.SolicitudDAO;
 import java.io.IOException;
@@ -93,7 +94,7 @@ public class servletModificarSol extends HttpServlet {
         request.getSession().setAttribute("listaws", lista);
 
         try {
-            List<Solicitud> listas = dao.buscarSolicitud(codigo);
+            List<ListaSolicitud> listas = dao.buscarSolicitud(codigo);
             request.setAttribute("listas", listas);
             request.getRequestDispatcher("ModificarSol.jsp").forward(request, response);
 

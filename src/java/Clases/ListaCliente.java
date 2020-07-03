@@ -19,11 +19,12 @@ public class ListaCliente {
     private int telefono;
     private String email;
     private String nombre;
+    private int id_comuna;
 
     public ListaCliente() {
     }
 
-    public ListaCliente(String rut_cliente, String primer_nombre, String segundo_nombre, String ap_paterno, String ap_materno, String direccion, int telefono, String email, String nombre) {
+    public ListaCliente(String rut_cliente, String primer_nombre, String segundo_nombre, String ap_paterno, String ap_materno, String direccion, int telefono, String email, String nombre, int id_comuna) {
         this.rut_cliente = rut_cliente;
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
@@ -33,6 +34,7 @@ public class ListaCliente {
         this.telefono = telefono;
         this.email = email;
         this.nombre = nombre;
+        this.id_comuna = id_comuna;
     }
 
     public String getRut_cliente() {
@@ -107,7 +109,23 @@ public class ListaCliente {
         this.nombre = nombre;
     }
 
+    public int getId_comuna() {
+        return id_comuna;
+    }
+
+    public void setId_comuna(int id_comuna) {
+        this.id_comuna = id_comuna;
+    }
+
+    @Override
+    public String toString() {
+        return "ListaCliente{" + "rut_cliente=" + rut_cliente + ", primer_nombre=" + primer_nombre + ", segundo_nombre=" + segundo_nombre + ", ap_paterno=" + ap_paterno + ", ap_materno=" + ap_materno + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + ", nombre=" + nombre + ", id_comuna=" + id_comuna + '}';
+    }
+
     
+    
+
+  
    
     
   

@@ -228,8 +228,9 @@
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="id_comuna" class="control-label">Comuna</label>
 
-                                                <select class="form-control" name="cboComuna">
-                                                    <option value="${sol.getId_comuna()}">Santiago</option>
+                                                <select class="form-control" name="cboComuna" >
+                                                    <option selected value="${sol.getId_comuna()}" hidden>${sol.getNombre_comuna()}</option>
+                                                    <option value="1">Santiago</option>
                                                     <option value="2">Conchalí</option>
                                                     <option value="3">Huechuraba</option>
                                                     <option value="4">Independencia</option>
@@ -282,8 +283,9 @@
                                             <div class="form-group"> <!-- Servicio -->
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="servicio" id="cboServicio" class="control-label">Selecciona el Servicio</label>
-                                                <select class="form-control" name="cboServicio">                    
-                                                    <option value="${sol.getId_servicio()}">Verificación Instalaciones y terminaciones</option>
+                                                <select class="form-control" name="cboServicio">  
+                                                    <option selected value="${sol.getId_servicio()}" hidden>${sol.getNombre_servicio()}</option>
+                                                    <option value="1">Verificación Instalaciones y terminaciones</option>
                                                     <option value="2">Medición de metros cuadrados de la vivienda</option>
                                                     <option value="3">Inspección de luz, instalaciones sanitarias y gas</option>
                                                     <option value="4">Termografías</option>

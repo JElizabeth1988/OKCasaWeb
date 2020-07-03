@@ -26,11 +26,14 @@ public class ListaSolicitud {
     private String hora;
     private String nombre_comuna;
     private String nombre_servicio;
+    private int id_servicio;
+    private int id_agenda;
+    private int id_comuna;
 
     public ListaSolicitud() {
     }
 
-    public ListaSolicitud(int id_solicitud, Date fecha_solicitud, String direccion_vivienda, String constructora, String rut_cliente, String tipo_pago, int pago, double descuento, String estado, Date dia, String hora, String nombre_comuna, String nombre_servicio) {
+    public ListaSolicitud(int id_solicitud, Date fecha_solicitud, String direccion_vivienda, String constructora, String rut_cliente, String tipo_pago, int pago, double descuento, String estado, Date dia, String hora, String nombre_comuna, String nombre_servicio, int id_servicio, int id_agenda, int id_comuna) {
         this.id_solicitud = id_solicitud;
         this.fecha_solicitud = fecha_solicitud;
         this.direccion_vivienda = direccion_vivienda;
@@ -44,6 +47,9 @@ public class ListaSolicitud {
         this.hora = hora;
         this.nombre_comuna = nombre_comuna;
         this.nombre_servicio = nombre_servicio;
+        this.id_servicio = id_servicio;
+        this.id_agenda = id_agenda;
+        this.id_comuna = id_comuna;
     }
 
     public int getId_solicitud() {
@@ -150,13 +156,35 @@ public class ListaSolicitud {
         this.nombre_servicio = nombre_servicio;
     }
 
-    @Override
-    public String toString() {
-        return "ListaSolicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", tipo_pago=" + tipo_pago + ", pago=" + pago + ", descuento=" + descuento + ", estado=" + estado + ", dia=" + dia + ", hora=" + hora + ", nombre_comuna=" + nombre_comuna + ", nombre_servicio=" + nombre_servicio + '}';
+    public int getId_servicio() {
+        return id_servicio;
     }
 
-    
-       
+    public void setId_servicio(int id_servicio) {
+        this.id_servicio = id_servicio;
+    }
+
+    public int getId_agenda() {
+        return id_agenda;
+    }
+
+    public void setId_agenda(int id_agenda) {
+        this.id_agenda = id_agenda;
+    }
+
+    public int getId_comuna() {
+        return id_comuna;
+    }
+
+    public void setId_comuna(int id_comuna) {
+        this.id_comuna = id_comuna;
+    }
+
+    @Override
+    public String toString() {
+        return "ListaSolicitud{" + "id_solicitud=" + id_solicitud + ", fecha_solicitud=" + fecha_solicitud + ", direccion_vivienda=" + direccion_vivienda + ", constructora=" + constructora + ", rut_cliente=" + rut_cliente + ", tipo_pago=" + tipo_pago + ", pago=" + pago + ", descuento=" + descuento + ", estado=" + estado + ", dia=" + dia + ", hora=" + hora + ", nombre_comuna=" + nombre_comuna + ", nombre_servicio=" + nombre_servicio + ", id_servicio=" + id_servicio + ", id_agenda=" + id_agenda + ", id_comuna=" + id_comuna + '}';
+    }
+
     
 }    
 

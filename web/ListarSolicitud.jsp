@@ -104,10 +104,8 @@
 
 
 
-                                    <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
-                                            class="icon-book-alt" style="font-size: 35px;"></span>Datos Encontrados
-                                        <a href="AgregarCliente.jsp"><span
-                                                class="icon-plus" style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Agregar</span></a>
+                                    <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> 
+                                               
                                         <a href="EliminarCliente.jsp"><span
                                                 class="icon-cancel" style="font-size:16px;margin-left: 10px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Eliminar</span></a>
                                     </p>

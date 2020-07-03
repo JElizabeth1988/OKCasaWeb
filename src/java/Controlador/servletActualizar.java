@@ -6,10 +6,17 @@
 package Controlador;
 
 import Clases.Cliente;
+import Clases.Comuna;
+import Clases.Usuario;
 import Dao.ClienteDao;
+import Dao.ComunaDAO;
+import Dao.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -59,7 +66,18 @@ public class servletActualizar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        ComunaDAO d = new ComunaDAO();
+
+        try {
+            List<Comuna> listaco = d.listarComunas(1);
+            request.getSession().setAttribute("listaco", listaco);
+            request.getRequestDispatcher("Modificar.jsp").forward(request, response);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(servletAgregar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**
@@ -73,7 +91,6 @@ public class servletActualizar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         //Capturar Info formulario
         String rut_cliente = request.getParameter("txtRut_cliente");
         String primer_nombre = request.getParameter("txtPrimer_nombre");
         String segundo_nombre = request.getParameter("txtSegundo_nombre");
@@ -88,19 +105,19 @@ public class servletActualizar extends HttpServlet {
         ClienteDao dao = new ClienteDao();
 
         try {
-            //Intentar Guardar
+           
             if (dao.ModificarCliente(cli)) {
                 request.setAttribute("msj", "Modificado exitosamente");
-                request.getSession().setAttribute("rut", rut_cliente);
                 request.getRequestDispatcher("Modificar.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "Error");
+                request.setAttribute("err", "No Modificado");
                 request.getRequestDispatcher("Modificar.jsp").forward(request, response);
             }
         } catch (SQLException ex) {
             request.setAttribute("err", "No Modificado" + ex.getMessage());
             request.getRequestDispatcher("Modificar.jsp").forward(request, response);
         }
+        
     }
 
     /**

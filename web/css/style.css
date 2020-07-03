@@ -10122,8 +10122,8 @@ div#error2 {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   transition: all 0.15s ease-out 0s;
   background: #cbd1d8;
   border: none;
@@ -10141,9 +10141,9 @@ div#error2 {
   background: #1683fb;
 }
 .option-input:checked::before {
-  height: 30px;
-  width: 30px;
-  content: ;
+  height: 15px;
+  width: 15px;
+  content: '';
   display: inline-block;
   font-size: 26.66667px;
   text-align: center;

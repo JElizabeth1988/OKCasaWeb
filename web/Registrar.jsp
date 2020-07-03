@@ -191,6 +191,7 @@
                                             <label for="id_comuna" class="control-label">Comuna</label>
 
                                             <select class="form-control" name="cboComuna">
+                                                
                                                 <option value="1">Santiago</option>
                                                 <option value="2">Conchalí</option>
                                                 <option value="3">Huechuraba</option>

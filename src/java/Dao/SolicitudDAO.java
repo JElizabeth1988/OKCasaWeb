@@ -137,9 +137,9 @@ public class SolicitudDAO {
         return centinela;
     }
 
-    //LISTAR POR RUT-----------------------------------------------------------
-    public List<Solicitud> buscarSolicitud(int codigo) throws SQLException {
-        List<Solicitud> listadoSol = new ArrayList<>();
+    //Buscar POR codigo-----------------------------------------------------------
+    public List<ListaSolicitud> buscarSolicitud(int codigo) throws SQLException {
+        List<ListaSolicitud> listadoSol = new ArrayList<>();
 
         try {
             this.conexion = new Conexion().obtenerConexion();
@@ -153,7 +153,7 @@ public class SolicitudDAO {
 
             while (rs.next()) {
 
-                Solicitud s = new Solicitud();
+                ListaSolicitud s = new ListaSolicitud();
                 s.setId_solicitud(rs.getInt("id_solicitud"));
                 s.setFecha_solicitud(rs.getDate("fecha_solicitud"));
                 s.setDireccion_vivienda(rs.getString("direccion_vivienda"));
@@ -163,6 +163,8 @@ public class SolicitudDAO {
                 s.setPago(rs.getInt("pago"));
                 s.setDescuento(rs.getDouble("descuento"));
                 s.setEstado(rs.getString("estado"));
+                s.setNombre_servicio(rs.getString("servicio"));
+                s.setNombre_comuna(rs.getString("comuna"));
                 s.setId_agenda(rs.getInt("id_agenda"));
                 s.setId_comuna(rs.getInt("id_comuna"));
                 s.setId_servicio(rs.getInt("id_servicio"));

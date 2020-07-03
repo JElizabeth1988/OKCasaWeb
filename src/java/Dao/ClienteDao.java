@@ -133,8 +133,8 @@ public class ClienteDao {
     }
 
     //LISTAR POR RUT--------------------------------------------------------------
-    public List<Cliente> buscarCliente(String rut) throws SQLException {
-        List<Cliente> lista = new ArrayList<>();
+    public List<ListaCliente> buscarCliente(String rut) throws SQLException {
+        List<ListaCliente> lista = new ArrayList<>();
 
         try {
             this.conexion = new Conexion().obtenerConexion();
@@ -148,7 +148,7 @@ public class ClienteDao {
 
             while (rs.next()) {
 
-                Cliente c = new Cliente();
+                ListaCliente c = new ListaCliente();
                 c.setRut_cliente(rs.getString("rut_cliente"));
                 c.setPrimer_nombre(rs.getString("primer_nombre"));
                 c.setSegundo_nombre(rs.getString("segundo_nombre"));
@@ -157,6 +157,7 @@ public class ClienteDao {
                 c.setDireccion(rs.getString("direccion"));
                 c.setTelefono(rs.getInt("telefono"));
                 c.setEmail(rs.getString("email"));
+                c.setNombre(rs.getString("nombre"));
                 c.setId_comuna(rs.getInt("id_comuna"));
 
                 lista.add(c);

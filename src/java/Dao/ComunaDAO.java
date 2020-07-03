@@ -28,15 +28,15 @@ public class ComunaDAO {
     }
     
         //Listar--------------------------------------------------------------------
-    public List<Comuna> listarComunas() throws SQLException {
+    public List<Comuna> listarComunas(int codigo) throws SQLException {
         List<Comuna> listado = new ArrayList<>();
 
         try {
             this.conexion = new Conexion().obtenerConexion();
-            String llamada = " { call SP_LISTAR_COMUNAS(?) }";
+            String llamada = " { call SP_LISTAR_COMUNAS(?,?) }";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
-            //pasamos cursor
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.setInt(2, codigo);
             cstmt.execute();
 
             ResultSet rs = (ResultSet) cstmt.getObject(1);

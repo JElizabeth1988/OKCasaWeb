@@ -8,6 +8,7 @@ package TEST;
 
 import Clases.Cliente;
 import Clases.Comuna;
+import Clases.ListaCliente;
 import Dao.ClienteDao;
 import Dao.ComunaDAO;
 import java.text.DateFormat;
@@ -46,32 +47,32 @@ public class TESTCLIENTE {
          ComunaDAO d = new ComunaDAO();
         try {
             
-          Cliente c = new Cliente("19385798-1", "no", "Nayareth", "Gómez", "Pacheco", "Rucalin 4100", 965172587, "sxs@gsa.cl", 2);
+          Cliente c = new Cliente("19285728-1", "SI", "Nayareth", "Gómez", "Pacheco", "Rucalin 4100", 965172587, "sxs@gsa.cl", 2);
            
-           if(dao.ModificarCliente(c)){
+          /* if(dao.agregarCliente(c)){
                System.out.println("Cliente mod");
            } else{
                System.out.println("Cliente no mod");
            }
-        
-            /*List<Cliente> listado = dao.buscarCliente("19385798-1");
-            for (Cliente cliente : listado) {
+        ¨*/
+            List<ListaCliente> listado = dao.buscarCliente("19385798-1");
+            for (ListaCliente cliente : listado) {
                 System.out.println(cliente.toString());
             }
             
-            /*List<Comuna>lis = d.listarComunas();
+           /*
+           if (dao.eliminarCliente("19654782-7")) {
+                System.out.println("el");
+            }else{
+                System.out.println("nel");
+            }*/
+           
+           /* List<Comuna>lis = d.listarComunas(1);
             for (Comuna comuna : lis) {
                 System.out.println(comuna.toString());
             }
-            */
+*/
            
-            /*if (dao.eliminarCliente("12864223-4")) {
-                System.out.println("Eliminado");
-            }else{
-                System.out.println("No eliminado");
-            }
-
-            */
         } catch (Exception e) {
             
             System.out.println("Error al ejecutar"+e.getMessage());

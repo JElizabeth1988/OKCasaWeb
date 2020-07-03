@@ -82,8 +82,8 @@ public class servletModificar extends HttpServlet {
         ClienteDao dao = new ClienteDao();
 
         try {
-            List<Cliente> listac = dao.buscarCliente(rut);
-            request.setAttribute("listac", listac);
+            List<ListaCliente> listac = dao.buscarCliente(rut);
+            request.getSession().setAttribute("listac", listac);
             request.getRequestDispatcher("Modificar.jsp").forward(request, response);
 
         } catch (SQLException ex) {

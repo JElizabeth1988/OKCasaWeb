@@ -6,12 +6,17 @@
 package Controlador;
 
 import Clases.Cliente;
+import Clases.Comuna;
 import Clases.Usuario;
 import Dao.ClienteDao;
+import Dao.ComunaDAO;
 import Dao.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,7 +45,7 @@ public class servletAgregar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletAgregar</title>");            
+            out.println("<title>Servlet servletAgregar</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet servletAgregar at " + request.getContextPath() + "</h1>");
@@ -62,6 +67,7 @@ public class servletAgregar extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+
     }
 
     /**
@@ -75,7 +81,7 @@ public class servletAgregar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                //Capturar Info formulario
+        //Capturar Info formulario
         String rut_cliente = request.getParameter("txtRut_cliente");
         String primer_nombre = request.getParameter("txtPrimer_nombre");
         String segundo_nombre = request.getParameter("txtSegundo_nombre");
@@ -103,8 +109,8 @@ public class servletAgregar extends HttpServlet {
             request.setAttribute("err", "No Registrado" + ex.getMessage());
             request.getRequestDispatcher("Registrar.jsp").forward(request, response);
         }
-        
-         //USUARIO------------------------------------------------------------------
+
+        //USUARIO------------------------------------------------------------------
         int codigo = 100;
         String nombre_usuario = request.getParameter("txtUsuario");
         String contrasenia = request.getParameter("txtContrasenia");
@@ -128,8 +134,7 @@ public class servletAgregar extends HttpServlet {
             request.setAttribute("error", "No Registrado");
             request.getRequestDispatcher("Registrar.jsp").forward(request, response);
         }
-        
-        
+
     }
 
     /**
