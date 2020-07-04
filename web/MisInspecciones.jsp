@@ -56,28 +56,24 @@
         </section>
 
         <br>
-        <br>
+
         <div>
             <form action="ListaInforme" method="POST">
                 <input type="hidden" name="txtRut" id="txtId" value="${rut}">
-                <input type="submit" class="btn btn btn-primary" style="margin-left: 1000px" value="Ver Mis Resultados">
+                <input type="submit" class="btn  btn-outline-primary" style="margin-left: 1000px" value="Ver Mis Resultados">
             </form>  
         </div>
 
 
         <div class="container">
-            <h3>Mis Inspecciones</h3>
+
 
             <div class="row justify-content-center">
+                <h3>Mis Solicitudes</h3>
                 <div class="col-md-auto">
                     <div class="card-body">
                         <div class="out"> 
-                            <form action="ListaUS" method="POST" style="margin-right: 35px">
-                                <!-- RUT CLIENTE -->
-                                <input type="hidden" value="${rut}" name="txtRut">
-                                <input type="submit" class="btn btn btn-primary" style="margin-right: 40px" value="ACTUALIZAR">
 
-                            </form> 
                             <table class="table table-responsive-sm text-center text-uppercase">
                                 <thead>
                                     <tr>
@@ -89,7 +85,7 @@
                                         <th scope="col">MONTO PAGO</th>
                                         <th scope="col">DESCUENTO APLICADO</th>
                                         <th scope="col">FECHA INSPECCION</th>
-                                        <th scope="col">RUT_CLIENTE</th>
+                                        
 
 
                                     </tr>
@@ -102,12 +98,21 @@
                                             <td>${sol.getDireccion_vivienda()} ${sol.getNombre_comuna()}</td>
                                             <td>${sol.getConstructora()}</td>
                                             <td>${sol.getNombre_servicio()}</td>                                                                                                  
-                                            <td>${sol.getPago()}</td>                                                      
-                                            <td>${sol.getDescuento()}</td>
+                                            <td>${sol.getPago()}</td>
+
+                                            <c:if test="${tipo_cliente==0}">
+                                                <td>
+                                                    0%
+                                                </td>
+                                            </c:if>
+                                            <c:if test="${tipo_cliente==1}">
+                                                <td>
+                                                    20%
+                                                </td>
+                                            </c:if>
+
                                             <td>${sol.getDia()} ${sol.getHora()}</td>
-                                            <td>${sol.getRut_cliente()}</td>      
-
-
+                                           
                                         </tr>
 
 

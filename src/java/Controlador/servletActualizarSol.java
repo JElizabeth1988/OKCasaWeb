@@ -78,10 +78,9 @@ public class servletActualizarSol extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
 
         //DATOS PARA GUARDAR SOLICITUD----------------------------------
-         int codigo = Integer.parseInt(request.getParameter("txtId"));
+        int codigo = Integer.parseInt(request.getParameter("txtId"));
 
         Date fecha_solicitud = Date.valueOf(request.getParameter("txtFecha"));
         String direccion_vivienda = request.getParameter("txtDireccion");
@@ -89,12 +88,16 @@ public class servletActualizarSol extends HttpServlet {
         String costructora = request.getParameter("txtConstructora");
 
         String rut_cliente = request.getParameter("txtRut");
-  
+
         String tipo_pago = request.getParameter("txtTipoPago");
         int pago = Integer.parseInt(request.getParameter("txtPago"));
         double descuento = Double.parseDouble(request.getParameter("txtDescuento"));
         String estado = request.getParameter("txtEstado");
         int id_agenda = Integer.parseInt(request.getParameter("txtAgenda"));
+
+        //id anterior
+        int id_ag_cli = Integer.parseInt(request.getParameter("Id_agenda"));
+
         int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
 
         int id_servicio = Integer.parseInt(request.getParameter("cboServicio"));
@@ -103,25 +106,44 @@ public class servletActualizarSol extends HttpServlet {
         SolicitudDAO dao = new SolicitudDAO();
 
         try {
-            
-            if (dao.modificarSolicitud(sol)) {
 
-                request.setAttribute("msj", "Inspección Modificada");
-                request.getRequestDispatcher("ModificarSol.jsp").forward(request, response);
+            AgendaDao daoag = new AgendaDao();
 
-                //PASAR DIA Y HORA A NO DISPONIBLE
-                AgendaDao d = new AgendaDao();
-                d.modificarAgenda(id_agenda);
+            //SIN SON DIFERENTES 
+            if (id_ag_cli != id_agenda) {
+                //VERIFICAR DISPONIBILIDAD 
+                if (daoag.buscarAgenda(id_agenda)) {
 
-            } else {
-                request.setAttribute("err", "Inspección No Modificada");
+                    if (dao.modificarSolicitud(sol)) {
 
-                request.getRequestDispatcher("ModificarSol.jsp").forward(request, response);
+                        //PASAR id_agenda nueva A NO DISPONIBLE
+                        daoag.modificarAgenda(id_agenda);
 
-                //PASAR DIA Y HORA A NO DISPONIBLE
-                AgendaDao d = new AgendaDao();
-                d.modificarAgenda(id_agenda);
+                        //PASAR id_agenda antigua a DISPONIBLE
+                        daoag.modificarAgendaAdmin(id_ag_cli);
+
+                        request.setAttribute("msj", "Inspección Modificada");
+                        request.getRequestDispatcher("ModificarSol.jsp").forward(request, response);
+
+                    }
+
+                    request.setAttribute("msj", "Inspección Modificada");
+                    request.getRequestDispatcher("ModificarSol.jsp").forward(request, response);
+
+                } else {
+                    request.setAttribute("err", "Fecha y hora seleccionadas No Disponibles. Intente de Nuevo.");
+                    request.getRequestDispatcher("ModificarSol.jsp").forward(request, response);
+
+                }
+
+            }else{
+                if (dao.modificarSolicitud(sol)) {
+                        request.setAttribute("msj", "Inspección Modificada");
+                        request.getRequestDispatcher("ModificarSol.jsp").forward(request, response);
+
+                    }
             }
+            
 
         } catch (SQLException ex) {
             request.setAttribute("err", "No Modificado" + ex.getMessage());

@@ -178,7 +178,7 @@
                                         <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
                                                 class="icon-cancel" style="font-size: 35px;"></span>Eliminar Solicitud
                                             <a href="AgregarCliente.jsp"><span
-                                                    class="icon-plus" style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Agregar</span></a>
+                                                    style="font-size:16px;margin-left: 420px;color:rgba(0, 0, 0, 0.5);"></span></a>
                                             <a href="ListadoSol"><span
                                                     class="icon-book-alt" style="font-size:16px;margin-left: 10px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Listar</span></a>
                                         </p>

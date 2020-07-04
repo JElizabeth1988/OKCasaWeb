@@ -52,21 +52,43 @@
             </div>
         </section>
 
-        <br>
-
-        <div class="container"style="width:70%;background-color: #c3e6cb; border-style: solid;"style="width:60%; border-style: solid;">
+        <div class="container"style="width:70%;">
             <br>
             <div class="row justify-content-center">
 
-                <div class="col-md-8">
+                <div class="col-md-8" style="border: #495057; border-style: solid; border-width: 1px;background-color: #b1dfbb"> 
+                    <div class="col-md-12">
+                        <c:if test="${msj!=null}">
+                            <div style="font-size: 18px;color: #002752;text-align: center;" class="alert">${msj}</div>   
+                        </c:if>
 
-                    <h2 style="font-size: 24px;font-weight: bold;">Tu Inspección ha sido agendada Exitosamente</h2>
-
+                    </div>
+                    <div class="col-md-12 justify-content-center">
+                        <p style="text-align: center;">Para ver el estado de sus solicitudes presione </p>
+                        <form action="ListaUS" method="POST" style="font-size:18px;margin-left: 300px;width: 10%;">
+                            <input value="${rut}" name="txtRut" hidden>
+                            <input type="submit" name="btnEnviar" presione value="Aquí" class="btn">
+                        </form>
+                    </div>
+                    <br>
                 </div>
+                <div class="col-md-8">
+                    <div class="card-header" style="background-color: white;">
+                        <img src="images/webpago.png" alt="logo" width="30%">
 
-                <div class="col-md-8"> 
+                        <div class="col-md-10"> 
+                            <!-- ERROR WS PAGO   -->    
 
-                    <p style="font-size: 18px;">Para verificar el seguimiento puede ingresar <a href="MisInspecciones.jsp">aquí</a> </p>     
+                            <c:if test="${msje!=null}">
+                                <div class="alert alert-info">${msje}</div>   
+
+                            </c:if>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
 
             </div>

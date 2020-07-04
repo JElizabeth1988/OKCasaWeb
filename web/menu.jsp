@@ -84,7 +84,7 @@
                         <li class="nav-item"><a href="servicios.jsp" class="nav-link">Servicios</a></li>
                             <c:if test="${tipo==2}">
 
-                            <li class="nav-item"><a href="ListaUS" class="nav-link">Mis Inspecciones <span
+                            <li class="nav-item"><a href="Bienvenida.jsp" class="nav-link">Mis Inspecciones <span
                                         class="icon"></span></a></li></a></li>                      
                             <li class="nav-item"><a href="servletAgenda" class="nav-link">Agendar<span
                                         class="icon"></span></a></li></a></li>  

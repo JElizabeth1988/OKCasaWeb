@@ -105,9 +105,13 @@
 
 
                                     <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> 
-                                               
+                                        <span
+                                            class="icon-book-alt" style="font-size: 35px;"></span>Datos Encontrados    
+                                        <a ><span
+                                         style="font-size:16px;margin-left: 600px;color:rgba(0, 0, 0, 0.5);"></span></a>
                                         <a href="EliminarCliente.jsp"><span
                                                 class="icon-cancel" style="font-size:16px;margin-left: 10px;color:rgba(0, 0, 0, 0.5);background-color: #ffeeba;">Ir Eliminar</span></a>
+
                                     </p>
                                     <hr id="line" style=" border-top: .1875rem solid #fcf8e3">
 
@@ -129,7 +133,7 @@
                                                                 <th scope="col">SERVICIO ESCOGIDO</th>
                                                                 <th scope="col">MONTO PAGO</th>
                                                                 <th scope="col">DESCUENTO APLICADO</th>
-                                                                
+
                                                                 <th scope="col">FECHA INSPECCION</th>
                                                                 <th scope="col">ESTADO</th>
                                                                 <th scope="col">ACCION</th>
@@ -147,13 +151,13 @@
                                                                     <td>${sol.getNombre_servicio()}</td>
                                                                     <td>${sol.getPago()}</td>                                                      
                                                                     <td>${sol.getDescuento()}</td>
-                                                                    
+
                                                                     <td>${sol.getDia()} ${sol.getHora()}</td>
                                                                     <td>${sol.getEstado()}</td>
                                                                     <td>
                                                                         <form action="servletModificarSol" method="POST">
                                                                             <input type="hidden" name="txtId" id="txtId" value="${sol.getId_solicitud()}">
-                                                                            <input type="submit" class="btn btn btn-primary" style="margin-right: 40px" value="Editar">
+                                                                            <input type="submit" class="btn btn btn-outline-primary" style="margin-right: 40px" value="Editar">
                                                                         </form>
                                                                     </td>   
 

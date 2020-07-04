@@ -45,7 +45,7 @@ public class servletActualizar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletActualizar</title>");            
+            out.println("<title>Servlet servletActualizar</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet servletActualizar at " + request.getContextPath() + "</h1>");
@@ -66,18 +66,7 @@ public class servletActualizar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        ComunaDAO d = new ComunaDAO();
-
-        try {
-            List<Comuna> listaco = d.listarComunas(1);
-            request.getSession().setAttribute("listaco", listaco);
-            request.getRequestDispatcher("Modificar.jsp").forward(request, response);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(servletAgregar.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        processRequest(request, response);
     }
 
     /**
@@ -105,7 +94,7 @@ public class servletActualizar extends HttpServlet {
         ClienteDao dao = new ClienteDao();
 
         try {
-           
+
             if (dao.ModificarCliente(cli)) {
                 request.setAttribute("msj", "Modificado exitosamente");
                 request.getRequestDispatcher("Modificar.jsp").forward(request, response);
@@ -117,7 +106,7 @@ public class servletActualizar extends HttpServlet {
             request.setAttribute("err", "No Modificado" + ex.getMessage());
             request.getRequestDispatcher("Modificar.jsp").forward(request, response);
         }
-        
+
     }
 
     /**

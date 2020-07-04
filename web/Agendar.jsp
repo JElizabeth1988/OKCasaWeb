@@ -77,18 +77,8 @@
 
         <br>
         <div class="container">
-            <h2 class="text-center">Agenda tu Inspección</h2>
-
-            <div>
-                <form action="ListaUS" method="POST">
-                    <input type="hidden" name="txtRut" id="txtId" value="${rut}">
-                    <input type="submit" class="btn btn-outline-secondary" style="margin-left: 1000px" value="Ver Mis Inspecciones">
-                </form>  
-            </div>
-
-            <p class="text-center">
-                <small id="passwordHelpInline" class="text-muted"></small>
-            </p>
+            <h3 class="text-center">Agenda tu Inspección</h3>
+          
             <hr>
 
             <div class="col-md">
@@ -100,7 +90,32 @@
                     <form action="servletAgregarSol" method="POST" style="width: 100%;">
 
                         <div class="container-fluid col-md-8">
+
                             <div class="row justify-content-center">
+                                <div class="col-md-10">
+                                    <c:if test="${msj!=null}">
+                                        <div class="alert alert-success">${msj}</div>   
+                                    </c:if>
+                                    <c:if test="${err!=null}">
+                                        <div class="alert alert-danger">${err}</div>  
+                                    </c:if>   
+
+                                </div>
+
+                                <div class="col-md-10"> 
+                                    <!-- ERROR WS PAGO   -->    
+
+                                    <c:if test="${msje!=null}">
+                                        <div class="alert alert-success">${msje}</div>   
+
+                                    </c:if>
+                                    <c:if test="${erro!=null}">
+                                        <div class="alert alert-danger">${erro}</div>  
+                                    </c:if>  
+
+
+
+                                </div>
 
                                 <p style="font-weight: bold; font-size: 18px">
                                     PASO 1. Selecciona la Fecha
@@ -216,7 +231,7 @@
                                                 <option value="30">Lo prado</option>
                                                 <option value="31">Pudahuel</option>
                                                 <option value="32">Quinta Normal</option>
-                                               
+
                                             </select>                    
                                         </div>
                                     </div>
@@ -416,30 +431,6 @@
 
 
 
-                                        <div class="col-md-10">
-                                            <c:if test="${msj!=null}">
-                                                <div class="alert alert-success">${msj}</div>   
-                                            </c:if>
-                                            <c:if test="${err!=null}">
-                                                <div class="alert alert-danger">${err}</div>  
-                                            </c:if>   
-
-                                        </div>
-
-                                        <div class="col-md-10"> 
-                                            <!-- ERROR WS PAGO   -->    
-
-                                            <c:if test="${msje!=null}">
-                                                <div class="alert alert-success">${msje}</div>   
-
-                                            </c:if>
-                                            <c:if test="${erro!=null}">
-                                                <div class="alert alert-danger">${erro}</div>  
-                                            </c:if>  
-
-
-
-                                        </div>
 
 
                                     </div>

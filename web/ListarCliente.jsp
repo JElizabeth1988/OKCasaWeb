@@ -117,7 +117,7 @@
 
                                     <div class="table-responsive">
                                         <table class="table text-uppercase">
-                                            <thead>
+                                            <thead style="background-color: #f0f0f0;">
                                                 <tr>
                                                     <th scope="col">RUT</th>
                                                     <th scope="col"> NOMBRE </th>
@@ -141,7 +141,7 @@
                                                         <td>
                                                             <form action="servletModificar" method="POST">
                                                                 <input type="hidden" name="txtRut" id="rut_cliente" value="${cliente.getRut_cliente()}">
-                                                                <input type="submit" class="btn btn btn-primary" style="margin-right: 40px" value="Editar">
+                                                                <input type="submit" class="btn btn-outline-primary" style="margin-right: 40px" value="Editar" id="btnModificar">
                                                             </form>
                                                         </td>         
 

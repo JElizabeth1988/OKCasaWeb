@@ -58,15 +58,15 @@
         </section>
 
         <br>
-        <br>
         <div>
-            <p><a href="servletAgenda" class="btn btn-lg btn-primary">Solicita una Nueva Inspección</a></p>
+            <p><a href="servletAgenda" class="btn btn-lg btn-primary">Solicita una Nueva Inspección </a></p>
         </div>
-        <br>
-        <br>
 
         <div class="container">
-            <h3>Seguimiento</h3>
+            <div class="row justify-content-center">
+                <h3>Seguimiento</h3>
+
+            </div>
 
             <div class="row justify-content-center">
                 <div class="col-md-auto">
@@ -76,7 +76,7 @@
                             <table class="table table-responsive-sm text-center text-uppercase">
                                 <thead>
                                     <tr>
-                                        
+
                                         <th scope="col">Código</th>
                                         <th scope="col">ESTADO</th>
                                         <th scope="col">FECHA INSPECCION</th>

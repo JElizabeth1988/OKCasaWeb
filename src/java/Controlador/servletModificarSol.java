@@ -95,7 +95,7 @@ public class servletModificarSol extends HttpServlet {
 
         try {
             List<ListaSolicitud> listas = dao.buscarSolicitud(codigo);
-            request.setAttribute("listas", listas);
+            request.getSession().setAttribute("listas", listas);
             request.getRequestDispatcher("ModificarSol.jsp").forward(request, response);
 
         } catch (SQLException ex) {

@@ -139,18 +139,18 @@ public class servletAgregarSol extends HttpServlet {
 
                         //Indicar vuelto
                         if (cliente.realizarPago(total, pag) == 0) {
-                            request.setAttribute("msj", "Inspección Agendada");
+                            request.setAttribute("msj", "Su Inspección ha sido Agendada  Exitosamente");
                             request.setAttribute("msje", "Pago efectuado");
-                            request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+                            request.getRequestDispatcher("PagoEfectuado.jsp").forward(request, response);
 
                             //PASAR DIA Y HORA A NO DISPONIBLE
                             AgendaDao d = new AgendaDao();
                             d.modificarAgenda(id_agenda);
                             
                         } else {
-                            request.setAttribute("msj", "Inspección Agendada");
+                            request.setAttribute("msj", "Su Inspección ha sido Agendada Exitosamente");
                             request.setAttribute("msje", "Pago efectuado, su vuelto es: $"+ cliente.realizarPago(total, pag));
-                            request.getRequestDispatcher("Agendar.jsp").forward(request, response);
+                            request.getRequestDispatcher("PagoEfectuado.jsp").forward(request, response);
                             
                              //PASAR DIA Y HORA A NO DISPONIBLE
                             AgendaDao d = new AgendaDao();
@@ -168,7 +168,7 @@ public class servletAgregarSol extends HttpServlet {
                     request.getRequestDispatcher("Agendar.jsp").forward(request, response);
                 }
             } else {
-                request.setAttribute("erro", "Clave Errónea");
+                request.setAttribute("erro", "Clave Errónea. Intente de nuevo");
                 request.setAttribute("err", "No Agendado ");
                 request.getRequestDispatcher("Agendar.jsp").forward(request, response);
 

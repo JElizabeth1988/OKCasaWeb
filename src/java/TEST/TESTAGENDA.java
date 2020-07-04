@@ -25,10 +25,10 @@ public class TESTAGENDA {
         
         try {
             
-            if (dao.modificarAgenda(10)) {
-                System.out.println("Modificado");
+            if (dao.buscarAgenda(7)) {
+                System.out.println("disp");
             }else{
-                System.out.println("No modificado");
+                System.out.println("No dispo");
             }
 
             

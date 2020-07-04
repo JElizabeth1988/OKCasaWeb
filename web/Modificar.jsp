@@ -122,7 +122,7 @@
                                         <div class="form-group"> <!-- RUT -->
                                             <label style="color: #bd2130">*</label>
                                             <label for="rut_cliente" class="control-label">RUT</label>
-                                            <input type="text" name="txtRut_cliente" required oninput="checkRut(this)" class="form-control input-lg" placeholder="Sin puntos ni guiones"
+                                            <input type="text" name="txtRut_cliente" readonly required oninput="checkRut(this)" class="form-control input-lg" placeholder="Sin puntos ni guiones"
                                                    title="Debe Ingresar su RUT" required minlength="9" maxlength="10" value="${cli.getRut_cliente()}" style="color: #9e9e9e;">
 
                                         </div>   
