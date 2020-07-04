@@ -102,7 +102,7 @@
 
                                             <c:if test="${tipo_cliente==0}">
                                                 <td>
-                                                    0%
+                                                    0
                                                 </td>
                                             </c:if>
                                             <c:if test="${tipo_cliente==1}">

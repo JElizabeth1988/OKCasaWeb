@@ -94,16 +94,15 @@
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
                         <div class="wrap-contact100" id="wrapp">
-                             <br>
+                            <br>
                             <div class="row justify-content-center"> 
-                               
+
                                 <h5>Verifica tus Inspecciones</h5>
                                 <hr id="line" style="width:110%;border-style: dotted">
                             </div>
 
 
                             <table class="table justify-content-center text-center" style="width: 60%;margin-left: 150px;">
-                                <br>
                                 <tr>
 
                                     <td>
@@ -112,6 +111,8 @@
                                             <input value="${rut}" name="txtRut" hidden>
                                             <input type="submit" name="btnEnviar" value="Mis Solicitudes" class="btn">
                                         </form>
+                                       <hr>
+                                       
                                     <td> 
 
                                 </tr>
@@ -122,13 +123,13 @@
                                             <input type="hidden" name="txtRut" id="txtId" value="${rut}">
                                             <input type="submit" class="btn" value="Ver Mis Resultados">
                                         </form>     
-
+                                          <hr>
                                     </td>
                                 </tr>
                                 <tr>
 
                                     <td> <input  class="btn" value="Agendar"></td>
-
+                                    
                                 </tr>
                                 <tr>
 
