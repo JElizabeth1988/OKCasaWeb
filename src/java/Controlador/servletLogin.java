@@ -94,14 +94,15 @@ public class servletLogin extends HttpServlet {
 
             //WS BANCO, HIPOTECARIO
             WSBANCO_Service serv = new WSBANCO_Service();
-            WSBANCO cli = serv.getWSBANCOPort();
+            WSBANCO hip = serv.getWSBANCOPort();
            
              //WS LOGIN, sacar rut usuario
             String rut = cliente.rutCliente(user, pass);
             
              //WS BANCO, PASAR EL RUT 
-            int tipo_cliente = cli.tipoCliente(rut);
+            int tipo_cliente = hip.tipoCliente(rut);
 
+            //PASAMOS VARIBALE DE TIPO Y EL USERNAME
             request.getSession().setAttribute("tipo", tipo);
             request.getSession().setAttribute("username", user);
             

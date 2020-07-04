@@ -96,7 +96,7 @@ public class servletAgregarAdm extends HttpServlet {
                 request.getSession().setAttribute("rut", rut_cliente);
                 request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
             } else {
-                request.setAttribute("err", "Cliente ya existente");
+                request.setAttribute("err", "Cliente ya Registrado");
                 request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
             }
         } catch (SQLException ex) {

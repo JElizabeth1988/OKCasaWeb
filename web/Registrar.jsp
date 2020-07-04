@@ -117,7 +117,7 @@
                                         <label style="color: #bd2130">*</label>
                                         <label for="rut_cliente" class="control-label">RUT</label>
                                         <input type="text" name="txtRut_cliente" required oninput="checkRut(this)" class="form-control input-lg" placeholder="Sin puntos ni guiones"
-                                               title="Debe Ingresar su RUT" required minlength="9" maxlength="10" required>
+                                               title="Debe Ingresar su RUT" required minlength="8" maxlength="11" required>
 
                                     </div>   
                                 </div>
