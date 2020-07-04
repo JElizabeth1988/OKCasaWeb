@@ -43,7 +43,6 @@
         <!---- Boostrap js link local ----->
         <link rel="icon" href="images/icon.png" type="image/x-icon" />
         <!---- Icon link local ----->
-
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         <!---- Font awesom link local ----->
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
@@ -77,7 +76,7 @@
         <br>
         <div class="container">
             <h3 class="text-center">Agenda tu Inspección</h3>
-          
+
             <hr>
 
             <div class="col-md">
@@ -146,7 +145,7 @@
                                                             <td>
 
                                                                 <label>
-                                                                    <input style="margin-left: 20px;"  type="radio" checked class="option-input radio" name="rb_agendar" value="${agenda.getIdAgenda()}" >
+                                                                    <input style="margin-left: 28px;"  type="radio" checked class="option-input radio" name="rb_agendar" value="${agenda.getIdAgenda()}" >
                                                                 </label> 
 
                                                             </td>
@@ -358,21 +357,21 @@
                                                     </c:if> 
                                                     <br>
                                                     <p> Seleccione Tipo de Pago </p>
-                                                    <div class="row">
+                                                    <div class="row justify-content-center">
 
                                                         <div class="col-md-3">
 
                                                         </div>
                                                         <div class="col-md-3 text-center">
                                                             <input type="radio" name="rbTipoPago" value="Crédito" checked>
-                                                            <img src="images/card-a.png" width="55%">
-                                                            <a>Crédito</a>
+                                                            <img src="images/card-a.png" width="65px" class="img-responsive" alt="Responsive image">
+                                                            <a style="margin-left: 8px;">Crédito</a>
 
                                                         </div>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-3 text-center">
                                                             <input type="radio" name="rbTipoPago" value="Débito">
-                                                            <img src="images/card-b.png" width="53%">
-                                                            <a>Débito</a>
+                                                            <img src="images/card-b.png" width="62px" class="img-responsive" alt="Responsive image">
+                                                            <a style="margin-left: 12px;">Débito</a>
                                                         </div>
                                                         <div class="col-md-3">
 
