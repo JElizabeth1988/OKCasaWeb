@@ -10182,8 +10182,8 @@ div#error2 {
         right: 0;
         bottom: 0;
         left: 0;
-        height: 40px;
-        width: 40px;
+        height: 33px;
+        width: 33px;
         transition: all 0.15s ease-out 0s;
         background: #cbd1d8;
         border: none;
@@ -10202,12 +10202,12 @@ div#error2 {
         }
         .option-input:checked::before {
         font-family: fontello;
-        height: 40px;
-        width: 40px;
+        height: 33px;
+        width: 33px;
         display: inline-block;
-        font-size: 26.66667px;
+        font-size: 24.66667px;
         text-align: center;
-        line-height: 40px;
+        line-height: 33px;
         content:  '\e023';
         }
         .option-input:checked::after {
