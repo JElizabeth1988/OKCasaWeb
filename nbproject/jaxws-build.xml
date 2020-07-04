@@ -458,5 +458,101 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
         <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN_6"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4, wsimport-client-WSDISPONIBILIDAD_3, wsimport-client-WSDISPONIBILIDAD_4, wsimport-client-WSDISPONIBILIDAD_5, wsimport-client-WSDISPONIBILIDAD_6, wsimport-client-WSDISPONIBILIDAD_7, wsimport-client-WSDISPONIBILIDAD_8, wsimport-client-WSPAGO_2, wsimport-client-WSLOGIN_5, wsimport-client-WSPAGO_3, wsimport-client-WS_Seguimiento, wsimport-client-WS_Seguimiento_1, wsimport-client-WS_Seguimiento_2, wsimport-client-WS_BANCO_1, wsimport-client-WS_Seguimiento_3, wsimport-client-WS_Seguimiento_4, wsimport-client-WSLOGIN_6"/>
+    <target name="wsimport-client-WS_BANCO_2" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WS_BANCO_2"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WS_BANCO_2" destdir="${build.generated.dir}/jax-wsCache/WS_BANCO_2" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WS_BANCO_2/wsdl/localhost_31439/WSBancoEstado/WS_BANCO.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSBancoEstado/WS_BANCO?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WS_BANCO_2/wsdl/localhost_31439/WSBancoEstado/WS_BANCO.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WS_BANCO_2"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WS_BANCO_2">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WS_BANCO_2" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WS_BANCO_2"/>
+    </target>
+    <target name="wsimport-client-WSLOGIN_7" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSLOGIN_7"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSLOGIN_7" destdir="${build.generated.dir}/jax-wsCache/WSLOGIN_7" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_7/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_7/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSLOGIN_7"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSLOGIN_7">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSLOGIN_7" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN_7"/>
+    </target>
+    <target name="wsimport-client-WSLOGIN_8" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSLOGIN_8"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSLOGIN_8" destdir="${build.generated.dir}/jax-wsCache/WSLOGIN_8" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_8/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSLOGIN?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSLOGIN_8/wsdl/localhost_31439/WSOKCasa/WSLOGIN.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSLOGIN_8"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSLOGIN_8">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSLOGIN_8" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSLOGIN_8"/>
+    </target>
+    <target name="wsimport-client-WSPAGO_4" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSPAGO_4"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSPAGO_4" destdir="${build.generated.dir}/jax-wsCache/WSPAGO_4" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSPAGO_4/wsdl/localhost_31439/WSOKCasa/WSPAGO.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSPAGO?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSPAGO_4/wsdl/localhost_31439/WSOKCasa/WSPAGO.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSPAGO_4"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSPAGO_4">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSPAGO_4" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSPAGO_4"/>
+    </target>
+    <target name="wsimport-client-WSDISPONIBILIDAD_9" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_9"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_9" destdir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_9" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_9/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WSDISPONIBILIDAD?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WSDISPONIBILIDAD_9/wsdl/localhost_31439/WSOKCasa/WSDISPONIBILIDAD.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_9"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_9">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSDISPONIBILIDAD_9" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WSDISPONIBILIDAD_9"/>
+    </target>
+    <target name="wsimport-client-WS_Seguimiento_5" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_5"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_5" destdir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_5" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Seguimiento_5/wsdl/localhost_31439/WSOKCasa/WS_Seguimiento.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:31439/WSOKCasa/WS_Seguimiento?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/WS_Seguimiento_5/wsdl/localhost_31439/WSOKCasa/WS_Seguimiento.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_5"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_5">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WS_Seguimiento_5" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/WS_Seguimiento_5"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSLOGIN_1, wsimport-client-WSLOGIN, wsimport-client-WSLOGIN_2, wsimport-client-WSPAGO, wsimport-client-WSDISPONIBILIDAD, wsimport-client-WSDISPONIBILIDAD_1, wsimport-client-WSDISPONIBILIDAD_2, wsimport-client-WSLOGIN_3, wsimport-client-WSPAGO_1, wsimport-client-WS_BANCO, wsimport-client-WSLOGIN_4, wsimport-client-WSDISPONIBILIDAD_3, wsimport-client-WSDISPONIBILIDAD_4, wsimport-client-WSDISPONIBILIDAD_5, wsimport-client-WSDISPONIBILIDAD_6, wsimport-client-WSDISPONIBILIDAD_7, wsimport-client-WSDISPONIBILIDAD_8, wsimport-client-WSPAGO_2, wsimport-client-WSLOGIN_5, wsimport-client-WSPAGO_3, wsimport-client-WS_Seguimiento, wsimport-client-WS_Seguimiento_1, wsimport-client-WS_Seguimiento_2, wsimport-client-WS_BANCO_1, wsimport-client-WS_Seguimiento_3, wsimport-client-WS_Seguimiento_4, wsimport-client-WSLOGIN_6, wsimport-client-WS_BANCO_2, wsimport-client-WSLOGIN_7, wsimport-client-WSLOGIN_8, wsimport-client-WSPAGO_4, wsimport-client-WSDISPONIBILIDAD_9, wsimport-client-WS_Seguimiento_5"/>
 </project>
