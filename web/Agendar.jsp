@@ -39,7 +39,6 @@
 
         <!---- boostrap.min link local ----->
 
-        <script src="js/calculos.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <!---- Boostrap js link local ----->
         <link rel="icon" href="images/icon.png" type="image/x-icon" />

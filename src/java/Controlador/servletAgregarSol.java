@@ -139,8 +139,8 @@ public class servletAgregarSol extends HttpServlet {
 
                         //Indicar vuelto
                         if (cliente.realizarPago(total, pag) == 0) {
-                            request.setAttribute("msj", "Su Inspección ha sido Agendada  Exitosamente");
-                            request.setAttribute("msje", "Pago efectuado");
+                            request.setAttribute("msj", "Su Inspección ha sido Agendada  Exitosamente.");
+                            request.setAttribute("msje", "Pago correctamente efectuado.");
                             request.getRequestDispatcher("PagoEfectuado.jsp").forward(request, response);
 
                             //PASAR DIA Y HORA A NO DISPONIBLE
@@ -148,7 +148,7 @@ public class servletAgregarSol extends HttpServlet {
                             d.modificarAgenda(id_agenda);
                             
                         } else {
-                            request.setAttribute("msj", "Su Inspección ha sido Agendada Exitosamente");
+                            request.setAttribute("msj", "Su Inspección ha sido Agendada Exitosamente.");
                             request.setAttribute("msje", "Pago efectuado, su vuelto es: $"+ cliente.realizarPago(total, pag));
                             request.getRequestDispatcher("PagoEfectuado.jsp").forward(request, response);
                             

@@ -56,20 +56,30 @@
             <br>
             <div class="row justify-content-center">
 
-                <div class="col-md-8" style="border: #495057; border-style: solid; border-width: 1px;background-color: #b1dfbb"> 
+                <div class="col-md-8" style="border: #495057; border-style: solid; border-width: 1px;background-color: #d4f8d2"> 
                     <div class="col-md-12">
                         <c:if test="${msj!=null}">
-                            <div style="font-size: 18px;color: #002752;text-align: center;" class="alert">${msj}</div>   
+                            <div style="font-size: 18px;color: #0044cc;text-align: center;" class="alert">${msj}</div>   
                         </c:if>
 
                     </div>
-                    <div class="col-md-12 justify-content-center">
-                        <p style="text-align: center;">Para ver el estado de sus solicitudes presione </p>
-                        <form action="ListaUS" method="POST" style="font-size:18px;margin-left: 300px;width: 10%;">
-                            <input value="${rut}" name="txtRut" hidden>
-                            <input type="submit" name="btnEnviar" presione value="Aquí" class="btn">
-                        </form>
+                    <div class="col-md-8" style="margin-left: 70px;">  
+                    <p style="text-align: justify;">Próximamente nos comunicaremos con usted, para confirmar su solicitud. </p>  
                     </div>
+
+                    <div class="col-md-12 justify-content-center">
+
+                        <form action="ListaUS" method="POST" style="font-size:18px; margin-left: 59px; width: 10%;">
+                            <input value="${rut}" name="txtRut" hidden>
+                            <input type="submit" name="btnEnviar" value="Para ver el estado de sus solicitudes presione Aquí" class="btn">
+                        </form>
+
+
+
+                    </div>
+                    <br>
+                    <br>
+                    <br>
                     <br>
                 </div>
                 <div class="col-md-8">

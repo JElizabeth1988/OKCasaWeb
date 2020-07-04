@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
 
         <title>OKCASA</title>
@@ -117,7 +117,7 @@
                                         <label style="color: #bd2130">*</label>
                                         <label for="rut_cliente" class="control-label">RUT</label>
                                         <input type="text" name="txtRut_cliente" required oninput="checkRut(this)" class="form-control input-lg" placeholder="Sin puntos ni guiones"
-                                               title="Debe Ingresar su RUT" required minlength="9" maxlength="10">
+                                               title="Debe Ingresar su RUT" required minlength="9" maxlength="10" required>
 
                                     </div>   
                                 </div>
@@ -128,7 +128,7 @@
                                         <label style="color: #bd2130">*</label>
                                         <label for="primer_nombre" class="control-label" style="black">Primer Nombre</label>
                                         <input type="text" name="txtPrimer_nombre" class="form-control input-lg" placeholder="Ej: Juan"
-                                               title="Debe Ingresar su Nombre" required minlength="3" maxlength="20">
+                                               title="Debe Ingresar su Nombre" required minlength="3" maxlength="20" >
                                     </div>  
                                 </div>
 
@@ -166,7 +166,7 @@
                                     <div class="form-group"> <!-- Telefono -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="telefono" class="control-label">Telefono</label>
-                                        <input type="text" name="txtTelefono" class="form-control input-lg"
+                                        <input type="text" pattern="^[9|8|7|6]\d{8}$" pattern="[0-9]" name="txtTelefono" class="form-control input-lg"
                                                placeholder="teléfono" minlength="9" maxlength="10">
                                     </div>   
                                 </div>
@@ -185,49 +185,49 @@
                                 </div>
 
 
-                                  <div class="col-md-3" id="textbox">
-                                        <div class="form-group"> <!--Comuna -->
-                                            <label style="color: #bd2130">*</label>
-                                            <label for="id_comuna" class="control-label">Comuna</label>
+                                <div class="col-md-3" id="textbox">
+                                    <div class="form-group"> <!--Comuna -->
+                                        <label style="color: #bd2130">*</label>
+                                        <label for="id_comuna" class="control-label">Comuna</label>
 
-                                            <select class="form-control" name="cboComuna">
-                                                
-                                                <option value="1">Santiago</option>
-                                                <option value="2">Conchalí</option>
-                                                <option value="3">Huechuraba</option>
-                                                <option value="4">Independencia</option>
-                                                <option value="5">Quilicura</option>
-                                                <option value="6">Recoleta</option>
-                                                <option value="7">Renca</option>
-                                                <option value="8">Las Condes</option>
-                                                <option value="9">Lo Barnechea</option>
-                                                <option value="10">Providencia</option>
-                                                <option value="11">Vitacura</option>
-                                                <option value="12">La Reina</option>
-                                                <option value="13">Macul</option>
-                                                <option value="14">Ñuñoa</option>
-                                                <option value="15">Peñalolen</option>
-                                                <option value="16">La Florida</option>
-                                                <option value="17">La Granja</option>
-                                                <option value="18">El Bosque</option>
-                                                <option value="19">La Cisterna</option>
-                                                <option value="20">La Pintana</option>
-                                                <option value="21">San Ramón</option>
-                                                <option value="22">Lo Espejo</option>
-                                                <option value="23">Pedro Aguirre Cerda</option>                                           
-                                                <option value="24">San Joaquín</option>                                           
-                                                <option value="25">San Miguel</option>
-                                                <option value="26">Cerrilos</option>
-                                                <option value="27">Estación Centrak</option>
-                                                <option value="28">Maipú</option>
-                                                <option value="29">Cerro Navia</option>
-                                                <option value="30">Lo prado</option>
-                                                <option value="31">Pudahuel</option>
-                                                <option value="32">Quinta Normal</option>
+                                        <select class="form-control" name="cboComuna">
 
-                                            </select>                    
-                                        </div>
+                                            <option value="1">Santiago</option>
+                                            <option value="2">Conchalí</option>
+                                            <option value="3">Huechuraba</option>
+                                            <option value="4">Independencia</option>
+                                            <option value="5">Quilicura</option>
+                                            <option value="6">Recoleta</option>
+                                            <option value="7">Renca</option>
+                                            <option value="8">Las Condes</option>
+                                            <option value="9">Lo Barnechea</option>
+                                            <option value="10">Providencia</option>
+                                            <option value="11">Vitacura</option>
+                                            <option value="12">La Reina</option>
+                                            <option value="13">Macul</option>
+                                            <option value="14">Ñuñoa</option>
+                                            <option value="15">Peñalolen</option>
+                                            <option value="16">La Florida</option>
+                                            <option value="17">La Granja</option>
+                                            <option value="18">El Bosque</option>
+                                            <option value="19">La Cisterna</option>
+                                            <option value="20">La Pintana</option>
+                                            <option value="21">San Ramón</option>
+                                            <option value="22">Lo Espejo</option>
+                                            <option value="23">Pedro Aguirre Cerda</option>                                           
+                                            <option value="24">San Joaquín</option>                                           
+                                            <option value="25">San Miguel</option>
+                                            <option value="26">Cerrilos</option>
+                                            <option value="27">Estación Centrak</option>
+                                            <option value="28">Maipú</option>
+                                            <option value="29">Cerro Navia</option>
+                                            <option value="30">Lo prado</option>
+                                            <option value="31">Pudahuel</option>
+                                            <option value="32">Quinta Normal</option>
+
+                                        </select>                    
                                     </div>
+                                </div>
 
                                 <div class="col-md-3" id="textbox">
                                     <div class="form-group"> <!-- Email -->
@@ -256,7 +256,7 @@
                                     <div class="form-group"> <!-- Contraseña 1 -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="contrasenia" class="control-label">Contraseña</label>
-                                        <input type="password" name="txtContrasenia" id="pass1" class="form-control input-lg"
+                                        <input type="password" name="txtContrasenia" id="contra" class="form-control input-lg"
                                                placeholder="Contraseña" title="Debe Ingresar su Contraseña" required minlength="7" maxlength="20">
                                     </div>  
 
@@ -265,7 +265,7 @@
                                     <div class="form-group"> <!-- Contraseña 2 -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="contrasenia2" class="control-label">Confirmar Contraseña</label>
-                                        <input type="password" name="txtPassword2" id="pass2" class="form-control input-lg"
+                                        <input type="password" name="txtContrasenia2" id="pass2" class="form-control input-lg"
                                                placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="7" maxlength="20">
                                         <!-- Error Text --> <div id="error2"></div>
                                     </div> 
@@ -320,21 +320,7 @@
                             <br>
                             <br>
                             <br>
-                            <%--
-                            <form id="formulario">
 
-            <input type="text" name="txtNombre" placeholder="Ingrese nombre">
-            <br>
-            <input type="email" name="txtCorreo" placeholder="Ingrese correo">
-            <br>
-            <input type="password" name="txtContrasenia" id="contra" placeholder="Ingrese contraseña">
-            <br>
-            <input type="password" name="txtContrasenia2"  placeholder="Ingrese contraseña">    
-            <!-- submit es botón y desencadena click a diferencia button-->
-            <input type="submit" value="Enviar"> 
-
-
-        </form>--%>
 
 
 
@@ -375,10 +361,6 @@
 
                             <!-- Nuestro script -->
                             <script src="js/validaciones.js"></script>
-
-                            <!-- Métodos adicionales, validar solo letras -->
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
-
 
                             </body>
                             </html>
