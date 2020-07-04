@@ -1331,7 +1331,7 @@ pre code {
 .table td {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6; }
+    border-top: 1px solid #white; }
 .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6; }
@@ -10094,7 +10094,7 @@ div#error2 {
         height: 0;
         overflow: visible;F
         }
-        
+
         .input-group-prepend span {
         width: 50px;
         color: black;
@@ -10106,11 +10106,13 @@ div#error2 {
         .outer {
         overflow-y: auto;
         height: 300px;
+        background-color: white;
         }
 
         .outer {
         width: 100%;
         -layout: fixed;
+        background-color: white;
         }
 
         .outer th {
