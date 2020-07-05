@@ -4,31 +4,31 @@
 <xsd:import namespace="http://ws/" schemaLocation="http://localhost:31439/WSOKCasa/WSLOGIN?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="Login">
-<part name="parameters" element="tns:Login"/>
-</message>
-<message name="LoginResponse">
-<part name="parameters" element="tns:LoginResponse"/>
-</message>
 <message name="Rut_cliente">
 <part name="parameters" element="tns:Rut_cliente"/>
 </message>
 <message name="Rut_clienteResponse">
 <part name="parameters" element="tns:Rut_clienteResponse"/>
 </message>
+<message name="Login">
+<part name="parameters" element="tns:Login"/>
+</message>
+<message name="LoginResponse">
+<part name="parameters" element="tns:LoginResponse"/>
+</message>
 <portType name="WSLOGIN">
-<operation name="Login">
-<input wsam:Action="http://ws/WSLOGIN/LoginRequest" message="tns:Login"/>
-<output wsam:Action="http://ws/WSLOGIN/LoginResponse" message="tns:LoginResponse"/>
-</operation>
 <operation name="Rut_cliente">
 <input wsam:Action="http://ws/WSLOGIN/Rut_clienteRequest" message="tns:Rut_cliente"/>
 <output wsam:Action="http://ws/WSLOGIN/Rut_clienteResponse" message="tns:Rut_clienteResponse"/>
 </operation>
+<operation name="Login">
+<input wsam:Action="http://ws/WSLOGIN/LoginRequest" message="tns:Login"/>
+<output wsam:Action="http://ws/WSLOGIN/LoginResponse" message="tns:LoginResponse"/>
+</operation>
 </portType>
 <binding name="WSLOGINPortBinding" type="tns:WSLOGIN">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="Login">
+<operation name="Rut_cliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="Rut_cliente">
+<operation name="Login">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

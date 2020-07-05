@@ -210,10 +210,10 @@
                                         <hr id="line" style="width: 70%;">
 
                                         <div class="row justify-content-center">
-                                            <div class="col-md-4" id="textbox">
-                                                <div class="form-group"> <!-- agenda -->
+                                            <div class="col-md-5" id="textbox">
+                                                <div class="form-group"> <!-- Estado -->
                                                     <br>
-                                                    <label for="codigo" class="control-label">Estado</label>
+                                                    <label for="estado" class="control-label">Estado</label>
                                                     <input type="text" name="txtEstado"  class="form-control input-lg"
                                                            placeholder="Estado" value="${sol.getEstado()}">
                                                 </div> 
@@ -231,10 +231,10 @@
                                             <!-- Comparar Códigos -->
                                             <input type="hidden" name="Id_agenda"  class="form-control input-lg"
                                                    placeholder="Código" value="${sol.getId_agenda()}">
-
+                                            <!----------------------->
                                             <div class="col-md-2"></div>
 
-                                            <div class="col-md-4" id="textbox">
+                                            <div class="col-md-5" id="textbox">
                                                 <div class="form-group"> <!-- Direccion -->
 
                                                     <label for="direccion" class="control-label">Dirección Vivienda</label>
@@ -245,7 +245,7 @@
                                             </div>
 
 
-                                            <div class="col-md-3" id="textbox">
+                                            <div class="col-md-4" id="textbox">
                                                 <div class="form-group"> <!--Comuna -->
 
                                                     <label for="id_comuna" class="control-label">Comuna</label>
@@ -288,9 +288,9 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-2"></div>
+                                            <div class="col-md-1"></div>
 
-                                            <div class="col-md-4" id="textbox" style="padding-left: 30px;">
+                                            <div class="col-md-5" id="textbox" >
                                                 <div class="form-group"> <!-- Constructora -->
 
                                                     <label for="direccion" class="control-label">Nombre Constructora</label>
@@ -299,7 +299,7 @@
                                                            value="${sol.getConstructora()}">
                                                 </div> 
                                             </div>
-                                            <div class="col-md-3" id="textbox">
+                                            <div class="col-md-4" id="textbox">
                                                 <div class="form-group"> <!-- Servicio -->
 
                                                     <label for="servicio" id="cboServicio" class="control-label">Servicio</label>
@@ -319,20 +319,21 @@
                                                 <br>
                                             </div>
 
-                                            <div class="col-md-2"></div>         
+                                            <div class="col-md-1"></div>         
 
 
                                         </div>
                                         <br>
+                                        <p style="font-weight: bold; font-size: 18px">
+                                            PAGO
+                                        </p>
+
+                                        <hr id="line" style="width: 70%;">
                                         <!-- PAGO ------------------------------------------------------->
                                         <div class="col-md-10">
 
                                             <div class="row">
-                                                <p style="font-weight: bold; font-size: 18px">
-                                                    DATOS PAGO
-                                                </p>
 
-                                                <hr id="line" style="width: 70%;">
 
                                                 <div class="col-md-3" id="textbox" style="padding-left: 30px;">
                                                     <div class="form-group"> <!-- Tipo Pago -->

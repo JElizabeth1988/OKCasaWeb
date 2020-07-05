@@ -293,16 +293,19 @@
                                             <c:if test="${tipo_cliente==0}">
                                                 <table class="table" style="font-size: 14px;">
                                                     <tr>
-                                                        <td>Descuento: <a style="margin-left: 60px;">$0</a></td>
+                                                        <td><a style="margin-left: 55px;">Descuento:</a><a style="margin-left: 25px;">$0</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Subtotal: <a style="margin-left: 60px;">$79.500</a> </td>     
+                                                        <td><a style="margin-left: 53px;">Subtotal:</a><a style="margin-left: 35px;">$79.500</a></td>     
                                                     </tr>
                                                     <tr>
-                                                        <td>Total: <a style="margin-left: 84px;">$79.500</a></td>
+                                                        <td> <a style="margin-left: 53px;">Total:</a><a style="margin-left: 59px;">$79.500</a> </td>
+                                                           
+                                                          
                                                     </tr>
+                                                    
                                                     <tr>
-                                                        <td style="font-size: 12px;padding-left: 36px;">No se encontraron descuentos<br> asociados a este Rut.</td>
+                                                        <td style="font-size: 12px;padding-left: 50px;">No se encontraron descuentos<br><a style="margin-left: 20px;">asociados a este Rut.</a></td>
                                                     </tr>
 
                                                 </table>
@@ -313,18 +316,20 @@
                                             <c:if test="${tipo_cliente==1}">
                                                 <table class="table" style="font-size: 14px;">
                                                     <tr>
-                                                        <td>Descuento: <a style="margin-left: 60px;">20%</a></td>
+                                                        <td><a style="margin-left: 55px;">Descuento:</a><a style="margin-left: 25px;">20%</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Subtotal: <a style="margin-left: 60px;">$79.500</a> </td>     
+                                                        <td><a style="margin-left: 52px;">Subtotal:</a><a style="margin-left: 35px;">$79.500</a></td>     
                                                     </tr>
                                                     <tr>
-                                                        <td>Total: <a style="margin-left: 84px;">$63.600</a></td>
+                                                        <td> <a style="margin-left: 52px;">Total:</a><a style="margin-left: 59px;">$63.600</a> </td>
+                                                           
+                                                          
                                                     </tr>
                                                     <tr>
-                                                        <td style="font-size: 12px;padding-left: 36px;">Descuento Cliente Hipotecario de Banco Estado.</td>
+                                                        <td style="font-size: 12px;padding-left: 50px;">Descuento Cliente Hipotecario<br><a style="margin-left: 35px;"> de Banco Estado.</a></td>
                                                     </tr>
-                                                   
+
                                                 </table>
 
                                             </c:if> 
@@ -402,19 +407,18 @@
 
                                                             <div class="form-group"> <!-- Pago -->
                                                                 <label for="pago" class="control-label">Ingrese Monto</label>
-                                                                <input type="text" name="txtPago" id="direccion" class="form-control input-lg"
-                                                                       placeholder="$" required minlength="1">
+                                                                <input type="text"  id="miCampo2" name="txtPago" id="direccion" class="form-control input-lg"
+                                                                       placeholder="$" required minlength="1" >
                                                             </div> 
                                                             <div class="form-group"> <!-- Clave wsPago -->
                                                                 <label for="pago" class="control-label">Ingrese clave secreta</label>
-                                                                <input type="password" name="txtClave" id="direccion" class="form-control input-lg"
-                                                                       placeholder="****" required minlength="1" style="width: 60%;margin-left: 50px;">
+                                                                <input type="password" id="miCampo2" name="txtClave" id="direccion" class="form-control input-lg"
+                                                                       placeholder="****" pattern="\d*" required minlength="1" style="width: 60%;margin-left: 50px;">
                                                             </div> 
                                                         </div>
 
                                                     </div>  
                                                     <input type="submit" class="btn btn btn-secondary" name="btnPago"  value="Procesar Pago">
-                                                    <br>
                                                     <br>
                                                 </div>
                                                 <div class="card-footer text-muted">
@@ -483,6 +487,14 @@
         <script src="js/google-map.js"></script>
         <script src="js/main.js"></script>
         <script src="js/backtotop.js"></script>   
+
+        <script src="js/validaciones.js"></script>
+
+        <!-- Métodos adicionales, validar solo números-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
+        <script type="text/javascript" src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js"></script>
 
     </body>
 </html>

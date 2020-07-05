@@ -147,7 +147,7 @@
                                             <div class="form-group"> <!-- Segundo Nombre -->
 
                                                 <label for="segundo_nombre" class="control-label">Segundo Nombre</label>
-                                                <input type="text" name="txtSegundo_nombre"  class="form-control input-lg" placeholder="Ej: Pedro">
+                                                <input type="text" name="txtSegundo_nombre"   class="form-control input-lg" placeholder="Ej: Pedro">
                                             </div>    
                                         </div>
 
@@ -178,7 +178,7 @@
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="telefono" class="control-label">Telefono</label>
                                                 <input type="tel" name="txtTelefono" class="form-control input-lg"
-                                                       placeholder="Ej: 912345678" minlength="9" maxlength="10" pattern="[7-8-9]{1}[0-9]{8}">
+                                                       placeholder="Ej: 912345678" minlength="9" id="miCampo2" maxlength="10" pattern="[7-8-9]{1}[0-9]{8}">
 
                                             </div>   
                                         </div>
@@ -266,7 +266,7 @@
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="contrasenia" class="control-label">Contraseña</label>
                                                 <input type="password" name="txtContrasenia" id="pass1" class="form-control input-lg"
-                                                       placeholder="Contraseña" title="Debe Ingresar su Contraseña" required minlength="7" maxlength="20">
+                                                       placeholder="Contraseña" title="Debe Ingresar su Contraseña" required minlength="6" maxlength="20">
                                             </div>  
 
                                         </div>
@@ -275,12 +275,12 @@
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="contrasenia2" class="control-label">Confirmar Contraseña</label>
                                                 <input type="password" name="txtContrasenia2" id="pass2" class="form-control input-lg"
-                                                       placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="7" maxlength="20">
-                                                <!-- Error Text --> <div id="error2"></div>
+                                                       placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="6" maxlength="20">
+                                                <!-- Error Text --> <div id="error2" required></div>
                                             </div> 
 
                                         </div>
-                                        
+
 
 
                                     </div>
@@ -357,11 +357,13 @@
                                     <script src="js/main.js"></script>
                                     <script src="js/backtotop.js"></script>
                                     <script src="js/validarRut.js"></script>
+                                    <script src="js/validaciones.js"></script>
 
-                                    <!-- Métodos adicionales, validar solo letras -->
+                                    <!-- Métodos adicionales, validar solo números-->
                                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+                                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
+                                    <script type="text/javascript" src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js"></script>
                                     </body>
                                     </html>
                                 </c:if>

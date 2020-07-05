@@ -120,13 +120,13 @@ public class servletAgregarAdm extends HttpServlet {
                             request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
                         }
                     } catch (SQLException ex) {
-                        request.setAttribute("err", "No Registrado" + ex.getMessage());
+                        request.setAttribute("err", "No Registrado :/" + ex.getMessage());
                         request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
                     }
 
                 } else {
 
-                    request.setAttribute("err", "No Registrado");
+                    request.setAttribute("err", "No Registrado :o");
                     request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
                 }
             } else {
@@ -135,7 +135,7 @@ public class servletAgregarAdm extends HttpServlet {
             }
 
         } catch (SQLException ex) {
-            request.setAttribute("err", "No Registrado");
+            request.setAttribute("err", "No Registrado :(");
             request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
         }
 

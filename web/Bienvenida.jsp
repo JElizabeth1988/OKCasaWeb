@@ -128,7 +128,7 @@
                                 </tr>
                                 <tr>
 
-                                    <td> <input  class="btn" value="Agendar"></td>
+                                    <td>  <p><a href="Agendar.jsp" class="btn btn">Agendar</a></p></td>
                                     
                                 </tr>
                                 <tr>

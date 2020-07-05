@@ -128,7 +128,7 @@
                                         <label style="color: #bd2130">*</label>
                                         <label for="primer_nombre" class="control-label" style="black">Primer Nombre</label>
                                         <input type="text" name="txtPrimer_nombre" class="form-control input-lg" placeholder="Ej: Juan"
-                                               title="Debe Ingresar su Nombre" required minlength="3" maxlength="20" >
+                                               title="Debe Ingresar su Nombre"  required minlength="3" maxlength="20" >
                                     </div>  
                                 </div>
 
@@ -148,7 +148,7 @@
                                     <div class="form-group"> <!-- Apellido Paterno -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="ap_paterno" class="control-label">Apellido Paterno</label>
-                                        <input type="text" name="txtAp_paterno"  class="form-control input-lg" placeholder="Apellido Paterno" required minlength="3" maxlength="20">
+                                        <input type="text" name="txtAp_paterno"   class="form-control input-lg" placeholder="Apellido Paterno" required minlength="3" maxlength="20">
                                     </div>    
                                 </div>
 
@@ -166,8 +166,9 @@
                                     <div class="form-group"> <!-- Telefono -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="telefono" class="control-label">Telefono</label>
-                                        <input type="text" name="txtTelefono" class="form-control input-lg"
-                                               placeholder="teléfono" minlength="9" maxlength="12">
+                                        <input type="tel" name="txtTelefono" class="form-control input-lg"
+                                               placeholder="Ej: 912345678" minlength="9" id="miCampo2" maxlength="10" pattern="[7-8-9]{1}[0-9]{8}">
+
                                     </div>   
                                 </div>
 
@@ -354,13 +355,13 @@
 
                             <!-- jquery -->
 
-                            <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-
-                            <!-- jquery validate -->
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
-
-                            <!-- Nuestro script -->
                             <script src="js/validaciones.js"></script>
+
+                            <!-- Métodos adicionales, validar solo letras -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
+                            <script type="text/javascript" src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js"></script>
 
                             </body>
                             </html>
