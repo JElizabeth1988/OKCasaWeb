@@ -4,31 +4,31 @@
 <xsd:import namespace="http://ws/" schemaLocation="http://localhost:31439/WSOKCasa/WSPAGO?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="ClaveCliente">
-<part name="parameters" element="tns:ClaveCliente"/>
-</message>
-<message name="ClaveClienteResponse">
-<part name="parameters" element="tns:ClaveClienteResponse"/>
-</message>
 <message name="RealizarPago">
 <part name="parameters" element="tns:RealizarPago"/>
 </message>
 <message name="RealizarPagoResponse">
 <part name="parameters" element="tns:RealizarPagoResponse"/>
 </message>
+<message name="ClaveCliente">
+<part name="parameters" element="tns:ClaveCliente"/>
+</message>
+<message name="ClaveClienteResponse">
+<part name="parameters" element="tns:ClaveClienteResponse"/>
+</message>
 <portType name="WSPAGO">
-<operation name="ClaveCliente">
-<input wsam:Action="http://ws/WSPAGO/ClaveClienteRequest" message="tns:ClaveCliente"/>
-<output wsam:Action="http://ws/WSPAGO/ClaveClienteResponse" message="tns:ClaveClienteResponse"/>
-</operation>
 <operation name="RealizarPago">
 <input wsam:Action="http://ws/WSPAGO/RealizarPagoRequest" message="tns:RealizarPago"/>
 <output wsam:Action="http://ws/WSPAGO/RealizarPagoResponse" message="tns:RealizarPagoResponse"/>
 </operation>
+<operation name="ClaveCliente">
+<input wsam:Action="http://ws/WSPAGO/ClaveClienteRequest" message="tns:ClaveCliente"/>
+<output wsam:Action="http://ws/WSPAGO/ClaveClienteResponse" message="tns:ClaveClienteResponse"/>
+</operation>
 </portType>
 <binding name="WSPAGOPortBinding" type="tns:WSPAGO">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="ClaveCliente">
+<operation name="RealizarPago">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="RealizarPago">
+<operation name="ClaveCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

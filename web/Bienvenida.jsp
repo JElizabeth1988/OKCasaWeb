@@ -109,7 +109,7 @@
 
                                         <form action="ListaUS" method="POST">
                                             <input value="${rut}" name="txtRut" hidden>
-                                            <input type="submit" name="btnEnviar" value="Mis Solicitudes" class="btn">
+                                            <input type="submit" name="btnEnviar" value="Mis Inspecciones" class="btn">
                                         </form>
                                        <hr>
                                        

@@ -50,8 +50,8 @@
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center justify-content-center">
                     <div class="col-md-9 ftco-animate text-center">
-                        <h1 class="mb-2 bread">Mis Inspecciones</h1>
-                        <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Mis Inspecciones <i class="ion-ios-arrow-forward"></i></span></p>
+                        <h1 class="mb-2 bread">Mis Resultados</h1>
+                        <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Resultados <i class="ion-ios-arrow-forward"></i></span></p>
                     </div>
                 </div>
             </div>

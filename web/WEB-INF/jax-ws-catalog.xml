@@ -10,4 +10,6 @@
     <system systemId="http://localhost:31439/WSBancoEstado/WS_BANCO?xsd=1" uri="wsdl/localhost_31439/WSBancoEstado/WS_BANCO.xsd_1.xsd"/>
     <system systemId="http://localhost:31439/WSSeguimiento/WS_Seguimiento?WSDL" uri="wsdl/localhost_31439/WSSeguimiento/WS_Seguimiento.wsdl"/>
     <system systemId="http://localhost:31439/WSSeguimiento/WS_Seguimiento?xsd=1" uri="wsdl/localhost_31439/WSSeguimiento/WS_Seguimiento.xsd_1.xsd"/>
+    <system systemId="http://localhost:31439/WSOKCasa/WS_Seguimiento?WSDL" uri="wsdl/localhost_31439/WSOKCasa/WS_Seguimiento.wsdl"/>
+    <system systemId="http://localhost:31439/WSOKCasa/WS_Seguimiento?xsd=1" uri="wsdl/localhost_31439/WSOKCasa/WS_Seguimiento.xsd_1.xsd"/>
 </catalog>

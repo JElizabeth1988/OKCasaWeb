@@ -166,8 +166,8 @@
                                     <div class="form-group"> <!-- Telefono -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="telefono" class="control-label">Telefono</label>
-                                        <input type="text" pattern="^[9|8|7|6]\d{8}$" pattern="[0-9]" name="txtTelefono" class="form-control input-lg"
-                                               placeholder="teléfono" minlength="9" maxlength="10">
+                                        <input type="text" name="txtTelefono" class="form-control input-lg"
+                                               placeholder="teléfono" minlength="9" maxlength="12">
                                     </div>   
                                 </div>
 
@@ -218,7 +218,7 @@
                                             <option value="24">San Joaquín</option>                                           
                                             <option value="25">San Miguel</option>
                                             <option value="26">Cerrilos</option>
-                                            <option value="27">Estación Centrak</option>
+                                            <option value="27">Estación Central</option>
                                             <option value="28">Maipú</option>
                                             <option value="29">Cerro Navia</option>
                                             <option value="30">Lo prado</option>
@@ -256,7 +256,7 @@
                                     <div class="form-group"> <!-- Contraseña 1 -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="contrasenia" class="control-label">Contraseña</label>
-                                        <input type="password" name="txtContrasenia" id="contra" class="form-control input-lg"
+                                        <input type="password" name="txtContrasenia" id="pass1" class="form-control input-lg"
                                                placeholder="Contraseña" title="Debe Ingresar su Contraseña" required minlength="7" maxlength="20">
                                     </div>  
 

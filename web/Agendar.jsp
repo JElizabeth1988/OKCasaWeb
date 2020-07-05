@@ -293,16 +293,16 @@
                                             <c:if test="${tipo_cliente==0}">
                                                 <table class="table" style="font-size: 14px;">
                                                     <tr>
-                                                        <td>Descuento: $0</td>
+                                                        <td>Descuento: <a style="margin-left: 60px;">$0</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Subtotal: $0</td>     
+                                                        <td>Subtotal: <a style="margin-left: 60px;">$79.500</a> </td>     
                                                     </tr>
                                                     <tr>
-                                                        <td>Total: $79.590</td>
+                                                        <td>Total: <a style="margin-left: 84px;">$79.500</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="font-size: 12px;">No se encontraron descuentos asociados a este Rut.</td>
+                                                        <td style="font-size: 12px;padding-left: 36px;">No se encontraron descuentos<br> asociados a este Rut.</td>
                                                     </tr>
 
                                                 </table>
@@ -313,17 +313,18 @@
                                             <c:if test="${tipo_cliente==1}">
                                                 <table class="table" style="font-size: 14px;">
                                                     <tr>
-                                                        <td>Descuento: 20%</td>
+                                                        <td>Descuento: <a style="margin-left: 60px;">20%</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Subtotal: $15.900</td>
+                                                        <td>Subtotal: <a style="margin-left: 60px;">$79.500</a> </td>     
                                                     </tr>
                                                     <tr>
-                                                        <td>Total: $63.600</td>
+                                                        <td>Total: <a style="margin-left: 84px;">$63.600</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="font-size: 12px;">Descuento Cliente Hipotecario de Banco Estado.</td>
+                                                        <td style="font-size: 12px;padding-left: 36px;">Descuento Cliente Hipotecario de Banco Estado.</td>
                                                     </tr>
+                                                   
                                                 </table>
 
                                             </c:if> 
@@ -344,7 +345,7 @@
                                                     <!-- No Hipotecario -->
                                                     <c:if test="${tipo_cliente==0}">
                                                         <ul class="list-group list-group-flush text-center">
-                                                            <li style="font-size: 17px; color: #007bff;list-style: none;" class="list-group">Total a Pagar: $79.590</li>  
+                                                            <li style="font-size: 17px; color: #007bff;list-style: none;" class="list-group">Total a Pagar: $79.500</li>  
                                                         </ul>
                                                     </c:if> 
 

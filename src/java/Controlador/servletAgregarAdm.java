@@ -40,7 +40,7 @@ public class servletAgregarAdm extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servletAgregarAdm</title>");            
+            out.println("<title>Servlet servletAgregarAdm</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet servletAgregarAdm at " + request.getContextPath() + "</h1>");
@@ -75,60 +75,70 @@ public class servletAgregarAdm extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                       //Capturar Info formulario
-        String rut_cliente = request.getParameter("txtRut_cliente");
-        String primer_nombre = request.getParameter("txtPrimer_nombre");
-        String segundo_nombre = request.getParameter("txtSegundo_nombre");
-        String ap_paterno = request.getParameter("txtAp_paterno");
-        String ap_materno = request.getParameter("txtAp_materno");
-        String direccion = request.getParameter("txtDireccion");
-        int telefono = Integer.parseInt(request.getParameter("txtTelefono"));
-        String email = request.getParameter("txtEmail");
-        int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
 
-        Cliente cli = new Cliente(rut_cliente, primer_nombre, segundo_nombre, ap_paterno, ap_materno, direccion, telefono, email, id_comuna);
-        ClienteDao dao = new ClienteDao();
-
-        try {
-            //Intentar Guardar
-            if (dao.agregarCliente(cli)) {
-                request.setAttribute("msj", "Registrado exitosamente");
-                request.getSession().setAttribute("rut", rut_cliente);
-                request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
-            } else {
-                request.setAttribute("err", "Cliente ya Registrado");
-                request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
-            }
-        } catch (SQLException ex) {
-            request.setAttribute("err", "No Registrado" + ex.getMessage());
-            request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
-        }
-        
-         //USUARIO------------------------------------------------------------------
+        //USUARIO------------------------------------------------------------------
         int codigo = 100;
+        String rut = request.getParameter("txtRut_cliente");
         String nombre_usuario = request.getParameter("txtUsuario");
         String contrasenia = request.getParameter("txtContrasenia");
+        String contrasenia2 = request.getParameter("txtContrasenia2");
         int id_tipo_usuario = 2;
 
-        Usuario us = new Usuario(codigo, nombre_usuario, contrasenia, rut_cliente, id_tipo_usuario);
+        Usuario us = new Usuario(codigo, nombre_usuario, contrasenia, rut, id_tipo_usuario);
         UsuarioDAO daous = new UsuarioDAO();
 
         try {
-            //Intentar Guardar
-            if (daous.agregarUsuario(us)) {
+            if (contrasenia.equals(contrasenia2)) {
+                //Intentar Guardar
+                if (daous.agregarUsuario(us)) {
 
-                request.setAttribute("msje", "Registrado exitosamente");
-                request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
+                    request.setAttribute("msje", "Registrado exitosamente");
+                    request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
+
+                    //Capturar Info formulario
+                    String rut_cliente = request.getParameter("txtRut_cliente");
+                    String primer_nombre = request.getParameter("txtPrimer_nombre");
+                    String segundo_nombre = request.getParameter("txtSegundo_nombre");
+                    String ap_paterno = request.getParameter("txtAp_paterno");
+                    String ap_materno = request.getParameter("txtAp_materno");
+                    String direccion = request.getParameter("txtDireccion");
+                    int telefono = Integer.parseInt(request.getParameter("txtTelefono"));
+                    String email = request.getParameter("txtEmail");
+                    int id_comuna = Integer.parseInt(request.getParameter("cboComuna"));
+
+                    Cliente cli = new Cliente(rut_cliente, primer_nombre, segundo_nombre, ap_paterno, ap_materno, direccion, telefono, email, id_comuna);
+                    ClienteDao dao = new ClienteDao();
+
+                    try {
+                        //Intentar Guardar
+                        if (dao.agregarCliente(cli)) {
+                            request.setAttribute("msj", "Registrado exitosamente");
+                            request.getSession().setAttribute("rut", rut_cliente);
+                            request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
+                        } else {
+                            request.setAttribute("err", "Cliente ya Registrado");
+                            request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
+                        }
+                    } catch (SQLException ex) {
+                        request.setAttribute("err", "No Registrado" + ex.getMessage());
+                        request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
+                    }
+
+                } else {
+
+                    request.setAttribute("err", "No Registrado");
+                    request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
+                }
             } else {
-
-                request.setAttribute("error", "No Registrado");
-                request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
+                request.setAttribute("err", "Contraseñas no coinciden, intente de nuevo.");
+                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
             }
+
         } catch (SQLException ex) {
-            request.setAttribute("error", "No Registrado");
+            request.setAttribute("err", "No Registrado");
             request.getRequestDispatcher("AgregarCliente.jsp").forward(request, response);
         }
-        
+
     }
 
     /**

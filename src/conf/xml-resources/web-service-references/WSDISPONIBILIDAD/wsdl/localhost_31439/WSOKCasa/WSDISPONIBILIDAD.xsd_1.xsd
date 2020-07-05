@@ -16,15 +16,11 @@
 
 <xs:complexType name="agenda">
 <xs:sequence>
-<xs:element name="dia" type="tns:date" minOccurs="0"/>
+<xs:element name="dia" type="xs:string" minOccurs="0"/>
 <xs:element name="disponible" type="xs:string" minOccurs="0"/>
 <xs:element name="hora" type="xs:string" minOccurs="0"/>
 <xs:element name="id_agenda" type="xs:int"/>
 <xs:element name="id_equipo" type="xs:int"/>
 </xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="date">
-<xs:sequence/>
 </xs:complexType>
 </xs:schema>

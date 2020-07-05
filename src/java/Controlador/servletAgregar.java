@@ -114,22 +114,31 @@ public class servletAgregar extends HttpServlet {
         int codigo = 100;
         String nombre_usuario = request.getParameter("txtUsuario");
         String contrasenia = request.getParameter("txtContrasenia");
+        String contrasenia2 = request.getParameter("txtContrasenia2");
         int id_tipo_usuario = 2;
 
         Usuario us = new Usuario(codigo, nombre_usuario, contrasenia, rut_cliente, id_tipo_usuario);
         UsuarioDAO daous = new UsuarioDAO();
 
         try {
-            //Intentar Guardar
-            if (daous.agregarUsuario(us)) {
+            if (contrasenia.equals(contrasenia2)) {
+                //Intentar Guardar
+                if (daous.agregarUsuario(us)) {
 
-                request.setAttribute("msje", "Registrado exitosamente");
-                request.getRequestDispatcher("Registrar.jsp").forward(request, response);
+                    request.setAttribute("msje", "Registrado exitosamente");
+                    request.getRequestDispatcher("Registrar.jsp").forward(request, response);
+                } else {
+
+                    request.setAttribute("error", "No Registrado");
+                    request.getRequestDispatcher("Registrar.jsp").forward(request, response);
+                }
             } else {
 
-                request.setAttribute("error", "No Registrado");
+                request.setAttribute("error", "Contraseñas no coinciden, intente de nuevo.");
                 request.getRequestDispatcher("Registrar.jsp").forward(request, response);
+
             }
+
         } catch (SQLException ex) {
             request.setAttribute("error", "No Registrado");
             request.getRequestDispatcher("Registrar.jsp").forward(request, response);

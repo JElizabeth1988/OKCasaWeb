@@ -104,6 +104,10 @@
                                 <div class="alert alert-danger">${err}</div>  
                             </c:if>   
 
+                            <c:if test="${error!=null}">
+                                <div class="alert alert-danger">${error}</div>  
+                            </c:if> 
+
                             <div class="wrap-contact100" id="wrapp">
 
                                 <form action="servletAgregarAdm" method="POST" style="margin-right: 35px">
@@ -124,7 +128,7 @@
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="rut_cliente" class="control-label">RUT</label>
                                                 <input type="text" name="txtRut_cliente" required oninput="checkRut(this)" class="form-control input-lg" placeholder="Sin puntos ni guiones"
-                                                       title="Debe Ingresar su RUT" required minlength="8" maxlength="11">
+                                                       title="Debe Ingresar su RUT" required minlength="8" maxlength="11" >
 
                                             </div>   
                                         </div>
@@ -173,8 +177,9 @@
                                             <div class="form-group"> <!-- Telefono -->
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="telefono" class="control-label">Telefono</label>
-                                                <input type="text" name="txtTelefono" class="form-control input-lg"
-                                                       placeholder="teléfono" minlength="9" maxlength="10">
+                                                <input type="tel" name="txtTelefono" class="form-control input-lg"
+                                                       placeholder="Ej: 912345678" minlength="9" maxlength="10" pattern="[7-8-9]{1}[0-9]{8}">
+
                                             </div>   
                                         </div>
 
@@ -269,12 +274,13 @@
                                             <div class="form-group"> <!-- Contraseña 2 -->
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="contrasenia2" class="control-label">Confirmar Contraseña</label>
-                                                <input type="password" name="txtPassword2" id="pass2" class="form-control input-lg"
+                                                <input type="password" name="txtContrasenia2" id="pass2" class="form-control input-lg"
                                                        placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="7" maxlength="20">
                                                 <!-- Error Text --> <div id="error2"></div>
                                             </div> 
 
                                         </div>
+                                        
 
 
                                     </div>
@@ -322,22 +328,6 @@
                                     <br>
 
 
-                                    <%--
-                                    <form id="formulario">
-
-            <input type="text" name="txtNombre" placeholder="Ingrese nombre">
-            <br>
-            <input type="email" name="txtCorreo" placeholder="Ingrese correo">
-            <br>
-            <input type="password" name="txtContrasenia" id="contra" placeholder="Ingrese contraseña">
-            <br>
-            <input type="password" name="txtContrasenia2"  placeholder="Ingrese contraseña">    
-            <!-- submit es botón y desencadena click a diferencia button-->
-            <input type="submit" value="Enviar"> 
-
-
-        </form>--%>
-
 
 
                                     <!--Footer  -->
@@ -368,19 +358,9 @@
                                     <script src="js/backtotop.js"></script>
                                     <script src="js/validarRut.js"></script>
 
-                                    <!-- jquery -->
-
-                                    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-
-                                    <!-- jquery validate -->
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
-
-                                    <!-- Nuestro script -->
-                                    <script src="js/validaciones.js"></script>
-
                                     <!-- Métodos adicionales, validar solo letras -->
                                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
-
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
                                     </body>
                                     </html>

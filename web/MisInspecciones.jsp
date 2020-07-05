@@ -69,7 +69,7 @@
 
 
             <div class="row justify-content-center">
-                <h3>Mis Solicitudes</h3>
+                <h3>Mis Inspecciones</h3>
                 <div class="col-md-auto">
                     <div class="card-body">
                         <div class="out"> 
@@ -85,6 +85,7 @@
                                         <th scope="col">MONTO PAGO</th>
                                         <th scope="col">DESCUENTO APLICADO</th>
                                         <th scope="col">FECHA INSPECCION</th>
+                                        <th scope="col">ESTADO</th>
                                         
 
 
@@ -112,6 +113,7 @@
                                             </c:if>
 
                                             <td>${sol.getDia()} ${sol.getHora()}</td>
+                                            <td>${sol.getEstado()}</td>
                                            
                                         </tr>
 

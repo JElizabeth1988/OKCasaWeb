@@ -64,7 +64,7 @@
 
                     </div>
                     <div class="col-md-8" style="margin-left: 70px;">  
-                    <p style="text-align: justify;">Próximamente nos comunicaremos con usted, para confirmar su solicitud. </p>  
+                    <p style="text-align: justify;">Próximamente nos comunicaremos con usted para confirmar su solicitud. </p>  
                     </div>
 
                     <div class="col-md-12 justify-content-center">

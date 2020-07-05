@@ -4,6 +4,23 @@
 
 <xs:element name="LoginResponse" type="tns:LoginResponse"/>
 
+<xs:element name="Rut_cliente" type="tns:Rut_cliente"/>
+
+<xs:element name="Rut_clienteResponse" type="tns:Rut_clienteResponse"/>
+
+<xs:complexType name="Rut_cliente">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Rut_clienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="Login">
 <xs:sequence>
 <xs:element name="user" type="xs:string" minOccurs="0"/>
