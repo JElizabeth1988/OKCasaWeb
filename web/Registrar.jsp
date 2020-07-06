@@ -1,4 +1,4 @@
-<%-- 
+z<%-- 
     Document   : Registrar
     Created on : 02-05-2020, 18:34:14
     Author     : chida
@@ -105,6 +105,7 @@
                     <div class="wrap-contact100" id="wrapp">
 
                         <form action="servletAgregar" method="POST" style="margin-right: 35px">
+                            <br>
                             <p class="text-uppercase pull-center" style="font-weight: bold;margin-left: 30px;"> <span
                                     class="icon-user-1" style="font-size: 35px;"></span>  Ingresa tus datos</p>
                             <hr id="line">
@@ -166,8 +167,8 @@
                                     <div class="form-group"> <!-- Telefono -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="telefono" class="control-label">Telefono</label>
-                                        <input type="tel" name="txtTelefono" class="form-control input-lg"
-                                               placeholder="Ej: 912345678" minlength="9" id="miCampo2" maxlength="10" pattern="[7-8-9]{1}[0-9]{8}">
+                                        <input type="tel" name="txtTelefono" value="0" class="form-control input-lg"
+                                               placeholder="Ej: 912345678" id="miCampo2" minlength="9"  maxlength="10" pattern="[7-8-9]{1}[0-9]{8}">
 
                                     </div>   
                                 </div>
@@ -352,16 +353,13 @@
                             <script src="js/main.js"></script>
                             <script src="js/backtotop.js"></script>
                             <script src="js/validarRut.js"></script>
-
-                            <!-- jquery -->
-
                             <script src="js/validaciones.js"></script>
 
-                            <!-- Métodos adicionales, validar solo letras -->
+                            <!-- Métodos adicionales, validar solo números-->
                             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
                             <script type="text/javascript" src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js"></script>
-
                             </body>
                             </html>
+                    

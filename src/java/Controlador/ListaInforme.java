@@ -89,7 +89,6 @@ public class ListaInforme extends HttpServlet {
         WSSeguimiento cliente = servicio.getWSSeguimientoPort();
         
         
-        
         List<Informe> listai = cliente.seguimientos(rut_cliente);
         request.setAttribute("listai", listai);
         request.getRequestDispatcher("Resultados.jsp").forward(request, response);

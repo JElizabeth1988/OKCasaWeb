@@ -75,12 +75,7 @@ public class servletAgregarSol extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
-        WSDISPONIBILIDAD_Service servicio = new WSDISPONIBILIDAD_Service();
-        WSDISPONIBILIDAD cliente = servicio.getWSDISPONIBILIDADPort();
-        List<Agenda> lista = cliente.listarAgenda();
-        request.setAttribute("lista", lista);
-
+        processRequest(request, response);
     }
 
     /**
@@ -110,7 +105,7 @@ public class servletAgregarSol extends HttpServlet {
 
             //VERIFICAMOS CLAVE
             if (cliente.claveCliente(rut, clave)) {
-               
+
                 //DATOS PARA GUARDAR SOLICITUD----------------------------------
                 int id_solicitud = 1;
 
@@ -146,13 +141,14 @@ public class servletAgregarSol extends HttpServlet {
                             //PASAR DIA Y HORA A NO DISPONIBLE
                             AgendaDao d = new AgendaDao();
                             d.modificarAgenda(id_agenda);
-                            
+
+                            //SI TIENE VUELTO
                         } else {
                             request.setAttribute("msj", "Su Inspección ha sido Agendada Exitosamente.");
-                            request.setAttribute("msje", "Pago efectuado, su vuelto es: $"+ cliente.realizarPago(total, pag));
+                            request.setAttribute("msje", "Pago efectuado, su vuelto es: $" + cliente.realizarPago(total, pag));
                             request.getRequestDispatcher("PagoEfectuado.jsp").forward(request, response);
-                            
-                             //PASAR DIA Y HORA A NO DISPONIBLE
+
+                            //PASAR DIA Y HORA A NO DISPONIBLE
                             AgendaDao d = new AgendaDao();
                             d.modificarAgenda(id_agenda);
                         }
@@ -161,7 +157,7 @@ public class servletAgregarSol extends HttpServlet {
                         request.setAttribute("err", "No Agendado ");
                         request.setAttribute("msje", "Pago no Efectuado");
                         request.getRequestDispatcher("Agendar.jsp").forward(request, response);
-                        
+
                     }
                 } catch (SQLException ex) {
                     request.setAttribute("err", "No Agendado" + ex.getMessage());

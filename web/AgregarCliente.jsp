@@ -177,8 +177,8 @@
                                             <div class="form-group"> <!-- Telefono -->
                                                 <label style="color: #bd2130">*</label>
                                                 <label for="telefono" class="control-label">Telefono</label>
-                                                <input type="tel" name="txtTelefono" class="form-control input-lg"
-                                                       placeholder="Ej: 912345678" minlength="9" id="miCampo2" maxlength="10" pattern="[7-8-9]{1}[0-9]{8}">
+                                                <input type="text" value="0" name="txtTelefono" class="form-control input-lg"
+                                                       placeholder="Ej: 912345678" pattern="[7-8-9]{1}[0-9]{8}" minlength="9" id="miCampo2" maxlength="10" >
 
                                             </div>   
                                         </div>
