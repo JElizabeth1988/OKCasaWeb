@@ -276,7 +276,7 @@
                                                 <label for="contrasenia2" class="control-label">Confirmar Contraseña</label>
                                                 <input type="password" name="txtContrasenia2" id="pass2" class="form-control input-lg"
                                                        placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="6" maxlength="20">
-                                                <!-- Error Text --> <div id="error2" required></div>
+                                                <!-- Error Text --> <div id="error2" style="width: 44%" required></div>
                                             </div> 
 
                                         </div>

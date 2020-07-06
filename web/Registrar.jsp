@@ -117,7 +117,7 @@ z<%--
                                     <div class="form-group"> <!-- RUT -->
                                         <label style="color: #bd2130">*</label>
                                         <label for="rut_cliente" class="control-label">RUT</label>
-                                        <input type="text" name="txtRut_cliente" required oninput="checkRut(this)" class="form-control input-lg" placeholder="Sin puntos ni guiones"
+                                        <input type="text" name="txtRut_cliente" required oninput="checkRut(this)"  class="form-control input-lg" placeholder="Sin puntos ni guiones"
                                                title="Debe Ingresar su RUT" required minlength="8" maxlength="11" required>
 
                                     </div>   
@@ -166,8 +166,8 @@ z<%--
                                 <div class="col-md-3" id="textbox">
                                     <div class="form-group"> <!-- Telefono -->
                                         <label style="color: #bd2130">*</label>
-                                        <label for="telefono" class="control-label">Telefono</label>
-                                        <input type="tel" name="txtTelefono" value="0" class="form-control input-lg"
+                                        <label for="telefono" class="control-label">Telefono</label> 
+                                        <input type="tel" name="txtTelefono" value="0"  class="form-control input-lg"
                                                placeholder="Ej: 912345678" id="miCampo2" minlength="9"  maxlength="10" pattern="[7-8-9]{1}[0-9]{8}">
 
                                     </div>   
@@ -269,7 +269,7 @@ z<%--
                                         <label for="contrasenia2" class="control-label">Confirmar Contraseña</label>
                                         <input type="password" name="txtContrasenia2" id="pass2" class="form-control input-lg"
                                                placeholder="Contraseña" title="Ingrese nuevamente la contraseña" required minlength="7" maxlength="20">
-                                        <!-- Error Text --> <div id="error2"></div>
+                                        <!-- Error Text --> <div id="error2" style="width: 44%"></div>
                                     </div> 
 
                                 </div>
