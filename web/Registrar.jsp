@@ -284,7 +284,7 @@ z<%--
 
                                     <div class="form-check" style="text-align: center;">
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" required min="1" checked="true">
+                                            <input type="checkbox" class="form-check-input" required min="1" checked="true" >
                                             Acepto los Términos y Condiciones de OkCasa.
                                         </label>
 
@@ -360,6 +360,6 @@ z<%--
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
                             <script type="text/javascript" src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js"></script>
+
                             </body>
                             </html>
-                    

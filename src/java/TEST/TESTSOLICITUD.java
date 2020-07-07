@@ -51,7 +51,7 @@ public class TESTSOLICITUD {
                 System.out.println("Solicitud no Modificada");
             }*/
             
-            List<ListaSolicitud>listado = dao.buscarSolicitud(3);
+            List<ListaSolicitud>listado = dao.listarPorRut("13697138-7");
              for (ListaSolicitud solicitud : listado) {
              System.out.println(solicitud.toString());
              }

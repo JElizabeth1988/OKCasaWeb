@@ -119,7 +119,7 @@
                                     PASO 1. Selecciona la Fecha
                                 </p>
 
-                                <hr id="line" style="width: 60%;">
+                                <hr id="line" style="width: 54%;">
 
                                 <div class="col-lg-12">
 
@@ -130,8 +130,8 @@
                                             <table class="table table-hover bg-light">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Hora</th>
+                                                        <th scope="col"><a style="margin-left: 35px;">Fecha</a></th>
+                                                        <th scope="col"><a style="margin-left: 10px;">Hora</a></th>
                                                         <th scope="col">Seleccionar</th>
                                                     </tr>
                                                 </thead>
@@ -177,10 +177,11 @@
                                     PASO 2. Ingresa los datos
                                 </p>
 
-                                <hr id="line" style="width: 48%;">
-
+                                <hr id="line" style="width: 44%;">
+                               
 
                                 <div class="row justify-content-center">
+                                     <br>
                                     <div class="col-md-4" id="textbox">
                                         <div class="form-group"> <!-- Direccion -->
                                             <label style="color: #bd2130">*</label>
@@ -234,11 +235,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-3"></div>
+                                    <div class="col-md-2"></div>
 
 
 
-                                    <div class="col-md-4" id="textbox" style="padding-left: 30px;">
+                                    <div class="col-md-4" id="textbox" style="margin-left: 60px;">
                                         <div class="form-group"> <!-- Constructora -->
                                             <label style="color: #bd2130">*</label>
                                             <label for="direccion" class="control-label">Nombre Constructora</label>
@@ -246,7 +247,7 @@
                                                    placeholder="Ingrese Nombre" required minlength="4" maxlength="500" >
                                         </div> 
                                     </div>
-                                    <div class="col-md-4" id="textbox">
+                                    <div class="col-md-3" id="textbox">
                                         <div class="form-group"> <!-- Servicio -->
                                             <label style="color: #bd2130">*</label>
                                             <label for="servicio" id="cboServicio" class="control-label">Selecciona el Servicio</label>
@@ -264,11 +265,8 @@
 
                                         <br>
                                     </div>
-                                    <div class="col-md-1" id="textbox">
 
-                                    </div>
-
-                                    <div class="col-md-3" id="textbox"></div>
+                                    <div class="col-md-1" id="textbox"></div>
 
                                 </div>
                                 <br>
@@ -282,7 +280,7 @@
                                             PASO 3. Realizar Pago
                                         </p>
 
-                                        <hr id="line" style="width: 61%;">
+                                        <hr id="line" style="width: 56%;">
 
                                         <div class="card" style="width: 18rem;">
                                             <div class="card-header">
