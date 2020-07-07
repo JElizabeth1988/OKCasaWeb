@@ -177,12 +177,13 @@
                                     PASO 2. Ingresa los datos
                                 </p>
 
-                                <hr id="line" style="width: 44%;">
+                                <hr id="line" style="width: 42%;">
                                
 
                                 <div class="row justify-content-center">
                                      <br>
                                     <div class="col-md-4" id="textbox">
+                                        <br>
                                         <div class="form-group"> <!-- Direccion -->
                                             <label style="color: #bd2130">*</label>
                                             <label for="direccion" class="control-label">Dirección Vivienda</label>
@@ -193,6 +194,7 @@
 
 
                                     <div class="col-md-2" id="textbox">
+                                        <br>
                                         <div class="form-group"> <!--Comuna -->
                                             <label style="color: #bd2130">*</label>
                                             <label for="id_comuna" class="control-label">Comuna</label>
@@ -235,11 +237,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"></div>
 
 
 
-                                    <div class="col-md-4" id="textbox" style="margin-left: 60px;">
+                                    <div class="col-md-4" id="textbox">
                                         <div class="form-group"> <!-- Constructora -->
                                             <label style="color: #bd2130">*</label>
                                             <label for="direccion" class="control-label">Nombre Constructora</label>
@@ -266,7 +268,7 @@
                                         <br>
                                     </div>
 
-                                    <div class="col-md-1" id="textbox"></div>
+                      
 
                                 </div>
                                 <br>
