@@ -47,7 +47,7 @@ public class TESTCLIENTE {
          ComunaDAO d = new ComunaDAO();
         try {
             
-        Cliente c = new Cliente("8796201-6", "SI", "Nayareth", "Gómez", "Pacheco", "Rucalin 4100", 965172587, "sxs@gsa.cl", 2);
+     /*   Cliente c = new Cliente("8796201-6", "SI", "Nayareth", "Gómez", "Pacheco", "Rucalin 4100", 965172587, "sxs@gsa.cl", 2);
            
           if(dao.agregarCliente(c)){
                System.out.println("Cliente ag");
@@ -60,12 +60,12 @@ public class TESTCLIENTE {
                 System.out.println(cliente.toString());
             }*/
             
-           /*
-           if (dao.eliminarCliente("19654782-7")) {
+
+           if (dao.eliminarCliente("19412-7")) {
                 System.out.println("el");
             }else{
                 System.out.println("nel");
-            }*/
+            }
            
            /* List<Comuna>lis = d.listarComunas(1);
             for (Comuna comuna : lis) {

@@ -232,6 +232,7 @@
                                                 <option value="30">Lo prado</option>
                                                 <option value="31">Pudahuel</option>
                                                 <option value="32">Quinta Normal</option>
+                                                <option value="33">Puente Alto</option>
 
                                             </select>                    
                                         </div>

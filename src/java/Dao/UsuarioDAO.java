@@ -92,5 +92,39 @@ public class UsuarioDAO {
         return listado;
     }
     
+    //BUSCAR USUARIO
+    public boolean buscarUsuario(String nombre) throws SQLException {
+        boolean centinela = false;
+
+        try {
+
+            //Abrir conexión
+            this.conexion = new Conexion().obtenerConexion();
+            String llamada = "{ call SP_BUSCAR_USUARIO(?,?) }";
+            CallableStatement cstmt = this.conexion.prepareCall(llamada);
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.setString(2, nombre);
+            cstmt.execute();
+            ResultSet rs = (ResultSet) cstmt.getObject(1);
+
+
+            if (rs.next()) {
+                centinela = true;
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+
+        } finally {
+
+            //Cerrar Conexión
+            this.conexion.close();
+        }
+
+        return centinela;
+    }
+    
+    
+    
    
 }

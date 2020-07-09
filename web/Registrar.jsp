@@ -1,4 +1,4 @@
-z<%-- 
+<%-- 
     Document   : Registrar
     Created on : 02-05-2020, 18:34:14
     Author     : chida
@@ -226,6 +226,7 @@ z<%--
                                             <option value="30">Lo prado</option>
                                             <option value="31">Pudahuel</option>
                                             <option value="32">Quinta Normal</option>
+                                            <option value="33">Puente Alto</option>
 
                                         </select>                    
                                     </div>

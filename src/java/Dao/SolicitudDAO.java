@@ -121,7 +121,8 @@ public class SolicitudDAO {
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
             cstmt.setInt(1, codigo);
 
-            if (cstmt.executeUpdate() > 0) {
+            if (buscarSoli(codigo)) {
+                cstmt.execute();
                 centinela = true;
             }
 
@@ -134,6 +135,33 @@ public class SolicitudDAO {
             this.conexion.close();
         }
 
+        return centinela;
+    }
+
+    //Buscar Para eliminar-----------------------------------------------------------
+    public Boolean buscarSoli(int codigo) throws SQLException {
+
+        Boolean centinela = false;
+
+        try {
+            this.conexion = new Conexion().obtenerConexion();
+            String llamada = " { call SP_BUSCAR_SOLICITUD(?,?) }";
+            CallableStatement cstmt = this.conexion.prepareCall(llamada);
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.setInt(2, codigo);
+            cstmt.execute();
+
+            ResultSet rs = (ResultSet) cstmt.getObject(1);
+
+            if (rs.next()) {
+
+                centinela = true;
+            }
+        } catch (Exception e) {
+            System.out.println("Error al listar solicitudes" + e.getMessage());
+        } finally {
+            this.conexion.close();
+        }
         return centinela;
     }
 
@@ -219,8 +247,8 @@ public class SolicitudDAO {
 
         return centinela;
     }
-    
-      //LISTAR POR RUT
+
+    //LISTAR POR RUT
     public List<ListaSolicitud> listarPorRut(String rut) throws SQLException {
         List<ListaSolicitud> listadoSol = new ArrayList<>();
 
@@ -260,6 +288,5 @@ public class SolicitudDAO {
         }
         return listadoSol;
     }
-    
 
 }

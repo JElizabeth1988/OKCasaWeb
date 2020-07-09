@@ -115,10 +115,13 @@ public class ClienteDao {
             String llamada = " { CALL SP_ELIMINAR_CLIENTE(?) } ";
             CallableStatement cstmt = this.conexion.prepareCall(llamada);
             cstmt.setString(1, rut);
-
-            if (cstmt.executeUpdate() > 0) {
-                centinela = true;
+         
+            
+            if (buscarCli(rut)) {
+                cstmt.execute();
+                centinela=true;
             }
+                  
 
         } catch (Exception e) {
             System.out.println("Error al Eliminar Cliente" + e.getMessage());
@@ -132,6 +135,34 @@ public class ClienteDao {
         return centinela;
     }
 
+    //Buyscar para eliminar--------------------------------------------------------------
+    public Boolean buscarCli(String rut) throws SQLException {
+        
+
+        Boolean centinela = false;
+        try {
+            this.conexion = new Conexion().obtenerConexion();
+            String llamada = " { call SP_BUSCAR_CLIENTE(?,?) }";
+            CallableStatement cstmt = this.conexion.prepareCall(llamada);
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.setString(2, rut);
+            cstmt.execute();
+
+            ResultSet rs = (ResultSet) cstmt.getObject(1);
+
+            if (rs.next()) {
+                
+                centinela = true;
+            }
+        } catch (Exception e) {
+            System.out.println("Error al buscar solicitudes" + e.getMessage());
+        } finally {
+            this.conexion.close();
+        }
+        return centinela;
+    }
+
+    
     //LISTAR POR RUT--------------------------------------------------------------
     public List<ListaCliente> buscarCliente(String rut) throws SQLException {
         List<ListaCliente> lista = new ArrayList<>();

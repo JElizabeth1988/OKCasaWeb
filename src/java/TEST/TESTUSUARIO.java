@@ -27,11 +27,11 @@ public class TESTUSUARIO {
          UsuarioDAO dao = new UsuarioDAO();
     
         try {
-            
-          Usuario u = new Usuario(100, "prueba", "hola123", "13697138-7", 2);
+           /* 
+          Usuario u = new Usuario(100, "prueba", "hola123", "13697138-7", 2);*/
           
-           if(dao.agregarUsuario(u)){
-               System.out.println("Usuario Guardado");
+           if(dao.buscarUsuario("elisa_ngr7")){
+               System.out.println("Usuario existe");
            } else{
                System.out.println("Usuario no Guardado");
            }

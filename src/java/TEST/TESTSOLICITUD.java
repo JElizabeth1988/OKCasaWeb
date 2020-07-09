@@ -44,17 +44,17 @@ public class TESTSOLICITUD {
              System.out.println(solicitud.toString());
              }
             */
-           /* Solicitud so = new Solicitud(1, null, "hello", "dwedewdewd", "19385798-1", "dewdewdwed", 30000, 0.2, "dewdewd", 1, 2, 3);
-            if (dao.modificarSolicitud(so)) {
+            Solicitud so = new Solicitud(1, null, "hello", "dwedewdewd", "19385798-1", "dewdewdwed", 30000, 0.2, "dewdewd", 1, 2, 3);
+            if (dao.eliminarSolicitud(15)) {
                 System.out.println("Solicitud Modificada");
             } else {
                 System.out.println("Solicitud no Modificada");
-            }*/
+            }
             
-            List<ListaSolicitud>listado = dao.listarPorRut("13697138-7");
+            /*List<ListaSolicitud>listado = dao.listarPorRut("13697138-7");
              for (ListaSolicitud solicitud : listado) {
              System.out.println(solicitud.toString());
-             }
+             }*/
              
         } catch (Exception e) {
             System.out.println("Error al ejecutar" + e.getMessage());
